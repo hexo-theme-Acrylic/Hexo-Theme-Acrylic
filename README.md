@@ -3,7 +3,7 @@
   中文
 </div>
 
-# hexo-theme-hexo-theme-Acrylic
+# hexo-theme-Acrylic
 
 ![1](https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/561ba70e-8697-4982-a57f-203aaa7d7667.png)
 ![2](https://tucdn.wpon.cn/2023/02/08/16fa1019080c7.png)
