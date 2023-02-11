@@ -2,7 +2,7 @@ extends includes/layout.pug
 
 block content
   #page
-    if top_img === false && page.type != 'music'
+    if top_img === false
       h1.page-title= page.title
 
     case page.type
@@ -14,10 +14,6 @@ block content
         include includes/page/categories.pug
       when 'essay'
         include includes/page/essay.pug
-      when 'about'
-        include includes/page/about.pug
-      when 'music'
-        include includes/page/music.pug
       default
         include includes/page/default-page.pug
 

@@ -481,3 +481,12 @@ var heo = {
     
   }
 }
+//首页大卡片恢复显示
+$(".topGroup").hover(function () {
+  // console.log("卡片悬浮");
+}, function () {
+  hoverOnCommentBarrage = false;
+  document.getElementById("todayCard").classList.remove('hide');
+  document.getElementById('todayCard').style.zIndex = 1;
+  // console.log("卡片停止悬浮");
+});

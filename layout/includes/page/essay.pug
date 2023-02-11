@@ -6,9 +6,9 @@
       .content-bottom
         .tips 使用 即刻短文静态部署版 构建
       .banner-button-group
-        a.banner-button(onclick='pjax.loadUrl("/posts/49736/")')
+        a.banner-button(onclick='pjax.loadUrl("/p/557c9e72.html")')
           i.fas.fa-circle-chevron-right
-          span.banner-button-text 如何使用
+          span.banner-button-text 部署项目
   #bber
     section.timeline.page-1
       ul#waterfall.list
@@ -28,7 +28,7 @@
                         .bber-content-noimg
                     if item.aplayer
                       .bber-music
-                        meting-js(id=item.aplayer.id server=item.aplayer.server type="song" mutex="true" preload="auto" theme="#3b70fc" order="list")
+                        .aplayer.no-destroy(data-id=item.aplayer.id data-server=item.aplayer.server data-type="song"  data-order="list" data-preload="none" data-autoplay="false" data-mutex="true" data-theme='var(--anzhiyu-main)')
                 hr
                 .bber-bottom
                   .bber-info

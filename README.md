@@ -3,13 +3,17 @@
   中文
 </div>
 
-# hexo-theme-Acrylic
+# hexo-theme-hexo-theme-Acrylic
 
-![封面图](https://raw.githubusercontent.com/hexo-theme-Acrylic/JS-Acrylic/main/hhis5p.webp)
+![1](https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/561ba70e-8697-4982-a57f-203aaa7d7667.png)
+![2](https://tucdn.wpon.cn/2023/02/08/16fa1019080c7.png)
+![3](https://tucdn.wpon.cn/2023/02/08/2b008821d75ce.png)
+![4](https://tucdn.wpon.cn/2023/02/08/973d237cbb4f7.png)
+![5](https://tucdn.wpon.cn/2023/02/08/c4f72037d1257.png)
 
-主题预览:  🤟[Heo](https://blog.zhheo.com/) ||  👍 [满心](https://blog.lovelu.top/)  ||  🤞 [Jayhrn](https://blog.jayhrn.com/)
+预览: 原始主题 [HEO](https://blog.zhheo.com/) || 👍 [满心](https://blog.lovelu.top/)  ||  🤞 [Jayhrn](https://blog.jayhrn.com/)
 
-文档: 📖 [https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
+文档: 📖 正在写，别急
 
 ## 💻 安裝
 
@@ -37,19 +41,18 @@ theme: Acrylic
 
 ## ✨ 贡献者
 > 欢迎你加入我们Acrylic组织
+![](https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/f1939bc8-4830-4f49-9ff0-f696ab8d422e.png)
 
 ### 参与开发
 [@Marcus](https://github.com/MarcusYYDS)
 [@Shine Yu](https://github.com/ShineYull)
+[Acozycotage](https://github.com/Acozycotage)
 ### 服务器提供和测试
-[@Acozycotage](https://github.com/Acozycotage)
+[@满心](https://github.com/helloqibin)
 ### 相关帮助
 暂无
-### 主题设计
-[@张洪Heo](https://github.com/zhheo)
-### 域名提供
-[@张洪Heo](https://github.com/zhheo)
-[@Acozycotage](https://github.com/Acozycotage)
+### 大佬专座
+[@张洪HEO](https://github.com/zhheo)
 
 ## 开发进度
 50%
