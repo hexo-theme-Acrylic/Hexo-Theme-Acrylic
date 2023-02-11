@@ -28,7 +28,7 @@
                         .bber-content-noimg
                     if item.aplayer
                       .bber-music
-                        .aplayer.no-destroy(data-id=item.aplayer.id data-server=item.aplayer.server data-type="song"  data-order="list" data-preload="none" data-autoplay="false" data-mutex="true" data-theme='var(--anzhiyu-main)')
+                        meting-js(id=item.aplayer.id server=item.aplayer.server type="song" mutex="true" preload="auto" theme="#3b70fc" order="list")
                 hr
                 .bber-bottom
                   .bber-info
