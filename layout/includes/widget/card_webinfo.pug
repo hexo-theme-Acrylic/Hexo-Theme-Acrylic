@@ -1,0 +1,19 @@
+if theme.aside.card_webinfo.enable
+  .card-widget.card-webinfo
+    .webinfo
+      if theme.aside.card_webinfo.post_count
+        .webinfo-item
+          i.item-icon.fas.fa-file-alt
+            .item-name= _p('aside.card_webinfo.article_name') + " :"
+          .item-count= site.posts.length
+      if theme.runtimeshow.enable
+        .webinfo-item
+          i.item-icon.fas.fa-stopwatch
+            .item-name= _p('aside.card_webinfo.runtime.name') + " :"
+          .item-count#runtimeshow(data-publishDate=date_xml(theme.runtimeshow.publish_date))
+      if theme.wordcount.enable && theme.wordcount.total_wordcount
+        .webinfo-item
+          i.item-icon.fas.fa-font
+            .item-name=_p('aside.card_webinfo.site_wordcount') + " :"
+          .item-count=totalcount(site)
+

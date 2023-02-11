@@ -1,0 +1,30 @@
+if theme.post_copyright.enable && page.copyright !== false
+  - let author = page.copyright_author ? page.copyright_author : config.author
+  - let url = page.copyright_url ? page.copyright_url : page.permalink
+  .post-copyright
+    .post-copyright__title
+      span.post-copyright-info
+        h #[=page.title]
+    .post-copyright__type
+      span.post-copyright-info
+        a(href=url_for(url))= theme.post_copyright.decode ? decodeURI(url) : url
+    .post-copyright-m
+      .post-copyright-m-info
+        .post-copyright-a(style="display: inline-block;width: 120px")
+            h 作者
+            .post-copyright-cc-info
+                h=author
+        .post-copyright-c(style="display: inline-block;width: 120px")
+            h 发布于
+            .post-copyright-cc-info
+                h=date(page.date, config.date_format)
+        .post-copyright-u(style="display: inline-block;width: 120px")
+            h 更新于
+            .post-copyright-cc-info
+                h=date(page.updated, config.date_format)
+        .post-copyright-c(style="display: inline-block;width: 120px")
+            h 许可协议
+            .post-copyright-cc-info
+                a.icon(rel='noopener' target='_blank' title='Creative Commons' href='https://creativecommons.org/')
+                  i.fab.fa-creative-commons
+                a(rel='noopener' target='_blank' title='CC BY 4.0' href='https://creativecommons.org/licenses/by/4.0/deed.zh') CC BY 4.0

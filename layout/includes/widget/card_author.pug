@@ -1,0 +1,31 @@
+.card-widget.card-info
+  .card-content
+    .card-info-avatar.is-center
+      #author-info__sayhi.author-info__sayhi 晚上好！我是
+      .author-info__name= config.author
+      .author-info__description
+        | 这有关于
+        b 产品、设计、开发
+        | 相关的问题和看法，还有
+        b 文章翻译
+        | 和
+        b 分享
+        | 。
+      .author-info__description2
+        | 相信你可以在这里找到对你有用的
+        b 知识
+        | 和
+        b 教程
+        | 。
+  .banner-button-group
+    a.banner-button(onclick='pjax.loadUrl("/about/")' data-pjax-state='')
+      i.fas.fa-circle-chevron-right
+      span.banner-button-text 了解更多
+  a#card-info-btn.button--animated(target='_blank' rel='noopener external nofollow' href='https://github.com/zhheo')
+    i.fab.fa-github
+    span Github
+  .card-info-social-icons.is-center
+    a.social-icon(href='https://dribbble.com/zhheo' rel='external nofollow' target='_blank' title='Dribbble')
+      i.fab.fa-dribbble
+    a.social-icon(href='https://github.com/zhheo' rel='external nofollow' target='_blank' title='Github')
+      i.fab.fa-github

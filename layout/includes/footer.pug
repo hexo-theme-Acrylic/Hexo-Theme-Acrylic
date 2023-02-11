@@ -1,0 +1,97 @@
+footer#footer
+  #footer_deal
+    a.deal_link(href='mailto:jayhrn@163.com' title='mail')
+      i.fa-regular.fa-envelope
+    a.deal_link(href='https://space.bilibili.com/340543148?spm_id_from=333.1007.0.0' title='哔哩哔哩' target='_blank')
+      i.fa-brands.fa-bilibili
+    a.deal_link(href='https://weibo.com/u/6067185802' title='微博' target='_blank')
+      i.fa-brands.fa-weibo
+    a.deal_link(href='https://github.com/JayHrn' title='GitHub' target='_blank')
+      i.fa-brands.fa-github
+    img.footer_mini_logo.entered.loading(style='border-radius:50%' src='https://tucdn.wpon.cn/2023/02/08/b96926895d8bb.webp' onclick='btf.scrollToDest(0, 500)' title='返回顶部')
+    a.deal_link(target='_blank' rel='noopener' href='https://gitee.com/JayHrn' title='Gitee')
+      i.fa-solid.fa-code-branch
+    a.deal_link(href='https://www.zhihu.com/people/ting-feng-75-76' title='知乎' target='_blank')
+      i.fa-brands.fa-zhihu
+    a.deal_link(href='https://juejin.cn/user/2801996240531566' title='稀土掘金' target='_blank')
+      i.fa-brands.fa-xing
+    a.deal_link(href='https://twitter.com/Jayhrn' title='Twitter' target='_blank')
+      i.fa-brands.fa-twitter
+  #Jay-footer
+    .footer-group
+      h3.footer-title 直达
+      .footer-links
+        a.footer-item(href='https://www.jayhrn.com' target='_blank') 我的主页
+        a.footer-item(href='/books/') 书籍分享
+        a.footer-item(href='/movies/') 电影推荐
+        a.footer-item(onclick='toRandomFlink()') 随机友链
+    .footer-group
+      h3.footer-title 分类
+      .footer-links
+        a.footer-item(href='/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/') 学习笔记
+        a.footer-item(href='/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/') 经验分享
+        a.footer-item(href='/categories/%E4%BC%98%E8%B4%A8%E6%8E%A8%E8%8D%90/') 优质推荐
+        a.footer-item(href='/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/') 生活日常
+    .footer-group
+      h3.footer-title 关于
+      .footer-links
+        a.footer-item(href='/about/') 关于我
+        a.footer-item(href='/echarts/') 博客统计
+        a.footer-item(href='/archives/') 文章归档
+        a.footer-item(href='/update/') 更新记录
+    .footer-group
+      h3.footer-title 服务
+      .footer-links
+        a.footer-item(href='https://tyucdn.com/' target='_blank') 天御云服务
+        a.footer-item(href='https://v6.51.la/' target='_blank') 51la统计
+        a.footer-item(href='https://tongji.baidu.com/' target='_blank') 百度统计
+        a.footer-item(href='https://bf.zzxworld.com/s/712' target='_blank') BlogFinder
+    .footer-group
+      h3.footer-title 协议
+      .footer-links
+        a.footer-item(href='/privacy/') 隐私协议
+        a.footer-item(href='/cookies/') Cookie
+        a.footer-item(href='/cc/') 版权协议
+    .footer-group
+      h3.footer-title
+        | 友链 
+        button(
+          href="javascript:;"
+          onclick="flink_random.randomLink()"
+          title="换一批"
+          class="fa-rotate-righ-button"
+        )
+          i.fa-rotate-right.fa-solid
+      .footer-links#friend-links-in-footer
+        a.footer-item(href="")
+        a.footer-item(href="")
+        a.footer-item(href="")
+        a.footer-item(href="")
+        a.footer-item(href="")
+        a.footer-item(data-pjax-state="" href="/link/") 查看更多
+  #footer-banner
+    .footer-banner-links
+      .footer-banner-left
+        .footer-banner-left
+          #footer-banner-tips
+          .copyright
+            | ©2022 - 2023 By 
+            a.footer-banner-link(href='/') 张洪HEO
+            a(data-pjax-state='')
+      .footer-banner-right
+        a.footer-banner-link(href='/update/' title='Pottery') 主题
+        a.footer-banner-link(href='/rss.xml' title='RSS') 订阅
+        a.footer-banner-link(href='https://beian.miit.gov.cn/' title='关于我' target='_blank') 赣ICP备2023000916号
+        a.footer-banner-link.cc(href='/cc/' title='版权协议')
+          i.iconfont.icon-occ
+          i.iconfont.icon-occ-by
+          i.iconfont.icon-onc
+          i.iconfont.icon-ond
+  #cookies-window.needEndHide.cw-hide.hide(style='display: none;')
+    .cookies-window-title 协议提醒助手
+    .cookies-window-content
+      span.cookies-tip 查看本站为你的个人隐私做出的努力
+      a.cookies-link(href='/privacy/' title='本站如何保护你的隐私')
+        i.fas.fa-arrow-circle-right
+  #quit-box(onclick='RemoveRewardMask()')
+  .comment-barrage.needEndHide.hide
