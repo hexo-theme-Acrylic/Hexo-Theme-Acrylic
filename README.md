@@ -9,7 +9,7 @@
 
 主题预览:  🤟[Heo](https://blog.zhheo.com/) ||  👍 [满心](https://blog.lovelu.top/)  ||  🤞 [Jayhrn](https://blog.jayhrn.com/)
 
-文档: 📖 正在写，别急
+文档: 📖 [https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
 
 ## 💻 安裝
 
@@ -41,13 +41,15 @@ theme: Acrylic
 ### 参与开发
 [@Marcus](https://github.com/MarcusYYDS)
 [@Shine Yu](https://github.com/ShineYull)
-[Acozycotage](https://github.com/Acozycotage)
 ### 服务器提供和测试
-[@满心](https://github.com/helloqibin)
+[@Acozycotage](https://github.com/Acozycotage)
 ### 相关帮助
 暂无
 ### 主题设计
 [@张洪Heo](https://github.com/zhheo)
+### 域名提供
+[@张洪Heo](https://github.com/zhheo)
+[@Acozycotage](https://github.com/Acozycotage)
 
 ## 开发进度
 50%
