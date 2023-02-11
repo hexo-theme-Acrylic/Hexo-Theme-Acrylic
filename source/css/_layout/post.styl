@@ -198,15 +198,18 @@ beautify()
     padding: 10px 16px
     border: 1px solid var(--light-grey)
     transition: box-shadow .3s ease-in-out
+    overflow: hidden
+    border-radius: 12px!important
+    background-color: rgb(239 241 243)
 
     &:before
-      @extend .fontawesomeIcon
-      position: absolute
-      top: 2px
-      right: 12px
-      color: $theme-color
-      content: '\f1f9'
-      font-size: 1.3em
+      position absolute
+      right -26px
+      top -120px
+      content '\f25e'
+      font-size 200px
+      font-family 'Font Awesome 5 Brands'
+      opacity .2
 
     &:hover
       box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5)
@@ -220,11 +223,13 @@ beautify()
         padding-left: 6px
 
         a
-          text-decoration: underline
+          text-decoration: none
           word-break: break-word
 
           &:hover
             text-decoration: none
+  .post-copyright-cc-info
+    color: $theme-color;
 
   .post-outdate-notice
     position: relative

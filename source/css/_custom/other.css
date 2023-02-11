@@ -256,3 +256,110 @@ html {
   margin-left: 1rem;
   font-weight: bold;
 }
+#article-container ol,
+#article-container ul {
+  margin-top: 0.4rem;
+  padding: 0px 0px 0px 0.8rem;
+  list-style: none;
+  counter-reset: li 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  #article-container ol,
+  #article-container ul {
+    padding: 0px 0px 0px 0.4rem;
+  }
+}
+
+#article-container ol p,
+#article-container ul p {
+  margin: 0px 0px 0.5rem;
+}
+
+#article-container ol ol,
+#article-container ol ul,
+#article-container ul ol,
+#article-container ul ul {
+  padding-left: 0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  #article-container ol ol,
+  #article-container ol ul,
+  #article-container ul ol,
+  #article-container ul ul {
+    padding-left: 0.2rem;
+  }
+}
+
+#article-container ol li:not(.tab),
+#article-container ul li:not(.tab) {
+  position: relative;
+  margin: 0.2rem 0px;
+}
+
+#article-container ol li:hover::before,
+#article-container ul li:hover::before {
+  transform: rotate(360deg);
+}
+
+#article-container ol li::before,
+#article-container ul li::before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgb(48, 122, 246);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.3s ease-out 0s;
+}
+
+#article-container ol>li:not(.tab) {
+  padding: 0.2em 0.2em 0.2em 1.8em;
+}
+
+#article-container ol>li::before {
+  margin-top: 0.65em;
+  width: 1.45em;
+  height: 1.45em;
+  border-radius: 0.725em;
+  content: counter(li);
+  counter-increment: li 1;
+  text-align: center;
+  font-size: 0.85em;
+  line-height: 1.45em;
+}
+
+#article-container ul>li:not(.tab) {
+  padding: 0.2em 0.2em 0.2em 1.4em;
+}
+#article-container ul>li:not(.tab)::before {
+  top: 0.78em;
+  width: 0.42em;
+  height: 0.42em;
+  border: 0.21em solid rgb(48, 122, 246);
+  border-radius: 0.42em;
+  background: 0px 0px;
+  content: "";
+  line-height: 0.42em;
+}
+#article-container ul>li:not(.tab):before {
+    border: 0.21em solid var(--heo-lighttext) !important;
+    background: var(--heo-lighttext) !important;
+}
+#article-container ul>li:not(.tab)::before {
+    top: 0.78em;
+    width: 0.42em;
+    height: 0.42em;
+    border-radius: 0.42em !important;
+    background: 0px 0px;
+    content: "";
+    line-height: 0.42em;
+}
+#article-container img {
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+}

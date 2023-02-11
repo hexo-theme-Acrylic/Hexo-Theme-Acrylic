@@ -1,17 +1,30 @@
 if theme.post_copyright.enable && page.copyright !== false
-  - let author = page.copyright_author || config.author
-  - let authorHref = page.copyright_author_href || theme.post_copyright.author_href || config.url
-  - let url = page.copyright_url || page.permalink
-  - let info = page.copyright_info || _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
+  - let author = page.copyright_author ? page.copyright_author : config.author
+  - let url = page.copyright_url ? page.copyright_url : page.permalink
   .post-copyright
-    .post-copyright__author
-      span.post-copyright-meta= _p('post.copyright.author') + ": "
+    .post-copyright__title
       span.post-copyright-info
-        a(href=authorHref)=author
+        h #[=page.title]
     .post-copyright__type
-      span.post-copyright-meta= _p('post.copyright.link') + ": "
       span.post-copyright-info
         a(href=url_for(url))= theme.post_copyright.decode ? decodeURI(url) : url
-    .post-copyright__notice
-      span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-      span.post-copyright-info!= info
+    .post-copyright-m
+      .post-copyright-m-info
+        .post-copyright-a(style="display: inline-block;width: 120px")
+            h 作者
+            .post-copyright-cc-info
+                h=author
+        .post-copyright-c(style="display: inline-block;width: 120px")
+            h 发布于
+            .post-copyright-cc-info
+                h=date(page.date, config.date_format)
+        .post-copyright-u(style="display: inline-block;width: 120px")
+            h 更新于
+            .post-copyright-cc-info
+                h=date(page.updated, config.date_format)
+        .post-copyright-c(style="display: inline-block;width: 120px")
+            h 许可协议
+            .post-copyright-cc-info
+                a.icon(rel='noopener' target='_blank' title='Creative Commons' href='https://creativecommons.org/')
+                  i.fab.fa-creative-commons
+                a(rel='noopener' target='_blank' title='CC BY 4.0' href='https://creativecommons.org/licenses/by/4.0/deed.zh') CC BY 4.0
