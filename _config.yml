@@ -892,6 +892,7 @@ CDN:
 
   option:
     # main_css:
+    countup_js: /js/countup.js
     # main:
     # utils:
     # translate:

@@ -38,7 +38,7 @@ theme: Acrylic
 ## ✨ 贡献者
 > 欢迎你加入我们Acrylic组织
 >
->![](/source/img/qqgroup.webp)
+>![](https://img2.acozycotage.net/i/2023/02/11/hii326.webp)
 
 ### 参与开发
 [@Marcus](https://github.com/MarcusYYDS)
