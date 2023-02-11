@@ -21,6 +21,7 @@ menu:
     在线工具: /tlink/ || fas fa-screwdriver-wrench
     电影推荐: /movies/ || fas fa-clapperboard
     关于本站: /about/ || fas fa-sailboat
+    音乐界面: /music/ || fas fa-sailboat
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -908,6 +909,7 @@ inject:
     - <script async data-pjax src="/js/anzhiyufunction.js"></script>
     - <script async src="/js/anzhiyuOnlyOne.js"></script>
     - <script src="/heo/random.js"></script>
+    
 
 # CDN
 # Don't modify the following settings unless you know how they work
