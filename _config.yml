@@ -84,14 +84,40 @@ katex:
 # Image (圖片設置)
 # --------------------------------------
 
-# Favicon（網站圖標）
+# Favicon（网站图标）
 favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 
-# Avatar (頭像)
+# Avatar (头像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
   effect: false
 
+# 关于页面自定义
+aboutpage: 
+  job: 学生、独立开发者、博主
+  live: 中国，北京市
+  born: 1997
+  school: 大连工业大学
+  can: 产品设计
+  work: UI/产品
+  character: 逻辑学家
+  character2: INTP-T
+  personalities: https://cdn.zhheo.com/public/svg/INTP-T.svg
+  selfie: https://p.zhheo.com/202352d98ec86bef3388a0152b33cf9d06ad082002.png!cover
+  maxim1: 荆棘之路，
+  maxim2: 劈风斩浪。
+  tc1: 玄学流电脑疑难问题
+  tc2: 解决专家
+  tc3: 软件学习能力
+  tc4: MAX
+  uid: 'UID:125766904'
+  fanjuname: 刺客伍六七
+  fanjulink: 'https://www.bilibili.com/bangumi/play/ss36594/?spm_id_from=333.999.0.0'
+  liketechnology: 数码科技
+  liketechnologyand: 手机、电脑软硬件
+  sllctitle: 为什么建站？
+  xllc: 创建这个站的时候，想要就是能够有一个自己能够积累知识、积累兴趣的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。分享这件事我从很早就开始了，起初做的微信公众号，现在做的网站。因为我比较喜欢研究数码和软件，想要探究在互联网上的事物是如何被创造和发展。网络给我带来了非常多的知识和眼界，我也想力所能及的分享一些我生活的琐碎知识。与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有技能的教程干货、有生活上的吐槽和妙招、有话题上的思考和想法。一般我研究什么、发现了什么都会分享在这里。这些就是创造这个小站的本意，也是我分享生活的方式。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
+  
 # 下面的一个都别改
 disable_top_img: false
 index_img: false
@@ -180,11 +206,11 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
+    - img: 
+      link:
+      text: wechat
     # - img: /img/alipay.jpg
     #   link:
     #   text: alipay
@@ -249,7 +275,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus
+  use: Twikoo # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -327,7 +353,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
+  envId: 
   region:
   visitor: false
   option:
