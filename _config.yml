@@ -14,7 +14,7 @@ menu:
     设计工具: /tags/Sketch/ || fas fa-palette
     视频混剪: /tags/混剪/ || fas fa-scissors
   友链:
-    友链鱼塘: /moments/ || fas fa-fish-fins
+    友链鱼塘: /fcircle/ || fas fa-fish-fins
     友情链接: /link/ || fas fa-user-group
     宝藏博主: javascript:travelling() || fas fa-bus
   我的:
@@ -25,7 +25,7 @@ menu:
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: light #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: darker #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
@@ -117,7 +117,20 @@ aboutpage:
   liketechnologyand: 手机、电脑软硬件
   sllctitle: 为什么建站？
   xllc: 创建这个站的时候，想要就是能够有一个自己能够积累知识、积累兴趣的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。分享这件事我从很早就开始了，起初做的微信公众号，现在做的网站。因为我比较喜欢研究数码和软件，想要探究在互联网上的事物是如何被创造和发展。网络给我带来了非常多的知识和眼界，我也想力所能及的分享一些我生活的琐碎知识。与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有技能的教程干货、有生活上的吐槽和妙招、有话题上的思考和想法。一般我研究什么、发现了什么都会分享在这里。这些就是创造这个小站的本意，也是我分享生活的方式。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
-  
+
+sidebars: 
+  href:
+    url1: https://zhheo.com/
+    url2: https://plog.zhheo.com/
+    url3: https://apps.zhheo.com/
+  img1: https://img2.acozycotage.net/i/2023/02/11/qmt0t7.webp
+  img2: https://img2.acozycotage.net/i/2023/02/11/qkgj7w.webp
+  img3: https://img2.acozycotage.net/i/2023/02/11/qo29oc.webp
+  img4: https://img2.acozycotage.net/i/2023/02/11/qofwot.webp
+  ptn2: 主页
+  ptn1: 图片博客
+  ptn3: 开发博客
+
 # 下面的一个都别改
 disable_top_img: false
 index_img: false
@@ -208,7 +221,7 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: 
+    - img: https://img2.acozycotage.net/i/2023/02/11/im049m.webp
       link:
       text: wechat
     # - img: /img/alipay.jpg
@@ -353,7 +366,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: 
+  envId:
   region:
   visitor: false
   option:
@@ -880,6 +893,7 @@ inject:
     #- <script src="/js/blogex.js"></script>
     - <script src="/js/flink_random.js"></script>
     - <script src="/js/fps.js"></script>
+    - <script src="/js/xh.js"></script>
     - <script src="/js/nav.js"></script>
     - <script src="/js/bblist.js"></script>
     - <script data-pjax src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script>
