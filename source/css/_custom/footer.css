@@ -24,35 +24,30 @@ div#footer_deal {
     img.footer_mini_logo {
         display: none
     }
-
     div#footer_deal {
         flex-wrap: wrap;
         flex-direction: row
     }
 }
+
 a.deal_link {
     display: flex;
     margin: 1rem 27px;
     color: var(--heo-card-bg);
     border-radius: 3rem;
-    width: 32px;
-    height: 32px;
+    width: 2.5rem;
+    height: 2.5rem;
     background: var(--heo-fontcolor);
     justify-content: center;
     align-items: center;
     transition: 0.3s;
 }
 
-#footer_deal i {
-  font-size: 0.9rem;
-  line-height: 0.9rem;
-  height: 0.9rem;
+a.deal_link:hover {
+    color: var(--heo-white);
+    background: var(--heo-main);
 }
 
-a.deal_link:hover {
-  color: var(--heo-white);
-  background: var(--heo-main);
-}
 img.footer_mini_logo {
     width: 50px;
     height: 50px;
@@ -71,7 +66,6 @@ img.footer_mini_logo:hover {
     img.footer_mini_logo:hover {
         transform: scale(1.03)
     }
-
     img.footer_mini_logo:active {
         transform: scale(.97)
     }
@@ -109,7 +103,9 @@ img.footer_mini_logo:hover {
     }
 }
 
-[data-theme=dark] #footer:before, [data-theme=dark] #page-header:before, [data-theme=dark] #web_bg:before {
+[data-theme=dark] #footer:before,
+[data-theme=dark] #page-header:before,
+[data-theme=dark] #web_bg:before {
     background-color: var(--Jay-none) !important
 }
 
@@ -118,11 +114,9 @@ img.footer_mini_logo:hover {
         flex-direction: column !important;
         text-align: center !important
     }
-
     #letlogo {
         display: none !important
     }
-
     #footer-wrap {
         margin-top: 1rem !important
     }
@@ -293,13 +287,14 @@ img.footer_mini_logo:hover {
     color: var(--Jay-theme)
 }
 
-#footer-banner > div > div.footer-banner-left > span {
+#footer-banner>div>div.footer-banner-left>span {
     margin-right: 1rem
 }
 
 #footer-banner .footer-banner-right a:hover {
     color: var(--Jay-lighttext)
 }
+
 #footer-banner {
     padding: 1rem;
     color: var(--heo-fontcolor);
@@ -310,22 +305,26 @@ img.footer_mini_logo:hover {
     z-index: 1002;
     transition: 0.3s;
 }
+
 #footer_deal i {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     transition: .3s;
     line-height: 1.3rem;
     height: 1.3rem
 }
+
 #footer-banner .footer-links {
     display: flex;
     flex-direction: column;
 }
+
 div#footer_deal {
     justify-content: center;
     display: flex;
     padding-top: 2rem;
     align-items: center;
 }
+
 #footer-banner .footer-item {
     font-size: 0.8rem;
     line-height: 0.8rem;

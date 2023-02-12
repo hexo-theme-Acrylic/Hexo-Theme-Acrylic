@@ -49,24 +49,26 @@
                 a.banner-button(href=`${theme.hometop.topgroup.card.link}`, data-pjax-state='external')
                   i(class=`${theme.hometop.topgroup.card.icon}`)
                   span.banner-button-text=theme.hometop.topgroup.card.buttontext
-          if theme.hometop.topgroup.class == "post"
-            each item in site.data.slider
-              .recent-post-item
-                .post_cover.left_radius
-                  a(href=`${item.link}`, title=`${item.title}`, data-pjax-state)
-                    span.recent-post-top-text(onclick=`pjax.loadUrl("` + item.link + `");`) 荐 
-                    img.post_bg.entered.loaded(data-lazy-src=`${item.cover}`, onerror='this.onerror=null;this.src=\'https://img2.acozycotage.net/i/2023/02/11/pqqw2r-4.webp\'', alt=`${item.title}`, data-ll-status='loaded', src=`${item.title}`)
-                .recent-post-info(onclick=`pjax.loadUrl("` + item.link + `");`)
-                  a.article-title(href=`${item.link}`, title=`${item.title}`, data-pjax-state)=item.title
-          if theme.hometop.topgroup.class == "both"
-            each item in site.data.slider
-              .recent-post-item
-                .post_cover.left_radius
-                  a(href=`${item.link}`, title=`${item.title}`, data-pjax-state)
-                    span.recent-post-top-text(onclick=`pjax.loadUrl("` + item.link + `");`) 荐 
-                    img.post_bg.entered.loaded(data-lazy-src=`${item.cover}`, onerror='this.onerror=null;this.src=\'https://img2.acozycotage.net/i/2023/02/11/pqqw2r-4.webp\'', alt=`${item.title}`, data-ll-status='loaded', src=`${item.title}`)
-                .recent-post-info(onclick=`pjax.loadUrl("` + item.link + `");`)
-                  a.article-title(href=`${item.link}`, title=`${item.title}`, data-pjax-state)=item.title
+          if site.data.slider
+            if theme.hometop.topgroup.class == "post"
+              each item in site.data.slider
+                .recent-post-item
+                  .post_cover.left_radius
+                    a(href=`${item.link}`, title=`${item.title}`, data-pjax-state)
+                      span.recent-post-top-text(onclick=`pjax.loadUrl("` + item.link + `");`) 荐 
+                      img.post_bg.entered.loaded(data-lazy-src=`${item.cover}`, onerror='this.onerror=null;this.src=\'https://img2.acozycotage.net/i/2023/02/11/pqqw2r-4.webp\'', alt=`${item.title}`, data-ll-status='loaded', src=`${item.title}`)
+                  .recent-post-info(onclick=`pjax.loadUrl("` + item.link + `");`)
+                    a.article-title(href=`${item.link}`, title=`${item.title}`, data-pjax-state)=item.title
+            if theme.hometop.topgroup.class == "both"
+              each item in site.data.slider
+                .recent-post-item
+                  .post_cover.left_radius
+                    a(href=`${item.link}`, title=`${item.title}`, data-pjax-state)
+                      span.recent-post-top-text(onclick=`pjax.loadUrl("` + item.link + `");`) 荐 
+                      img.post_bg.entered.loaded(data-lazy-src=`${item.cover}`, onerror='this.onerror=null;this.src=\'https://img2.acozycotage.net/i/2023/02/11/pqqw2r-4.webp\'', alt=`${item.title}`, data-ll-status='loaded', src=`${item.title}`)
+                  .recent-post-info(onclick=`pjax.loadUrl("` + item.link + `");`)
+                    a.article-title(href=`${item.link}`, title=`${item.title}`, data-pjax-state)=item.title
+
             .todayCard#todayCard(onclick=`window.open(\'${theme.hometop.topgroup.card.link}\')`, style='z-index: 1;')
               .todayCard-info
                 .todayCard-tips=theme.hometop.topgroup.card.tips
