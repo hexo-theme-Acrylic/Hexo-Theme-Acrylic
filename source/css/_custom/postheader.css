@@ -1,9 +1,9 @@
 #page-header.post-bg{
-    background:var(--leonus-purple)!important;
+    background:var(--heo-theme) !important;
     overflow:hidden
 }
 #page-header.post-bg::before{
-    background:var(--leonus-purple)!important;
+    background:var(--heo-theme) !important;
 }
 #post-cover{
     width:80%;
@@ -27,7 +27,7 @@
     height:100%;
     top:0;
     left:0;
-    box-shadow:100px -100px 275px 75px var(--leonus-purple) inset;
+    box-shadow:100px -100px 275px 75px var(--heo-theme) inset;
     background:var(--main-lighter)
 }
 #post-cover-img{
@@ -51,7 +51,7 @@
         position:fixed
     }
     #post-cover::after{
-        box-shadow:0 -150px 150px 35px var(--leonus-purple) inset
+        box-shadow:0 -150px 150px 35px var(--heo-theme) inset
     }
 }
 #page-header #post-info{
@@ -92,7 +92,7 @@
     margin-right:1rem
 }
 #post-info #post-meta .meta-firstline a.post-meta-categories:hover{
-    color:var(--leonus-purple);
+    color:var(--heo-theme);
 }
 #post-info #post-meta .meta-firstline span.post-meta-categories{
     margin-right:1rem

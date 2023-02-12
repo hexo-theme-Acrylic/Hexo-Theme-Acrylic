@@ -123,3 +123,31 @@ a {
   background: var(--heo-main) !important;
   color: var(--heo-white) !important;
 }
+@media screen and (min-width: 900px) {
+	html.hide-aside .layout>div:first-child {
+	    width: 100% !important;
+	}
+}
+
+.layout>div:first-child:not(.recent-posts) {
+    box-shadow: var(--heo-shadow-border);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: var(--heo-card-bg);
+    border: var(--style-border);
+    width: calc(100% - 300px);
+}
+.layout>div:first-child:not(.recent-posts) {
+    align-self: flex-start;
+    padding: 50px 40px;
+    border-radius: 8px;
+    background: var(--heo-card-bg);
+    box-shadow: var(--card-box-shadow);
+}
+.layout>div:first-child {
+    width: calc(100% - 300px);
+}
+.layout>div:first-child {
+    width: 75% !important;
+    transition: all 0.3s ease 0s;
+}
