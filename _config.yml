@@ -222,7 +222,7 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://img2.acozycotage.net/i/2023/02/11/im049m.webp
+    - img: http://photoimage.2lc.top/LightPicture/2023/02/5093124048fd6e2f.webp
       link:
       text: wechat
     # - img: /img/alipay.jpg
@@ -917,8 +917,8 @@ hometop:
     #如果为card
     card:
       tips: 新品推荐
-      title: 将世界万物化作电子木鱼
-      bg: https://img2.acozycotage.net/i/2023/02/11/ik27c0.webp
+      title: 让亚克力化作效率工具
+      bg: http://photoimage.2lc.top/LightPicture/2023/02/22c99eaf9576e7e5.png
       link: https://blog.zhheo.com/p/671f98c8.html
       buttontext: 更多推荐
       icon: fas fa-circle-plus
