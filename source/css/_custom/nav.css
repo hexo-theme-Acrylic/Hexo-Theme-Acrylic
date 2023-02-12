@@ -108,8 +108,8 @@
     transition: 0.3s;
     padding: 6px 4px 10px 4px!important;
     border-radius: 100px;
-    background-color: var(--Acozycotage-card-bg);
-    box-shadow: var(--Acozycotage-shadow-black);
+    background-color: var(--hen-card-bg);
+    box-shadow: var(--hen-shadow-black);
     border: var(--style-border);
     transition: 0.3s;
     backdrop-filter: blur(20px);
@@ -131,13 +131,13 @@
     border-radius: 100px;
     padding: 0.3rem 0.8rem;
     width: 100%;
-    color: var(--Acozycotage-fontcolor) !important;
+    color: var(--hen-fontcolor) !important;
     text-shadow: none !important;
 }
 #nav .menus_items .menus_item .menus_item_child li a:hover{
-    background: var(--Acozycotage-main) !important;
-    color: var(--Acozycotage-white) !important;
-    box-shadow: var(--Acozycotage-shadow-main);
+    background: var(--hen-main) !important;
+    color: var(--hen-white) !important;
+    box-shadow: var(--hen-shadow-main);
     margin: 0 auto;
     transform: scale(1) !important;
     padding: 0.3rem 1.05rem;
@@ -803,8 +803,8 @@
     transition: 0.3s;
     padding: 6px 4px 10px 4px!important;
     border-radius: 100px;
-    background-color: var(--Acozycotage-card-bg);
-    box-shadow: var(--Acozycotage-shadow-black);
+    background-color: var(--hen-card-bg);
+    box-shadow: var(--hen-shadow-black);
     border: var(--style-border);
     transition: 0.3s;
     backdrop-filter: blur(20px);
@@ -826,13 +826,13 @@
     border-radius: 100px;
     padding: 0.3rem 0.8rem;
     width: 100%;
-    color: var(--Acozycotage-fontcolor) !important;
+    color: var(--hen-fontcolor) !important;
     text-shadow: none !important;
 }
 #nav .menus_items .menus_item .menus_item_child li a:hover{
-    background: var(--Acozycotage-main) !important;
-    color: var(--Acozycotage-white) !important;
-    box-shadow: var(--Acozycotage-shadow-main);
+    background: var(--hen-main) !important;
+    color: var(--hen-white) !important;
+    box-shadow: var(--hen-shadow-main);
     margin: 0 auto;
     transform: scale(1) !important;
     padding: 0.3rem 1.05rem;
