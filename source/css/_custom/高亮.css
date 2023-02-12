@@ -1,0 +1,11 @@
+figure.highlight pre .ruby .class .title, figure.highlight pre .css .rules .attribute, figure.highlight pre .string, figure.highlight pre .value, figure.highlight pre .inheritance, figure.highlight pre .header, figure.highlight pre .ruby .symbol, figure.highlight pre .xml .cdata, figure.highlight pre .special, figure.highlight pre .number, figure.highlight pre .formula {
+    color: var(--heo-green);
+}
+#article-container a {
+    text-decoration: none;
+    border-bottom: 0px solid var(--heo-lighttext) !important;
+    color: var(--heo-fontcolor);
+    font-weight: bold;
+    padding: 0px 4px;
+    border-radius: 4px 4px 0px 0px;
+}

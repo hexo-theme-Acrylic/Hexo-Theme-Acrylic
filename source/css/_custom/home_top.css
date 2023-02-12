@@ -1100,3 +1100,13 @@ span.recent-post-top-text {
     margin-bottom: 0.75rem;
     box-shadow: var(--heo-shadow-border);
   }}
+  
+    .topGroup .todayCard::after {
+      box-shadow: 0 -109px 133px -9px #006a73 inset !important;
+    }
+    .todayCard-title,.todayCard-tips,.topGroup .banner-button {
+      color: #ffffff;
+    }
+    .topGroup .todayCard {
+      background: #006a73 !important;
+    }

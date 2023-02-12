@@ -363,3 +363,9 @@ html {
     margin-bottom: 0.5rem;
     object-fit: cover;
 }
+@media screen and (min-width: 1300px){
+	#category-bar {
+	    margin-bottom: 0.75rem;
+	    box-shadow: var(--heo-shadow-border);
+	}
+}

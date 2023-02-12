@@ -63,6 +63,10 @@ a.catalog-more:hover {
 }
 div#首页 {
     background: var(--heo-theme);
-    color: var(--heo-white);
+    color: var(--heo-white) !important;
     border-radius: 8px;
+	height: 30px;
+}
+ div#首页 a {
+    color: white;
 }
