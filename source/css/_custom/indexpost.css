@@ -9,7 +9,6 @@
     margin-top: 0.25rem;
     margin-bottom: 0.75rem;
     box-shadow: var(--heo-shadow-border);
-    clip-path: inset(0 0 0 0 round 12px);
   }
 
   #recent-posts>.recent-post-item:active {
@@ -47,7 +46,6 @@
     box-shadow: var(--heo-shadow-border);
     display: block;
     position: relative;
-    clip-path: inset(0 0 0 0 round 12px);
   }
 /* 文章封面 */
 
