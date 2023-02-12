@@ -5,7 +5,7 @@
 
 # hexo-theme-Acrylic
 
-![封面图](https://photoimage.2lc.top/LightPicture/2023/02/270d6941dc4f1a9b.webp)
+![封面图](https://photoimage.2lc.top/LightPicture/2023/02/958c511fe4757474.webp)
 
 主题预览:  🤟[Heo](https://blog.zhheo.com/) ||  👍 [满心](https://blog.lovelu.top/)  ||  🤞 [Jayhrn](https://blog.jayhrn.com/)
 
