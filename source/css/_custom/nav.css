@@ -6,16 +6,17 @@
 }
 
 #nav .menus_items .menus_item .menus_item_child {
-    padding: 6px 4px 8px 4px;
-    border-radius: 100px;
-    background-color: var(--heo-card-bg);
-    box-shadow: var(--heo-shadow-black);
-    border: var(--style-border);
-    transition: 0.3s;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    transform: translateZ(0);
-    top: 35px;
+  padding: 6px 4px 8px 4px;
+  border-radius: 100px;
+  background-color: var(--heo-card-bg);
+  box-shadow: var(--heo-shadow-black);
+  border: var(--style-border);
+  transition: 0.3s;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  left: 50%;
+  transform: translateX(-50%)!important;
+  top: 35px;
 }
 
 #nav .menus_items .menus_item .menus_item_child:hover {
