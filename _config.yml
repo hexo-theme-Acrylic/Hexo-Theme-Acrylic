@@ -1,7 +1,7 @@
+--- # --------------------------------------
+
 # Main menu navigation (導航目錄)
 # see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
-# --------------------------------------
-
 menu:
   文库:
     文章列表: /archives/ || fas fa-box-archive
@@ -94,7 +94,7 @@ avatar:
   effect: false
 
 # 关于页面自定义
-aboutpage: 
+aboutpage:
   job: 学生、独立开发者、博主
   live: 中国，北京市
   born: 1997
@@ -111,15 +111,15 @@ aboutpage:
   tc2: 解决专家
   tc3: 软件学习能力
   tc4: MAX
-  uid: 'UID:125766904'
+  uid: "UID:125766904"
   fanjuname: 刺客伍六七
-  fanjulink: 'https://www.bilibili.com/bangumi/play/ss36594/?spm_id_from=333.999.0.0'
+  fanjulink: "https://www.bilibili.com/bangumi/play/ss36594/?spm_id_from=333.999.0.0"
   liketechnology: 数码科技
   liketechnologyand: 手机、电脑软硬件
   sllctitle: 为什么建站？
   xllc: 创建这个站的时候，想要就是能够有一个自己能够积累知识、积累兴趣的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。分享这件事我从很早就开始了，起初做的微信公众号，现在做的网站。因为我比较喜欢研究数码和软件，想要探究在互联网上的事物是如何被创造和发展。网络给我带来了非常多的知识和眼界，我也想力所能及的分享一些我生活的琐碎知识。与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有技能的教程干货、有生活上的吐槽和妙招、有话题上的思考和想法。一般我研究什么、发现了什么都会分享在这里。这些就是创造这个小站的本意，也是我分享生活的方式。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
 
-sidebars: 
+sidebars:
   href:
     url1: https://zhheo.com/
     url2: https://plog.zhheo.com/
@@ -162,7 +162,7 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: '请尝试站内搜索寻找文章'
+  subtitle: "请尝试站内搜索寻找文章"
   background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
 
 post_meta:
@@ -182,7 +182,7 @@ post_meta:
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
-  enable: true
+  enable: false
   post_wordcount: true
   min2read: true
   total_wordcount: true
@@ -512,9 +512,9 @@ site_verification:
 theme_color:
   enable: true
   main: "#425AEF"
-#   paginator: "#00c4b6"
+  #   paginator: "#00c4b6"
   button_hover: "#425AEF"
-#   text_selection: "#00c4b6"
+  #   text_selection: "#00c4b6"
   link_color: "#425AEF"
 #   meta_color: "#858585"
 #   hr_color: "#A4D8FA"
@@ -576,7 +576,7 @@ canvas_fluttering_ribbon:
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  color: "0,0,255" #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
   count: 99 # the number of lines, default: 99.
@@ -755,9 +755,9 @@ translate:
   # Time delay
   translateDelay: 0
   # The text of the button when the language is Simplified Chinese
-  msgToTraditionalChinese: '繁'
+  msgToTraditionalChinese: "繁"
   # The text of the button when the language is Traditional Chinese
-  msgToSimplifiedChinese: '簡'
+  msgToSimplifiedChinese: "簡"
 
 # Read Mode (閲讀模式)
 readmode: false
@@ -843,8 +843,8 @@ aplayerInject:
 snackbar:
   enable: true
   position: top-center
-  bg_light: '#49b1f5' # The background color of Toast Notification in light mode
-  bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
+  bg_light: "#49b1f5" # The background color of Toast Notification in light mode
+  bg_dark: "#1f1f1f" # The background color of Toast Notification in dark mode
 
 # https://instant.page/
 # prefetch (預加載)
@@ -924,14 +924,14 @@ hometop:
       icon: fas fa-circle-plus
     #如果为post
     post:
-      class: 
+      class:
       number: 6
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+  # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     - <script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script>
     - <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -953,7 +953,6 @@ inject:
     - <script async data-pjax src="/js/anzhiyufunction.js"></script>
     - <script async src="/js/anzhiyuOnlyOne.js"></script>
     - <script src="/heo/random.js"></script>
-    
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -969,7 +968,7 @@ CDN:
   # when set it to local, you need to install hexo-butterfly-extjs
   third_party_provider: jsdelivr
 
-  # Add version number to CDN, true or false  
+  # Add version number to CDN, true or false
   version: false
 
   # Custom format
