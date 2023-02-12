@@ -5,19 +5,6 @@
     justify-content: space-between;
 }
 
-#nav .menus_items .menus_item .menus_item_child {
-  padding: 6px 4px 8px 4px;
-  border-radius: 100px;
-  background-color: var(--heo-card-bg);
-  box-shadow: var(--heo-shadow-black);
-  border: var(--style-border);
-  transition: 0.3s;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transform: translateZ(0);
-  top: 35px;
-}
-
 #nav .menus_items .menus_item .menus_item_child:hover {
     border: var(--style-border-hover);
     box-shadow: var(--heo-shadow-main);
@@ -600,21 +587,15 @@
         transition: 0.3s;
         overflow: hidden;
     }
-    #nav #site-name i {
-        transition: 0.3s;
-    }
     #nav #site-name:hover i {
         opacity: 0;
-        transition: 0.3s;
     }
     #page-header.nav-fixed #nav #site-name {
         opacity: 1;
-        transition: 0.1s;
         border-radius: 40px;
     }
     #page-header.nav-visible #nav #site-name {
         opacity: 1;
-        transition: 0.1s;
     }
     #nav #site-name:after {
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAptJREFUeF7tm7+vDUEUxz/ff4GEBIVOpVNIFCiISOjcSDQ0GlE+WiWJSiFRUSm8ikRERUSoNAqNgkQpQac8MrLk3fvu/rhnd2b27pspb3bOOZ9PZmdmd++ITM3MzgM3gB/AA0nPc5SiHEnN7ALwZCH3TNJm6nqSC6iB/8edXEJSAS3wWSQkE9ARPrmEJAJWhE8qIboAJ3wyCVEF9IRPIiGagIHgo0uIImBg+KgSBhcQCT6ahEEFRIaPImEwAYngB5cwiIDE8INK6C0gE/xgEnoJyAw/iAS3gJHA95bgEjAy+F4SVhYwUni3hJUEjBzeJaGzgDWBX1lCJwFrBr+ShFYBawrfWUKjgDWH7yShVsBE4FslLBUwMfhGCdsETBS+VsKcgInDL5XwX8AOgd8m4a+AHQY/J0HVV9qnqT9KjiTfLAiwkRSTpYwg4C1wLEv2/EnfBwGngEfAvvz1JK3gK3Bl6ypwYkn6V0lLipfs5GJoSa/Db23PApOYHyTVchYBTaNuKitEGQHlFihzQJkE6+a6sgqUVaDBQFkGJ/KkWPYBZR9Q9gFlH5B7H/ABeAM86/jIfxQ4DpzpeH3jZbknwbuSNjwgZvYQuOzpu7VPTgGbkmZ9AMzsTnW2yB0mp4AjksLwdzczOwx8dAcIr70yLoO7JP3sU3zoa2ZfgIPeONkENCVeBcbMwsvZZS9tO4UpAnLdAmUENJjvNHari8otkHEOCMdbwzFXT/suaY+n42IfMws7yHPOWC8knfVuha+Gg83OxPclXXP2netmZreBm85YlyQ9dgmo1uCXwGlH8t2Swsnw3s3MDgDfHIFad6Ktf5SsJNwCLgKHWor4BbwDNiR9chRc28XM9gP3qk/5exti/wY+h4cvSdfbavgDTDRpnlU9TNAAAAAASUVORK5CYII=) no-repeat 50% 50%;
@@ -849,7 +830,6 @@
 
 .nav-fixed #nav #site-name i {
     color: var(--heo-fontcolor);
-    transition: 0.3s;
 }
 
 #nav #site-name:hover i {
@@ -926,7 +906,7 @@
 #nav #site-name {
     color: var(--heo-fontcolor);
     padding: 0;
-    transition: 0.3s;
+    z-index: 1;
     display: flex;
     height: 35px;
     width: 75px;
@@ -1376,8 +1356,10 @@
     }
 }
 
-@media screen and (max-width: 768px) #bbTimeList {
-    margin-bottom: 0rem;
+@media screen and (max-width: 768px) {
+    #bbTimeList {
+        margin-bottom: 0rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
