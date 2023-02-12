@@ -62,12 +62,7 @@ hexo.extend.helper.register('md5', function (path) {
 })
 
 hexo.extend.helper.register('injectHtml', function (data) {
-  let result = ''
-  if (!data) return ''
-  for (let i = 0; i < data.length; i++) {
-    result += data[i]
-  }
-  return result
+  return data ? Object.values(data).join('') : ''
 })
 
 hexo.extend.helper.register('findArchivesTitle', function (page, menu, date) {
