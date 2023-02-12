@@ -295,15 +295,21 @@
         transition: transform .3s
 
       .menus_item_child
+        padding: 6px 4px 8px 4px
+        border-radius: 100px
+        background-color: var(--heo-card-bg)
+        box-shadow: var(--heo-shadow-black)
+        border: var(--style-border)
+        transition: 0.3s
+        backdrop-filter: blur(20px)
+        left: 50%
+        transform: translate(-50%) !important
+        top: 35px
         position: absolute
         right: 0
         display: none
         margin-top: 8px
-        padding: 0
         width: max-content
-        border-radius: 8px
-        background-color: var(--sidebar-bg)
-        box-shadow: 0 5px 20px -4px rgba($dark-black, .5)
         animation: sub_menus .3s .1s ease both
 
         &:before
