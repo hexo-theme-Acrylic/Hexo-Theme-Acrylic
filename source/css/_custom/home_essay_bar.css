@@ -6,8 +6,6 @@
     box-shadow: var(--heo-shadow-lightblack);
     display: flex;
     transition: 0.3s;
-	width: 1340px;
-	margin-left: 50px;
     margin-bottom: 1rem;
     border: var(--style-border);
     align-items: center;
