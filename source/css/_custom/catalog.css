@@ -1,6 +1,6 @@
 /* 分类目录条、标签目录条 */
 #catalog-bar {
-  padding: .4rem .8rem;
+  padding: 0.4rem 0.8rem;
   border-radius: var(--border-radius);
   display: flex;
   border: var(--card-border);
@@ -19,7 +19,7 @@
 #catalog-list {
   /* 分类/标签较少时，可以选择不设置 width，居中显示 catalog-list-item */
   /* width: 100%; */
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   display: flex;
   white-space: nowrap;
   overflow-x: scroll;
@@ -30,16 +30,16 @@
 }
 
 .catalog-list-item a {
-  margin: 0 .2em;
+  margin: 0 0.2em;
   padding: 0.2em 0.3em 0.3em;
   font-weight: bold;
   border-radius: var(--border-radius);
   color: var(--font-color);
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .catalog-list-item:hover a {
@@ -62,11 +62,12 @@ a.catalog-more:hover {
   color: var(--main);
 }
 div#首页 {
-    background: var(--heo-theme);
-    color: var(--heo-white) !important;
-    border-radius: 8px;
-	height: 30px;
+  background: var(--heo-theme);
+  color: var(--heo-white) !important;
+  border-radius: 8px;
+  height: 30px;
+  margin-right: 2px;
 }
- div#首页 a {
-    color: white;
+div#首页 a {
+  color: white;
 }

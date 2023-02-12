@@ -14,8 +14,7 @@
   transition: 0.3s;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  left: 50%;
-  transform: translateX(-50%)!important;
+  transform: translateZ(0);
   top: 35px;
 }
 

@@ -201,6 +201,13 @@ html {
   white-space: nowrap;
   overflow-x: scroll;
   display: flex;
+  height: 30px;
+}
+
+.category-bar-items .category-bar-item:hover {
+  background: var(--heo-theme);
+  border-radius: 8px;
+  color: var(--heo-white);
 }
 
 .category-in-bar .category-in-bar-tips {
