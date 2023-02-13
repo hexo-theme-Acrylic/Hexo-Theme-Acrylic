@@ -69,24 +69,24 @@ var heo = {
 
 
   //监测是否在页面开头
-  addNavBackgroundInit: function() {
-    var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
-      if(document.body){
-        bodyScrollTop = document.body.scrollTop;
-      }
-      if(document.documentElement){
-        documentScrollTop = document.documentElement.scrollTop;
-      }
-      scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
-      // console.log("滚动高度"+ scrollTop)
-    
-      if (scrollTop != 0) {
-        document.getElementById("page-header").classList.add("nav-fixed");
-        document.getElementById("page-header").classList.add("nav-visible");
-        $('#cookies-window').hide()
-        console.log("已添加class")
-      }
-  },
+  // addNavBackgroundInit: function() {
+  //   var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+  //     if(document.body){
+  //       bodyScrollTop = document.body.scrollTop;
+  //     }
+  //     if(document.documentElement){
+  //       documentScrollTop = document.documentElement.scrollTop;
+  //     }
+  //     scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+  //     // console.log("滚动高度"+ scrollTop)
+  //
+  //     if (scrollTop != 0) {
+  //       document.getElementById("page-header").classList.add("nav-fixed");
+  //       document.getElementById("page-header").classList.add("nav-visible");
+  //       $('#cookies-window').hide()
+  //       console.log("已添加class")
+  //     }
+  // },
 
   // 标签页面
   //分类条
@@ -149,7 +149,7 @@ var heo = {
     .then(res => res.json())
     .then(json =>{
       var randomFriendLinks = getArrayItems(json,3);
-  
+
       var htmlText = '';
       for (let i = 0; i < randomFriendLinks.length; ++i) {
         var item = randomFriendLinks[i]
@@ -234,7 +234,7 @@ var heo = {
     if (document.querySelector('#waterfall')) {
       setTimeout(function(){
           waterfall('#waterfall');
-          document.getElementById("waterfall").classList.add('show'); 
+          document.getElementById("waterfall").classList.add('show');
       },500);
     }
   },
@@ -478,7 +478,7 @@ var heo = {
       document.querySelector("#consoleFPS").classList.add("on");
       localStorage.setItem('showFPS', 'true');
     }
-    
+
   }
 }
 

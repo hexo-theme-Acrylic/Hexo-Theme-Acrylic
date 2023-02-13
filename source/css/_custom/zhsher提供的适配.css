@@ -755,7 +755,6 @@ a.extiw:visited:hover span.heimu {
 
 /************ double row.css start ************/
 #recent-posts {
-    margin-top: -1rem; /*头部抵消间隔*/
     align-content: flex-start;
     display: flex;
     flex-wrap: wrap; /*规定灵活的项目在必要的时候拆行或拆列。*/

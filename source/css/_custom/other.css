@@ -3,7 +3,7 @@
   width: 8px;
   height: 8px;
 }
- 
+
 *::-webkit-scrollbar-thumb{
   background: var(gray);
   border-radius: 8px;
@@ -142,8 +142,7 @@ html {
   display: flex;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 13px;
-  margin-bottom: 0.1px;
+  margin-bottom: 0;
   border: var(--style-border);
   transition: 0.3s;
   width: 100%;
@@ -165,12 +164,12 @@ html {
   #category-bar {
     border-radius: 0;
     background: var(--heo-background);
-    margin-bottom: 0rem;
+    margin-bottom: 0;
     position: -webkit-sticky;
     position: sticky;
     top: 60px;
     z-index: 1;
-    padding: 0rem 1rem 0rem 16px;
+    padding: 0 1rem 0 16px;
     height: 50px;
     margin-top: 0;
     align-items: center;

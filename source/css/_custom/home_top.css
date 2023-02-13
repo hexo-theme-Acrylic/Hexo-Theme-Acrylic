@@ -1,9 +1,8 @@
 #home_top {
-    max-width: 1360px;
-    margin: auto;
+    max-width: 1400px;
     width: 100%;
-    margin-top: 0.5rem;
-    padding: 0 0.5rem;
+    margin: 0.5rem auto auto;
+    padding: 0 1.5rem;
 }
 
 
@@ -177,7 +176,6 @@ div#banners {
         position: relative;
         box-shadow: var(--heo-shadow-border);
         flex-direction: column;
-        overflow: hidden;
         transition: 0.3s;
         clip-path: inset(0 0 0 0 round 12px);
     }
@@ -872,8 +870,7 @@ a.categoryButton:hover {
 
 @media screen and (min-width: 1300px) {
     .recent-post-top .recent-post-item {
-        margin-right: 0px;
-        margin-bottom: 0.5rem;
+        margin-right: 0;
     }
     .recent-post-top .recent-post-item:active {
         transform: scale(0.97);
@@ -1050,14 +1047,9 @@ span.recent-post-top-text {
         margin-top: 0.25rem;
         margin-bottom: 0.75rem;
         box-shadow: var(--heo-shadow-border);
-        clip-path: inset(0 0 0 0 round 12px);
     }
     #recent-posts>.recent-post-item:not(:first-child):active {
         transform: scale(0.97);
-    }
-    #category-bar {
-        margin-bottom: 0.75rem;
-        box-shadow: var(--heo-shadow-border);
     }
 }
 
