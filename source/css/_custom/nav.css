@@ -59,16 +59,6 @@
 #menus > div.menus_items > div:nth-child(4) > ul{
   right: -200px!important;
 } */
-
-#nav .menus_items .menus_item .menus_item_child li a:hover {
-    background: var(--heo-main) !important;
-    color: var(--heo-white) !important;
-    box-shadow: var(--heo-shadow-main);
-    margin: 0 auto;
-    transform: scale(1) !important;
-    padding: 0.3rem 1rem;
-}
-
 #nav .menus_items .menus_item .menus_item_child li a i:not(.fa-brands) {
     font-size: 1rem;
     margin-right: 8px;
@@ -96,10 +86,6 @@
 #nav{
     font-size: 1.5em;
 }
-#nav a{
-    padding: 0.3rem 0.4rem 0px;
-    
-}
 #menus > div.menus_items > div > a{
     line-height: 35px;
 }
@@ -120,27 +106,6 @@
 
 #nav .menus_items .menus_item .menus_item_child:before{
     top: -8px;
-}
-#nav .menus_items .menus_item .menus_item_child:hover{
-    border: var(--style-border-hover);
-}
-#nav .menus_items .menus_item .menus_item_child li a{
-    letter-spacing: 0rem;
-    display: flex;
-    align-items: center;
-    border-radius: 100px;
-    padding: 0.3rem 0.8rem;
-    width: 100%;
-    color: var(--hen-fontcolor) !important;
-    text-shadow: none !important;
-}
-#nav .menus_items .menus_item .menus_item_child li a:hover{
-    background: var(--hen-main) !important;
-    color: var(--hen-white) !important;
-    box-shadow: var(--hen-shadow-main);
-    margin: 0 auto;
-    transform: scale(1) !important;
-    padding: 0.3rem 1.05rem;
 }
 #nav .menus_items .menus_item .menus_item_child li:hover{
     background: transparent;
@@ -311,28 +276,30 @@
 
 /* 导航栏logo */
 
-#site-name .iconfont {
+.site-name .iconfont {
     font-size: 20px;
     font-weight: normal;
     line-height: 48px;
 }
 
-#site-logo {
+.site-name {
     width: 121px;
 }
 
-#site-logo:hover {
+.site-name:hover {
     transform: scale(1.03);
 }
-
-
-/* 返回顶部 */
+#nav a:hover, #nav .menus_items .menus_item:hover .group {
+    color: var(--heo-white) !important;
+    background: var(--heo-main);
+    transition: 0.3s;
+    box-shadow: var(--heo-shadow-main);
+}/* 返回顶部 */
 
 #nav-totop {
     position: relative;
     width: 35px;
     height: 35px;
-    transition: 0.3s;
     display: flex;
     border-radius: 40px;
     transition: all 0.3s ease-in-out;
@@ -791,10 +758,6 @@
 #nav{
     font-size: 1.5em;
 }
-#nav a{
-    padding: 0.3rem 0.4rem 0px;
-    
-}
 #menus > div.menus_items > div > a{
     line-height: 35px;
 }
@@ -816,23 +779,18 @@
 #nav .menus_items .menus_item .menus_item_child:before{
     top: -8px;
 }
-#nav .menus_items .menus_item .menus_item_child:hover{
-    border: var(--style-border-hover);
-}
 #nav .menus_items .menus_item .menus_item_child li a{
-    letter-spacing: 0rem;
+    letter-spacing: 0;
     display: flex;
     align-items: center;
     border-radius: 100px;
     padding: 0.3rem 0.8rem;
     width: 100%;
-    color: var(--hen-fontcolor) !important;
-    text-shadow: none !important;
 }
 #nav .menus_items .menus_item .menus_item_child li a:hover{
-    background: var(--hen-main) !important;
-    color: var(--hen-white) !important;
-    box-shadow: var(--hen-shadow-main);
+    background: var(--heo-main) !important;
+    color: var(--heo-white) !important;
+    box-shadow: var(--heo-shadow-main);
     margin: 0 auto;
     transform: scale(1) !important;
     padding: 0.3rem 1.05rem;
@@ -840,8 +798,6 @@
 #nav .menus_items .menus_item .menus_item_child li:hover{
     background: transparent;
 }
-
-
 /* 导航栏居中 */
 
 #nav #menus {
@@ -874,18 +830,6 @@
     line-height: 35px;
     border-radius: 40px;
 }
-
-#nav .menus_items .menus_item .menus_item_child li a {
-    letter-spacing: 0rem;
-    display: flex;
-    align-items: center;
-    border-radius: 100px;
-    padding: 0.3rem 0.8rem;
-    width: 100%;
-    color: var(--heo-fontcolor) !important;
-    text-shadow: none !important;
-}
-
 #page-header.nav-fixed #nav #menus[style*="padding-right: 300px;"] .menus_items {
     transform: translateX(-150px);
 }
