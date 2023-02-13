@@ -255,12 +255,12 @@ document.addEventListener('DOMContentLoaded', function () {
    * 滾動處理
    */
   const scrollFn = function () {
-    const $rightside = document.getElementById('rightside')
+    // const $rightside = document.getElementById('rightside')
     const innerHeight = window.innerHeight + 56
 
     // 當滾動條小于 56 的時候
     if (document.body.scrollHeight <= innerHeight) {
-      $rightside.style.cssText = 'opacity: 1; transform: translateX(-58px)'
+      // $rightside.style.cssText = 'opacity: 1; transform: translateX(-58px)'
       return
     }
 
@@ -290,25 +290,25 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           } else {
             if (!$header.classList.contains('nav-visible')) $header.classList.add('nav-visible')
-            if (isChatBtnHide && isChatShow === false) {
-              chatBtnShow()
-              isChatShow = true
-            }
+            // if (isChatBtnHide && isChatShow === false) {
+            //   chatBtnShow()
+            //   isChatShow = true
+            // }
           }
           $header.classList.add('nav-fixed')
-          if (window.getComputedStyle($rightside).getPropertyValue('opacity') === '0') {
-            $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
-          }
+          // if (window.getComputedStyle($rightside).getPropertyValue('opacity') === '0') {
+          //   $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
+          // }
         } else {
           if (currentTop === 0) {
             $header.classList.remove('nav-fixed', 'nav-visible')
           }
-          $rightside.style.cssText = "opacity: ''; transform: ''"
+          // $rightside.style.cssText = "opacity: ''; transform: ''"
         }
-
-        if (document.body.scrollHeight <= innerHeight) {
-          $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
-        }
+        //
+        // if (document.body.scrollHeight <= innerHeight) {
+        //   $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
+        // }
       }, 200)()
     }
 
