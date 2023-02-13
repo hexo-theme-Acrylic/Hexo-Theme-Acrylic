@@ -77,7 +77,7 @@ nav#nav.show
         i.iconfont.icon-HRN
     #page-name-mask
       #page-name
-        a#page-name-text(onclick='btf.scrollToDest(0, 500)') 
+        a#page-name-text(onclick='btf.scrollToDest(0, 500)')
           span #[=config.title]
     #menus
       !=partial('includes/header/menu_item', {}, {cache: true})
@@ -88,16 +88,16 @@ nav#nav.show
     #nav-right
       #travellings_button.nav-button.only-home(style='display: none')
         a.site-page(onclick='totraveling()' title='随机前往一个开往项目网站' href='javascript:void(0);' rel='external nofollow')
-          i.fas.fa-train-subway(style='font-size: 1rem;')
+          i.fas.fa-train-subway
       #randomPost_button.nav-button
         a.site-page(onclick='toRandomPost()' title='随机前往一个文章')
-          i.fas.fa-shuffle(style='font-size: 1rem;')
+          i.fas.fa-shuffle
       #search-button.nav-button
         a.site-page.social-icon.search(title='站内搜索' href='javascript:void(0);' rel='external nofollow')
-          i.fas.fa-magnifying-glass(style='font-size: 1rem;')
+          i.fas.fa-magnifying-glass
       #nav-console.nav-button
         a.console_switchbutton(onclick='heo.showConsole()' title='显示中控台' href='javascript:void(0);' rel='external nofollow')
-          i.fas.fa-bars-progress(style='font-size: 1rem;')
+          i.fas.fa-bars-progress
       #nav-totop.nav-button(onclick='btf.scrollToDest(0, 500)')
         a.totopbtn(data-pjax-state='')
           i.fas.fa-arrow-up
