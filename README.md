@@ -11,6 +11,8 @@
 
 文档: 📖 [https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
 
+一款基于[hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly)修改的主题
+
 ## 💻 安裝
 
 ### Git 安裝
