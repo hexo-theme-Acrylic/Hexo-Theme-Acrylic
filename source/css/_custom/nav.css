@@ -61,7 +61,7 @@
 #page-header.nav-fixed #nav {
     top: 0;
     box-shadow: none;
-    outline: var(--style-border);
+    outline: var(--style-border)
 }
 
 #page-header #nav {
