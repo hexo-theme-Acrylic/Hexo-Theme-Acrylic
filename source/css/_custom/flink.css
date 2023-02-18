@@ -1,0 +1,112 @@
+#banners .banner-button {
+    padding: 8px 12px;
+    background: var(--heo-fontcolor) !important;
+    border-radius: 12px;
+    color: var(--heo-card-bg) !important;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: var(--heo-shadow-black) !important;
+}
+#banners .banner-button.secondary {
+    background: var(--heo-secondbg) !important;
+    border: var(--style-border-always) !important;
+    color: var(--heo-lighttext) !important;
+    margin-right: 1rem;
+    box-shadow: var(--heo-shadow-border) !important;
+}
+.page-title {
+	display: none;
+}
+#page {
+    background: none;
+    border: none;
+    padding: 0;
+}
+#article-container> :last-child {
+    margin-bottom: 0px !important;
+}
+details:not(.tk-admin-config-group) {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+    min-height: 54px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: var(--style-border);
+    transition: border 0.3s;
+}
+details:not(.tk-admin-config-group) summary::marker {
+    color: var(--heo-main);
+    transition: 0.3s;
+}
+::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+details:not(.tk-admin-config-group) summary {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    background: var(--heo-card-bg);
+    margin: 0;
+    transition: 0.3s;
+    box-shadow: var(--heo-shadow-border);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
+}
+details[open]:not(.tk-admin-config-group) {
+    border-radius: 12px;
+    border: var(--style-border-hover-always);
+    padding: 0 1.5rem;
+    background: var(--heo-card-bg);
+}
+details:not(.tk-admin-config-group) {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+    min-height: 54px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: var(--style-border);
+    transition: border 0.3s;
+}
+#article-container ol, #article-container ul {
+    padding: 0;
+}
+#article-container ol, #article-container ul {
+    margin-top: 0.4rem;
+    padding: 0px 0px 0px 0.8rem;
+    list-style: none;
+    counter-reset: li 0;
+}
+details[open]:not(.tk-admin-config-group) summary::marker {
+    color: var(--heo-white);
+}
+details:not(.tk-admin-config-group) summary::marker {
+    color: var(--heo-main);
+    transition: 0.3s;
+}
+details[open]:not(.tk-admin-config-group) summary {
+    background: var(--heo-main);
+    color: var(--heo-white);
+}
+details:not(.tk-admin-config-group) summary {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    background: var(--heo-card-bg);
+    margin: 0;
+    transition: 0.3s;
+    box-shadow: var(--heo-shadow-border);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
+}

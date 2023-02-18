@@ -1,0 +1,153 @@
+/* 文章中的超链接 */
+#article-container a {
+  text-decoration: none;
+  border-bottom: 2px solid var(--heo-lighttext);
+  color: var(--heo-fontcolor);
+  font-weight: bold;
+  padding: 0 4px;
+  border-radius: 4px 4px 0 0;
+}
+
+#article-container a:not(.fancybox):hover {
+  text-decoration: none;
+  border-bottom: 2px solid var(--heo-none);
+  color: var(--heo-white);
+  background: var(--heo-main);
+  border-radius: 4px;
+  box-shadow: var(--heo-shadow-main);
+}
+
+#article-container a.fancybox {
+  border-bottom: 0;
+  padding: 0;
+  margin: auto;
+  display: contents;
+  width: fit-content;
+}
+
+#article-container a.fancybox img {
+  cursor: pointer;
+}
+
+#article-container code {
+  color: var(--heo-white);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  margin: 0px 4px;
+  background: var(--heo-pink);
+  line-height: 2;
+  box-shadow: var(--heo-shadow-border);
+}
+
+#article-container code::selection {
+  background: var(--heo-main) !important;
+}
+
+/* 文章表格间距 */
+.table-wrap {
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+table th,
+table td {
+  border: var(--style-border-always);
+}
+
+table thead {
+  background: var(--heo-secondbg);
+}
+
+/* 文章中的加粗文本颜色 */
+b,
+strong {
+  color: var(--heo-lighttext);
+}
+/* 外挂标签 */
+
+.note.warning:not(.no-icon):not(.modern)::before {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  color: var(--heo-yellow);
+}
+
+.note.warning:not(.modern) {
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: var(--heo-yellow);
+  box-shadow: var(--heo-shadow-border);
+  background: var(--heo-card-bg);
+}
+
+a {
+    background-color: transparent;
+    color: var(--heo-fontcolor);
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    overflow-wrap: break-word;
+}
+/* 代码高亮 */
+#article-container figure.highlight {
+  border-radius: 8px 8px 4px 4px;
+}
+
+#article-container figure.highlight,
+#article-container pre {
+  color: var(--heo-fontcolor);
+  background: var(--heo-card-bg);
+}
+
+#article-container figure.highlight .highlight-tools {
+  background: #F1F3F7;
+  color: var(--heo-fontcolor);
+}
+
+#article-container figure.highlight .gutter pre {
+  color: var(--heo-secondtext);
+  background: var(--heo-secondbg);
+  border-right: var(--style-border-always);
+}
+
+#article-container figure.highlight figcaption a {
+  color: #a9a9a9 !important
+}
+
+#article-container .highlight:not(.js-file-line-container) {
+  background-color: var(--heo-card-bg) !important;
+  color: var(--heo-fontcolor);
+  border: var(--style-border-always);
+}
+
+#article-container figure.highlight pre span::selection {
+  background: var(--heo-main) !important;
+  color: var(--heo-white) !important;
+}
+@media screen and (min-width: 900px) {
+	html.hide-aside .layout>div:first-child {
+	    width: 100% !important;
+	}
+}
+
+.layout>div:first-child:not(.recent-posts) {
+    box-shadow: var(--heo-shadow-border);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: var(--heo-card-bg);
+    border: var(--style-border);
+    width: calc(100% - 300px);
+}
+.layout>div:first-child:not(.recent-posts) {
+    align-self: flex-start;
+    padding: 50px 40px;
+    border-radius: 8px;
+    background: var(--heo-card-bg);
+    box-shadow: var(--card-box-shadow);
+}
+.layout>div:first-child {
+    width: calc(100% - 300px);
+}
+.layout>div:first-child {
+    width: 75% !important;
+    transition: all 0.3s ease 0s;
+}

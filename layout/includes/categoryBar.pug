@@ -1,0 +1,7 @@
+#category-bar
+    .category-bar-items#category-bar-items
+        .category-bar-item(id='首页')
+            a(href="/") 首页
+        .category-bar-items#category-bar-items
+            !=getarray_bar("category")
+    a.category-bar-more(href="/categories/") 更多

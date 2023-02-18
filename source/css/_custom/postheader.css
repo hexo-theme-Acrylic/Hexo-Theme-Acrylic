@@ -1,0 +1,187 @@
+#page-header.post-bg{
+    background:var(--heo-theme) !important;
+    overflow:hidden
+}
+#page-header.post-bg::before{
+    background:var(--heo-theme) !important;
+}
+#post-cover{
+    width:80%;
+    height:100%;
+    position:relative;
+    margin:0 -15% 0 auto;
+    overflow:hidden;
+	filter: blur(30px) !important;
+    margin-bottom:0;
+    -webkit-transform:rotate(10deg) translateY(-30px) scale(1.1);
+    -moz-transform:rotate(10deg) translateY(-30px) scale(1.1);
+    -ms-transform:rotate(10deg) translateY(-30px) scale(1.1);
+    -o-transform:rotate(10deg) translateY(-30px) scale(1.1);
+    transform:rotate(10deg) translateY(-30px) scale(1.1);
+    filter:blur(5px)
+}
+#post-cover::after{
+    position:absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    box-shadow:100px -100px 275px 75px var(--heo-theme) inset;
+    background:var(--main-lighter)
+}
+#post-cover-img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover;
+    min-width:50vw;
+    min-height:20rem
+}
+@media screen and (max-width:900px){
+    #post-cover{
+        width:100%;
+        height:300px;
+        -webkit-transform:translate(0,0);
+        -moz-transform:translate(0,0);
+        -ms-transform:translate(0,0);
+        -o-transform:translate(0,0);
+        transform:translate(0,0);
+        margin:0;
+        filter:none;
+        position:fixed
+    }
+    #post-cover::after{
+        box-shadow:0 -150px 150px 35px var(--heo-theme) inset
+    }
+}
+#page-header #post-info{
+    text-align:left;
+    bottom:30%;
+    left:0;
+    right:0;
+    position:absolute;
+    padding:0 3%;
+    margin:0 auto
+}
+#page-header #post-info .post-title{
+    font-size:3.5rem;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:1rem;
+    margin-top:1rem
+}
+#page-header #post-info #post-meta .meta-firstline .post-meta-icon{
+    display:none
+}
+#page-header #post-info .post-meta-separator{
+    display:none
+}
+#post-info #post-meta>.meta-secondline>span:first-child{
+    display:unset
+}
+#post-info #post-meta .meta-secondline>span:not(:last-child){
+    opacity:.9;
+    margin-right:1rem
+}
+#post-info #post-meta .meta-firstline a.post-meta-categories{
+    font-weight:700;
+    font-size:.95rem;
+    background:rgba(255,255,255,.2);
+    border-radius:var(--border-radius);
+    padding:.3rem .4rem;
+    margin-right:1rem
+}
+#post-info #post-meta .meta-firstline a.post-meta-categories:hover{
+    color:var(--heo-theme);
+}
+#post-info #post-meta .meta-firstline span.post-meta-categories{
+    margin-right:1rem
+}
+#post-info #post-meta .meta-firstline a.post-meta-tags{
+    opacity:.9;
+    margin-right:1rem
+}
+@media screen and (max-width:900px){
+    #page-header.post-bg{
+        height:500px
+    }
+    #page-header #post-info{
+        text-align:center;
+        bottom:20%
+    }
+    #page-header #post-info .post-title{
+        font-size:2.5rem
+    }
+}
+@media screen and (max-width:768px){
+    #post-info #post-meta .post-meta-label{
+        display:none
+    }
+}
+@media screen and (max-width:500px){
+    #page-header #post-info{
+        bottom:20%
+    }
+}
+#page-header #post-info #post-meta{
+    font-size:var(--global-font-size)
+}
+#post>#post-info{
+    position:absolute;
+    top:4rem;
+    left:10%;
+    width:80%;
+    text-align:center
+}
+#post-info .post-title {
+    color: var(--heo-white);
+    font-weight: 700;
+    font-size: 2.3rem;
+    line-height: 1.2;
+    text-align: left;
+    margin: 1rem 0 1rem 0 !important;
+    -webkit-line-clamp: 2;
+    padding: 0;
+    overflow: hidden;
+}
+a.post-meta-original {
+    background: var(--heo-white-op) !important;
+    color: var(--heo-white) !important;
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+    margin: auto;
+    border-radius: 8px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+a.post-meta-categories {
+    color: var(--heo-white) !important;
+}
+.post-meta__tags {
+    color: var(--heo-white) !important;
+    opacity: 0.4;
+    margin-right: 1rem;
+}
+@media screen and (min-width: 1300px){
+	#page-header.post-bg {
+	    height: 35rem;
+	}
+}
+#page-cover:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 110px -130px 300px 60px var(--heo-main) inset;
+}
+#page-header {
+    background-image: none !important;
+    display: flex;
+    justify-content: center;
+}
