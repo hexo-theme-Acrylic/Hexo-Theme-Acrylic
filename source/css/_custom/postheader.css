@@ -55,13 +55,14 @@
     }
 }
 #page-header #post-info{
-    text-align:left;
-    bottom:30%;
+    text-align: left;
+    bottom: 30%;
     left:0;
     right:0;
     position:absolute;
-    padding:0 3%;
-    margin:0 auto
+    padding: 0 3rem;
+    margin: 0 auto;
+    max-width: 1400px;
 }
 #page-header #post-info .post-title{
     font-size:3.5rem;

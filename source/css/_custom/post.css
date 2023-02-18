@@ -148,6 +148,5 @@ a {
     width: calc(100% - 300px);
 }
 .layout>div:first-child {
-    width: 75% !important;
     transition: all 0.3s ease 0s;
 }

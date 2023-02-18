@@ -444,10 +444,10 @@ a.article-meta__categories:hover {
 /* 文章卡片标题 */
 #recent-posts>.recent-post-item>.recent-post-info>.article-title {
   line-height: 1.4;
-  margin-top: 0px;
+  margin-top: 0;
   font-weight: bold;
   color: var(--heo-fontcolor);
-  margin-bottom: 0px;
+  margin-bottom: 0;
   position: absolute;
   width: 100%;
   left: 0;
