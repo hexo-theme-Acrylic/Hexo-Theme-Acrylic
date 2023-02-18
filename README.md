@@ -43,6 +43,12 @@ theme: Acrylic
 ### 参与开发
 [@Marcus](https://github.com/MarcusYYDS)
 [@Shine Yu](https://github.com/ShineYull)
+[@rootlex](https://github.com/rootlexblog)
+[@轻笑](https://github.com/qxchuckle)
+[@Leonus](https://github.com/Lea321)
+[@noionion](https://github.com/2X-ercha)
+[@安知鱼专座](https://github.com/anzhiyu-c)
+[@时贰姐姐](https://github.com/GC-ZF)
 ### 服务器提供和测试
 [@Acozycotage](https://github.com/Acozycotage)
 ### 相关帮助
