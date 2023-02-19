@@ -1,0 +1,290 @@
+.tk-expand {
+    width: 100%;
+    cursor: pointer;
+    padding: .75em;
+    text-align: center;
+    transition: all .5s
+}
+
+#twikoo .tk-content p {
+    margin: 0
+}
+
+#twikoo .tk-expand:hover {
+    color: #fff;
+    background-color: #3b70fc;
+    border: 1px solid transparent;
+}
+
+.tk-expand {
+    border: var(--style-border);
+    box-shadow: 0 8px 16px -4px #2c2d300c;
+    border-radius: 50px;
+    letter-spacing: 5px;
+    background-color: var(--zhsher-card-bg)
+}
+
+.tk-replies > .tk-comment {
+    border-top: var(--style-border-dashed);
+    border-radius: 12px;
+    padding: 1rem 0 0;
+    transition: all .3s ease 0s
+}
+
+.tk-replies .tk-content span:first-child:not(.token) {
+    font-size: .5rem;
+    color: var(--zhsher-secondtext)
+}
+
+#twikoo pre code {
+    padding: 0;
+    background: 0 0;
+    color: transparent;
+}
+
+#twikoo code {
+    padding: 2px 4px;
+    background: var(--zhsher-secondbg);
+    color: #f47466
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before {
+    content: '输入QQ号会自动获取昵称和头像';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(2):before {
+    content: '收到回复将会发送到你的邮箱';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(3):before {
+    content: '可以通过昵称访问你的网站';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::after, .el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::before {
+    display: block
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend::before {
+    display: none;
+    position: absolute;
+    top: -60px;
+    white-space: nowrap;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 14px 18px;
+    background: #444;
+    color: #fff
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend::after {
+    display: none;
+    content: "";
+    position: absolute;
+    border: 12px solid transparent;
+    border-top-color: #444;
+    left: 50%;
+    transform: translate(-50%, -48px)
+}
+
+.vwrap {
+    box-shadow: 2px 2px 5px #bbb;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0 30px 0
+}
+
+.vcard {
+    box-shadow: 2px 2px 5px #bbb;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0 0 0
+}
+
+#twikoo .tk-extra {
+    background: var(--zhsher-card-bg);
+    border: var(--style-border-always);
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-right: 4px;
+    color: var(--zhsher-secondtext);
+    margin-top: 6px;
+    font-size: .8rem
+}
+
+#twikoo .tk-extra-text {
+    font-size: .5rem
+}
+
+#twikoo .tk-replies .tk-content {
+    font-size: .9rem
+}
+
+#twikoo .tk-content {
+    margin-top: 0
+}
+
+.tk-content span a:not([data-fancybox=gallery]) {
+    font-weight: 500;
+    border-bottom: solid px var(--zhsher-lighttext);
+    color: var(--zhsher-fontcolor);
+    padding: 0 .2em;
+    text-decoration: none
+}
+
+.tk-content span a:not([data-fancybox=gallery]):hover {
+    color: var(--zhsher-white);
+    background-color: var(--zhsher-theme);
+    border-radius: 4px
+}
+
+.tk-main .tk-content span > a {
+    border-bottom: none
+}
+
+#post-comment .comment-head {
+    font-size: .8em !important;
+    margin-bottom: .5rem
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::before {
+    display: block;
+    animation: commonTipsIn .3s
+}
+
+@keyframes commonTipsIn {
+    0% {
+        top: -50px;
+        opacity: 0
+    }
+    100% {
+        top: -60px;
+        opacity: 1
+    }
+}
+
+#twikoo .tk-input .el-textarea__inner {
+    min-height: 130px !important;
+    border-radius: 15px;
+    display: block;
+    resize: vertical;
+    padding: 16px 16px 40px 16px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    color: #606266;
+    background-color: var(--zhsher-card-bg);
+    border: var(--style-border-always);
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1)
+}
+
+#page .el-textarea__inner {
+    background: var(--zhsher-card-bg) !important;
+    box-shadow: var(--zhsher-shadow-border);
+    color: var(--zhsher-fontcolor) !important
+}
+
+#twikoo.twikoo .el-input__inner:focus, #twikoo.twikoo .el-textarea__inner:focus {
+    border-color: var(--zhsher-main)
+}
+
+.tk-comments-container > .tk-comment {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    transition: .3s;
+    border-radius: 12px;
+    padding: 1rem 0 0;
+    border: none;
+    border-top: var(--style-border-dashed)
+}
+
+#post-comment .comment-tips {
+    background-color: rgba(103, 194, 58, .13);
+    border: var(--style-border-always);
+    border-color: var(--zhsher-green);
+    color: var(--zhsher-green);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: .5rem;
+    display: none
+}
+
+#post-comment .comment-tips.show {
+    display: flex
+}
+
+#page .tk-comments-container > .tk-comment {
+    background: var(--zhsher-card-bg);
+    padding: 1rem;
+    border: var(--style-border);
+    border-top: var(--style-border);
+    box-shadow: var(--zhsher-shadow-border)
+}
+
+.tk-content {
+    margin-top: .5rem;
+    overflow: auto;
+    max-height: 500px
+}
+
+.page .el-input__inner {
+    background: var(--zhsher-card-bg) !important
+}
+
+.tk-comments .tk-row-actions-start {
+    position: relative;
+    top: -56px;
+    left: 17px
+}
+
+.tk-comments .tk-main .tk-row-actions-start {
+    position: relative;
+    top: -56px;
+    left: 2px
+}
+
+.OwO .OwO-body {
+    border: var(--style-border-always) !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    background-color: var(--zhsher-maskbg) !important;
+    backdrop-filter: saturate(180%) blur(10px);
+    cursor: auto;
+    top: 2.1em !important
+}
+
+@media screen and (max-width: 768px) {
+    .OwO .OwO-body {
+        width: 260px
+    }
+
+    .tk-comments .tk-main .tk-row-actions-start {
+        left: 30px
+    }
+}
+
+.OwO .OwO-body .OwO-items .OwO-item:hover {
+    box-shadow: var(--zhsher-shadow-lightblack) !important;
+    border-radius: 8px
+}
+
+#post-comment .tk-avatar.tk-clickable {
+    margin: 5px
+}
+
+/* gif动图 */
+.tk-input textarea {
+    background-image: url('https://bu.dusays.com/2022/12/27/63a9c622b10ff.gif'); /* 图片地址 */
+    min-height: 120px !important; /* 默认是75px 拉高评论框大小 */
+    background-size: 10em 10em; /* 设置图片长宽 */
+    /* background-color: #ffffff; */
+    transition: all 0.25s ease-in-out 0s; /* 动画过渡 */
+}
+
+.tk-input textarea:focus {
+    background-position-y: 130px;
+    transition: all .25s ease-in-out 0s !important;
+}

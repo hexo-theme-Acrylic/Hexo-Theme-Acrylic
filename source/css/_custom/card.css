@@ -49,7 +49,7 @@
 }
 
 
-/* 
+/*
 #recent-posts > .recent-post-item >.recent-post-info > .content:hover{
   opacity: 0.8;
   transition: 0.3s;
@@ -566,10 +566,15 @@ hr:before {
 }
 
 #aside-content .card-widget {
+    box-shadow: var(--heo-shadow-border);
+    background: var(--heo-card-bg);
+    border: var(--style-border);
+    transition: 0.3s;
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
-    margin-top: 20px;
-    padding: 10px 10px;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
 }
 
 #aside-content .card-tag-cloud a {

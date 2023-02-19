@@ -106,19 +106,120 @@ a {
   color: var(--heo-white) !important;
 }
 
-/* 隐藏滚动条 */
-#aside-content #card-toc .toc-content::-webkit-scrollbar-thumb, #aside-content #card-toc .toc-content::-webkit-scrollbar-corner {
-    background-color: transparent;
+/* 2.10文章代码框 */
+figure {
+    margin-top: 0.5rem !important;
 }
-#aside-content #card-toc .toc-content>ol {
-    padding: 0 !important;
+
+/* 2.5文章引用 */
+blockquote {
+    border: var(--style-border);
+    background-color: var(--zhsher-secondbg);
+    color: var(--zhsher-secondtext);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 1rem 0.8rem;
 }
-#aside-content {
-    width: 100% !important;
+
+/* 2.6文章内的表格 */
+table thead {
+    background: var(--zhsher-secondbg)
 }
-/*@media screen and (min-width: 900px) {*/
-/*	html.hide-aside .layout>div:first-child {*/
-/*	    width: 100% !important;*/
-/*	}*/
+
+table td, table th {
+    padding: .3rem .6rem;
+    border: var(--style-border-always)
+}
+
+.table-wrap {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow-x: scroll
+}
+
+/* 放大原先的CC标识*/
+/*.layout #post .post-copyright:before {*/
+/*    top: -71px;*/
+/*    right: -20px;*/
+/*    font-size: 8.3em*/
 /*}*/
+.layout #post .post-copyright:before {
+    display: none;
+}
+
+/* CC图标 */
+#post .post-copyright:after {
+    position: absolute;
+    right: 22px;
+    top: -90px;
+    content: '\f25e';
+    font-size: 180px;
+    font-family: 'Font Awesome 5 Brands';
+    color: var(--zhsher-fontcolor);
+    opacity: 0.4;
+    filter: blur(5px);
+}
+
+/* 2.9文章小节标题 */
+/* 去除主题配置默认的beautify矢量图 */
+#article-container.post-content h1:before, #article-container.post-content h2:before, #article-container.post-content h3:before, #article-container.post-content h4:before, #article-container.post-content h5:before, #article-container.post-content h6:before {
+    display: none
+}
+
+/* 锚点图 */
+#article-container .headerlink::before {
+    content: "\f0c1";
+    font-family: "Font Awesome 5 Free"
+}
+/* 文章点样式 */
+#article-container ul>li:not(.tab):hover:before {
+  border-color: var(--heo-none) !important;
+}
+/* h1-h3锚点位置、透明处理 */
+#article-container h1 .headerlink {
+    float: right;
+    opacity: .08;
+    position: relative;
+    padding: 0;
+    border: none;
+    line-height: 1;
+    font-size: 2rem;
+    border-radius: 8px !important;
+    text-decoration: none;
+    font-weight: 700
+}
+#article-container h2 .headerlink {
+    float: right;
+    opacity: .08;
+    position: relative;
+    padding: 0;
+    border: none;
+    line-height: 1;
+    font-size: 1.8rem;
+    border-radius: 8px !important;
+    text-decoration: none;
+    font-weight: 700
+}
+
+#article-container h3 .headerlink {
+    float: right;
+    opacity: .08;
+    position: relative;
+    padding: 0;
+    border: none;
+    line-height: 1;
+    font-size: 1.3rem;
+    border-radius: 8px !important;
+    text-decoration: none;
+    font-weight: 700
+}
+
+/* h1-h6标题效果 */
+#article-container.post-content h1, #article-container.post-content h2, #article-container.post-content h3, #article-container.post-content h4, #article-container.post-content h5, #article-container.post-content h6 {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    border-top: 1px dashed var(--zhsher-theme-op);
+    padding-top: 1.5rem;
+    padding-left: 0
+}
 
