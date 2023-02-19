@@ -61,13 +61,3 @@ a.catalog-more {
 a.catalog-more:hover {
   color: var(--main);
 }
-div#首页 {
-  background: var(--heo-theme);
-  color: var(--heo-white) !important;
-  border-radius: 8px;
-  height: 30px;
-  margin-right: 5px;
-}
-div#首页 a {
-  color: white;
-}

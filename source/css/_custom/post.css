@@ -1,22 +1,3 @@
-/* 文章中的超链接 */
-#article-container a {
-  text-decoration: none;
-  border-bottom: 2px solid var(--heo-lighttext);
-  color: var(--heo-fontcolor);
-  font-weight: bold;
-  padding: 0 4px;
-  border-radius: 4px 4px 0 0;
-}
-
-#article-container a:not(.fancybox):hover {
-  text-decoration: none;
-  border-bottom: 2px solid var(--heo-none);
-  color: var(--heo-white);
-  background: var(--heo-main);
-  border-radius: 4px;
-  box-shadow: var(--heo-shadow-main);
-}
-
 #article-container a.fancybox {
   border-bottom: 0;
   padding: 0;
@@ -27,20 +8,6 @@
 
 #article-container a.fancybox img {
   cursor: pointer;
-}
-
-#article-container code {
-  color: var(--heo-white);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  margin: 0px 4px;
-  background: var(--heo-pink);
-  line-height: 2;
-  box-shadow: var(--heo-shadow-border);
-}
-
-#article-container code::selection {
-  background: var(--heo-main) !important;
 }
 
 /* 文章表格间距 */
@@ -87,6 +54,21 @@ a {
     transition: all 0.2s ease 0s;
     overflow-wrap: break-word;
 }
+#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title) {
+    text-decoration: none;
+    border-bottom: 2px solid var(--zhsher-lighttext);
+    color: var(--zhsher-fontcolor);
+    font-weight: bold;
+    padding: 0 4px;
+}
+
+#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title):hover {
+    text-decoration: none;
+    color: var(--zhsher-white);
+    background: var(--zhsher-main);
+    border-radius: 4px;
+    box-shadow: var(--zhsher-shadow-main);
+}
 /* 代码高亮 */
 #article-container figure.highlight {
   border-radius: 8px 8px 4px 4px;
@@ -123,30 +105,20 @@ a {
   background: var(--heo-main) !important;
   color: var(--heo-white) !important;
 }
-@media screen and (min-width: 900px) {
-	html.hide-aside .layout>div:first-child {
-	    width: 100% !important;
-	}
-}
 
-.layout>div:first-child:not(.recent-posts) {
-    box-shadow: var(--heo-shadow-border);
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    background: var(--heo-card-bg);
-    border: var(--style-border);
-    width: calc(100% - 300px);
+/* 隐藏滚动条 */
+#aside-content #card-toc .toc-content::-webkit-scrollbar-thumb, #aside-content #card-toc .toc-content::-webkit-scrollbar-corner {
+    background-color: transparent;
 }
-.layout>div:first-child:not(.recent-posts) {
-    align-self: flex-start;
-    padding: 50px 40px;
-    border-radius: 8px;
-    background: var(--heo-card-bg);
-    box-shadow: var(--card-box-shadow);
+#aside-content #card-toc .toc-content>ol {
+    padding: 0 !important;
 }
-.layout>div:first-child {
-    width: calc(100% - 300px);
+#aside-content {
+    width: 100% !important;
 }
-.layout>div:first-child {
-    transition: all 0.3s ease 0s;
-}
+/*@media screen and (min-width: 900px) {*/
+/*	html.hide-aside .layout>div:first-child {*/
+/*	    width: 100% !important;*/
+/*	}*/
+/*}*/
+

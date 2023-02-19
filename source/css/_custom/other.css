@@ -200,7 +200,6 @@ html {
   white-space: nowrap;
   overflow-x: scroll;
   display: flex;
-  height: 30px;
 }
 
 .category-bar-items .category-bar-item:hover {
@@ -261,6 +260,15 @@ html {
 .category-bar-more {
   margin-left: 1rem;
   font-weight: bold;
+}
+div#首页 {
+  background: var(--heo-theme);
+  color: var(--heo-white) !important;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+div#首页 a {
+  color: white;
 }
 #article-container ol,
 #article-container ul {
