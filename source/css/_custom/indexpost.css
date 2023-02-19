@@ -4,20 +4,15 @@
     flex-direction: column;
   }
 
-  #recent-posts>.recent-post-item {
+  #recent-posts>.recent-post-item:not(:first-child) {
     width: calc(100% / 2 - 0.5rem);
     margin-top: 0.25rem;
     margin-bottom: 0.75rem;
     box-shadow: var(--heo-shadow-border);
   }
 
-  #recent-posts>.recent-post-item:active {
+  #recent-posts>.recent-post-item:not(:first-child):active {
     transform: scale(0.97);
-  }
-
-  #category-bar {
-    margin-bottom: 0.75rem;
-    box-shadow: var(--heo-shadow-border);
   }
 
   /* 首页文章第一个 */
@@ -77,12 +72,18 @@
 }
 
 #recent-posts>.recent-post-item .right_radius {
-  border-radius: 12px 0 0 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 12px;
 }
 
 @media screen and (min-width: 1300px) {
   #recent-posts>.recent-post-item .right_radius {
-    border-radius: 12px 12px 0 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
 }
 
@@ -98,7 +99,10 @@
 
   #recent-posts>.recent-post-item .right_radius,
   #recent-posts>.recent-post-item .left_radius {
-    border-radius: 12px 0 0 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 12px;
     width: 75%;
     display: flex;
     height: 200px;
@@ -144,7 +148,10 @@
 
   #recent-posts>.recent-post-item .right_radius,
   #recent-posts>.recent-post-item .left_radius {
-    border-radius: 12px 12px 0 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     width: 100%;
     display: flex;
   }
@@ -206,6 +213,7 @@
   justify-content: center;
   align-items: flex-end;
   align-content: center;
+  padding-top: .5rem;
   font-weight: bold;
   font-size: 0.8rem !important;
   padding: 0 !important;
@@ -250,6 +258,9 @@
   transform: scale(1);
 }
 
+.recent-post-item .post_cover {
+  -webkit-mask-image: -webkit-radial-gradient(center, rgb(255, 255, 255), rgb(0, 0, 0));
+}
 #recent-posts>.recent-post-item {
   display: flex;
   -webkit-box-orient: horizontal;
@@ -273,12 +284,16 @@
   box-shadow: var(--card-hover-box-shadow);
 }
 
+#recent-posts>.recent-post-item:hover img.post_bg {
+  transform: scale(1.1);
+}
+
 #recent-posts>.recent-post-item .left_radius {
-  border-radius: 5px 0 0 8px;
+  border-radius: 5px 0px 0px 8px;
 }
 
 #recent-posts>.recent-post-item .right_radius {
-  border-radius: 5px 0 0 8px;
+  border-radius: 5px 0px 0px 8px;
 }
 
 #recent-posts>.recent-post-item.ads-wrap {
