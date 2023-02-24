@@ -186,7 +186,7 @@ post_meta:
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
-  enable: true
+  enable: false
   post_wordcount: true
   min2read: true
   total_wordcount: true
@@ -1000,7 +1000,7 @@ CDN:
     # valine:
     # disqusjs:
     # disqusjs_css:
-    twikoo: https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
+    twikoo: https://cdn1.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
     # waline_js:
     # waline_css:
     # sharejs:

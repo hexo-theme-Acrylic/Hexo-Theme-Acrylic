@@ -215,7 +215,6 @@ span.tagsPageCount {
   min-width: 151px;
   min-height: 80px;
   background: var(--heo-secondbg);
-  -webkit-mask-image: -webkit-radial-gradient(center, rgb(255, 255, 255), rgb(0, 0, 0));
 }
 
 @media screen and (max-width: 768px) {
