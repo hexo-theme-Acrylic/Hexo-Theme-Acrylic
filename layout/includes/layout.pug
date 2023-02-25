@@ -31,16 +31,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
             if theme.aside.enable && page.aside !== false
               include widget/index.pug
 
-        - var footerBg = theme.footer_bg
-        if (footerBg)
-          if (footerBg === true)
-            - var footer_bg = bg_img
-          else
-            - var footer_bg = theme.footer_bg.indexOf('/') !== -1 ? `background-image: url('${url_for(footerBg)}')` : `background: ${footerBg}`
-        else
-          - var footer_bg = ''
-
-        footer#footer(style=footer_bg)
+        footer#footer
           !=partial('includes/footer', {}, {cache: true})
 
     else

@@ -1,15 +1,15 @@
 {
-	"description": "A Simple and Card UI Design theme for Hexo",
+	"description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Acrylic team",
 	"version": "2.2.5",
-	"author": "GB <wudingyi1020@163.com>",
+	"author": "Hexo-Theme-Acrylic<Acrylic@marcus233.top>",
 	"license": "Apache-2.0",
 	"bugs": {
 		"url": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic/issues",
-		"email": "wudingyi1020@163.com"
+		"email": "Acrylic@marcus233.top"
 	},
 	"main": "package.json",
-	"homepage": "https://blog.zhheo.com/",
-	"keywords": ["hexo", "theme", "butterfly", "Card UI Design", "GB", "hexo-theme-Acrylic"],
+	"homepage": "https://Acrylic.zhheo.com/",
+	"keywords": ["hexo", "theme", "butterfly","hexo-theme-Acrylic"],
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

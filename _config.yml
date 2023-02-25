@@ -93,8 +93,20 @@ avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
   effect: false
 
-# 关于页面自定义
-aboutpage: 
+# about(关于页面)
+# --------------------------------------
+about:
+  info:
+    right:
+      - 🤖️ 数码爱好者
+      - 🔍 分享与热心帮助
+      - 🏠 智能家居小能手
+      - 🔨 开发小萌新
+    left:
+      - 专修交互设计 🤝
+      - 脚踏实地行动派 🏃
+      - 专攻各种困难 🧱
+      - 人狠话不多 💢
   job: 学生、独立开发者、博主
   live: 中国，北京市
   born: 1997
@@ -132,10 +144,6 @@ sidebars:
   ptn1: 图片博客
   ptn3: 开发博客
 
-footerplus: 
-  halfmail: mailto:wudingyi1020@163.com
-  halfbilibili: https://space.bilibili.com/340543148
-  
 # 下面的一个都别改
 disable_top_img: false
 index_img: false
@@ -449,14 +457,186 @@ messenger:
   pageID:
   lang: zh_TW # Language en_US/zh_CN/zh_TW and so on
 
-# Footer Settings
+# Footer
 # --------------------------------------
 footer:
-  owner:
+  enable: true
+  footer_icons:
     enable: true
-    since: 2020
-  custom_text:
-  copyright: true # Copyright of theme and framework
+    left:
+      - icon: fa-solid fa-compass
+        link: https://www.marcus233.top/
+        desrc: 个人主页
+        class: out
+      - icon: fa-brands fa-qq
+        link: https://res.abeim.cn/api/qq/?qq=3105950984
+        desrc: 联系QQ
+        class: out
+      - icon: fa-brands fa-weixin
+        link: /wechat/
+        desrc: 联系微信
+        class: in
+      - icon: fa-solid fa-envelope
+        link: mailto:marcus@marcus233.top
+        desrc: 发送邮件
+        class: out
+    right:
+      - icon: fa-brands fa-github
+        link: https://github.com/Marcusyyds
+        desrc: Github主页
+        class: out
+      - icon: fa-brands fa-bilibili
+        link: https://space.bilibili.com/1024450661
+        desrc: 哔哩哔哩主页
+        class: out
+      - icon: fa-solid fa-star
+        link: /stars/
+        desrc: 藏宝阁
+        class: in
+      - icon: fa-solid fa-comment
+        link: /message/
+        desrc: 留言
+        class: in
+  footer_logo:
+    enable: true
+    url: https://img01.anzhiy.cn/useruploads/8/2022/12/15/639adf5b8806a.png
+  footer_group:
+    enable: true
+    footer_group_link:
+      - group_title: 直达
+        footer_links: 
+          - text: 藏宝阁
+            link: /stars/
+            class: in
+          - text: 优秀句子
+            link: /sentence/
+            class: in
+          - text: 空间说说
+            link: /zone/
+            class: in
+          - text: 友链订阅
+            link: /fcircle/
+            class: in
+          - text: 切换背景
+            link: /bg/
+            class: in
+      - group_title: 关于
+        footer_links: 
+          - text: 关于我
+            link: /about/
+            class: in
+          - text: RSS订阅
+            link: /atom.xml
+            class: in
+          - text: 站点监控
+            link: https://uptime.marcus233.top/
+            class: out
+          - text: 更新记录
+            link: /timeline/
+            class: in
+          - text: 我的相册
+            link: /picture/
+            class: in
+      - group_title: 分类
+        footer_links: 
+          - text: 博客相关
+            link: /categories/博客相关
+            class: in
+          - text: 生活点滴
+            link: /categories/生活点滴
+            class: in 
+          - text: 资源分享
+            link: /categories/资源分享
+            class: in
+          - text: 学习笔记
+            link: /categories/学习笔记
+            class: in 
+          - text: 实用教程
+            link: /categories/实用教程
+            class: in 
+          - text: 查看全部
+            link: /categories/
+            class: in 
+  footer_friend_links:
+    enable: true
+    number: 5
+  footer_bottom:
+    copyright:
+      enable: true
+      author: Marcus
+      link: https://marcus233.top/
+      time: 2022
+    left:
+      - text: 雨云
+        desrc: 本站CDN支持
+        link: https://rainyun.com/
+      - text: 网盾星球
+        desrc: 本站CDN防护主要提供商:网盾星球
+        link: https://www.netdun.net/
+      - text: 萌ICP备20230221
+        desrc: 萌ICP备20230221
+        link: https://icp.gov.moe/?keyword=20230221
+      - text: 萌ICP备20236688
+        desrc: 萌ICP备20236688
+        link: https://icp.gov.moe/?keyword=20236688
+      - text: 萌ICP备20230002
+        desrc: 萌ICP备20230002
+        link: https://icp.gov.moe/?keyword=20230002
+    right:
+      - text: Hexo
+        desrc: 框架
+        link: https://hexo.io/zh-cn/
+      - text: Butterfly
+        desrc: 主题
+        link: https://butterfly.js.org/
+    runtime:
+      enable: true
+
+
+# hometop
+# --------------------------------------
+hometop:
+  enable: true
+  banner:
+    enable: true
+    class: creativity #people/creativity
+    title_up: 分享设计
+    title_dn: 与科技生活
+    tips: ZHHEO.COM
+  categoryGroup:
+    enable: true
+    category_list:
+      - name: 必看精选
+        path: /tags/必看/
+        shadow: var(--heo-shadow-blue)
+        class: bikan
+        icon: fas fa-dove
+      - name: 热门文章
+        path: /tags/热门/
+        shadow: var(--heo-shadow-red)
+        class: remen
+        icon: fas fa-burn
+      - name: 实用教程
+        path: /tags/教程/
+        shadow: var(--heo-shadow-green)
+        class: shiyong
+        icon: fas fa-book
+  topgroup:
+    enable: true
+    class: both #card/post/both
+    #如果为both则都填
+    #如果为card
+    card:
+      tips: 新品推荐
+      title: 让亚克力化作效率工具
+      bg: http://photoimage.2lc.top/LightPicture/2023/02/22c99eaf9576e7e5.png
+      link: https://blog.zhheo.com/p/671f98c8.html
+      buttontext: 更多推荐
+      icon: fas fa-circle-plus
+    #如果为post
+    post:
+      class: 
+      number: 6
 
 # Analysis
 # --------------------------------------
@@ -886,50 +1066,6 @@ Open_Graph_meta: true
 # Add the vendor prefixes to ensure compatibility
 css_prefix: true
 
-# hometop
-# --------------------------------------
-hometop:
-  enable: true
-  banner:
-    enable: true
-    class: creativity #people/creativity
-    title_up: 分享设计
-    title_dn: 与科技生活
-    tips: ZHHEO.COM
-  categoryGroup:
-    enable: true
-    category_list:
-      - name: 必看精选
-        path: /tags/必看/
-        shadow: var(--heo-shadow-blue)
-        class: bikan
-        icon: fas fa-dove
-      - name: 热门文章
-        path: /tags/热门/
-        shadow: var(--heo-shadow-red)
-        class: remen
-        icon: fas fa-burn
-      - name: 实用教程
-        path: /tags/教程/
-        shadow: var(--heo-shadow-green)
-        class: shiyong
-        icon: fas fa-book
-  topgroup:
-    enable: true
-    class: both #card/post/both
-    #如果为both则都填
-    #如果为card
-    card:
-      tips: 新品推荐
-      title: 让亚克力化作效率工具
-      bg: http://photoimage.2lc.top/LightPicture/2023/02/22c99eaf9576e7e5.png
-      link: https://blog.zhheo.com/p/671f98c8.html
-      buttontext: 更多推荐
-      icon: fas fa-circle-plus
-    #如果为post
-    post:
-      class: 
-      number: 6
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
