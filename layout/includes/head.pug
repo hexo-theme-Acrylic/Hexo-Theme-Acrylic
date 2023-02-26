@@ -55,9 +55,6 @@ if (theme.snackbar && theme.snackbar.enable)
 if theme.fancybox
   link(rel='stylesheet' href=url_for(theme.asset.fancybox_css_v4) media="print" onload="this.media='all'")
 
-//- google_adsense
-!=partial('includes/head/google_adsense', {}, {cache: true})
-
 //- analytics
 !=partial('includes/head/analytics', {}, {cache: true})
 
