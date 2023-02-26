@@ -410,53 +410,6 @@ artalk:
   visitor: false
   option:
 
-# Chat Services
-# --------------------------------------
-
-# Chat Button [recommend]
-# It will create a button in the bottom right corner of website, and hide the origin button
-chat_btn: false
-
-# The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
-chat_hide_show: false
-
-# chatra
-# https://chatra.io/
-chatra:
-  enable: false
-  id:
-
-# tidio
-# https://www.tidio.com/
-tidio:
-  enable: false
-  public_key:
-
-# daovoice
-# http://daovoice.io/
-daovoice:
-  enable: false
-  app_id:
-
-# gitter
-# https://gitter.im/
-gitter:
-  enable: false
-  room:
-
-# crisp
-# https://crisp.chat/en/
-crisp:
-  enable: false
-  website_id:
-
-# messenger
-# https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/
-messenger:
-  enable: false
-  pageID:
-  lang: zh_TW # Language en_US/zh_CN/zh_TW and so on
-
 # Footer
 # --------------------------------------
 footer:
