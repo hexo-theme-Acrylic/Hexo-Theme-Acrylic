@@ -3,6 +3,8 @@ let heo_musicPlaying = false;
 let heo_keyboard = false;
 let heo_intype = false;
 let heo_showFPS = false;
+// 定义变量存储上一个内容
+let lastSayHello = '';
 // 私有函数
 var heo = {
   // 检测显示模式
@@ -12,22 +14,6 @@ var heo = {
       $(".menu-darkmode-text").text("深色模式");
     }else {
       $(".menu-darkmode-text").text("浅色模式");
-    }
-  },
-
-  //bb添加时间
-  changeTimeInEssay: function() {
-    const relativeDate = function (selector) {
-      selector.forEach(item => {
-        const $this = item
-        const timeVal = $this.getAttribute('datetime')
-        $this.innerText = btf.diffDate(timeVal, true)
-        $this.style.display = 'inline'
-      })
-    }
-
-    if (document.querySelector('#bber')) {
-      relativeDate(document.querySelectorAll('#bber time'))
     }
   },
 
@@ -69,24 +55,24 @@ var heo = {
 
 
   //监测是否在页面开头
-  // addNavBackgroundInit: function() {
-  //   var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
-  //     if(document.body){
-  //       bodyScrollTop = document.body.scrollTop;
-  //     }
-  //     if(document.documentElement){
-  //       documentScrollTop = document.documentElement.scrollTop;
-  //     }
-  //     scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
-  //     // console.log("滚动高度"+ scrollTop)
-  //
-  //     if (scrollTop != 0) {
-  //       document.getElementById("page-header").classList.add("nav-fixed");
-  //       document.getElementById("page-header").classList.add("nav-visible");
-  //       $('#cookies-window').hide()
-  //       console.log("已添加class")
-  //     }
-  // },
+  addNavBackgroundInit: function() {
+    var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+      if(document.body){
+        bodyScrollTop = document.body.scrollTop;
+      }
+      if(document.documentElement){
+        documentScrollTop = document.documentElement.scrollTop;
+      }
+      scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+      // console.log("滚动高度"+ scrollTop)
+    
+      if (scrollTop != 0) {
+        document.getElementById("page-header").classList.add("nav-fixed");
+        document.getElementById("page-header").classList.add("nav-visible");
+        $('#cookies-window').hide()
+        console.log("已添加class")
+      }
+  },
 
   // 标签页面
   //分类条
@@ -149,7 +135,7 @@ var heo = {
     .then(res => res.json())
     .then(json =>{
       var randomFriendLinks = getArrayItems(json,3);
-
+  
       var htmlText = '';
       for (let i = 0; i < randomFriendLinks.length; ++i) {
         var item = randomFriendLinks[i]
@@ -178,19 +164,6 @@ var heo = {
       if(document.body.clientWidth < 1300){
         e.preventDefault();
       }
-      }, false);
-    }
-  },
-
-  topCategoriesBarScroll: function() {
-    if (document.getElementById("category-bar-items")){
-        let xscroll = document.getElementById("category-bar-items");
-        xscroll.addEventListener("mousewheel", function (e) {
-        //计算鼠标滚轮滚动的距离
-        let v = -e.wheelDelta / 2;
-        xscroll.scrollLeft += v;
-        //阻止浏览器默认方法
-        e.preventDefault();
       }, false);
     }
   },
@@ -234,15 +207,47 @@ var heo = {
     if (document.querySelector('#waterfall')) {
       setTimeout(function(){
           waterfall('#waterfall');
-          document.getElementById("waterfall").classList.add('show');
+          document.getElementById("waterfall").classList.add('show'); 
       },500);
     }
   },
+  //即刻短文更改日期格式
+  chageTimeFormate:function() {
+    var timeElements = document.getElementsByTagName("time");
 
-  // 即刻短文添加灯箱
-  addMediumInEssay: function() {
-    if (document.querySelector('#waterfall')) {
-      mediumZoom(document.querySelectorAll('[data-zoomable]'))
+    // 遍历所有 <time> 元素
+    for (var i = 0; i < timeElements.length; i++) {
+      // 获取时间字符串和时间对象
+      var datetime = timeElements[i].getAttribute("datetime");
+      var timeObj = new Date(datetime);
+
+      // 计算距离今天的天数
+      var today = new Date();
+      var timeDiff = today.getTime() - timeObj.getTime();
+      var daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+      // 处理时间字符串
+      var timeString;
+
+      if (daysDiff === 0) {
+        timeString = "最近";
+      } else if (daysDiff === 1) {
+        timeString = "昨天";
+      } else if (daysDiff === 2) {
+        timeString = "前天";
+      } else if (daysDiff <= 7) {
+        timeString = daysDiff + "天前";
+      } else {
+        // 处理时间字符串
+        if (timeObj.getFullYear() !== new Date().getFullYear()) {
+          timeString = timeObj.getFullYear() + "/" + (timeObj.getMonth() + 1) + "/" + timeObj.getDate();
+        } else {
+          timeString = (timeObj.getMonth() + 1) + "/" + timeObj.getDate();
+        }
+      }
+
+      // 更新 <time> 元素的文本内容
+      timeElements[i].textContent = timeString;
     }
   },
 
@@ -323,8 +328,8 @@ var heo = {
 
   //自适应主题色
   initThemeColor: function() {
+    const currentTop = window.scrollY || document.documentElement.scrollTop
     if (heo.is_Post()) {
-      const currentTop = window.scrollY || document.documentElement.scrollTop
       if (currentTop > 0) {
         let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--heo-card-bg');
         heo.changeThemeColor(themeColor);
@@ -335,8 +340,15 @@ var heo = {
         }
       }
     }else {
-      let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--heo-card-bg');
-      heo.changeThemeColor(themeColor);
+      if (currentTop > 0) {
+        let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--heo-card-bg');
+        heo.changeThemeColor(themeColor);
+      }else {
+        if (currentTop === 0) {
+          let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--heo-background');
+          heo.changeThemeColor(themeColor);
+        }
+      }
     }
   },
 
@@ -434,8 +446,32 @@ var heo = {
 
   //滚动到指定id
   scrollTo:function(id){
-    var domTop = document.querySelector(id).offsetTop;
-    window.scrollTo(0,domTop - 80);
+    const element = document.getElementById(id);
+    if (element) {
+      const targetY = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      const startingY = window.pageYOffset;
+      const diff = targetY - startingY;
+      let startTime = null;
+  
+      function step(currentTime) {
+        if (!startTime) {
+          startTime = currentTime;
+        }
+        const timeElapsed = currentTime - startTime;
+        const percentage = Math.min(timeElapsed / 0, 1);
+        const ease = easeInOutQuad(percentage);
+        window.scrollTo(0, startingY + diff * ease);
+        if (timeElapsed < 600) {
+          window.requestAnimationFrame(step);
+        }
+      }
+  
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+  
+      window.requestAnimationFrame(step);
+    }
   },
 
   //隐藏侧边栏
@@ -478,16 +514,235 @@ var heo = {
       document.querySelector("#consoleFPS").classList.add("on");
       localStorage.setItem('showFPS', 'true');
     }
+    
+  },
+  //跳转到指定页面
+  toPage: function() {
+    console.log("执行跳转")
+    var e = document.querySelectorAll(".page-number"),
+    t = e[e.length - 1].innerHTML,
+    n = Number(t),
+    a = document.getElementById("toPageText"),
+    o = Number(a.value);
+    if ("" != o && !isNaN(o) && o % 1 == 0) if (1 == o) document.getElementById("toPageButton").href = "/";
+    else if (o > n) {
+      var d = "/page/" + n + "/";
+      document.getElementById("toPageButton").href = d
+    } else d = "/page/" + a.value + "/",
+    document.getElementById("toPageButton").href = d
+  },
+  //作者卡片tips更改
+  changeSayHelloText: function() {
+    // 定义数组存储可选内容
+    const contentArray = ['🤖️ 数码科技爱好者', '🔍 分享与热心帮助', '🏠 智能家居小能手', '🔨 设计开发一条龙', '🤝 专修交互与设计','🏃 脚踏实地行动派',"🧱 团队小组发动机","💢 壮汉人狠话不多"];
+    // 获取要更改内容的元素
+    const contentElement = document.getElementById('author-info__sayhi');
+    // 从数组中随机选择一个新内容
+    let newContent = contentArray[Math.floor(Math.random() * contentArray.length)];
+    // 如果新内容与上一个重复，重新选择
+    while (newContent === lastSayHello) {
+      newContent = contentArray[Math.floor(Math.random() * contentArray.length)];
+    }
+    // 将新内容赋值给元素的文本内容
+    contentElement.textContent = newContent;
 
+    // 更新上一个内容的变量
+    lastSayHello = newContent;
+  },
+  //滚动首页分类条
+  scrollCategoryBarToRight: function() {
+    var element = document.getElementById('category-bar-items');
+    var buttonIcon = document.getElementById('category-bar-next');
+    var scrollStep = element.clientWidth; // 计算每次滚动的距离
+    if (element) {
+      if (element.scrollLeft + element.clientWidth >= element.scrollWidth) {
+        // 滚动条已经在最右侧，滚动到最左侧
+        element.scroll({
+          left: 0,
+          behavior: 'smooth'
+        });
+        buttonIcon.innerHTML = '<i class="fas fa-angles-right"></i>';   
+      } else {
+        // 滚动条在其他位置，向右滚动一个可视宽度
+        element.scrollBy({
+          left: scrollStep,
+          behavior: 'smooth'
+        });
+      }
+    }
+  },
+  //匿名评论
+  addRandomCommentInfo: function() {
+    // 从形容词数组中随机取一个值
+    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+
+    // 从蔬菜水果动物名字数组中随机取一个值
+    const randomName = vegetablesAndFruits[Math.floor(Math.random() * vegetablesAndFruits.length)];
+
+    // 将两个值组合成一个字符串
+    const name = `${randomAdjective}${randomName}`;
+
+    function dr_js_autofill_commentinfos() {
+      var lauthor = ["#author","input[name='comname']","#inpName","input[name='author']","#ds-dialog-name","#name","input[name='nick']","#comment_author"],
+      lmail =["#mail","#email","input[name='commail']","#inpEmail","input[name='email']","#ds-dialog-email","input[name='mail']","#comment_email"],
+      lurl =["#url","input[name='comurl']","#inpHomePage","#ds-dialog-url","input[name='url']","input[name='website']","#website","input[name='link']","#comment_url"];
+      for (var i = 0; i < lauthor.length; i++) {
+          var author = document.querySelector(lauthor[i]);
+          if (author != null) {
+              author.value = name;
+      author.dispatchEvent(new Event('input'));
+      author.dispatchEvent(new Event('change'));
+              break;
+          }
+      }
+      for (var j = 0; j < lmail.length; j++) {
+          var mail = document.querySelector(lmail[j]);
+          if (mail != null) {
+              mail.value = 'visitor@gtc.com';
+      mail.dispatchEvent(new Event('input'));
+      mail.dispatchEvent(new Event('change'));
+              break;
+          }
+      }
+      return ! 1;
+    }
+
+    dr_js_autofill_commentinfos();
+    var input = document.getElementsByClassName('el-textarea__inner')[0];
+    input.focus();
+    input.setSelectionRange(-1,-1);
   }
 }
 
-//首页大卡片恢复显示
-$(".topGroup").hover(function () {
-  // console.log("卡片悬浮");
-}, function () {
-  hoverOnCommentBarrage = false;
-  document.getElementById("todayCard").classList.remove('hide');
-  document.getElementById('todayCard').style.zIndex = 1;
-  // console.log("卡片停止悬浮");
-});
+const adjectives = [
+  "美丽的",
+  "英俊的",
+  "聪明的",
+  "勇敢的",
+  "可爱的",
+  "慷慨的",
+  "善良的",
+  "可靠的",
+  "开朗的",
+  "成熟的",
+  "稳重的",
+  "真诚的",
+  "幽默的",
+  "豁达的",
+  "有趣的",
+  "活泼的",
+  "优雅的",
+  "敏捷的",
+  "温柔的",
+  "温暖的",
+  "敬业的",
+  "细心的",
+  "耐心的",
+  "深沉的",
+  "朴素的",
+  "含蓄的",
+  "率直的",
+  "开放的",
+  "务实的",
+  "坚强的",
+  "自信的",
+  "谦虚的",
+  "文静的",
+  "深刻的",
+  "纯真的",
+  "朝气蓬勃的",
+  "慎重的",
+  "大方的",
+  "顽强的",
+  "迷人的",
+  "机智的",
+  "善解人意的",
+  "富有想象力的",
+  "有魅力的",
+  "独立的",
+  "好奇的",
+  "干净的",
+  "宽容的",
+  "尊重他人的",
+  "体贴的",
+  "守信的",
+  "有耐性的",
+  "有责任心的",
+  "有担当的",
+  "有远见的",
+  "有智慧的",
+  "有眼光的",
+  "有冒险精神的",
+  "有爱心的",
+  "有同情心的",
+  "喜欢思考的",
+  "喜欢学习的",
+  "具有批判性思维的",
+  "善于表达的",
+  "善于沟通的",
+  "善于合作的",
+  "善于领导的",
+  "有激情的",
+  "有幽默感的",
+  "有思想的",
+  "有个性的",
+  "有正义感的",
+  "有责任感的",
+  "有创造力的",
+  "有想象力的",
+  "有艺术细胞的",
+  "有团队精神的",
+  "有协调能力的",
+  "有决策能力的",
+  "有组织能力的",
+  "有学习能力的",
+  "有执行能力的",
+  "有分析能力的",
+  "有逻辑思维的",
+  "有创新能力的",
+  "有专业素养的",
+  "有商业头脑的"
+]
+
+const vegetablesAndFruits = [
+  "萝卜",
+  "白菜",
+  "芹菜",
+  "生菜",
+  "青椒",
+  "辣椒",
+  "茄子",
+  "豆角",
+  "黄瓜",
+  "西红柿",
+  "洋葱",
+  "大蒜",
+  "土豆",
+  "南瓜",
+  "豆腐",
+  "韭菜",
+  "花菜",
+  "西兰花",
+  "蘑菇",
+  "金针菇",
+  "苹果",
+  "香蕉",
+  "橙子",
+  "柠檬",
+  "猕猴桃",
+  "草莓",
+  "葡萄",
+  "桃子",
+  "杏子",
+  "李子",
+  "石榴",
+  "西瓜",
+  "哈密瓜",
+  "蜜瓜",
+  "樱桃",
+  "蓝莓",
+  "柿子",
+  "橄榄",
+  "柚子",
+  "火龙果",
+];
