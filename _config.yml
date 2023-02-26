@@ -277,77 +277,25 @@ noticeOutdate:
 # Share System (分享功能)
 # --------------------------------------
 
-# AddThis
-# https://www.addthis.com/
-addThis:
-  enable: false
-  pubid:
-
 # Share.js
 # https://github.com/overtrue/share.js
 sharejs:
   enable: true
   sites: facebook,twitter,wechat,weibo,qq
 
-# AddToAny
-# https://www.addtoany.com/
-addtoany:
-  enable: false
-  item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
-
 # Comments System
 # --------------------------------------
 
 comments:
   # Up to two comments system, the first will be shown as default
-  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: Twikoo # Valine,Disqus
+  # Choose: Waline/Twikoo/Artalk
+  use: Twikoo # Waline/Twikoo/Artalk
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
   count: false # Display comment count in post's top_img
   card_post_count: false # Display comment count in Home Page
-
-# disqus
-# https://disqus.com/
-disqus:
-  shortname:
-  apikey: # For newest comments widget
-
-# Alternative Disqus - Render comments with Disqus API
-# DisqusJS 評論系統，可以實現在網路審查地區載入 Disqus 評論列表，兼容原版
-# https://github.com/SukkaW/DisqusJS
-disqusjs:
-  shortname:
-  apikey:
-  option:
-
-# livere (來必力)
-# https://www.livere.com/
-livere:
-  uid:
-
-# gitalk
-# https://github.com/gitalk/gitalk
-gitalk:
-  client_id:
-  client_secret:
-  repo:
-  owner:
-  admin:
-  option:
-
-# valine
-# https://valine.js.org
-valine:
-  appId: # leancloud application app id
-  appKey: # leancloud application app key
-  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
-  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  bg: # valine background
-  visitor: false
-  option:
 
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
@@ -357,49 +305,12 @@ waline:
   pageview: false
   option:
 
-# utterances
-# https://utteranc.es/
-utterances:
-  repo:
-  # Issue Mapping: pathname/url/title/og:title
-  issue_term: pathname
-  # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
-  light_theme: github-light
-  dark_theme: photon-dark
-
-# Facebook Comments Plugin
-# https://developers.facebook.com/docs/plugins/comments/
-facebook_comments:
-  app_id:
-  user_id: # optional
-  pageSize: 10 # The number of comments to show
-  order_by: social # social/time/reverse_time
-  lang: zh_TW # Language en_US/zh_CN/zh_TW and so on
-
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
   envId:
   region:
   visitor: false
-  option:
-
-# Giscus
-# https://giscus.app/
-giscus:
-  repo:
-  repo_id:
-  category_id:
-  theme:
-    light: light
-    dark: dark
-  option:
-
-# Remark42
-# https://remark42.com/docs/configuration/frontend/
-remark42:
-  host: # Your Host URL
-  siteId: # Your Site ID
   option:
 
 # Artalk
@@ -410,6 +321,10 @@ artalk:
   visitor: false
   option:
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 92ef412 (delet:不必要的评论和聊天)
 # Footer
 # --------------------------------------
 footer:
