@@ -718,50 +718,6 @@ a.reward-main-btn:hover {
   }
 }
 
-#page .tag-cloud-list a {
-  display: flex;
-  width: fit-content;
-  color: var(--heo-fontcolor) !important;
-  font-size: 1.4em !important;
-  padding: 0.2em .5em;
-  background: var(--heo-card-bg);
-  margin: .5em .5em;
-  border-radius: 12px;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  border: var(--style-border-always);
-  box-shadow: var(--heo-shadow-border);
-  align-items: center;
-}
-
-#page .tag-cloud-list a:hover {
-  background: var(--heo-blue) !important;
-  box-shadow: var(--heo-shadow-blue);
-  color: var(--heo-white) !important;
-  border: var(--style-border-hover);
-}
-
-span.tagsPageCount {
-  background: var(--heo-secondbg);
-  padding: 4px 4px;
-  border-radius: 8px;
-  color: var(--heo-secondtext);
-  line-height: 1;
-  text-align: center;
-  min-width: 35px;
-  display: inline-block;
-  font-size: 1rem;
-  margin-left: 4px;
-}
-
-.category-lists span.tagsPageCount {
-  margin-left: 4px;
-}
-
-#page .tag-cloud-list a:hover span.tagsPageCount {
-  color: var(--heo-lighttext);
-}
-
 #tag-page-tags .tagsPageCount, #post .tag_share .post-meta__tags span.tagsPageCount {
   padding: 2px;
   background: var(--heo-secondbg);
@@ -824,36 +780,6 @@ span.tags-punctuation::before {
 
 #article-container h1:hover {
   padding-left: 0rem;
-}
-
-/* 分类页 */
-#article-container>div>figure>figcaption>p {
-  margin: 0;
-}
-
-#page .category-lists ul li::before {
-  display: none;
-}
-
-#page .category-lists ul li {
-  margin: 0;
-  margin-right: 8px;
-  margin-bottom: 8px;
-}
-
-#page .category-lists ul {
-  display: flex;
-  padding: 0;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-#page .category-lists ul li {
-  padding: 4px 16px;
-  width: 200px;
-  border-radius: 12px;
-  background: var(--heo-card-bg);
-  border: var(--style-border-always);
 }
 
 /* 分类圆角 */
@@ -941,7 +867,6 @@ figure.gallery-group:hover .gallery-group-name::after {
   font-size: 16px;
   font-weight: bold;
   opacity: 0.4;
-  top: -1em;
 }
 
 .article-sort-item {

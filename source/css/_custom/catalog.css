@@ -61,3 +61,17 @@ a.catalog-more {
 a.catalog-more:hover {
   color: var(--main);
 }
+.category-bar-next {
+  margin-left: 16px;
+  cursor: pointer;
+  height: 22px;
+}
+
+.category-bar-next:hover {
+  color: var(--heo-lighttext);
+}
+
+.category-bar-more {
+  margin-left: 14px;
+  font-weight: bold;
+}

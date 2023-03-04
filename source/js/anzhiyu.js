@@ -58,5 +58,3 @@ var anzhiyu = {
 
 // 如果有右键事件 可以在这里写。
 // addRightMenuClickEvent();
-
-anzhiyu.changeMusicBg(false);  //音乐页面
