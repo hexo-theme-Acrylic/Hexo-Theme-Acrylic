@@ -7,12 +7,10 @@ menu:
     文章列表: /archives/ || fas fa-box-archive
     全部分类: /categories/ || fas fa-cube
     全部标签: /tags/ || fas fa-tags
-    即刻短文: /essay/ || fas fa-bars-staggered
   专栏:
     设计报告: /tags/设计报告/ || fas fa-swatchbook
     设计分享: /tags/Heocan/ || fas fa-object-group
     设计工具: /tags/Sketch/ || fas fa-palette
-    视频混剪: /tags/混剪/ || fas fa-scissors
   友链:
     友链鱼塘: /fcircle/ || fas fa-fish-fins
     友情链接: /link/ || fas fa-user-group
