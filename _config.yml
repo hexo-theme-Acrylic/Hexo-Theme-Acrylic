@@ -267,10 +267,10 @@ reward:
   QR_code:
     - img: https://acrylic.leonus.cn/i/2023/02/19/ddz6gd.webp
       link:
-      text: wechat
-    - img: https://acrylic.leonus.cn/i/2023/02/19/ddzapo.webp
+      text: 微信
+    - img: https://acrylic.leonus.cn/i/2023/03/04/pmf2ec.webp
       link:
-      text: alipay
+      text: 爱发电
 
 
 
@@ -299,7 +299,7 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
+  envId: https://photoimage.2lc.top
   region:
   visitor: false
   option:
@@ -906,7 +906,7 @@ CDN:
     # valine:
     # disqusjs:
     # disqusjs_css:
-    twikoo: https://cdn1.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
+    twikoo: https://cdn2.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
     # waline_js:
     # waline_css:
     # sharejs:

@@ -404,3 +404,12 @@ div#首页 a {
 .icon-heologo:before {
   content: "\e005";
 }
+
+a {
+  background-color: transparent;
+  color: var(--heo-fontcolor);
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+  overflow-wrap: break-word;
+  -webkit-user-drag: none;
+}
