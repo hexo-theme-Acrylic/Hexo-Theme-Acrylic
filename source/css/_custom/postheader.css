@@ -48,7 +48,6 @@
         transform:translate(0,0);
         margin:0;
         filter:none;
-        position:fixed
     }
     #post-cover::after{
         box-shadow:0 -150px 150px 35px var(--heo-theme) inset
