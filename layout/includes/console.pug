@@ -1,0 +1,48 @@
+#console
+  .close-btn(onclick='heo.hideConsole()',href="javascript:void(0);")
+    i.fas.fa-circle-xmark
+  .console-card-group
+    .console-card-group-left
+      .console-card#card-newest-comments(onclick='heo.hideConsole()')
+        .card-content
+            .author-content-item-tips 互动
+            span.author-content-item-title 最近评论
+        .aside-list
+          span= _p('aside.card_newest_comments.loading_text')
+    .console-card-group-right
+      .console-card.tags(onclick='heo.hideConsole()')
+        - let tagLimit = theme.aside.card_tags.limit === 0 ? 0 : theme.aside.card_tags.limit || 40
+        .card-content
+            .author-content-item-tips 标签
+            span.author-content-item-title 寻找感兴趣的领域
+        .card-tag-cloud!= tagcloud({min_font: 1, max_font: 1, amount: tagLimit , color: true, start_color: '#D3D3D3', end_color: '#D3D3D3', unit: 'em'})
+      .console-card.history(onclick='heo.hideConsole()') 
+        if theme.aside.card_archives.enable
+          - let type = theme.aside.card_archives.type || 'monthly'
+          - let format = theme.aside.card_archives.format || 'MMMM YYYY'
+          - let order = theme.aside.card_archives.order || -1
+          - let limit = theme.aside.card_archives.limit === 0 ? 0 : theme.aside.card_archives.limit || 8
+          != aside_archives({ type:type, format: format, order: order, limit: limit })  
+  .button-group
+    .console-btn-item 
+      a.darkmode_switchbutton(onclick='rm.switchDarkMode()',title='显示模式切换',href="javascript:void(0);")
+        i.fas.fa-moon(style='font-size: 1rem;')
+    #consoleHideAside.console-btn-item(onclick='heo.hideAsideBtn()',title='边栏显示控制')
+      a.asideSwitch
+        i.fas.fa-arrows-alt-h
+    #consoleKeyboard.console-btn-item(onclick='heo.keyboardToggle()',title='快捷键开关')
+      a.keyboard-switch
+        i.fas.fa-keyboard
+    #assist-open.console-btn-item(onclick='heo.hideConsole()',title='无障碍工具栏')
+      a.assist-btn
+        i.fas.fa-wheelchair
+    #consoleCommentBarrage.console-btn-item(onclick='changeMouseMode()',title='热评开关')
+      a.commentBarrage
+        i.fa-solid.fa-message
+    #consoleMusic.console-btn-item(onclick='heo.musicToggle()',title='音乐开关')
+      a.music-switch
+        i.fas.fa-music
+    .console-btn-item#consoleFPS(onclick='manxin.FPSToggle()', title='帧率显示开关')
+      a.FPS-switch
+        i.fas.fa-gauge
+  .console-mask(onclick='heo.hideConsole()',href="javascript:void(0);")

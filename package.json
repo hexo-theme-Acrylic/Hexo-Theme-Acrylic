@@ -1,0 +1,25 @@
+{
+	"description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Acrylic team",
+	"version": "0.0.1",
+	"author": "Hexo-Theme-Acrylic<Acrylic@marcus233.top>",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic/issues",
+		"email": "Acrylic@marcus233.top"
+	},
+	"main": "package.json",
+	"homepage": "https://Acrylic.zhheo.com/",
+	"keywords": ["hexo", "theme", "butterfly","hexo-theme-Acrylic"],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"hexo-renderer-pug": "^3.0.0",
+		"hexo-renderer-stylus": "^2.1.0"
+	},
+	"name": "hexo-theme-Acrylic",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git"
+	}
+}

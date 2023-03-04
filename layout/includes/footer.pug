@@ -1,0 +1,68 @@
+#footer_deal
+  if theme.footer.footer_icons.enable
+      each i in theme.footer.footer_icons.left
+        if i.class == "in"
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`,data-pjax-state)
+            i(class=`${i.icon}`)
+        else if i.class == "out"
+          a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+        else 
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+  img.footer_mini_logo.entered.loading(title='返回顶部' onclick='btf.scrollToDest(0, 500)' src=`${theme.footer.footer_logo.url}` data-ll-status='loading')
+  if theme.footer.footer_icons.enable
+      each i in theme.footer.footer_icons.right 
+        if i.class == "in"
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`,data-pjax-state)
+            i(class=`${i.icon}`)
+        else if i.class == "out"
+          a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+        else 
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+#heo-footer
+  each item in theme.footer.footer_group.footer_group_link
+    .footer-group
+        h3.footer-title=item.group_title
+            .footer-links
+              each i in item.footer_links
+                if i.class == "in"
+                  a.footer-item(href=`${i.link}`, data-pjax-state)=i.text
+                else if i.class == "out"
+                  a.footer-item(target='_blank', href=`${i.link}`)=i.text
+                else 
+                  a.footer-item(href=`${i.link}`)=i.text
+  .footer-group
+    .footer-title-group
+      h3.footer-title 友链
+      a.random-friends-btn(href='javascript:heo.addFriendLinksInFooter();' rel='external nofollow' data-pjax-state='')
+        i.fa-solid.fa-arrows-rotate
+    #friend-links-in-footer.footer-links
+      a.footer-item(href='http://yaoyaoman.cn/blog/' target='_blank' rel='noopener nofollow') 京墨博客社区
+      a.footer-item(href='https://678777.xyz/' target='_blank' rel='noopener nofollow') SLOVER
+      a.footer-item(href='https://myblog.wallleap.cn/' target='_blank' rel='noopener nofollow') wallleap
+      a.footer-item(href='/link/') 更多
+#footer-banner
+  .footer-banner-links
+    .footer-banner-left
+      #footer-banner-tips
+        .copyright
+          | ©2019 - 2023 By 
+          a.footer-banner-link(target='_blank' href='/' rel='external nofollow') 张洪Heo
+    .footer-banner-right
+      a.footer-banner-link(href='/rss/' data-pjax-state='') 订阅
+      a.footer-banner-link(href='/update/' data-pjax-state='') 主题
+      a.footer-banner-link(target='_blank' href='https://beian.miit.gov.cn/#/Integrated/index' rel='noopener external nofollow noreferrer noopener')=theme.footer.icp
+      a.footer-banner-link.cc(href='/cc/' title='cc协议' data-pjax-state='')
+        i.fa-regular.fa-copyright
+        i.fa-brands.fa-creative-commons-by
+        i.fa-brands.fa-creative-commons-nc
+        i.fa-brands.fa-creative-commons-nd
+#cookies-window.needEndHide.cw-hide.hide(style='display: none;')
+  .cookies-window-title 协议提醒助手
+  .cookies-window-content
+    span.cookies-tip 查看本站为你的个人隐私做出的努力
+    a.cookies-link(href='/privacy/' title='本站如何保护你的隐私' data-pjax-state='')
+      i.fas.fa-arrow-circle-right

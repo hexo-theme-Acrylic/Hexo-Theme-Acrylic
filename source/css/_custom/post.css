@@ -1,0 +1,217 @@
+#article-container a.fancybox {
+  border-bottom: 0;
+  padding: 0;
+  margin: auto;
+  display: contents;
+  width: fit-content;
+}
+
+#article-container a.fancybox img {
+  cursor: pointer;
+}
+
+/* 文章表格间距 */
+.table-wrap {
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+table th,
+table td {
+  border: var(--style-border-always);
+}
+
+table thead {
+  background: var(--heo-secondbg);
+}
+
+/* 文章中的加粗文本颜色 */
+b,
+strong {
+  color: var(--heo-lighttext);
+}
+/* 外挂标签 */
+
+.note.warning:not(.no-icon):not(.modern)::before {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  color: var(--heo-yellow);
+}
+
+.note.warning:not(.modern) {
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: var(--heo-yellow);
+  box-shadow: var(--heo-shadow-border);
+  background: var(--heo-card-bg);
+}
+#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title) {
+    text-decoration: none;
+    border-bottom: 2px solid var(--zhsher-lighttext);
+    color: var(--zhsher-fontcolor);
+    font-weight: bold;
+    padding: 0 4px;
+}
+
+#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title):hover {
+    text-decoration: none;
+    color: var(--zhsher-white);
+    background: var(--zhsher-main);
+    border-radius: 4px;
+    box-shadow: var(--zhsher-shadow-main);
+}
+/* 代码高亮 */
+#article-container figure.highlight {
+  border-radius: 8px 8px 4px 4px;
+}
+
+#article-container figure.highlight,
+#article-container pre {
+  color: var(--heo-fontcolor);
+  background: var(--heo-card-bg);
+}
+
+#article-container figure.highlight .highlight-tools {
+  background: #F1F3F7;
+  color: var(--heo-fontcolor);
+}
+
+#article-container figure.highlight .gutter pre {
+  color: var(--heo-secondtext);
+  background: var(--heo-secondbg);
+  border-right: var(--style-border-always);
+}
+
+#article-container figure.highlight figcaption a {
+  color: #a9a9a9 !important
+}
+
+#article-container .highlight:not(.js-file-line-container) {
+  background-color: var(--heo-card-bg) !important;
+  color: var(--heo-fontcolor);
+  border: var(--style-border-always);
+}
+
+#article-container figure.highlight pre span::selection {
+  background: var(--heo-main) !important;
+  color: var(--heo-white) !important;
+}
+
+/* 2.10文章代码框 */
+figure {
+    margin-top: 0.5rem !important;
+}
+
+/* 2.5文章引用 */
+blockquote {
+    border: var(--style-border);
+    background-color: var(--zhsher-secondbg);
+    color: var(--zhsher-secondtext);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 1rem 0.8rem;
+}
+
+/* 2.6文章内的表格 */
+table thead {
+    background: var(--zhsher-secondbg)
+}
+
+table td, table th {
+    padding: .3rem .6rem;
+    border: var(--style-border-always)
+}
+
+.table-wrap {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow-x: scroll
+}
+
+/* 放大原先的CC标识*/
+/*.layout #post .post-copyright:before {*/
+/*    top: -71px;*/
+/*    right: -20px;*/
+/*    font-size: 8.3em*/
+/*}*/
+.layout #post .post-copyright:before {
+    display: none;
+}
+
+/* CC图标 */
+#post .post-copyright:after {
+    position: absolute;
+    right: 22px;
+    top: -90px;
+    content: '\f25e';
+    font-size: 180px;
+    font-family: 'Font Awesome 5 Brands';
+    color: var(--zhsher-fontcolor);
+    opacity: 0.4;
+    filter: blur(5px);
+}
+
+/* 2.9文章小节标题 */
+/* 去除主题配置默认的beautify矢量图 */
+#article-container.post-content h1:before, #article-container.post-content h2:before, #article-container.post-content h3:before, #article-container.post-content h4:before, #article-container.post-content h5:before, #article-container.post-content h6:before {
+    display: none
+}
+
+/* 锚点图 */
+#article-container .headerlink::before {
+    content: "\f0c1";
+    font-family: "Font Awesome 5 Free"
+}
+/* 文章点样式 */
+#article-container ul>li:not(.tab):hover:before {
+  border-color: var(--heo-none) !important;
+}
+/* h1-h3锚点位置、透明处理 */
+#article-container h1 .headerlink {
+    float: right;
+    opacity: .08;
+    position: relative;
+    padding: 0;
+    border: none;
+    line-height: 1;
+    font-size: 2rem;
+    border-radius: 8px !important;
+    text-decoration: none;
+    font-weight: 700
+}
+#article-container h2 .headerlink {
+    float: right;
+    opacity: .08;
+    position: relative;
+    padding: 0;
+    border: none;
+    line-height: 1;
+    font-size: 1.8rem;
+    border-radius: 8px !important;
+    text-decoration: none;
+    font-weight: 700
+}
+
+#article-container h3 .headerlink {
+    float: right;
+    opacity: .08;
+    position: relative;
+    padding: 0;
+    border: none;
+    line-height: 1;
+    font-size: 1.3rem;
+    border-radius: 8px !important;
+    text-decoration: none;
+    font-weight: 700
+}
+
+/* h1-h6标题效果 */
+#article-container.post-content h1, #article-container.post-content h2, #article-container.post-content h3, #article-container.post-content h4, #article-container.post-content h5, #article-container.post-content h6 {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    border-top: 1px dashed var(--zhsher-theme-op);
+    padding-top: 1.5rem;
+    padding-left: 0
+}
+

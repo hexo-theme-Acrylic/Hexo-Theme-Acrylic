@@ -1,0 +1,8 @@
+if theme.Open_Graph_meta
+  - let contentType = is_post() ? 'article' : 'website'
+  - let metaImage = (page.cover || theme.avatar.img) ? full_url_for(page.cover || theme.avatar.img) : ''
+
+
+else
+  meta(name="description" content=page_description())
+

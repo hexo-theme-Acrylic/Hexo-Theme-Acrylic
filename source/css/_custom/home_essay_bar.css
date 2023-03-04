@@ -1,0 +1,287 @@
+#bbTimeList {
+    background: var(--heo-none);
+    color: var(--heo-fontcolor);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: var(--heo-shadow-lightblack);
+    display: flex;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+    border: var(--style-border);
+    align-items: center;
+    height: 50px;
+}
+[data-theme="dark"] #bbTimeList {
+  background: #000 !important;
+}
+#bbtalk {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#bber-talk {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.bber-logo {
+  font-size: 1.5rem;
+  line-height: 22px;
+  margin-right: 1rem;
+  transition: all 0.3s ease 0s;
+}
+
+.bber-gotobb {
+  line-height: 25px;
+  margin-left: 1rem;
+  transition: all 0.3s ease 0s;
+}
+
+#bber-talk .li-style {
+  width: 100%;
+  max-width: 100%;
+  height: 25px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.3s;
+  font-weight: 700;
+  margin: auto;
+  white-space: nowrap;
+}
+
+#bbTimeList:hover {
+  border: var(--style-border-hover);
+  box-shadow: var(--anzhiyu-shadow-main);
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-bblogo:hover {
+  opacity: 0.8;
+  color: var(--heo-theme);
+}
+#bbTimeList {
+  background: var(--heo-none);
+  color: var(--heo-fontcolor);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: var(--heo-shadow-lightblack);
+  display: flex;
+  transition: 0.3s;
+  margin-bottom: 1rem;
+  border: var(--style-border);
+  align-items: center;
+  height: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  #bbTimeList:hover {
+    border: var(--style-border-hover);
+    box-shadow: var(--heo-shadow-main);
+    background: var(--heo-card-bg);
+  }
+}
+
+
+@media screen and (min-width: 1300px) {
+  #bbTimeList {
+    margin-bottom: 1rem;
+  }
+}
+.icon-bblogo {
+    font-size: 40px !important;
+    line-height: 22px;
+    margin-right: 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@font-face {
+  font-family: "iconfont"; /* Project id 1891866 */
+  src: url('//at.alicdn.com/t/font_1891866_47sukspu18q.woff2?t=1640845578775') format('woff2'),
+       url('//at.alicdn.com/t/font_1891866_47sukspu18q.woff?t=1640845578775') format('woff'),
+       url('//at.alicdn.com/t/font_1891866_47sukspu18q.ttf?t=1640845578775') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dribbble1:before {
+  content: "\e615";
+}
+
+.icon-github1:before {
+  content: "\e61d";
+}
+
+.icon-dribbble:before {
+  content: "\e604";
+}
+
+.icon-bilibili:before {
+  content: "\e602";
+}
+
+.icon-insgram:before {
+  content: "\e603";
+}
+
+.icon-github:before {
+  content: "\e613";
+}
+
+.icon-weibo:before {
+  content: "\e632";
+}
+
+.icon-mail1:before {
+  content: "\e743";
+}
+
+.icon-pinterest:before {
+  content: "\f662";
+}
+
+.icon-mail-circle:before {
+  content: "\e6d7";
+}
+
+.icon-facebook:before {
+  content: "\eb8d";
+}
+
+.icon-home:before {
+  content: "\e601";
+}
+
+.icon-heo:before {
+  content: "\e68a";
+}
+
+.icon-CN_bilibili:before {
+  content: "\e600";
+}
+
+.icon-mail:before {
+  content: "\e7b7";
+}
+
+.icon-weixin:before {
+  content: "\e933";
+}
+
+.icon-bilibili-fill:before {
+  content: "\e93e";
+}
+
+.icon-ins:before {
+  content: "\e639";
+}
+
+.icon-bblogo:before {
+  content: "\e67a";
+}
+
+.icon-favicon:before {
+  content: "\e679";
+}
+
+.icon-heo-e:before {
+  content: "\e676";
+}
+
+.icon-heo-h:before {
+  content: "\e677";
+}
+
+.icon-heo-o:before {
+  content: "\e678";
+}
+
+.icon-ozero:before {
+  content: "\e675";
+}
+
+.icon-oshare:before {
+  content: "\e674";
+}
+
+.icon-osampling:before {
+  content: "\e673";
+}
+
+.icon-osamplingplus:before {
+  content: "\e672";
+}
+
+.icon-osa:before {
+  content: "\e671";
+}
+
+.icon-oremix:before {
+  content: "\e670";
+}
+
+.icon-opublicdomainalt:before {
+  content: "\e66f";
+}
+
+.icon-opd:before {
+  content: "\e66e";
+}
+
+.icon-onc-eu:before {
+  content: "\e66d";
+}
+
+.icon-onc-jp:before {
+  content: "\e66c";
+}
+
+.icon-ond:before {
+  content: "\e668";
+}
+
+.icon-occ-by:before {
+  content: "\e669";
+}
+
+.icon-onc:before {
+  content: "\e66a";
+}
+
+.icon-occ:before {
+  content: "\e66b";
+}

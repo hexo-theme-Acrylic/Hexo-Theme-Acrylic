@@ -1,0 +1,152 @@
+#pagination{
+    flex:auto;
+    width:100%
+}
+#pagination .page-number.current{
+    color:var(--white);
+    background:var(--heo-theme)
+}
+#pagination .page-number,#pagination a.extend,#pagination span{
+    color:var(--text-highlight-color);
+    background:var(--card-bg);
+    border-radius:var(--border-radius);
+    height:2rem;
+    width:2rem;
+    text-align:center;
+    line-height:2rem;
+    border:var(--card-border);
+    -webkit-box-shadow:var(--box-shadow);
+    -moz-box-shadow:var(--box-shadow);
+    -ms-box-shadow:var(--box-shadow);
+    -o-box-shadow:var(--box-shadow);
+    box-shadow:var(--box-shadow)
+}
+#pagination a.extend:hover,#pagination a.page-number:hover{
+    color:var(--second);
+    background:var(--main);
+    -webkit-box-shadow:var(--main-shadow);
+    -moz-box-shadow:var(--main-shadow);
+    -ms-box-shadow:var(--main-shadow);
+    -o-box-shadow:var(--main-shadow);
+    box-shadow:var(--main-shadow);
+    border-color:var(--main)
+}
+.pagination span.space{
+    border:none!important;
+    box-shadow:none!important;
+    font-weight:700;
+    background:0 0!important
+}
+#pagination a.extend.prev{
+    width:4.5rem;
+    float:left;
+    padding:0 .8rem 0 .2rem;
+}
+#pagination a.extend.next{
+    width:4.5rem;
+    float:right;
+    padding:0 .2rem 0 .8rem;
+}
+#pagination a.extend.prev .pagination-prev{
+    opacity:0;
+    display:inline;
+    color:var(--second);
+    margin-right:-2em;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -ms-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    transition:all .3s ease-in-out
+}
+#pagination a.extend.prev:hover .pagination-prev{
+    opacity:1;
+    margin-right:0
+}
+#pagination a.extend.next .pagination-next{
+    opacity:0;
+    display:inline;
+    color:var(--second);
+    margin-left:-2em;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -ms-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    transition:all .3s ease-in-out
+}
+#pagination a.extend.next:hover .pagination-next{
+    opacity:1;
+    margin-left:0
+}
+#pagination.pagination-post{
+    border-radius:var(--border-radius);
+    -webkit-transition:all .6s ease-in-out;
+    -moz-transition:all .6s ease-in-out;
+    -ms-transition:all .6s ease-in-out;
+    -o-transition:all .6s ease-in-out;
+    transition:all .6s ease-in-out
+}
+#pagination .next-post .label,#pagination .prev-post .label{
+    font-size:1rem;
+    -webkit-transition:all .6s ease-in-out;
+    -moz-transition:all .6s ease-in-out;
+    -ms-transition:all .6s ease-in-out;
+    -o-transition:all .6s ease-in-out;
+    transition:all .6s ease-in-out
+}
+#pagination .next-post .next_info,#pagination .prev-post .prev_info{
+    font-size:1.1rem;
+    -webkit-transition:all .6s ease-in-out;
+    -moz-transition:all .6s ease-in-out;
+    -ms-transition:all .6s ease-in-out;
+    -o-transition:all .6s ease-in-out;
+    transition:all .6s ease-in-out
+}
+#pagination .prev-post{
+    border-right:var(--card-border)
+}
+#pagination .next-post{
+    border-left:var(--card-border)
+}
+#pagination .next-post:hover img,#pagination .prev-post:hover img{
+    opacity:.1
+}
+#pagination .next-post:hover a,#pagination .prev-post:hover a{
+    background:var(--main);
+    color:var(--second);
+    -webkit-box-shadow:var(--main-shadow);
+    -moz-box-shadow:var(--main-shadow);
+    -ms-box-shadow:var(--main-shadow);
+    -o-box-shadow:var(--main-shadow);
+    box-shadow:var(--main-shadow)
+}
+#pagination .next-post:hover .label,#pagination .next-post:hover .next_info,#pagination .prev-post:hover .label,#pagination .prev-post:hover .prev_info{
+    opacity:0
+}
+#pagination .content{
+    opacity:0;
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    padding:0 1rem;
+    color:var(--second);
+    text-align:justify;
+    word-break:break-all;
+    -webkit-line-clamp:3;
+    display:-webkit-box;
+    overflow:hidden;
+    -webkit-box-orient:vertical;
+    -webkit-transition:all .6s ease-in-out;
+    -moz-transition:all .6s ease-in-out;
+    -ms-transition:all .6s ease-in-out;
+    -o-transition:all .6s ease-in-out;
+    transition:all .6s ease-in-out;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    transform:translateY(-50%)
+}
+#pagination .next-post:hover .content,#pagination .prev-post:hover .content{
+    opacity:1
+}

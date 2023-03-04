@@ -1,0 +1,3 @@
+figure.highlight pre .ruby .class .title, figure.highlight pre .css .rules .attribute, figure.highlight pre .string, figure.highlight pre .value, figure.highlight pre .inheritance, figure.highlight pre .header, figure.highlight pre .ruby .symbol, figure.highlight pre .xml .cdata, figure.highlight pre .special, figure.highlight pre .number, figure.highlight pre .formula {
+    color: var(--heo-green);
+}
