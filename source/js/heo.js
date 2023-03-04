@@ -561,7 +561,7 @@ var heo = {
           left: 0,
           behavior: 'smooth'
         });
-        buttonIcon.innerHTML = '<i class="fas fa-angles-right"></i>';   
+        buttonIcon.innerHTML = '<i class="heofont icon-youxiangshuangjiantou"></i>'; 
       } else {
         // 滚动条在其他位置，向右滚动一个可视宽度
         element.scrollBy({
@@ -598,7 +598,7 @@ var heo = {
       for (var j = 0; j < lmail.length; j++) {
           var mail = document.querySelector(lmail[j]);
           if (mail != null) {
-              mail.value = 'visitor@gtc.com';
+              mail.value = 'visitor@zhheo.com';
       mail.dispatchEvent(new Event('input'));
       mail.dispatchEvent(new Event('change'));
               break;

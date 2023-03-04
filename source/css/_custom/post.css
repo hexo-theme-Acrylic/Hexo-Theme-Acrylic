@@ -129,29 +129,6 @@ table td, table th {
     overflow-x: scroll
 }
 
-/* 放大原先的CC标识*/
-/*.layout #post .post-copyright:before {*/
-/*    top: -71px;*/
-/*    right: -20px;*/
-/*    font-size: 8.3em*/
-/*}*/
-.layout #post .post-copyright:before {
-    display: none;
-}
-
-/* CC图标 */
-#post .post-copyright:after {
-    position: absolute;
-    right: 22px;
-    top: -90px;
-    content: '\f25e';
-    font-size: 180px;
-    font-family: 'Font Awesome 5 Brands';
-    color: var(--zhsher-fontcolor);
-    opacity: 0.4;
-    filter: blur(5px);
-}
-
 /* 2.9文章小节标题 */
 /* 去除主题配置默认的beautify矢量图 */
 #article-container.post-content h1:before, #article-container.post-content h2:before, #article-container.post-content h3:before, #article-container.post-content h4:before, #article-container.post-content h5:before, #article-container.post-content h6:before {

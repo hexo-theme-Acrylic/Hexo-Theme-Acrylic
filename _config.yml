@@ -41,13 +41,6 @@ copy:
     enable: false
     limit_count: 50
 
-# social settings (社交圖標設置)
-# formal:
-#   icon: link || the description
-social:
-  # fab fa-github: https://github.com/xxxxx || Github
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
-
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
 # --------------------------------------
@@ -168,8 +161,8 @@ cover:
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
+  post_page: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
 
 # A simple 404 page
 error_404:
@@ -194,7 +187,7 @@ post_meta:
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
-  enable: false
+  enable: true
   post_wordcount: true
   min2read: true
   total_wordcount: true
@@ -230,17 +223,6 @@ post_copyright:
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-# Sponsor/reward
-reward:
-  enable: true
-  QR_code:
-    - img: http://photoimage.2lc.top/LightPicture/2023/02/5093124048fd6e2f.webp
-      link:
-      text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
-
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
@@ -274,14 +256,23 @@ noticeOutdate:
   message_prev: It has been
   message_next: days since the last update, the content of the article may be outdated.
 
-# Share System (分享功能)
+# ptool（文章底部工具）
 # --------------------------------------
-
-# Share.js
-# https://github.com/overtrue/share.js
-sharejs:
+ptool:
   enable: true
-  sites: facebook,twitter,wechat,weibo,qq
+
+# 打赏
+reward:
+  enable: true
+  QR_code:
+    - img: https://acrylic.leonus.cn/i/2023/02/19/ddz6gd.webp
+      link:
+      text: wechat
+    - img: https://acrylic.leonus.cn/i/2023/02/19/ddzapo.webp
+      link:
+      text: alipay
+
+
 
 # Comments System
 # --------------------------------------

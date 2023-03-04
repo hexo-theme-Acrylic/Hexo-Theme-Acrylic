@@ -161,11 +161,6 @@ a.post-meta-original {
 a.post-meta-categories {
     color: var(--heo-white) !important;
 }
-.post-meta__tags {
-    color: var(--heo-white) !important;
-    opacity: 0.4;
-    margin-right: 1rem;
-}
 @media screen and (min-width: 1300px){
 	#page-header.post-bg {
 	    height: 35rem;
