@@ -213,6 +213,10 @@ cover:
   default_cover:
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
+# 即刻短文（默认关闭）
+bbTimeList:
+  enable: false
+
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
   flink: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png

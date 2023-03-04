@@ -1,5 +1,6 @@
 #home_top
-  include ./bbTimeList.pug
+  if theme.bbTimeList.enable
+    include ./bbTimeList.pug
   .recent-top-post-group#recent-top-post-group
     .recent-post-top#recent-post-top
       if theme.hometop.banner.enable
