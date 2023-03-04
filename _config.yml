@@ -21,7 +21,6 @@ menu:
     在线工具: /tlink/ || fas fa-screwdriver-wrench
     电影推荐: /movies/ || fas fa-clapperboard
     关于本站: /about/ || fas fa-sailboat
-    音乐界面: /music/ || fas fa-sailboat
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -407,7 +406,7 @@ footer:
       - group_title: 生活
         footer_links: 
           - text: 音乐榜单
-            link: /categories/博客相关
+            link: /music/
             class: in
           - text: 我的电影
             link: /categories/生活点滴
