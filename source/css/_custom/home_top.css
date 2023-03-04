@@ -795,11 +795,9 @@ span.recent-post-top-text {
     font-size: 0.8rem !important;
     padding: 0 !important;
 }
-
 .topGroup .todayCard::after {
-    box-shadow: 0 -109px 133px -9px #006a73 inset !important;
+	box-shadow: 0 -109px 133px -9px #57178F inset !important;
 }
-
 .todayCard-title,
 .todayCard-tips,
 .topGroup .banner-button {

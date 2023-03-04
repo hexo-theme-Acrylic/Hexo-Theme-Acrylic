@@ -497,9 +497,9 @@ hometop:
     #如果为both则都填
     #如果为card
     card:
-      tips: 新品推荐
-      title: 让亚克力化作效率工具
-      bg: https://acrylic.leonus.cn/i/2023/02/19/ddz3j8.png
+      tips: 强势回归
+      title: Acrylic-Promote
+      bg: https://acrylic.leonus.cn/i/2023/03/04/ir6ary.webp
       link: https://blog.zhheo.com/p/671f98c8.html
       buttontext: 更多推荐
       icon: fas fa-circle-plus
