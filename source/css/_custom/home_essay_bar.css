@@ -1,5 +1,5 @@
 #bbTimeList {
-    background: var(--heo-none);
+    background: var(--heo-white) !important;
     color: var(--heo-fontcolor);
     padding: 0.5rem 1rem;
     border-radius: 12px;
