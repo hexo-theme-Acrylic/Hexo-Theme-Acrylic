@@ -24,9 +24,10 @@
           - let limit = theme.aside.card_archives.limit === 0 ? 0 : theme.aside.card_archives.limit || 8
           != aside_archives({ type:type, format: format, order: order, limit: limit })  
   .button-group
-    .console-btn-item 
-      a.darkmode_switchbutton(onclick='rm.switchDarkMode()',title='显示模式切换',href="javascript:void(0);")
-        i.fas.fa-moon(style='font-size: 1rem;')
+    if darkmode.enable && darkmode.button
+      .console-btn-item 
+        a.darkmode_switchbutton(onclick='rm.switchDarkMode()',title='显示模式切换',href="javascript:void(0);")
+          i.fas.fa-moon(style='font-size: 1rem;')
     #consoleHideAside.console-btn-item(onclick='heo.hideAsideBtn()',title='边栏显示控制')
       a.asideSwitch
         i.fas.fa-arrows-alt-h
