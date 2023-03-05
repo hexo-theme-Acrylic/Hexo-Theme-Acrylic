@@ -1,7 +1,3 @@
-footer:
-  framework: 框架
-  theme: 主题
-
 copy:
   success: 复制成功
   error: 复制错误
@@ -32,7 +28,7 @@ post:
     copyright_notice: 版权声明
     copyright_content: '本博客所有文章除特别声明外，均采用
       <a href="%s" target="_blank">%s</a> 许可协议。转载请注明来自 <a href="%s" target="_blank">%s</a>！'
-  recommend: 相关推荐
+  recommend: 阅读建议
   edit: 编辑
 
 search:

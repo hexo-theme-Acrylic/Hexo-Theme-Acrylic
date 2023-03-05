@@ -1,4 +1,3 @@
-/* 颜色 */
 :root {
   --heo-white: #fff;
   --heo-white-op: rgba(255, 255, 255, 0.2);
@@ -50,7 +49,7 @@
   --heo-hovertext: var(--heo-main);
   --heo-ahoverbg: #F7F7FA;
   --heo-lighttext: var(--heo-main);
-  --heo-secondtext: rgba(60, 60, 67, 0.6);
+  --heo-secondtext: rgba(60, 60, 67, 0.8);
   --heo-scrollbar: rgba(60, 60, 67, 0.4);
   --heo-card-btn-bg: #edf0f7;
   --heo-post-blockquote-bg: #fafcff;
@@ -113,6 +112,7 @@
   --style-border-dashed: 1px dashed var(--heo-theme-op);
   --style-border-forever: 2px solid var(--heo-lighttext);
 }
+
 
 :root {
   --anzhiyu-theme-op: #4259ef23;
