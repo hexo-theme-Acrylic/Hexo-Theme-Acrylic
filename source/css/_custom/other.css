@@ -159,23 +159,6 @@ html {
     margin-bottom: .25rem;
   }
 }
-
-@media screen and (max-width: 768px) {
-  #category-bar {
-    border-radius: 0;
-    background: var(--heo-background);
-    margin-bottom: 0;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 60px;
-    z-index: 1;
-    padding: 0 1rem 0 16px;
-    height: 50px;
-    margin-top: 0;
-    align-items: center;
-  }
-}
-
 #category #category-bar {
   padding: 0;
   border: none;

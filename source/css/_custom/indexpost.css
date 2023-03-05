@@ -143,24 +143,12 @@
     border-radius: 0 !important;
     width: 100%;
   }
-
-  #bbTimeList {
-    margin-top: 0;
-    border-radius: 0;
-    background: var(--heo-background);
-    padding: 0.5rem 20px;
-  }
-
   a.article-meta__categories {
     left: 12px !important;
     top: 12px !important;
     border-radius: 4px !important;
     padding: 2px 9px !important;
     font-size: 12px;
-  }
-
-  #bbTimeList {
-    margin-bottom: 0;
   }
 }
 

@@ -1258,31 +1258,6 @@ padding: 0 12px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  #bbTimeList {
-      margin-bottom: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #bbTimeList {
-      margin-top: 0;
-      border-radius: 0;
-      width: 300px;
-      background: none !important;
-      padding: 0.5rem 20px;
-  }
-  .banner-button-group {
-      display: none;
-  }
-  .tk-extras {
-      display: none !important;
-  }
-  .tk-footer {
-      display: none;
-  }
-}
-
 #sidebar #sidebar-menus>.avatar-img {
   margin-top: 80px;
 }
