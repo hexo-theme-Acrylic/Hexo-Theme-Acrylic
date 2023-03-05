@@ -37,12 +37,6 @@
       flex-direction: column; /*容器内部纵向排列*/
 
     }
-    #recent-posts > .recent-post-item .left_radius {
-        border-radius: 8px 8px 0 0;/*圆角修改*/
-    }
-    #recent-posts > .recent-post-item .right_radius {
-        border-radius: 8px 8px 0 0;/*圆角修改*/
-    }
     .recent-post-item{
         height:auto !important;/*容器高度自动*/
     }

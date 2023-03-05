@@ -48,14 +48,6 @@
     }
 }
 
-
-/*
-#recent-posts > .recent-post-item >.recent-post-info > .content:hover{
-  opacity: 0.8;
-  transition: 0.3s;
-} */
-
-
 /* 描述行数限制 */
 
 #recent-posts>.recent-post-item>.recent-post-info>.content {
