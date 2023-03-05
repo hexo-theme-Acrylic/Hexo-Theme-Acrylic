@@ -419,7 +419,7 @@ footer:
         class: in
   footer_logo:
     enable: true
-    url: https://bu.dusays.com/2023/03/03/6401a7960c0fb.webp
+    url: https://acrylic.leonus.cn/i/2023/03/05/vyviio.webp
   footer_group:
     enable: true
     footer_group_link:
@@ -645,9 +645,6 @@ tag_ui: # 留空或 index
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
 background: false
-
-# Footer Background
-footer_bg: false
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
