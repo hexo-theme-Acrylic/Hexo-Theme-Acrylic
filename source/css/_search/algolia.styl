@@ -1,14 +1,63 @@
 #algolia-search
+  hr
+    display:none
+  
+  .search-nav
+    height:40px
+    margin:0
+
   .search-dialog
+    +maxWidth768()
+      border: none
+      border-radius: 0
+
     .ais-SearchBox
-      input
-        padding: 5px 14px
+      .ais-SearchBox-form
+        height: 35px
         width: 100%
-        outline: none
-        border: 2px solid $search-color
-        border-radius: 40px
-        background: var(--search-bg)
-        color: var(--search-input-color)
+        overflow: hidden
+        margin-bottom: 10px
+        display: flex
+
+        input
+          padding: 0 14px
+          height: 100%
+          width: calc(100% - 50px)
+          outline: none
+          border: 2px solid $search-color
+          border-right: 0
+          border-radius: 40px 0 0 40px
+          background: transparent
+          color: var(--search-input-color)
+
+        input::-webkit-search-cancel-button
+            -webkit-appearance: none
+
+        button.ais-SearchBox-submit
+          display: flex
+          align-items: center
+          justify-content: center
+          height: 100%
+          width: 50px
+          border: 2px solid var(--leonus-purple)
+          border-left: 0
+          border-radius: 0 40px 40px 0
+
+          svg
+            width: 50%
+            height: 50%
+
+            path
+              fill: var(--search-input-color)
+          
+          &:hover svg path 
+            fill: var(--leonus-purple)
+            
+        span.ais-SearchBox-loadingIndicator 
+          position: absolute
+          left: 50%
+          top: 93px
+          transform: translate(-50%)
 
     .ais-Hits-list
       margin: 0
@@ -17,6 +66,7 @@
 
       a
         color: var(--search-result-title)
+        font-weight: bold
 
         &:hover
           color: $search-color
@@ -27,11 +77,12 @@
         font-weight: bold
 
     .algolia-hit-item-content
-      margin: 0 0 8px
+      margin: 0 0 5px
       word-break: break-all
 
     .ais-Pagination
-      margin: 20px 0 0
+      margin: 10px 0
+      height: 35px
       padding: 0
       text-align: center
 
@@ -54,9 +105,10 @@
 
       .ais-Pagination-item--selected
         a
-          background: $theme-paginator-color
+          background: var(--leonus-purple)
           color: #eee
           cursor: default
+          border-radius: 5px
 
       .ais-Pagination-item--disabled
         visibility: hidden
@@ -69,23 +121,70 @@
     #algolia-hits
       > div
         overflow-y: scroll
-
+        
         +minWidth768()
           max-height: calc(80vh - 240px)
 
         +maxWidth768()
-          height: calc(100vh - 260px)
+          max-height: calc(100vh - 260px)
+          max-height: calc(100dvh - 200px)
 
-    #algolia-info
-      div
-        display: inline
+/* 搜索背景模糊 */
+#search-mask 
+  backdrop-filter blur(12px)
+  -webkit-backdrop-filter blur(12px)
+  transform translateZ(0)
+  background var(--heo-maskbgdeep)
+/* 搜索输入框 */
+#algolia-search 
+  .search-dialog 
+    .ais-search-box 
+      input 
+        border-radius 1px !important
+        border var(--style-border)
+        &:focus 
+          border var(--style-border-hover)
+        &::placeholder 
+          opacity 0.6
+#algolia-input-panel 
+  margin-bottom 8px
 
-      .algolia-poweredBy
-        float: right
-
-.apple
-  #algolia-search
-    #algolia-hits
-      > div
-        +maxWidth768()
-          height: calc(90vh - 260px)
+#algolia-search 
+  .search-dialog 
+    .ais-Hits-list 
+      li 
+        &:before 
+          display none !important
+/* 搜索提示文字 */
+#algolia-tips 
+  padding-top 12px
+  color var(--heo-secondtext)
+  right 0
+  margin auto
+  i 
+    font-size 22px
+.algolia-tips-text 
+  margin-left 0.4rem
+/* 搜索结果间距 */
+#algolia-search-results 
+  padding-top 8px
+#algolia-search 
+  .search-dialog 
+    .ais-hits--item 
+      &.algolia-hit-item 
+        padding-left 0rem
+        font-weight bold
+        &:before 
+          display none
+        em 
+          color var(--heo-theme)
+          font-style normal
+    .ais-pagination 
+      &.pagination 
+        margin 0.2rem 0 0
+        .ais-pagination--item 
+          &.current 
+            a 
+              border-radius 4px
+              background var(--heo-main)
+              color var(--heo-white)
