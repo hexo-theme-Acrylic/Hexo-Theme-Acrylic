@@ -12,18 +12,6 @@
   border-radius: 12px;
 }
 
-#post .post-copyright:after {
-  position: absolute;
-  right: 22px;
-  top: -77px;
-  content: '\f25e';
-  font-size: 180px;
-  font-family: 'Font Awesome 5 Brands';
-  color: var(--heo-fontcolor);
-  opacity: 0.4;
-  filter: blur(7px);
-}
-
 @media screen and (max-width: 768px) {
   #post .post-copyright {
     padding: 1rem 1.3rem;
@@ -912,4 +900,7 @@ figure.gallery-group:hover .gallery-group-name::after {
 .article-sort-item-title:hover {
   transform: translateX(0px);
   color: var(--heo-hovertext);
+}
+a.post-copyright__original.post-meta-tags:nth-of-type(n+2) {
+    display: none;
 }
