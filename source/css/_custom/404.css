@@ -258,10 +258,6 @@ html {
     align-content: center;
     padding-top: 0.5rem;
 }
-
-.aside-list .aside-list-item .content time {
-    display: none;
-}
 .error {
     display: flex;
     flex-direction: column;

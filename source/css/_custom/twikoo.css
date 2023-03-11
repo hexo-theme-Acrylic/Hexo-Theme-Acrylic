@@ -36,7 +36,7 @@ div#post-comment {
 }
 a {
   background-color: transparent;
-  color: var(--heo-fontcolor);
+  color: var(--heo-fontcolor) ;
   text-decoration: none;
   transition: all 0.2s ease 0s;
   overflow-wrap: break-word;
