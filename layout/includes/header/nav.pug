@@ -25,11 +25,11 @@ nav#nav.show
                           span.back-menu-item-text=i.text
       if nav.logo.enable
         a#site-name(href='/' title='返回博客主页')
-          if nav.logo.class == i_class
+          if nav.logo.class == "i_class"
             i(class=`${nav.logo.custom}`)
-          else if nav.logo.class == img
+          else if nav.logo.class == "img"
             i(style=`background-image: url('${url_for(nav.logo.custom)}')`)
-          else if nav.logo.class == text
+          else if nav.logo.class == "text"
             i=nav.logo.custom
     #page-name-mask
       #page-name

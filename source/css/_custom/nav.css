@@ -1318,3 +1318,6 @@ padding: 0 12px;
 #page-header .post-bg {
   overflow: hidden !important;
 }
+.menus_item_child a{
+  color: var(--heo-fontcolor) !important;
+}
