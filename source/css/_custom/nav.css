@@ -856,9 +856,7 @@ padding: 0 12px;
   opacity: 0.6;
 }
 
-
 /* 中控台 */
-
 #console {
   display: flex;
   position: fixed;
@@ -897,6 +895,7 @@ padding: 0 12px;
   transition-delay: 0.1s;
 }
 
+
 #console .console-card-group-left {
   margin-right: 0.5rem;
   width: 40%;
@@ -912,44 +911,70 @@ padding: 0 12px;
   overflow: hidden;
 }
 
-@media screen and (max-width: 1300px) {
+/* @media screen and (max-width: 1300px) {
   #console .console-card-group {
-      justify-content: center;
+    justify-content: center;
   }
-  #console .console-card-group-left {
-      display: none;
-  }
-  #console .console-card-group-right {
-      width: 100%;
-      margin: 0;
-  }
-  #consoleMusic {
-      display: none;
-  }
-  #consoleCommentBarrage {
-      display: none;
-  }
-}
 
-@media screen and (max-width: 768px) {
+  #console .console-card-group-left {
+    display: none;
+  }
+
+  #console .console-card-group-right {
+    width: 100%;
+    margin: 0;
+  }
+
+  #consoleMusic {
+    display: none;
+  }
+
+  #consoleCommentBarrage {
+    display: none;
+  }
+} */
+ 
+/* @media screen and (max-width: 768px) {
   #console .console-card-group {
-      display: none;
+    display: none;
   }
+
   #consoleHideAside {
-      display: none;
+    display: none;
   }
-}
+} */
 
 @media screen and (max-height: 800px) {
-  #console .console-card-group {
-      display: none;
+  #console #card-newest-comments {
+    height: 80vh;
   }
-  #consoleMusic {
-      display: none;
+  #console .console-card {
+    padding: 30px;
   }
-  #consoleCommentBarrage {
-      display: none;
+  #card-newest-comments .aside-list-item:nth-last-of-type(-n+2) {
+    display: none;
   }
+  #console .console-card-group-right {
+    height: 80vh;
+  }
+  #console .console-card.history .card-archive-list li.card-archive-list-item {
+    display: none;
+  }
+  #console .console-card.history .card-archive-list li.card-archive-list-item:nth-last-of-type(-n+4) {
+    display: block !important;
+  }
+  #console .console-card.tags {
+    height: 40vh;
+  }
+  #console .button-group .console-btn-item {
+    height: 10vh;
+  }
+  #console .close-btn {
+    right: 32px;
+    top: 33px;
+    z-index: 1000;
+  }
+
 }
 
 #console .console-card {
@@ -958,12 +983,14 @@ padding: 0 12px;
   overflow: hidden;
   border: var(--style-border);
   box-shadow: var(--heo-shadow-border);
-  padding: 40px;
+  padding: 30px;
+  height: 40vh
 }
 
 #console .console-card.tags {
-  height: calc(100% - 172px);
+  margin-bottom: 8px !important;
 }
+
 
 #console .console-mask {
   background: var(--heo-maskbgdeep);
@@ -1008,9 +1035,9 @@ padding: 0 12px;
 }
 
 #card-newest-comments .aside-list-item .name {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
 }
 
 #console .author-content-item-tips {
@@ -1058,7 +1085,7 @@ padding: 0 12px;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 1.5rem;
+  margin: 34vh 16vh;
 }
 
 #console .button-group {
@@ -1096,7 +1123,7 @@ padding: 0 12px;
 }
 
 #console .button-group .console-btn-item.on a {
-  background: var(--heo-orange);
+  background: var(--heo-blue);
   color: var(--heo-white);
   transition: 0.3s;
 }
@@ -1140,26 +1167,27 @@ padding: 0 12px;
   height: 35px;
   position: fixed;
   right: 100px;
-  top: 50px;
+  top: 25px;
   font-size: 35px;
   color: var(--font-color);
   cursor: pointer;
   transition: 0.3s;
   display: flex;
+  z-index: 1000;
 }
 
 #console .close-btn:hover {
   color: var(--heo-hovertext);
 }
 
-#console .console-card.history {
+/* #console .console-card.history {
   margin-top: 8px;
   padding: 0;
   background: none;
   box-shadow: none;
   border: none;
   overflow: hidden;
-}
+} */
 
 #console .console-card.history .item-headline {
   display: none;
@@ -1170,6 +1198,7 @@ padding: 0 12px;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 #console .console-card.history .card-archive-list li.card-archive-list-item {
@@ -1199,7 +1228,6 @@ padding: 0 12px;
 #console .button-group i {
   font-size: 1rem;
 }
-
 @font-face {
   font-family: "iconfont";
   /* Project id 3570527 */

@@ -32,7 +32,7 @@ nav:
             class: out
   logo: 
     enable: true
-    class: #i_class/text/img 
+    class: i_class #i_class/text/img 
     custom: heoicon icon-heologo #Heo/https://xxx.com/logo.png
   fps_enable: true
   menu:
@@ -59,6 +59,8 @@ nav:
     random: true
     console: true
     totop: true
+# 中控台 (console)
+# --------------------------------------
 
 
 # Code Blocks (代碼相關)
