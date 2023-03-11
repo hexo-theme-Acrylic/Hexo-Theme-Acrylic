@@ -1,6 +1,6 @@
-if theme.menu
+if theme.nav.menu
   .menus_items
-    each value, label in theme.menu
+    each value, label in theme.nav.menu
       if typeof value !== 'object'
         .menus_item
           - const valueArray = value.split('||')
