@@ -17,6 +17,12 @@
 
 ### Git 安裝
 
+在博客根目录里安装稳定版【推荐】
+
+```powershell
+git clone -b main https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git themes/Acrylic
+```
+
 在博客根目录里安装最新版【推荐】
 
 ```powershell
