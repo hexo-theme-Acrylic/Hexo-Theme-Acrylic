@@ -44,5 +44,15 @@
       a.FPS-switch
         i.fas.fa-gauge
   .console-mask(onclick='heo.hideConsole()',href="javascript:void(0);")
-  
-include ./third-party/newest-comments/twikoo-comment.pug
+
+- let { use } = theme.comments
+
+if use
+  - let forum,apiKey,userRepo
+  case use[0]
+    when 'Waline'
+      include ./third-party/newest-comments/waline.pug
+    when 'Twikoo'
+      include ./third-party/newest-comments/twikoo-comment.pug
+    when 'Artalk'
+      include ./third-party/newest-comments/artalk.pug  

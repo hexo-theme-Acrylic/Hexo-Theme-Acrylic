@@ -406,6 +406,13 @@
   font-size: 1rem;
 }
 .aside-list {
-    width: 500px;
+    width: 520px;
 	left: 00px;
 }
+#console .aside-list::-webkit-scrollbar {
+  display:none;
+}
+#console .aside-list {
+  overflow: hidden;
+}
+    
