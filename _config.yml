@@ -128,7 +128,7 @@ avatar:
 # about(关于页面)
 # --------------------------------------
 about:
-  reward: #关于打赏
+  reward: #关于打赏模块开启
     enable: false
   info:
     right:
