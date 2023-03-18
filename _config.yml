@@ -73,14 +73,6 @@ highlight_shrink: false # true: shrink the code blocks / false: expand the code 
 highlight_height_limit: false # unit: px
 code_word_wrap: false
 
-# copy settings
-# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
-copy:
-  enable: false
-  copyright:
-    enable: false
-    limit_count: 50
-
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
 # --------------------------------------
@@ -539,44 +531,12 @@ hometop:
       class: 
       number: 6
 
-# Analysis
-# --------------------------------------
-
-# Baidu Analytics
-# https://tongji.baidu.com/web/welcome/login
-baidu_analytics:
-
-# Google Analytics
-# https://analytics.google.com/analytics/web/
-google_analytics:
-
-# CNZZ Analytics
-# https://www.umeng.com/
-cnzz_analytics:
-
-# Cloudflare Analytics
-# https://www.cloudflare.com/zh-tw/web-analytics/
-cloudflare_analytics:
-
-# Microsoft Clarity
-# https://clarity.microsoft.com/
-microsoft_clarity:
-
 # Insert ads manually (手動插入廣告)
 # --------------------------------------
 # ad:
 #   index:
 #   aside:
 #   post:
-
-# Verification (站長驗證)
-# --------------------------------------
-
-site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
@@ -940,17 +900,9 @@ CDN:
     # algolia_search_v4:
     # instantsearch_v4:
     # pjax:
-    # gitalk:
-    # gitalk_css:
-    # blueimp_md5:
-    # valine:
-    # disqusjs:
-    # disqusjs_css:
     twikoo: https://cdn2.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
     # waline_js:
     # waline_css:
-    # sharejs:
-    # sharejs_css:
     # mathjax:
     # katex:
     # katex_copytex:

@@ -38,9 +38,6 @@ link(rel="canonical" href=urlNoIndex())
 //- 預解析
 !=partial('includes/head/preconnect', {}, {cache: true})
 
-//- 網站驗證
-!=partial('includes/head/site_verification', {}, {cache: true})
-
 //- PWA
 if (theme.pwa && theme.pwa.enable)
   !=partial('includes/head/pwa', {}, {cache: true})
@@ -54,9 +51,6 @@ if (theme.snackbar && theme.snackbar.enable)
 
 if theme.fancybox
   link(rel='stylesheet' href=url_for(theme.asset.fancybox_css_v4) media="print" onload="this.media='all'")
-
-//- analytics
-!=partial('includes/head/analytics', {}, {cache: true})
 
 //- font
 if theme.blog_title_font &&　theme.blog_title_font.font_link
