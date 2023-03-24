@@ -6,6 +6,16 @@
 # 这是Dev版!
 # -------------------------------------
 
+# 图片 (image)
+# -------------------------------------
+
+# 网站图标 (Favicon)
+favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
+
+# Avatar (头像)
+avatar:
+  img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
+
 # 导航栏 (nav)
 # ------------------------------------
 nav:
@@ -59,9 +69,18 @@ nav:
     random: true
     console: true
     totop: true
+# 手机边栏 (sidebar)
+# --------------------------------------
+sidebar: 
+  list_group: true
+  tag: true
+
 # 中控台 (console)
 # --------------------------------------
-
+console:
+  comment: true
+  tag: true
+  archives: true 
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -74,7 +93,7 @@ highlight_height_limit: false # unit: px
 code_word_wrap: false
 
 # search (搜索)
-# see https://butterfly.js.org/posts/ceeb73f/#搜索系統
+# see 
 # --------------------------------------
 
 # Algolia search
@@ -107,16 +126,6 @@ katex:
   per_page: false
   hide_scrollbar: true
 
-# Image (圖片設置)
-# --------------------------------------
-
-# Favicon（网站图标）
-favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
-
-# Avatar (头像)
-avatar:
-  img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
-  effect: false
 
 # about(关于页面)
 # --------------------------------------
@@ -156,18 +165,6 @@ about:
   sllctitle: #为什么建站？
   xllc: #创建这个站的时候，想要就是能够有一个自己能够积累知识、积累兴趣的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。分享这件事我从很早就开始了，起初做的微信公众号，现在做的网站。因为我比较喜欢研究数码和软件，想要探究在互联网上的事物是如何被创造和发展。网络给我带来了非常多的知识和眼界，我也想力所能及的分享一些我生活的琐碎知识。与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有技能的教程干货、有生活上的吐槽和妙招、有话题上的思考和想法。一般我研究什么、发现了什么都会分享在这里。这些就是创造这个小站的本意，也是我分享生活的方式。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
 
-sidebars: 
-  href:
-    url1: https://zhheo.com/
-    url2: https://plog.zhheo.com/
-    url3: https://apps.zhheo.com/
-  img1: 
-  img2: 
-  img3: 
-  img4: 
-  ptn2: 主页
-  ptn1: 图片博客
-  ptn3: 开发博客
 
 # 下面的一个都别改
 disable_top_img: false
