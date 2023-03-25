@@ -58,11 +58,10 @@ nav#nav.show
         #nav-console.nav-button
           a.console_switchbutton(onclick='heo.showConsole()' title='显示中控台' href='javascript:void(0);' rel='external nofollow')
             i.fas.fa-bars-progress
-      if nav.right_button.totop
-        #nav-totop.nav-button(onclick='btf.scrollToDest(0, 500)')
-          a.totopbtn(data-pjax-state='')
-            i.fas.fa-arrow-up
-            span#percent 0
+      #nav-totop.nav-button(onclick='btf.scrollToDest(0, 500)')
+        a.totopbtn(data-pjax-state='')
+          i.fas.fa-arrow-up
+          span#percent 0
       #toggle-menu
         a.site-page(data-pjax-state='')
           i.fas.fa-bars.fa-fw

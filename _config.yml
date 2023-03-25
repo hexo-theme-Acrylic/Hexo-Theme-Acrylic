@@ -12,9 +12,33 @@
 # 网站图标 (Favicon)
 favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 
-# Avatar (头像)
+# 头像 (Avatar)
 avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
+
+# 封面 (cover)
+cover:
+  # display the cover or not (是否显示文章封面)
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  # the position of cover in home page (封面显示的位置)
+  # left/right/both
+  position: both
+  # When cover is not set, the default cover is displayed (当沒有设置cover時，默认的封面顯示)
+  default_cover:
+    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
+
+# Replace Broken Images (替換无法显示的圖片)
+error_img:
+  flink: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
+  post_page: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
+
+# A simple 404 page
+error_404:
+  enable: true
+  subtitle: '请尝试站内搜索寻找文章'
+  background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
 
 # 导航栏 (nav)
 # ------------------------------------
@@ -68,7 +92,7 @@ nav:
     travelling: true
     random: true
     console: true
-    totop: true
+
 # 手机边栏 (sidebar)
 # --------------------------------------
 sidebar: 
@@ -176,28 +200,6 @@ tag_per_img: false
 category_img: false
 category_per_img: false
 
-cover:
-  # display the cover or not (是否顯示文章封面)
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
-  # the position of cover in home page (封面顯示的位置)
-  # left/right/both
-  position: both
-  # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
-  default_cover:
-    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-
-# Replace Broken Images (替換無法顯示的圖片)
-error_img:
-  flink: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
-  post_page: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
-
-# A simple 404 page
-error_404:
-  enable: true
-  subtitle: '请尝试站内搜索寻找文章'
-  background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
 
 post_meta:
   page: # Home Page
@@ -914,7 +916,7 @@ CDN:
     # snackbar_css:
     # snackbar:
     # activate_power_mode:
-    # fontawesomeV6:
+    fontawesomeV6: https://cdn1.tianli0.top/npm/@fortawesome/fontawesome-free/css/all.min.css
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
