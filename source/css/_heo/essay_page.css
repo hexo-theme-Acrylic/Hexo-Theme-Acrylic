@@ -8,7 +8,7 @@
   display: none;
 }
 #web_bg ~ .page:has(#essay_page) {
-  background: var(--anzhiyu-background);
+  background: var(--heo-background);
 }
 #bber .bber-container-img {
   display: flex;
@@ -42,7 +42,7 @@
   order: 0;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--anzhiyu-fontcolor);
+  color: var(--heo-fontcolor);
   width: 100%;
   line-height: 1.38;
   border-radius: 12px;
@@ -72,8 +72,8 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  background: var(--anzhiyu-card-bg);
-  box-shadow: var(--anzhiyu-shadow-border);
+  background: var(--heo-card-bg);
+  box-shadow: var(--heo-shadow-border);
   margin-right: 2%;
 }
 #bber .timeline #waterfall.show {
@@ -107,7 +107,7 @@
   display: flex;
   position: relative;
   margin: 8px 0px;
-  border: 1px dashed var(--anzhiyu-theme-op);
+  border: 1px dashed var(--heo-theme-op);
   width: 100%;
 }
 
@@ -118,9 +118,9 @@
 
 #bber > section > ul > li > div .bber-info-time,
 #bber > section > ul > li > div .bber-info-from {
-  color: var(--anzhiyu-fontcolor);
+  color: var(--heo-fontcolor);
   font-size: 0.7rem;
-  background-color: var(--anzhiyu-gray-op);
+  background-color: var(--heo-gray-op);
   padding: 0px 8px;
   border-radius: 20px;
   cursor: default;
@@ -160,8 +160,8 @@
   margin-right: 3px;
 }
 #bber .bber-content-link:hover {
-  background-color: var(--anzhiyu-main);
-  color: var(--anzhiyu-white);
+  background-color: var(--heo-main);
+  color: var(--heo-white);
 }
 #bber .bber-music {
   width: 100%;
@@ -170,7 +170,7 @@
   border-radius: 8px;
   overflow: hidden;
   border: var(--style-border-always);
-  background: var(--anzhiyu-secondbg);
+  background: var(--heo-secondbg);
 }
 #bber .aplayer {
   margin: 0;
@@ -192,7 +192,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   margin: 0;
-  color: var(--anzhiyu-fontcolor);
+  color: var(--heo-fontcolor);
 }
 
 #bber .aplayer .aplayer-info .aplayer-controller {
@@ -205,7 +205,7 @@
   position: initial;
 }
 #bber .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
-  background: var(--anzhiyu-gray);
+  background: var(--heo-gray);
   height: 8px;
   border-radius: 12px;
   transition: 0.3s;
@@ -392,9 +392,9 @@
 [data-theme="dark"] #bber .bber-music .aplayer,
 [data-theme="dark"] #bber .aplayer .aplayer-lrc:before,
 [data-theme="dark"] #bber .aplayer .aplayer-lrc:after {
-  background: var(--anzhiyu-card-bg);
-  color: var(--anzhiyu-fontcolor);
+  background: var(--heo-card-bg);
+  color: var(--heo-fontcolor);
 }
 #bber .aplayer .aplayer-lrc p {
-  color: var(--anzhiyu-fontcolor);
+  color: var(--heo-fontcolor);
 }

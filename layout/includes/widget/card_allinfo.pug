@@ -1,0 +1,27 @@
+.card-widget.card-tags.card-archives.card-webinfo.card-allinfo
+  - let tagLimit = theme.aside.card_tags.limit === 0 ? 0 : theme.aside.card_tags.limit || 40
+  if theme.aside.card_tags.color
+    .card-tag-cloud!= cloudTags({source: site.tags})
+  else
+    .card-tag-cloud!= tagcloud({min_font: 1.1, max_font: 1.5, amount: tagLimit , color: true, start_color: '#999', end_color: '#99a9bf', unit: 'em'})
+  hr
+  .webinfo
+    if theme.aside.card_webinfo.post_count
+      .webinfo-item
+        .webinfo-item-title
+          i.item-icon.fas.fa-file-alt
+          .item-name= _p('aside.card_webinfo.article_name') + " :"
+        .item-count= site.posts.length
+    if theme.runtimeshow.enable
+      .webinfo-item
+        .webinfo-item-title
+          i.item-icon.fas.fa-stopwatch
+          .item-name= _p('aside.card_webinfo.runtime.name') + " :"
+        .item-count#runtimeshow(data-publishDate=date_xml(theme.runtimeshow.publish_date))
+    if theme.wordcount.enable && theme.wordcount.total_wordcount
+      .webinfo-item
+        .webinfo-item-title
+          i.item-icon.fas.fa-font
+          .item-name=_p('aside.card_webinfo.site_wordcount') + " :"
+        .item-count=totalcount(site)
+    

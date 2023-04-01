@@ -26,7 +26,4 @@
     .sticky_layout
       if showToc
         include ./card_post_toc.pug
-      .card-widget.card-tags.card-webinfo
-        !=partial('includes/widget/card_tags', {}, {cache: true})
-        hr
-        !=partial('includes/widget/card_webinfo', {}, {cache: true})
+      !=partial('includes/widget/card_allinfo', {}, {cache: true})

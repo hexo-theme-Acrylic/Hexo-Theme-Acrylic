@@ -26,14 +26,14 @@
   each item in theme.footer.footer_group.footer_group_link
     .footer-group
         h3.footer-title=item.group_title
-            .footer-links
-              each i in item.footer_links
-                if i.class == "in"
-                  a.footer-item(href=`${i.link}`)=i.text
-                else if i.class == "out"
-                  a.footer-item(target='_blank', href=`${i.link}`)=i.text
-                else 
-                  a.footer-item(href=`${i.link}`)=i.text
+        .footer-links
+          each i in item.footer_links
+            if i.class == "in"
+              a.footer-item(href=`${i.link}`)=i.text
+            else if i.class == "out"
+              a.footer-item(target='_blank', href=`${i.link}`)=i.text
+            else 
+              a.footer-item(href=`${i.link}`)=i.text
   .footer-group
     .footer-title-group
       h3.footer-title 友链

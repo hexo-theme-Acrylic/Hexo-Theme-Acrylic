@@ -1,1 +1,5 @@
-.category-lists!= list_categories()
+.category-lists
+      .category-title.is-center
+        | 分类 - 
+        span.category-amount 11
+      .tag-cloud-list.is-center!=pagecloud({source: site.categories})

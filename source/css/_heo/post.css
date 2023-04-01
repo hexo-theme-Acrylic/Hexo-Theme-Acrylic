@@ -46,20 +46,20 @@ strong {
   box-shadow: var(--heo-shadow-border);
   background: var(--heo-card-bg);
 }
-#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title) {
+#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title):not(.tags-group-icon){
     text-decoration: none;
-    border-bottom: 2px solid var(--zhsher-lighttext);
-    color: var(--zhsher-fontcolor);
+    border-bottom: 2px solid var(--heo-lighttext);
+    color: var(--heo-fontcolor);
     font-weight: bold;
     padding: 0 4px;
 }
 
-#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title):hover {
+#article-container a:not([data-fancybox]):not(.headerlink):not(.cf-article-title):hover:not(.tags-group-icon) {
     text-decoration: none;
-    color: var(--zhsher-white);
-    background: var(--zhsher-main);
+    color: var(--heo-white);
+    background: var(--heo-main);
     border-radius: 4px;
-    box-shadow: var(--zhsher-shadow-main);
+    box-shadow: var(--heo-shadow-main);
 }
 /* 代码高亮 */
 #article-container figure.highlight {
@@ -106,8 +106,8 @@ figure {
 /* 2.5文章引用 */
 blockquote {
     border: var(--style-border);
-    background-color: var(--zhsher-secondbg);
-    color: var(--zhsher-secondtext);
+    background-color: var(--heo-secondbg);
+    color: var(--heo-secondtext);
     border-radius: 8px;
     margin: 1rem 0;
     padding: 1rem 0.8rem;
@@ -115,7 +115,7 @@ blockquote {
 
 /* 2.6文章内的表格 */
 table thead {
-    background: var(--zhsher-secondbg)
+    background: var(--heo-secondbg)
 }
 
 table td, table th {
@@ -187,7 +187,7 @@ table td, table th {
 #article-container.post-content h1, #article-container.post-content h2, #article-container.post-content h3, #article-container.post-content h4, #article-container.post-content h5, #article-container.post-content h6 {
     font-size: 1.6rem;
     line-height: 1.6;
-    border-top: 1px dashed var(--zhsher-theme-op);
+    border-top: 1px dashed var(--heo-theme-op);
     padding-top: 1.5rem;
     padding-left: 0
 }

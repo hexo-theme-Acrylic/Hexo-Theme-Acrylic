@@ -2,15 +2,17 @@ extends includes/layout.pug
 
 block content
   #page
-    if top_img === false && page.type != 'music'
-      h1.page-title= page.title
+    //- if top_img === false && page.type != 'music'
+    //-   h1.page-title= page.title
 
     case page.type
       when 'tags'
+        h1.page-title= page.title
         include includes/page/tags.pug
       when 'link'
         include includes/page/flink.pug
       when 'categories'
+        h1.page-title= page.title
         include includes/page/categories.pug
       when 'essay'
         include includes/page/essay.pug
@@ -19,6 +21,7 @@ block content
       when 'music'
         include includes/page/music.pug
       default
+        h1.page-title= page.title
         include includes/page/default-page.pug
 
     if page.comments !== false && theme.comments && theme.comments.use

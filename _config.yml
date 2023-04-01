@@ -68,7 +68,7 @@ nav:
     enable: true
     class: i_class #i_class/text/img 
     custom: heoicon icon-heologo #Heo/https://xxx.com/logo.png
-  fps_enable: true
+  fps_enable: false
   menu:
     文库:
       文章列表: /archives/ || fas fa-box-archive

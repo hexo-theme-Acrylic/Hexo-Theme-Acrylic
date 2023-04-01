@@ -6,13 +6,14 @@ if hexo-config('css_prefix')
 @import 'var'
 @import '_global/*'
 @import '_highlight/highlight'
-@import '_page/*'
-@import '_layout/*'
+// @import '_page/*'
+// @import '_layout/*'
 @import '_tags/*'
 @import '_mode/*'
 // css样式集合
-@import '_custom/*.css'
-// @import './main.css'
+// @import '_custom/*.css'
+@import './_heo/*.css'
+@import './main.css'
 
 // search
 if hexo-config('algolia_search.enable')
