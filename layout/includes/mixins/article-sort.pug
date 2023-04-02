@@ -3,15 +3,14 @@ mixin articleSort(posts)
     - var year
     - posts.each(function (article) {
       - let tempYear = date(article.date, 'YYYY')
-      - let no_cover = article.cover === false || !theme.cover.archives_enable ? 'no-article-cover' : ''
       - let title = article.title || _p('no_title')
       if tempYear !== year
         - year = tempYear
         .article-sort-item.year= year
-      .article-sort-item(class=no_cover)
-        if article.cover && theme.cover.archives_enable
+      .article-sort-item
+        if article.cover
           a.article-sort-item-img(href=url_for(article.path) title=title)
-            img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
+            img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.default_img)}'`)
         .article-sort-item-info
           .article-sort-item-time
             i.far.fa-calendar-alt

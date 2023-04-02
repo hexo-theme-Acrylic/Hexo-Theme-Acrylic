@@ -5,9 +5,7 @@ div
   if theme.translate.enable
     script(src=url_for(theme.asset.translate))
 
-  if theme.medium_zoom
-    script(src=url_for(theme.asset.medium_zoom))
-  else if theme.fancybox
+  if theme.fancybox
     script(src=url_for(theme.asset.fancybox_v4))
 
   if theme.instantpage
@@ -30,7 +28,7 @@ div
   else if theme.local_search.enable
     script(src=url_for(theme.asset.local_search))
 
-  if theme.preloader
+  if theme.loading.enable
     != partial("includes/loading/loading-js", {}, { cache: true })
 
   .js-pjax
@@ -42,13 +40,6 @@ div
     if commentsJsLoad
       include ./third-party/comments/js.pug
 
-  != partial("includes/third-party/prismjs", {}, { cache: true })
-
-  if theme.aside.enable && theme.newest_comments.enable
-    if theme.pjax.enable
-      != partial("includes/third-party/newest-comments/index", {}, { cache: true })
-    else if (!is_post() && page.aside !== false)
-      != partial("includes/third-party/newest-comments/index", {}, { cache: true })
 
   != fragment_cache('injectBottom', function(){return injectHtml(theme.inject.bottom)})
 

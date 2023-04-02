@@ -53,7 +53,6 @@
             - site.posts.sort(sort, -1).limit(postLimit).each(function(article){
               - let link = article.link || article.path
               - let title = article.title || _p('no_title')
-              - let no_cover = article.cover === false || !theme.cover.aside_enable ? 'no-cover' : ''
               - let post_cover = article.cover
               .recent-post-item
                 .post_cover.left_radius
@@ -67,7 +66,6 @@
             - site.posts.sort(sort, -1).limit(postLimit).each(function(article){
               - let link = article.link || article.path
               - let title = article.title || _p('no_title')
-              - let no_cover = article.cover === false || !theme.cover.aside_enable ? 'no-cover' : ''
               - let post_cover = article.cover
               .recent-post-item
                 .post_cover.left_radius

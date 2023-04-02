@@ -39,6 +39,7 @@ nav#nav.show
       !=partial('includes/header/menu_item', {}, {cache: true})
     #nav-left
       if nav.fps_enable
+        script(src="/js/fps.js") 
         #fps-group.show
           #fps
           span.fpsText FPS

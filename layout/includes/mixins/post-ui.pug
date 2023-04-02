@@ -4,20 +4,15 @@ mixin postUI(posts)
       -
         let link = article.link || article.path
         let title = article.title || _p('no_title')
-        const position = theme.cover.position
-        let leftOrRight = position === 'both'
-          ? index%2 == 0 ? 'left' : 'right'
-          : position === 'left' ? 'left' : 'right'
         let post_cover = article.cover
-        let no_cover = article.cover === false || !theme.cover.index_enable ? 'no-cover' : ''
       -
-      if post_cover && theme.cover.index_enable
-        .post_cover(class=leftOrRight)
+      if post_cover
+        .post_cover(class='both')
           each item, index in article.categories.data
             a(href=url_for(item.path)).article-meta__categories #[=item.name]
           a(href=url_for(link) title=title)
-            img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'` alt=title)
-      .recent-post-info(class=no_cover)
+            img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.default_img) + `'` alt=title)
+      .recent-post-info
         a.article-title(href=url_for(link) title=title)= title
         .article-meta-wrap
           if (is_home() && (article.top || article.sticky > 0))

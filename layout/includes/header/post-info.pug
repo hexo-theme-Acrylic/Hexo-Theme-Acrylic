@@ -2,7 +2,7 @@
 #post-info
   #post-firstinfo
     .meta-firstline
-      a.post-meta-original(title='该文章为原创文章，注意版权协议', href='/cc/', data-pjax-state) 原创
+      a.post-meta-original(title='该文章为原创文章，注意版权协议', href=`${theme.copyright.link}`, data-pjax-state) 原创
       if (theme.post_meta.post.categories && page.categories.data.length > 0)
         each item, index in page.categories.data
           span.post-meta-categories
@@ -67,42 +67,12 @@
               block
         
         case whichCount
-          when 'Disqus'
-            +countBlock
-              span.disqus-comment-count
-                a(href=full_url_for(page.path) + '#disqus_thread')
-                  i.fa-solid.fa-spinner.fa-spin
-          when 'Disqusjs'
-            +countBlock
-              a(href=full_url_for(page.path) + '#disqusjs')
-                span.disqus-comment-count(data-disqus-url=full_url_for(page.path))
-                  i.fa-solid.fa-spinner.fa-spin
-          when 'Valine'
-            +countBlock
-              a(href=url_for(page.path) + '#post-comment' itemprop="discussionUrl")
-                span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
-                  i.fa-solid.fa-spinner.fa-spin
           when 'Waline'
             +countBlock
               a(href=url_for(page.path) + '#post-comment')
                 span.waline-comment-count(data-path=url_for(page.path))
                   i.fa-solid.fa-spinner.fa-spin
-          when 'Gitalk'
-            +countBlock
-              a(href=url_for(page.path) + '#post-comment')
-                span.gitalk-comment-count
-                  i.fa-solid.fa-spinner.fa-spin
           when 'Twikoo'
             +countBlock
               a(href=url_for(page.path) + '#post-comment', data-pjax-state)
                 span#twikoo-count
-          when 'Facebook Comments'
-            +countBlock
-              a(href=url_for(page.path) + '#post-comment')
-                span.fb-comments-count(data-href=urlNoIndex())
-                  i.fa-solid.fa-spinner.fa-spin
-          when 'Remark42'
-            +countBlock
-              a(href=url_for(page.path) + '#post-comment')
-                span.remark42__counter(data-url=urlNoIndex())
-                  i.fa-solid.fa-spinner.fa-spin

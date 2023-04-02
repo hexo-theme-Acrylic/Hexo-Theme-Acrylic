@@ -15,30 +15,37 @@ favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 # 头像 (Avatar)
 avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
-
+default_img:
+default_title:
+default_text:
 # 封面 (cover)
-cover:
-  # display the cover or not (是否显示文章封面)
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
-  # the position of cover in home page (封面显示的位置)
-  # left/right/both
-  position: both
-  # When cover is not set, the default cover is displayed (当沒有设置cover時，默认的封面顯示)
-  default_cover:
-    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-
-# Replace Broken Images (替換无法显示的圖片)
-error_img:
-  flink: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
-  post_page: https://acrylic.leonus.cn/i/2023/03/04/fnjj9d.png
+# cover:
+#   # display the cover or not (是否显示文章封面)
+#   index_enable: true
+#   aside_enable: true
+#   archives_enable: true
+#   # the position of cover in home page (封面显示的位置)
+#   # left/right/both
+#   position: both
+#   # When cover is not set, the default cover is displayed (当沒有设置cover時，默认的封面顯示)
+#   default_cover:
+#     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # A simple 404 page
 error_404:
   enable: true
   subtitle: '请尝试站内搜索寻找文章'
   background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
+
+# 即刻短文 (essay)
+# ------------------------------------
+essay:
+  enable: true
+  descr: 分享生活的小确幸
+  tip: 使用 即刻短文静态部署版 构建
+  link: /posts/49736/
+  text: 如何使用
+  icon: fas fa-circle-chevron-right
 
 # 导航栏 (nav)
 # ------------------------------------
@@ -106,16 +113,6 @@ console:
   tag: true
   archives: true 
 
-# Code Blocks (代碼相關)
-# --------------------------------------
-
-highlight_theme: darker #  darker / pale night / light / ocean / mac / mac light / false
-highlight_copy: true # copy button
-highlight_lang: true # show the code language
-highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: false # unit: px
-code_word_wrap: false
-
 # search (搜索)
 # see 
 # --------------------------------------
@@ -134,10 +131,6 @@ local_search:
 
 # Math (數學)
 # --------------------------------------
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page (true 表示每一頁都加載js)
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
-# (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
 
 # MathJax
 mathjax:
@@ -190,16 +183,28 @@ about:
   xllc: #创建这个站的时候，想要就是能够有一个自己能够积累知识、积累兴趣的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。分享这件事我从很早就开始了，起初做的微信公众号，现在做的网站。因为我比较喜欢研究数码和软件，想要探究在互联网上的事物是如何被创造和发展。网络给我带来了非常多的知识和眼界，我也想力所能及的分享一些我生活的琐碎知识。与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有技能的教程干货、有生活上的吐槽和妙招、有话题上的思考和想法。一般我研究什么、发现了什么都会分享在这里。这些就是创造这个小站的本意，也是我分享生活的方式。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
 
 
-# 下面的一个都别改
-disable_top_img: false
-index_img: false
-default_top_img: false
-archive_img: false
-tag_img: false
-tag_per_img: false
-category_img: false
-category_per_img: false
+# wordcount (字數統計)
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
 
+
+# 文章 (Post)
+# --------------------------------------
+
+# 版权信息 (copyright)
+# --------------------------------------
+copyright:
+  enable: true
+  link: /cc/
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 阅读建议 (Related Articles)
+related_post:
+  enable: true
 
 post_meta:
   page: # Home Page
@@ -214,78 +219,6 @@ post_meta:
     categories: true # true or false 文章頁是否顯示分類
     tags: true # true or false 文章頁是否顯示標籤
     label: true # true or false 顯示描述性文字
-
-# wordcount (字數統計)
-# see https://butterfly.js.org/posts/ceeb73f/#字數統計
-wordcount:
-  enable: true
-  post_wordcount: true
-  min2read: true
-  total_wordcount: true
-
-# Display the article introduction on homepage
-# 1: description
-# 2: both (if the description exists, it will show description, or show the auto_excerpt)
-# 3: auto_excerpt (default)
-# false: do not show the article introduction
-index_post_content:
-  method: 3
-  length: 500 # if you set method to 2 or 3, the length need to config
-
-# anchor
-# when you scroll in post, the URL will update according to header id.
-anchor: false
-
-# Post
-# --------------------------------------
-
-# toc (目錄)
-toc:
-  post: true
-  page: false
-  number: true
-  expand: false
-  style_simple: false # for post
-
-post_copyright:
-  enable: true
-  decode: false
-  author_href:
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-# Post edit
-# Easily browse and edit blog source code online.
-post_edit:
-  enable: false
-  # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
-  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:
-
-# Related Articles
-related_post:
-  enable: true
-  limit: 6 # Number of posts displayed
-  date_type: created # or created or updated 文章日期顯示創建日或者更新日
-
-# figcaption (圖片描述文字)
-photofigcaption: false
-
-# post_pagination (分頁)
-# value: 1 || 2 || false
-# 1: The 'next post' will link to old post
-# 2: The 'next post' will link to new post
-# false: disable pagination
-post_pagination: 1
-
-# Displays outdated notice for a post (文章過期提醒)
-noticeOutdate:
-  enable: false
-  style: flat # style: simple/flat
-  limit_day: 500 # When will it be shown
-  position: top # position: top/bottom
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
 
 # ptool（文章底部工具）
 # --------------------------------------
@@ -530,12 +463,12 @@ hometop:
       class: 
       number: 6
 
-# Insert ads manually (手動插入廣告)
+# 广告 (ad)
 # --------------------------------------
-# ad:
-#   index:
-#   aside:
-#   post:
+ad:
+  index:
+  aside:
+  post:
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
@@ -561,81 +494,25 @@ theme_color:
 #   meta_theme_color_light: "ffffff"
 #   meta_theme_color_dark: "#0d0d0d"
 
-# The top_img settings of home page
-# default: top img - full screen, site info - middle (默認top_img全屏，site_info在中間)
-# The position of site info, eg: 300px/300em/300rem/10% (主頁標題距離頂部距離)
-index_site_info_top:
-# The height of top_img, eg: 300px/300em/300rem (主頁top_img高度)
-index_top_img_height:
 
-# The user interface setting of category and tag page (category和tag頁的UI設置)
-# index - same as Homepage UI (index 值代表 UI將與首頁的UI一樣)
-# default - same as archives UI 默認跟archives頁面UI一樣
-category_ui: # 留空或 index
-tag_ui: # 留空或 index
-
-# Website Background (設置網站背景)
-# can set it to color or image (可設置圖片 或者 顔色)
-# The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: false
-
-# Footer Background
-footer_bg: false
-
-# the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
-rightside-bottom:
-
-# Enter transitions (開啓網頁進入效果)
-enter_transitions: false
-
-
-# Default display mode (網站默認的顯示模式)
+# 默认显示模式 (Default display mode)
 # light (default) / dark
 display_mode: light
 
-# Beautify (美化頁面顯示)
-beautify:
-  enable: false
-  field: post # site/post
-  title-prefix-icon: # '\f0c1'
-  title-prefix-icon-color: # '#F47466'
 
-# Global font settings
-# Don't modify the following settings unless you know how they work (非必要不要修改)
-font:
-  global-font-size:
-  code-font-size:
-  font-family:
-  code-font-family:
-
-# Font settings for the site title and site subtitle
-# 左上角網站名字 主頁居中網站名字
-blog_title_font:
-  font_link:
-  font-family:
-
-# The setting of divider icon (水平分隔線圖標設置)
-hr_icon:
+# 加载动画 (Loading)
+# --------------------------------------
+loading: 
   enable: true
-  icon: # the unicode value of Font Awesome icon, such as '\3423'
-  icon-top:
 
-# Loading Animation (加載動畫)
-preloader: true
-
-# aside (側邊欄)
+# 侧边栏 (aside)
 # --------------------------------------
 
 aside:
   enable: true
-  hide: false
   button: true
   mobile: true # display on mobile
   position: right # left or right
-  display:
-    archive: true
-    tag: true
-    category: true
   card_author:
     enable: true
     description:
@@ -646,37 +523,16 @@ aside:
       link: https://github.com/xxxxxx
   card_weixin:
     enable: true
-  card_announcement:
-    enable: false
-    content: This is my Blog
   card_recent_post:
     enable: false
     limit: 5 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
-  card_categories:
-    enable: false
-    limit: 8 # if set 0 will show all
-    expand: none # none/true/false
-    sort_order: # Don't modify the setting unless you know how it works
-  card_tags:
-    enable: true
-    limit: 40 # if set 0 will show all
-    color: true
-    sort_order: # Don't modify the setting unless you know how it works
-  card_archives:
-    enable: false
-    type: monthly # yearly or monthly
-    format: MMMM YYYY # eg: YYYY年MM月
-    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
-    limit: 8 # if set 0 will show all
-    sort_order: # Don't modify the setting unless you know how it works
-  card_webinfo:
+  card_all_info:
     enable: true
     post_count: true
-    last_push_date: true
-    sort_order: # Don't modify the setting unless you know how it works
-
+    runtime: true
+    word_count: true
 # busuanzi count for PV / UV in site
 # 訪問人數
 busuanzi:
@@ -688,15 +544,7 @@ busuanzi:
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
   enable: true
-  publish_date:
-
-# Aside widget - Newest Comments
-newest_comments:
-  enable: false
-  sort_order: # Don't modify the setting unless you know how it works
-  limit: 6
-  storage: 10 # unit: mins, save data to localStorage
-  avatar: true
+  publish_date: 
 
 # Bottom right button (右下角按鈕)
 # --------------------------------------
@@ -739,11 +587,6 @@ rightside_item_order:
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
-# You can only choose one, or neither (只能選擇一個 或者 兩個都不選)
-
-# medium-zoom
-# https://github.com/francoischalifour/medium-zoom
-medium_zoom: false
 
 # fancybox
 # http://fancyapps.com/fancybox/3/
@@ -849,7 +692,6 @@ inject:
     - <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     - <script src="/js/blogex.js"></script>
     - <script src="/js/black.js"></script>
-    - <script src="/js/fps.js"></script>
     - <script src="/js/xh.js"></script>
     - <script src="/js/nav.js"></script>
     - <script src="/js/bblist.js"></script>
@@ -912,18 +754,12 @@ CDN:
     # pangu:
     # fancybox_css_v4:
     # fancybox_v4:
-    # medium_zoom:
     # snackbar_css:
     # snackbar:
     # activate_power_mode:
     fontawesomeV6: https://cdn1.tianli0.top/npm/@fortawesome/fontawesome-free/css/all.min.css
-    # flickr_justified_gallery_js:
-    # flickr_justified_gallery_css:
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
     aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
     meting_js: https://cdn1.tianli0.top/gh/hexo-theme-Acrylic/JS-Acrylic@main/Meting.js
-    # prismjs_js:
-    # prismjs_lineNumber_js:
-    # prismjs_autoloader:
     # artalk_js:
     # artalk_css:

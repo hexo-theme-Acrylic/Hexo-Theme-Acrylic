@@ -52,25 +52,23 @@
     })
   }
 
-  let noticeOutdate = 'undefined';
-  if (theme.noticeOutdate && theme.noticeOutdate.enable) {
-    noticeOutdate = JSON.stringify({
-      limitDay: theme.noticeOutdate.limit_day,
-      position: theme.noticeOutdate.position,
-      messagePrev: theme.noticeOutdate.message_prev,
-      messageNext: theme.noticeOutdate.message_next,
-    })
-  }
+  //- let noticeOutdate = 'undefined';
+  //- if (theme.noticeOutdate && theme.noticeOutdate.enable) {
+  //-   noticeOutdate = JSON.stringify({
+  //-     limitDay: theme.noticeOutdate.limit_day,
+  //-     position: theme.noticeOutdate.position,
+  //-     messagePrev: theme.noticeOutdate.message_prev,
+  //-     messageNext: theme.noticeOutdate.message_next,
+  //-   })
+  //- }
 
-  let highlight = 'undefined';
-  if ((config.highlight && config.highlight.enable) || (config.prismjs && config.prismjs.enable)) {
-    highlight = JSON.stringify({
-      plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
-      highlightCopy: theme.highlight_copy,
-      highlightLang: theme.highlight_lang,
-      highlightHeightLimit: theme.highlight_height_limit
-    })
-  }
+  let highlight = JSON.stringify({
+      plugin: 'highlighjs',
+      highlightCopy: true,
+      highlightLang: true,
+      highlightHeightLimit: 200px
+    });
+
 
 script.
   const GLOBAL_CONFIG = { 
@@ -78,7 +76,7 @@ script.
     algolia: !{algolia},
     localSearch: !{localSearch},
     translate: !{translate},
-    noticeOutdate: !{noticeOutdate},
+    //- noticeOutdate: !{noticeOutdate},
     highlight: !{highlight},
     relativeDate: {
       homepage: !{theme.post_meta.page.date_format === 'relative'},
@@ -100,7 +98,7 @@ script.
         css: '!{url_for(theme.asset.flickr_justified_gallery_css)}'
       }
     },
-    isPhotoFigcaption: !{theme.photofigcaption},
+    isPhotoFigcaption: !{true},
     islazyload: !{theme.lazyload.enable},
-    isAnchor: !{theme.anchor}
+    isAnchor: !{false}
   }

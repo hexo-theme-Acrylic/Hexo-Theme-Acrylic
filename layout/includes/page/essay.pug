@@ -1,14 +1,15 @@
-#essay_page
+- var essay = theme.essay
+if essay.enable
   .author-content.author-content-item.essayPage.single
     .card-content
       .author-content-item-tips 即刻短文
-      span.author-content-item-title 分享生活的小确幸
+      span.author-content-item-title=essay.descr
       .content-bottom
-        .tips 使用 即刻短文静态部署版 构建
+        .tips=essay.tip
       .banner-button-group
-        a.banner-button(onclick='pjax.loadUrl("/posts/49736/")')
-          i.fas.fa-circle-chevron-right
-          span.banner-button-text 如何使用
+        a.banner-button(onclick=`pjax.loadUrl("${essay.link}")`)
+          i(class=`${essay.icon}`)
+          span.banner-button-text=essay.text
   #bber
     section.timeline.page-1
       ul#waterfall.list
@@ -44,7 +45,7 @@
                       .bber-info-from
                         i.far.fa-popsicle
                         span=item.from
-                  .bber-reply(onclick="anzhiyu.commentText(" + `'${item.content}'` + ")")
+                  .bber-reply(onclick="heo.commentText(" + `'${item.content}'` + ")")
                     i.fa-solid.fa-message
-  #bber-tips(style='color: var(--anzhiyu-secondtext);')
+  #bber-tips(style='color: var(--heo-secondtext);')
     | - 只展示最近30条短文 -

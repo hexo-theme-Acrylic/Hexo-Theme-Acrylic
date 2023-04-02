@@ -14,22 +14,16 @@
     .console-card-group-right
       if console.tag
         .console-card.tags(onclick='heo.hideConsole()')
-          - let tagLimit = theme.aside.card_tags.limit === 0 ? 0 : theme.aside.card_tags.limit || 40
           .card-content
               .author-content-item-tips 标签
               span.author-content-item-title 寻找感兴趣的领域
-          .card-tag-cloud!= tagcloud({min_font: 1, max_font: 1, amount: tagLimit , color: true, start_color: '#D3D3D3', end_color: '#D3D3D3', unit: 'em'})
+          .card-tag-cloud!= cloudTags({source: site.tags})
       .console-card.history(onclick='heo.hideConsole()') 
         if console.archives
           .card-content
               .author-content-item-tips 归档
               span.author-content-item-title 发现有意思的内容
-          //- if theme.aside.card_archives.enable
-          - let type = theme.aside.card_archives.type || 'monthly'
-          - let format = theme.aside.card_archives.format || 'MMMM YYYY'
-          - let order = theme.aside.card_archives.order || -1
-          - let limit = theme.aside.card_archives.limit === 0 ? 0 : theme.aside.card_archives.limit || 8
-          != aside_archives({ type:type, format: format, order: order, limit: limit })  
+          != aside_archives({ type: 'monthly', format: 'MMMM YYYY', order: -1, limit: 4 })  
   .button-group
     .console-btn-item 
       a.darkmode_switchbutton(onclick='rm.switchDarkMode()',title='显示模式切换',href="javascript:void(0);")

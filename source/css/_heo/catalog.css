@@ -18,7 +18,7 @@
 
 #catalog-list {
   /* 分类/标签较少时，可以选择不设置 width，居中显示 catalog-list-item */
-  /* width: 100%; */
+  width: 100%;
   margin: 0 0.5rem;
   display: flex;
   white-space: nowrap;

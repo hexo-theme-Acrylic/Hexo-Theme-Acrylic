@@ -1,5 +1,4 @@
-- var htmlClassHideAside = theme.aside.enable && theme.aside.hide ? 'hide-aside' : ''
-- page.aside = is_archive() ? theme.aside.display.archive: is_category() ? theme.aside.display.category : is_tag() ? theme.aside.display.tag : page.aside
+- var htmlClassHideAside = theme.aside.enable
 - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
 - var pageType = is_post() ? 'post' : 'page'
 
@@ -8,8 +7,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
   head
     include ./head.pug
   body
-    if theme.preloader
-      !=partial('includes/loading/loading', {}, {cache: true})
+    if theme.loading
+      !=partial('includes/loading/loading.pug', {}, {cache: true})
 
     if theme.background
       #web_bg

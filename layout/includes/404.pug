@@ -14,17 +14,16 @@
 
   .aside-list
     .aside-list-group
-      - let postLimit = theme.aside.card_recent_post.limit === 0 ? site.posts.length : theme.aside.card_recent_post.limit || 5
-      - let sort = theme.aside.card_recent_post.sort === 'updated' ? 'updated' : 'date'
+      - let postLimit = 5
+      - let sort = 'date'
       - site.posts.sort(sort, -1).limit(postLimit).each(function(article){
       - let link = article.link || article.path
       - let title = article.title || _p('no_title')
-      - let no_cover = article.cover === false || !theme.cover.aside_enable ? 'no-cover' : ''
       - let post_cover = article.cover
-      .aside-list-item(class=no_cover)
-        if post_cover && theme.cover.aside_enable
+      .aside-list-item
+        if post_cover
           a.thumbnail(href=url_for(link) title=title)
-            img(src=url_for(post_cover) onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'` alt=title)
+            img(src=url_for(post_cover) onerror=`this.onerror=null;this.src='${url_for(theme.default_img)}'` alt=title)
         .content
           a.title(href=url_for(link) title=title)= title
           if theme.aside.card_recent_post.sort === 'updated'
