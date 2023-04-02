@@ -185,7 +185,7 @@ about:
 
 # wordcount (字數統計)
 wordcount:
-  enable: true
+  enable: false
   post_wordcount: true
   min2read: true
   total_wordcount: true
