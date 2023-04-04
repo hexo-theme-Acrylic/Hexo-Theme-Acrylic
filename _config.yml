@@ -18,19 +18,6 @@ avatar:
 default_img:
 default_title:
 default_text:
-# 封面 (cover)
-# cover:
-#   # display the cover or not (是否显示文章封面)
-#   index_enable: true
-#   aside_enable: true
-#   archives_enable: true
-#   # the position of cover in home page (封面显示的位置)
-#   # left/right/both
-#   position: both
-#   # When cover is not set, the default cover is displayed (当沒有设置cover時，默认的封面顯示)
-#   default_cover:
-#     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-
 # A simple 404 page
 error_404:
   enable: true

@@ -52,16 +52,6 @@
     })
   }
 
-  //- let noticeOutdate = 'undefined';
-  //- if (theme.noticeOutdate && theme.noticeOutdate.enable) {
-  //-   noticeOutdate = JSON.stringify({
-  //-     limitDay: theme.noticeOutdate.limit_day,
-  //-     position: theme.noticeOutdate.position,
-  //-     messagePrev: theme.noticeOutdate.message_prev,
-  //-     messageNext: theme.noticeOutdate.message_next,
-  //-   })
-  //- }
-
   let highlight = JSON.stringify({
       plugin: 'highlighjs',
       highlightCopy: true,
@@ -76,13 +66,11 @@ script.
     algolia: !{algolia},
     localSearch: !{localSearch},
     translate: !{translate},
-    //- noticeOutdate: !{noticeOutdate},
     highlight: !{highlight},
     relativeDate: {
       homepage: !{theme.post_meta.page.date_format === 'relative'},
       post: !{theme.post_meta.post.date_format === 'relative'}
     },
-    runtime: '!{theme.runtimeshow.enable ? _p("aside.card_webinfo.runtime.unit") : ""}',
     date_suffix: {
       just: '!{_p("date_suffix.just")}',
       min: '!{_p("date_suffix.min")}',
@@ -90,14 +78,8 @@ script.
       day: '!{_p("date_suffix.day")}',
       month: '!{_p("date_suffix.month")}'
     },
-    lightbox: '!{ theme.medium_zoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null" )}',
+    lightbox: '!{"fancybox"}',
     Snackbar: !{Snackbar},
-    source: {
-      justifiedGallery: {
-        js: '!{url_for(theme.asset.flickr_justified_gallery_js)}',
-        css: '!{url_for(theme.asset.flickr_justified_gallery_css)}'
-      }
-    },
     isPhotoFigcaption: !{true},
     islazyload: !{theme.lazyload.enable},
     isAnchor: !{false}
