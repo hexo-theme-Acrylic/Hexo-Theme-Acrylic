@@ -34,28 +34,38 @@
               a.footer-item(target='_blank', href=`${i.link}`)=i.text
             else 
               a.footer-item(href=`${i.link}`)=i.text
-  .footer-group
-    .footer-title-group
-      h3.footer-title 友链
-      a.random-friends-btn(href='javascript:heo.addFriendLinksInFooter();' rel='external nofollow' data-pjax-state='')
-        i.fa-solid.fa-arrows-rotate
-    #friend-links-in-footer.footer-links
-      a.footer-item(href='http://yaoyaoman.cn/blog/' target='_blank' rel='noopener nofollow') 京墨博客社区
-      a.footer-item(href='https://678777.xyz/' target='_blank' rel='noopener nofollow') SLOVER
-      a.footer-item(href='https://myblog.wallleap.cn/' target='_blank' rel='noopener nofollow') wallleap
-      a.footer-item(href='/link/') 更多
+  if theme.footer_friend_links.enable
+    .footer-group
+      .footer-title-group
+        h3.footer-title 友链
+        a.random-friends-btn(href='javascript:heo.addFriendLinksInFooter();' rel='external nofollow' data-pjax-state='')
+          i.fa-solid.fa-arrows-rotate
+      #friend-links-in-footer.footer-links
+        - var n=0
+        while n < theme.footer_friend_links.number 
+          a.footer-item(href='',target='_blank',rel='noopener nofollow') 加载中
+          - n++
+        a.footer-item(href='/link/') 更多
 #footer-banner
   .footer-banner-links
     .footer-banner-left
       #footer-banner-tips
-        .copyright
-          | ©2019 - 2023 By 
-          a.footer-banner-link(target='_blank' href='/' rel='external nofollow') 张洪Heo
+        if copyrightenable
+          - var now = new Date()
+          - var nowYear = now.getFullYear()
+          - var time = theme.footer.footer_bottom.copyright.time
+          if time && time != nowYear
+            .copyright!= `| &copy;${time} - ${nowYear} By `
+              a(target='_blank',href='/',rel='external nofollow') #[=config]
+          else
+            .copyright!= `| &copy;${nowYear} By `
+              a(target='_blank',href='/',rel='external nofollow')
     .footer-banner-right
-      a.footer-banner-link(href='/rss/' data-pjax-state='') 订阅
-      a.footer-banner-link(href='/update/' data-pjax-state='') 主题
-      a.footer-banner-link(target='_blank' href='https://beian.miit.gov.cn/#/Integrated/index' rel='noopener external nofollow noreferrer noopener')=theme.footer.icp
-      a.footer-banner-link.cc(href='/cc/' title='cc协议' data-pjax-state='')
+      a.footer-banner-link(href='/rss/' ,data-pjax-state='' ,title="框架") Hexo
+      a.footer-banner-link(href='/update/' ,data-pjax-state='' ,title="主题") Acrylic
+      each i in theme.footer.footer_bottom.right
+        a.footer-banner-link(target='_blank' ,href=`${i.link}` rel='noopener external nofollow noreferrer noopener') #[=i.text]
+      a.footer-banner-link.cc(href=`${theme.copyright.link}` ,title=`${theme.copyright.short}` ,data-pjax-state='')
         i.fa-regular.fa-copyright
         i.fa-brands.fa-creative-commons-by
         i.fa-brands.fa-creative-commons-nc

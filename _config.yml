@@ -1,16 +1,22 @@
-# 这是Acrylic主题的配置文件
-# 可以和文档同时查看配置，效果更好
-# --------------------------------
+# 欢迎使用Acrylic主题!🎉
+# Welcome to use theme of Acrylic!🎉
+# 文档: https://Acrylic.zhheo.com/
+# dosc: https://Acrylic.zhheo.com/
+# 交流群: 649565726
+# 这是Dev版!
+# -------------------------------------
 
 # 图片
 # --------------------------------
+
 # 网站图标
 favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 
 # 头像
 avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
-# 封面图
+
+# 默认信息
 default_img:
 default_title:
 default_text:
@@ -56,8 +62,8 @@ nav:
             class: out
   logo: 
     enable: true
-    class: i_class #i_class/text/img 
-    custom: heoicon icon-heologo #Heo/https://xxx.com/logo.png
+    class: i_class #i_class/text/img i_class为icon图标,text为文字,img为图片
+    custom: heoicon icon-heologo #Heo/https://xxx.com/logo.png /class为text时留空
   fps_enable: false
   menu:
     文库:
@@ -99,50 +105,6 @@ essay:
   link: /posts/49736/
   text: 如何使用
   icon: fas fa-circle-chevron-right
-
-# 首页
-hometop:
-  enable: true
-  banner:
-    enable: true
-    class: people #people/creativity
-    title_up: 分享设计
-    title_dn: 与科技生活
-    tips: ZHHEO.COM
-  categoryGroup:
-    enable: true
-    category_list:
-      - name: 必看精选
-        path: /tags/必看/
-        shadow: var(--heo-shadow-blue)
-        class: bikan
-        icon: fas fa-dove
-      - name: 热门文章
-        path: /tags/热门/
-        shadow: var(--heo-shadow-red)
-        class: remen
-        icon: fas fa-burn
-      - name: 实用教程
-        path: /tags/教程/
-        shadow: var(--heo-shadow-green)
-        class: shiyong
-        icon: fas fa-book
-  topgroup:
-    enable: true
-    class: post #card/post/both
-    #如果为both则都填
-    #如果为card
-    card:
-      tips: 强势回归
-      title: Acrylic-Promote
-      bg: https://acrylic.leonus.cn/i/2023/03/04/ir6ary.webp
-      link: https://blog.zhheo.com/p/671f98c8.html
-      buttontext: 更多推荐
-      icon: fas fa-circle-plus
-    #如果为post
-    post:
-      class: 
-      number: 6
 
 # 关于页
 about:
@@ -221,6 +183,7 @@ copyright:
   enable: true
   link: /cc/
   license: CC BY-NC-SA 4.0
+  short: cc
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
   
 # 相关文章
@@ -276,7 +239,51 @@ artalk:
   visitor: false
   option:
 
-# 底部
+# 首页顶部
+hometop:
+  enable: true
+  banner:
+    enable: true
+    class: people #people(人潮汹涌)/creativity(创造力)
+    title_up: 分享设计
+    title_dn: 与科技生活
+    tips: ZHHEO.COM
+  categoryGroup:
+    enable: true
+    category_list:
+      - name: 必看精选
+        path: /tags/必看/
+        shadow: var(--heo-shadow-blue)
+        class: bikan
+        icon: fas fa-dove
+      - name: 热门文章
+        path: /tags/热门/
+        shadow: var(--heo-shadow-red)
+        class: remen
+        icon: fas fa-burn
+      - name: 实用教程
+        path: /tags/教程/
+        shadow: var(--heo-shadow-green)
+        class: shiyong
+        icon: fas fa-book
+  topgroup:
+    enable: true
+    class: post #card/post/both
+    #如果为both则都填
+    #如果为card
+    card:
+      tips: 强势回归
+      title: Acrylic-Promote
+      bg: https://acrylic.leonus.cn/i/2023/03/04/ir6ary.webp
+      link: https://blog.zhheo.com/p/671f98c8.html
+      buttontext: 更多推荐
+      icon: fas fa-circle-plus
+    #如果为post
+    post:
+      class: 
+      number: 6
+
+# 页脚
 # --------------------------------
 footer:
   footer_icons:
@@ -415,15 +422,25 @@ footer:
           - text: 版权协议
             link: /categories/资源分享
             class: in
-  icp: 京ICP备1905135号
+  footer_friend_links:
+    enable: true
+    number: 4
+  footer_bottom:
+    copyright:
+      enable: true
+      time: 2022
+    right:
+      - text: 京ICP备1905135号
+        link: https://beian.miit.gov.cn/#/Integrated/index
 
 # 小工具
 # --------------------------------
+
 #广告
-# ad:
-#   index:
-#   aside:
-#   post:
+ad:
+  index:
+  aside:
+  post:
 
 # 加载动画
 loading: 
@@ -521,10 +538,6 @@ busuanzi:
   site_pv: true
   page_pv: true
 
-# 运行时间
-runtimeshow:
-  enable: true
-  publish_date: 
 
 # 右下角按钮
 # --------------------------------
@@ -608,7 +621,6 @@ lazyload:
 
 
 Open_Graph_meta: true
-
 css_prefix: true
 
 # 代码引入
