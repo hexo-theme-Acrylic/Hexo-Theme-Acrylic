@@ -1,41 +1,37 @@
-# 欢迎使用Acrylic主题!🎉
-# Welcome to use theme of Acrylic!🎉
-# 文档: https://Acrylic.zhheo.com/
-# dosc: https://Acrylic.zhheo.com/
-# 交流群: 649565726
-# 这是Dev版!
-# -------------------------------------
+# 这是Acrylic主题的配置文件
+# 可以和文档同时查看配置，效果更好
+# --------------------------------
 
-# 图片 (image)
-# -------------------------------------
-
-# 网站图标 (Favicon)
+# 图片
+# --------------------------------
+# 网站图标
 favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 
-# 头像 (Avatar)
+# 头像
 avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
+# 封面图
 default_img:
 default_title:
 default_text:
-# A simple 404 page
-error_404:
-  enable: true
-  subtitle: '请尝试站内搜索寻找文章'
-  background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
 
-# 即刻短文 (essay)
-# ------------------------------------
-essay:
-  enable: true
-  descr: 分享生活的小确幸
-  tip: 使用 即刻短文静态部署版 构建
-  link: /posts/49736/
-  text: 如何使用
-  icon: fas fa-circle-chevron-right
+# 搜索
+# --------------------------------
+# Algolia search
+algolia_search:
+  enable: false
+  hits:
+    per_page: 6
 
-# 导航栏 (nav)
-# ------------------------------------
+# Local search
+local_search:
+  enable: false
+  preload: false
+  CDN:
+
+
+# 导航栏
+# --------------------------------
 nav:
   left_groups:
     enable: true
@@ -87,52 +83,68 @@ nav:
     random: true
     console: true
 
-# 手机边栏 (sidebar)
-# --------------------------------------
-sidebar: 
-  list_group: true
-  tag: true
+# 页面
+# --------------------------------
+# 404页面
+error_404:
+  enable: true
+  subtitle: '请尝试站内搜索寻找文章'
+  background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
 
-# 中控台 (console)
-# --------------------------------------
-console:
-  comment: true
-  tag: true
-  archives: true 
+# 即刻短文 
+essay:
+  enable: true
+  descr: 分享生活的小确幸
+  tip: 使用 即刻短文静态部署版 构建
+  link: /posts/49736/
+  text: 如何使用
+  icon: fas fa-circle-chevron-right
 
-# search (搜索)
-# see 
-# --------------------------------------
+# 首页
+hometop:
+  enable: true
+  banner:
+    enable: true
+    class: people #people/creativity
+    title_up: 分享设计
+    title_dn: 与科技生活
+    tips: ZHHEO.COM
+  categoryGroup:
+    enable: true
+    category_list:
+      - name: 必看精选
+        path: /tags/必看/
+        shadow: var(--heo-shadow-blue)
+        class: bikan
+        icon: fas fa-dove
+      - name: 热门文章
+        path: /tags/热门/
+        shadow: var(--heo-shadow-red)
+        class: remen
+        icon: fas fa-burn
+      - name: 实用教程
+        path: /tags/教程/
+        shadow: var(--heo-shadow-green)
+        class: shiyong
+        icon: fas fa-book
+  topgroup:
+    enable: true
+    class: post #card/post/both
+    #如果为both则都填
+    #如果为card
+    card:
+      tips: 强势回归
+      title: Acrylic-Promote
+      bg: https://acrylic.leonus.cn/i/2023/03/04/ir6ary.webp
+      link: https://blog.zhheo.com/p/671f98c8.html
+      buttontext: 更多推荐
+      icon: fas fa-circle-plus
+    #如果为post
+    post:
+      class: 
+      number: 6
 
-# Algolia search
-algolia_search:
-  enable: false
-  hits:
-    per_page: 6
-
-# Local search
-local_search:
-  enable: false
-  preload: false
-  CDN:
-
-# Math (數學)
-# --------------------------------------
-
-# MathJax
-mathjax:
-  enable: false
-  per_page: false
-
-# KaTeX
-katex:
-  enable: false
-  per_page: false
-  hide_scrollbar: true
-
-
-# about(关于页面)
-# --------------------------------------
+# 关于页
 about:
   info:
     right:
@@ -167,48 +179,55 @@ about:
   liketechnology: #数码科技
   liketechnologyand: #手机、电脑软硬件
   sllctitle: #为什么建站？
-  xllc: #创建这个站的时候，想要就是能够有一个自己能够积累知识、积累兴趣的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。分享这件事我从很早就开始了，起初做的微信公众号，现在做的网站。因为我比较喜欢研究数码和软件，想要探究在互联网上的事物是如何被创造和发展。网络给我带来了非常多的知识和眼界，我也想力所能及的分享一些我生活的琐碎知识。与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有技能的教程干货、有生活上的吐槽和妙招、有话题上的思考和想法。一般我研究什么、发现了什么都会分享在这里。这些就是创造这个小站的本意，也是我分享生活的方式。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
+  xllc: #写一写你的想法……
 
-
-# wordcount (字數統計)
+# 文章
+# --------------------------------
+post_meta:
+  page: # 首页
+    date_type: created # created/updated/both 文章显示创作日期/更新日期/都显示
+    date_format: date 
+    categories: true # 首页显示分类
+    tags: true # 首页显示标签
+    label: true # 首页显示文章描述
+  post:
+    date_type: both # created/updated/both 文章显示创作日期/更新日期/都显示
+    date_format: date 
+    categories: true # 首页显示分类
+    tags: true # 首页显示标签
+    label: true # 首页显示文章描述
+  
+# 字数统计
+# 注意安装对应的插件
 wordcount:
   enable: false
   post_wordcount: true
   min2read: true
   total_wordcount: true
 
+# MathJax
+mathjax:
+  enable: false
+  per_page: false
 
-# 文章 (Post)
-# --------------------------------------
+# KaTeX
+katex:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
 
-# 版权信息 (copyright)
-# --------------------------------------
+# 版权
 copyright:
   enable: true
   link: /cc/
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-# 阅读建议 (Related Articles)
+  
+# 相关文章
 related_post:
   enable: true
 
-post_meta:
-  page: # Home Page
-    date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
-    date_format: date # date/relative 顯示日期還是相對日期
-    categories: true # true or false 主頁是否顯示分類
-    tags: true # true or false 主頁是否顯示標籤
-    label: true # true or false 顯示描述性文字
-  post:
-    date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
-    date_format: date # date/relative 顯示日期還是相對日期
-    categories: true # true or false 文章頁是否顯示分類
-    tags: true # true or false 文章頁是否顯示標籤
-    label: true # true or false 顯示描述性文字
-
-# ptool（文章底部工具）
-# --------------------------------------
+# 文章底部工具
 ptool:
   enable: true
 
@@ -216,30 +235,24 @@ ptool:
 reward:
   enable: true
   QR_code:
-    - img: https://acrylic.leonus.cn/i/2023/02/19/ddz6gd.webp
+    - img: https://cdn.staticaly.com/gh/gtwxxh666/pic@main/1/wechat.png
       link:
       text: 微信
-    - img: https://acrylic.leonus.cn/i/2023/03/04/pmf2ec.webp
+    - img: https://cdn.staticaly.com/gh/gtwxxh666/pic@main/1/alipay.png
       link:
-      text: 爱发电
+      text: 支付宝
 
-
-
-# Comments System
-# --------------------------------------
-
+# 评论系统
+# --------------------------------
 comments:
-  # Up to two comments system, the first will be shown as default
-  # Choose: Waline/Twikoo/Artalk
   use: Twikoo # Waline/Twikoo/Artalk
-  text: true # Display the comment name next to the button
-  # lazyload: The comment system will be load when comment element enters the browser's viewport.
-  # If you set it to true, the comment count will be invalid
+  text: true # 在按钮旁边显示评论名称
+  # lazyload: 当评论进入浏览器视野时，评论系统将被加载。
   lazyload: false
-  count: false # Display comment count in post's top_img
-  card_post_count: false # Display comment count in Home Page
+  count: false # 顶部图显示评论数
+  card_post_count: false # 首页显示评论数
 
-# waline - A simple comment system with backend support fork from Valine
+# waline 
 # https://waline.js.org/
 waline:
   serverURL: # Waline server address url
@@ -250,7 +263,7 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://photoimage.2lc.top
+  envId: 
   region:
   visitor: false
   option:
@@ -263,8 +276,8 @@ artalk:
   visitor: false
   option:
 
-# Footer
-# --------------------------------------
+# 底部
+# --------------------------------
 footer:
   footer_icons:
     enable: true
@@ -404,65 +417,53 @@ footer:
             class: in
   icp: 京ICP备1905135号
 
+# 小工具
+# --------------------------------
+#广告
+# ad:
+#   index:
+#   aside:
+#   post:
 
-# hometop
-# --------------------------------------
-hometop:
+# 加载动画
+loading: 
   enable: true
-  banner:
-    enable: true
-    class: creativity #people/creativity
-    title_up: 分享设计
-    title_dn: 与科技生活
-    tips: ZHHEO.COM
-  categoryGroup:
-    enable: true
-    category_list:
-      - name: 必看精选
-        path: /tags/必看/
-        shadow: var(--heo-shadow-blue)
-        class: bikan
-        icon: fas fa-dove
-      - name: 热门文章
-        path: /tags/热门/
-        shadow: var(--heo-shadow-red)
-        class: remen
-        icon: fas fa-burn
-      - name: 实用教程
-        path: /tags/教程/
-        shadow: var(--heo-shadow-green)
-        class: shiyong
-        icon: fas fa-book
-  topgroup:
-    enable: true
-    class: both #card/post/both
-    #如果为both则都填
-    #如果为card
-    card:
-      tips: 强势回归
-      title: Acrylic-Promote
-      bg: https://acrylic.leonus.cn/i/2023/03/04/ir6ary.webp
-      link: https://blog.zhheo.com/p/671f98c8.html
-      buttontext: 更多推荐
-      icon: fas fa-circle-plus
-    #如果为post
-    post:
-      class: 
-      number: 6
 
-# 广告 (ad)
-# --------------------------------------
-ad:
-  index:
-  aside:
-  post:
+# 手机边栏 
+sidebar: 
+  list_group: true
+  tag: true
 
-# Beautify/Effect (美化/效果)
-# --------------------------------------
+# 中控台
+console:
+  comment: true
+  tag: true
+  archives: true 
 
-# Theme color for customize
-# Notice: color value must in double quotes like "#000" or may cause error!
+# 图片放大
+# fancybox
+# http://fancyapps.com/fancybox/3/
+fancybox: true
 
+# 标签外挂
+mermaid:
+  enable: false
+  # 主题: default/forest/dark/neutral
+  theme:
+    light: default
+    dark: dark
+
+# Note
+note:
+  style: flat
+  icons: true
+  border_radius: 3
+  light_bg_offset: 0
+
+# 美化
+# --------------------------------
+# 主题色
+# 写HEX或者RGB
 theme_color:
   enable: true
   main: "#425AEF"
@@ -481,25 +482,17 @@ theme_color:
 #   meta_theme_color_light: "ffffff"
 #   meta_theme_color_dark: "#0d0d0d"
 
-
-# 默认显示模式 (Default display mode)
-# light (default) / dark
+# 显示模式
+# light/dark
 display_mode: light
 
-
-# 加载动画 (Loading)
-# --------------------------------------
-loading: 
-  enable: true
-
-# 侧边栏 (aside)
-# --------------------------------------
-
+# 侧边栏
+# --------------------------------
 aside:
   enable: true
   button: true
-  mobile: true # display on mobile
-  position: right # left or right
+  mobile: true # 手机显示
+  position: right # 左边右边 right/left
   card_author:
     enable: true
     description:
@@ -512,104 +505,59 @@ aside:
     enable: true
   card_recent_post:
     enable: false
-    limit: 5 # if set 0 will show all
-    sort: date # date or updated
-    sort_order: # Don't modify the setting unless you know how it works
+    limit: 5 # 输入0全显示
+    sort: date # 显示发布日期/更新日期
+    sort_order: 
   card_all_info:
     enable: true
     post_count: true
     runtime: true
-    word_count: true
-# busuanzi count for PV / UV in site
-# 訪問人數
+    word_count: false
+
+
+# 访问人數
 busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
 
-# Time difference between publish date and now (網頁運行時間)
-# Formal: Month/Day/Year Time or Year/Month/Day Time
+# 运行时间
 runtimeshow:
   enable: true
   publish_date: 
 
-# Bottom right button (右下角按鈕)
-# --------------------------------------
-
-# Conversion between Traditional and Simplified Chinese (簡繁轉換)
+# 右下角按钮
+# --------------------------------
+# 简体繁体切换
 translate:
   enable: true
-  # The text of a button
   default: 繁
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
   defaultEncoding: 2
-  # Time delay
   translateDelay: 0
-  # The text of the button when the language is Simplified Chinese
   msgToTraditionalChinese: '繁'
-  # The text of the button when the language is Traditional Chinese
   msgToSimplifiedChinese: '簡'
 
-# Read Mode (閲讀模式)
+# 阅读模式
 readmode: false
 
-# dark mode
+# 深色模式
 darkmode:
   enable: true
-  # Toggle Button to switch dark/light mode
   button: true
-  # Switch dark/light mode automatically (自動切換 dark mode和 light mode)
-  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
-  # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
-  # autoChangeMode: false
+  # 自动切换暗/亮模式
+  # 1： 按照系统设置，如果系统不支持深色模式，它将在下午 6 点到早上 6 点之间切换深色模式
+  # 2： 在下午 6 点到早上 6 点之间切换黑暗模式
   autoChangeMode: 1
 
-# Don't modify the following settings unless you know how they work (非必要請不要修改 )
-# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
-# Don't repeat 不要重複
 rightside_item_order:
   enable: false
-  hide: # readmode,translate,darkmode,hideAside
-  show: # toc,chat,comment
+  hide: 
+  show: 
 
-# Lightbox (圖片大圖查看模式)
-# --------------------------------------
-
-# fancybox
-# http://fancyapps.com/fancybox/3/
-fancybox: true
-
-# Tag Plugins settings (標籤外掛)
-# --------------------------------------
-
-# mermaid
-# see https://github.com/mermaid-js/mermaid
-mermaid:
-  enable: false
-  # built-in themes: default/forest/dark/neutral
-  theme:
-    light: default
-    dark: dark
-
-# Note (Bootstrap Callout)
-note:
-  # Note tag style values:
-  #  - simple    bs-callout old alert style. Default.
-  #  - modern    bs-callout new (v2-v3) alert style.
-  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
-  #  - disabled  disable all CSS styles import of note tag.
-  style: flat
-  icons: true
-  border_radius: 3
-  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
-  # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
-
-# other
-# --------------------------------------
-
+# 其他
+# --------------------------------
 # Pjax
-# It may contain bugs and unstable, give feedback when you find the bugs.
+# 它可能包含错误和不稳定
 # https://github.com/MoOx/pjax
 pjax:
   enable: true
@@ -617,32 +565,30 @@ pjax:
     # - xxxx
     # - xxxx
 
-# Inject the css and script (aplayer/meting)
+# Aplayer
 aplayerInject:
   enable: true
   per_page: true
 
-# Snackbar (Toast Notification 彈窗)
+# 弹窗
 # https://github.com/polonel/SnackBar
-# position 彈窗位置
-# 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
+# 位置 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
   enable: true
   position: top-center
-  bg_light: '#49b1f5' # The background color of Toast Notification in light mode
-  bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
+  bg_light: '#49b1f5' 
+  bg_dark: '#1f1f1f' 
 
 # https://instant.page/
-# prefetch (預加載)
+# 预加载
 instantpage: true
 
-# https://github.com/vinta/pangu.js
-# Insert a space between Chinese character and English character (中英文之間添加空格)
+# 中英文间加空格
 pangu:
   enable: false
   field: site # site/post
 
-# Lazyload (圖片懶加載)
+# 图片懒加载
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
   enable: false
@@ -651,8 +597,7 @@ lazyload:
   blur: false
 
 # PWA
-# See https://github.com/JLHwung/hexo-offline
-# ---------------
+# https://github.com/JLHwung/hexo-offline
 # pwa:
 #   enable: false
 #   manifest: /pwa/manifest.json
@@ -661,20 +606,20 @@ lazyload:
 #   favicon_16_16: /pwa/16.png
 #   mask_icon: /pwa/safari-pinned-tab.svg
 
-# Open graph meta tags
-# https://developers.facebook.com/docs/sharing/webmasters/
+
 Open_Graph_meta: true
 
-# Add the vendor prefixes to ensure compatibility
 css_prefix: true
 
-# Inject
-# Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
-# 插入代码到头部 </head> 之前 和 底部 </body> 之前
+# 代码引入
+# --------------------------------
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    # 通常这里写CSS
   bottom:
+    # - <script src="/js/xxx.js"></script>
+    # 通常这里写JS
     - <script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script>
     - <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     - <script src="/js/blogex.js"></script>
@@ -697,24 +642,16 @@ inject:
     
 
 # CDN
-# Don't modify the following settings unless you know how they work
-# 非必要請不要修改
+# --------------------------------
 CDN:
-  # The CDN provider of internal scripts (主題內部 js 的 cdn 配置)
-  # option: local/jsdelivr/unpkg/cdnjs/custom
-  # Dev version can only choose. ( dev版的主題只能設置為 local )
   internal_provider: local
 
-  # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
-  # option: moezz/local/jsdelivr/unpkg/cdnjs/custom
-  # when set it to local, you need to install hexo-butterfly-extjs
+  # 第三方CDN
+  # moezz/local/jsdelivr/unpkg/cdnjs/custom
   third_party_provider: jsdelivr
 
-  # Add version number to CDN, true or false  
   version: false
-
-  # Custom format
-  # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
+  # 实例: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
   custom_format:
 
   option:
