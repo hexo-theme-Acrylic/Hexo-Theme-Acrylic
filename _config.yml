@@ -1,4 +1,6 @@
 # 这是Acrylic主题的配置文件
+=======
+# 可以和文档同时查看配置，效果更好
 # --------------------------------
 
 # 图片
@@ -9,6 +11,7 @@ favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 # 头像
 avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
+# 封面图
 default_img:
 default_title:
 default_text:
