@@ -676,23 +676,9 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     - <script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script>
-    - <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     - <script src="/js/blogex.js"></script>
-    - <script src="/js/black.js"></script>
-    - <script src="/js/xh.js"></script>
-    - <script src="/js/nav.js"></script>
-    - <script src="/js/bblist.js"></script>
-    - <script data-pjax src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script>
-    - <script async data-pjax src="/js/jkdw.js"></script>
-    - <script async data-pjax src="/js/waterfall.js"></script>
-    - <script src="/js/nav2.js"></script>
+    - <script data-pjax src="/lib/swiper.min.js"></script>
     - <script src="/js/heo.js"></script>
-    - <script src="/js/hidescrollbar.js"></script>
-    - <script src="/js/rightmenu.js"></script>
-    - <script src="/js/sayhi.js"></script>
-    - <script async data-pjax src="/js/anzhiyu.js"></script>
-    - <script async data-pjax src="/js/anzhiyufunction.js"></script>
-    - <script async src="/js/anzhiyuOnlyOne.js"></script>
     - <script src="/heo/random.js"></script>
     
 
