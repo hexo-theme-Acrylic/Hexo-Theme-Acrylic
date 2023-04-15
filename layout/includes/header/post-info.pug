@@ -49,9 +49,9 @@
       span.post-meta-wechat(title='该文章在博客首发')
         i.fas.fa-compass.post-meta-icon
         | 博客独享
-      span.post-meta-position(title='作者IP属地为成都')
+      span.post-meta-position(title=`作者IP属地为${theme.post_meta.location}`)
         i.fas.fa-location-dot.post-meta-icon
-        | 成都
+        | #[=theme.post_meta.location]
       span.post-meta-pv(data-flag-title='热度')
         i.fab.fa-hotjar.fa-fw.post-meta-icon
         span.post-meta-label 热度:

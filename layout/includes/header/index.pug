@@ -12,7 +12,8 @@ else
 header#page-header(class=isHomeClass style=post_cover)
   !=partial('includes/header/nav', {}, {cache: true})
   if is_post()
-    .cover.loaded#coverdiv
+    .coverdiv
       img.nolazyload.entered.loaded#post-cover(src=`${cover}`, alt='cover', data-ll-status='loaded')
     include ./post-info.pug
+    include ./wave.pug
     

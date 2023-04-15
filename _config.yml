@@ -158,7 +158,12 @@ post_meta:
     categories: true # 首页显示分类
     tags: true # 首页显示标签
     label: true # 首页显示文章描述
-  
+  location: 成都 #地点
+  ai: #ai文章摘要生成
+    enable: true 
+    tianliGPT:
+      key: aX6hJp9B5eZtMqY7VrFg #可前往https://afdian.net/item/0e63b80adb6511edbeb552540025c377购买
+    
 # 字数统计
 # 注意安装对应的插件
 wordcount:
@@ -479,26 +484,6 @@ note:
 
 # 美化
 # --------------------------------
-# 主题色
-# 写HEX或者RGB
-theme_color:
-  enable: true
-  main: "#425AEF"
-#   paginator: "#00c4b6"
-  button_hover: "#425AEF"
-#   text_selection: "#00c4b6"
-  link_color: "#425AEF"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
-#   scrollbar_color: "#49b1f5"
-#   meta_theme_color_light: "ffffff"
-#   meta_theme_color_dark: "#0d0d0d"
-
 # 显示模式
 # light/dark
 display_mode: light
@@ -512,12 +497,18 @@ aside:
   position: right # 左边右边 right/left
   card_author:
     enable: true
-    description:
+    description: <div class="author-info__description"></div>这有关于<b>产品、设计、开发</b>相关的问题和看法，还有<b>文章翻译</b>和<b>分享</b>。<div class="author-info__description2"></div>相信你可以在这里找到对你有用的<b>知识</b>和<b>教程</b>。
     button:
-      enable: true
-      icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/xxxxxx
+      link: /about/
+      icon: fas fa-circle-chevron-right
+      text: 了解更多
+    social:
+      - title: Dribbble
+        icon: fab fa-dribbble
+        link: https://dribbble.com/zhheo
+      - title: Github
+        icon: fab fa-github
+        link: https://github.com/zhheo
   card_weixin:
     enable: true
   card_recent_post:
@@ -531,6 +522,8 @@ aside:
     runtime: true
     word_count: false
 
+runtime:
+  time: "2023/02/08 00:00:00"
 
 # 访问人數
 busuanzi:
@@ -602,7 +595,7 @@ pangu:
   field: site # site/post
 
 # 图片懒加载
-# https://github.com/verlok/vanilla-lazyload
+# https://github.com/verlok/vanillsa-lazyload
 lazyload:
   enable: false
   field: site # site/post

@@ -34,7 +34,7 @@
               a.footer-item(target='_blank', href=`${i.link}`)=i.text
             else 
               a.footer-item(href=`${i.link}`)=i.text
-  if theme.footer_friend_links.enable
+  if theme.footer.footer_friend_links.enable
     .footer-group
       .footer-title-group
         h3.footer-title 友链
@@ -42,7 +42,7 @@
           i.fa-solid.fa-arrows-rotate
       #friend-links-in-footer.footer-links
         - var n=0
-        while n < theme.footer_friend_links.number 
+        while n < theme.footer.footer_friend_links.number 
           a.footer-item(href='',target='_blank',rel='noopener nofollow') 加载中
           - n++
         a.footer-item(href='/link/') 更多

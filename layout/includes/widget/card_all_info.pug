@@ -14,7 +14,7 @@ if theme.aside.card_all_info.enable
           .webinfo-item-title
             i.item-icon.fas.fa-stopwatch
             .item-name= _p('aside.card_webinfo.runtime.name') + " :"
-          .item-count#runtimeshow(data-publishDate=date_xml(theme.runtimeshow.publish_date))
+          .item-count#runtimeshow(data-publishDate=date_xml(theme.runtime.time))
       if theme.wordcount.enable && theme.aside.card_all_info.word_count
         .webinfo-item
           .webinfo-item-title
