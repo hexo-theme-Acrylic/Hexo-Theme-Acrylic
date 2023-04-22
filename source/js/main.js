@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // sidebar menus
   const sidebarFn = {
     open: () => {
-      btf.sidebarPaddingR()
+      acy.sidebarPaddingR()
       document.body.style.overflow = 'hidden'
-      btf.animateIn(document.getElementById('menu-mask'), 'to_show 0.5s')
+      acy.animateIn(document.getElementById('menu-mask'), 'to_show 0.5s')
       document.getElementById('sidebar-menus').classList.add('open')
       mobileSidebarOpen = true
     },
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const $body = document.body
       $body.style.overflow = ''
       $body.style.paddingRight = ''
-      btf.animateOut(document.getElementById('menu-mask'), 'to_hide 0.5s')
+      acy.animateOut(document.getElementById('menu-mask'), 'to_hide 0.5s')
       document.getElementById('sidebar-menus').classList.remove('open')
       mobileSidebarOpen = false
     }
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const scrollDownInIndex = () => {
     const $scrollDownEle = document.getElementById('scroll-down')
     $scrollDownEle && $scrollDownEle.addEventListener('click', function () {
-      btf.scrollToDest(document.getElementById('content-inner').offsetTop, 300)
+      acy.scrollToDest(document.getElementById('content-inner').offsetTop, 300)
     })
   }
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
         document.execCommand('copy')
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.success)
+          acy.snackbarShow(GLOBAL_CONFIG.copy.success)
         } else {
           const prevEle = ctx.previousElementSibling
           prevEle.innerText = GLOBAL_CONFIG.copy.success
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
+          acy.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
         } else {
           ctx.previousElementSibling.innerText = GLOBAL_CONFIG.copy.noSupport
         }
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const highlightShrinkFn = (ele) => {
       const $nextEle = [...ele.parentNode.children].slice(1)
       ele.firstChild.classList.toggle('closed')
-      if (btf.isHidden($nextEle[$nextEle.length - 1])) {
+      if (acy.isHidden($nextEle[$nextEle.length - 1])) {
         $nextEle.forEach(e => { e.style.display = 'block' })
       } else {
         $nextEle.forEach(e => { e.style.display = 'none' })
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $figureHighlight.forEach(function (item) {
           const langName = item.getAttribute('data-language') ? item.getAttribute('data-language') : 'Code'
           const highlightLangEle = `<div class="code-lang">${langName}</div>`
-          btf.wrap(item, 'figure', { class: 'highlight' })
+          acy.wrap(item, 'figure', { class: 'highlight' })
           createEle(highlightLangEle, item)
         })
       } else {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       if (isPrismjs) {
         $figureHighlight.forEach(function (item) {
-          btf.wrap(item, 'figure', { class: 'highlight' })
+          acy.wrap(item, 'figure', { class: 'highlight' })
           createEle('', item)
         })
       } else {
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
    * Lightbox
    */
   const runLightbox = () => {
-    btf.loadLightbox(document.querySelectorAll('#article-container img:not(.no-lightbox)'))
+    acy.loadLightbox(document.querySelectorAll('#article-container img:not(.no-lightbox)'))
   }
 
   /**
@@ -235,12 +235,12 @@ document.addEventListener('DOMContentLoaded', function () {
       $imgList.forEach(i => {
         const dataLazySrc = i.getAttribute('data-lazy-src')
         if (dataLazySrc) i.src = dataLazySrc
-        btf.wrap(i, 'div', { class: 'fj-gallery-item' })
+        acy.wrap(i, 'div', { class: 'fj-gallery-item' })
       })
     })
 
     if (window.fjGallery) {
-      setTimeout(() => { btf.initJustifiedGallery(ele) }, 100)
+      setTimeout(() => { acy.initJustifiedGallery(ele) }, 100)
       return
     }
 
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newEle.rel = 'stylesheet'
     newEle.href = GLOBAL_CONFIG.source.justifiedGallery.css
     document.body.appendChild(newEle)
-    getScript(`${GLOBAL_CONFIG.source.justifiedGallery.js}`).then(() => { btf.initJustifiedGallery(ele) })
+    getScript(`${GLOBAL_CONFIG.source.justifiedGallery.js}`).then(() => { acy.initJustifiedGallery(ele) })
   }
 
   /**
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const isChatBtnShow = typeof chatBtnShow === 'function'
 
     window.scrollCollect = () => {
-      return btf.throttle(function (e) {
+      return acy.throttle(function (e) {
         const currentTop = window.scrollY || document.documentElement.scrollTop
         const isDown = scrollDirection(currentTop)
         if (currentTop > 56) {
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const $target = target.contains('toc-link')
           ? e.target
           : e.target.parentElement
-        btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI($target.getAttribute('href')).replace('#', ''))), 300)
+        acy.scrollToDest(acy.getEleTop(document.getElementById(decodeURI($target.getAttribute('href')).replace('#', ''))), 300)
         if (window.innerWidth < 900) {
           window.mobileToc.close()
         }
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let currentIndex = ''
 
       list.forEach(function (ele, index) {
-        if (top > btf.getEleTop(ele) - 80) {
+        if (top > acy.getEleTop(ele) - 80) {
           const id = ele.id
           currentId = id ? '#' + encodeURI(id) : ''
           currentIndex = index
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (detectItem === currentIndex) return
 
-      if (isAnchor) btf.updateAnchor(currentId)
+      if (isAnchor) acy.updateAnchor(currentId)
 
       detectItem = currentIndex
 
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // main of scroll
     window.tocScrollFn = function () {
-      return btf.throttle(function () {
+      return acy.throttle(function () {
         const currentTop = window.scrollY || document.documentElement.scrollTop
         isToc && scrollPercent(currentTop)
         findHeadPosition(currentTop)
@@ -468,11 +468,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (nowMode === 'light') {
         activateDarkMode()
         saveToLocal.set('theme', 'dark', 2)
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+        GLOBAL_CONFIG.Snackbar !== undefined && acy.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
       } else {
         activateLightMode()
         saveToLocal.set('theme', 'light', 2)
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+        GLOBAL_CONFIG.Snackbar !== undefined && acy.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
       }
       // handle some cases
       typeof utterancesTheme === 'function' && utterancesTheme()
@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.classList.toggle('show')
     },
     scrollToTop: () => { // Back to top
-      btf.scrollToDest(0, 500)
+      acy.scrollToDest(0, 500)
     },
     hideAsideBtn: () => { // Hide aside
       const $htmlDom = document.documentElement.classList
@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const $runtimeCount = document.getElementById('runtimeshow')
     if ($runtimeCount) {
       const publishDate = $runtimeCount.getAttribute('data-publishDate')
-      $runtimeCount.innerText = btf.diffDate(publishDate) + ' ' + GLOBAL_CONFIG.runtime
+      $runtimeCount.innerText = acy.diffDate(publishDate) + ' ' + GLOBAL_CONFIG.runtime
     }
   }
 
@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const $lastPushDateItem = document.getElementById('last-push-date')
     if ($lastPushDateItem) {
       const lastPushDate = $lastPushDateItem.getAttribute('data-lastPushDate')
-      $lastPushDateItem.innerText = btf.diffDate(lastPushDate, true)
+      $lastPushDateItem.innerText = acy.diffDate(lastPushDate, true)
     }
   }
 
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const $table = document.querySelectorAll('#article-container :not(.highlight) > table, #article-container > table')
     if ($table.length) {
       $table.forEach(item => {
-        btf.wrap(item, 'div', { class: 'table-wrap' })
+        acy.wrap(item, 'div', { class: 'table-wrap' })
       })
     }
   }
@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const $this = this
           $this.classList.add('open')
           const $fjGallery = $this.nextElementSibling.querySelectorAll('.fj-gallery')
-          $fjGallery.length && btf.initJustifiedGallery($fjGallery)
+          $fjGallery.length && acy.initJustifiedGallery($fjGallery)
         })
       })
     }
@@ -631,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           if (!$tabItem.classList.contains('active')) {
             const $tabContent = $tabItem.parentNode.nextElementSibling
-            const $siblings = btf.siblings($tabItem, '.active')[0]
+            const $siblings = acy.siblings($tabItem, '.active')[0]
             $siblings && $siblings.classList.remove('active')
             $tabItem.classList.add('active')
             const tabId = $this.getAttribute('data-href').replace('#', '')
@@ -642,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             const $isTabJustifiedGallery = $tabContent.querySelectorAll(`#${tabId} .fj-gallery`)
             if ($isTabJustifiedGallery.length > 0) {
-              btf.initJustifiedGallery($isTabJustifiedGallery)
+              acy.initJustifiedGallery($isTabJustifiedGallery)
             }
           }
         })
@@ -651,7 +651,7 @@ document.addEventListener('DOMContentLoaded', function () {
     backToTop: () => {
       document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
         item.addEventListener('click', function () {
-          btf.scrollToDest(btf.getEleTop(btf.getParents(this, '.tabs')), 300)
+          acy.scrollToDest(acy.getEleTop(acy.getParents(this, '.tabs')), 300)
         })
       })
     }
@@ -666,7 +666,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const $this = this
           $this.classList.toggle('expand')
           const $parentEle = $this.parentNode.nextElementSibling
-          if (btf.isHidden($parentEle)) {
+          if (acy.isHidden($parentEle)) {
             $parentEle.style.display = 'block'
           } else {
             $parentEle.style.display = 'none'
@@ -682,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $switchBtn && $switchBtn.addEventListener('click', function () {
       this.classList.toggle('move')
       document.querySelectorAll('#post-comment > .comment-wrap > div').forEach(function (item) {
-        if (btf.isHidden(item)) {
+        if (acy.isHidden(item)) {
           item.style.cssText = 'display: block;animation: tabshow .5s'
         } else {
           item.style.cssText = "display: none;animation: ''"
@@ -698,7 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const addPostOutdateNotice = function () {
     const data = GLOBAL_CONFIG.noticeOutdate
-    const diffDay = btf.diffDate(GLOBAL_CONFIG_SITE.postUpdate)
+    const diffDay = acy.diffDate(GLOBAL_CONFIG_SITE.postUpdate)
     if (diffDay >= data.limitDay) {
       const ele = document.createElement('div')
       ele.className = 'post-outdate-notice'
@@ -724,7 +724,7 @@ document.addEventListener('DOMContentLoaded', function () {
     selector.forEach(item => {
       const $this = item
       const timeVal = $this.getAttribute('datetime')
-      $this.innerText = btf.diffDate(timeVal, true)
+      $this.innerText = acy.diffDate(timeVal, true)
       $this.style.display = 'inline'
     })
   }
@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const unRefreshFn = function () {
     window.addEventListener('resize', () => {
       adjustMenu(false)
-      btf.isHidden(document.getElementById('toggle-menu')) && mobileSidebarOpen && sidebarFn.close()
+      acy.isHidden(document.getElementById('toggle-menu')) && mobileSidebarOpen && sidebarFn.close()
     })
 
     document.getElementById('menu-mask').addEventListener('click', e => { sidebarFn.close() })

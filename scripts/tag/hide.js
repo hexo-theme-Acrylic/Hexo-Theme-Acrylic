@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * @example
  * hideInline
  * {% hideInline content,display,bg,color %}

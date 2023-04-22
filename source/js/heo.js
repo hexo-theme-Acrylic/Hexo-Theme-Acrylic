@@ -256,7 +256,7 @@ var heo = {
     rm.hideRightMenu();
     if (rm.downloadimging == false) {
       rm.downloadimging = true;
-      btf.snackbarShow('正在下载中，请稍后',false,10000)
+      acy.snackbarShow('正在下载中，请稍后',false,10000)
       setTimeout(function(){
         let image = new Image();
         // 解决跨域 Canvas 污染问题
@@ -275,11 +275,11 @@ var heo = {
           a.dispatchEvent(event); // 触发a的单击事件
         };
         image.src = imgsrc;
-        btf.snackbarShow('图片已添加盲水印，请遵守版权协议');
+        acy.snackbarShow('图片已添加盲水印，请遵守版权协议');
         rm.downloadimging = false;
       }, "10000");
     }else{
-      btf.snackbarShow('有正在进行中的下载，请稍后再试');
+      acy.snackbarShow('有正在进行中的下载，请稍后再试');
     }
   },
 

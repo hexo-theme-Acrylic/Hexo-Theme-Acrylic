@@ -9,7 +9,7 @@
 	},
 	"main": "package.json",
 	"homepage": "https://Acrylic.zhheo.com/",
-	"keywords": ["hexo", "theme", "butterfly","hexo-theme-Acrylic"],
+	"keywords": ["hexo", "theme", "Acrylic","hexo-theme-Acrylic"],
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

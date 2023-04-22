@@ -174,7 +174,7 @@ window.onload = function () {
 
 function showcopy() {
   if (GLOBAL_CONFIG.Snackbar !== undefined) {
-    btf.snackbarShow(GLOBAL_CONFIG.copy.success)
+    acy.snackbarShow(GLOBAL_CONFIG.copy.success)
   } else {
     const prevEle = ctx.previousElementSibling
     prevEle.innerText = GLOBAL_CONFIG.copy.success
@@ -234,7 +234,7 @@ function fly_to_top() {
   document.getElementById("guli_top").classList.add("open_wing");
   setTimeout(function () {
     document.getElementById("guli_top").classList.add("flying");
-    btf.scrollToDest(0, 300);
+    acy.scrollToDest(0, 300);
   }, 300);
   setTimeout(function () {
     // 这里就是处理的事件
@@ -251,11 +251,11 @@ var navFn = {
     if (nowMode === 'light') {
       activateDarkMode()
       saveToLocal.set('theme', 'dark', 2)
-      GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night, false, 2000)
+      GLOBAL_CONFIG.Snackbar !== undefined && acy.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night, false, 2000)
     } else {
       activateLightMode()
       saveToLocal.set('theme', 'light', 2)
-      GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day, false, 2000)
+      GLOBAL_CONFIG.Snackbar !== undefined && acy.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day, false, 2000)
     }
     // handle some cases
     typeof utterancesTheme === 'function' && utterancesTheme();
@@ -309,7 +309,7 @@ document.addEventListener('touchstart', e => {
 //监听ctrl+C
 $(document).unbind('keydown').bind('keydown', function (e) {
   if ((e.ctrlKey || e.metaKey) && (e.keyCode == 67) && (selectTextNow != '')) {
-    btf.snackbarShow('复制成功，复制和转载请标注本文地址');
+    acy.snackbarShow('复制成功，复制和转载请标注本文地址');
     rm.rightmenuCopyText(selectTextNow);
     return false;
   }
@@ -324,13 +324,13 @@ $(document).unbind('keydown').bind('keydown', function (e) {
 //       var country = json.country;
 //       console.log(country);
 //       if (country != '中国'){
-//         btf.snackbarShow('使用国外网络访问可能无法访问文章图片，敬请谅解。Blog pictures only serve mainland China.')
+//         acy.snackbarShow('使用国外网络访问可能无法访问文章图片，敬请谅解。Blog pictures only serve mainland China.')
 //       }
 //     })
 // });
 
 //颜色
-document.addEventListener('scroll', btf.throttle(function () {
+document.addEventListener('scroll', acy.throttle(function () {
   heo.initThemeColor()
 }, 200))
 
@@ -376,7 +376,7 @@ function toforeverblog() {
 
 //前往开往项目
 function totraveling() {
-  btf.snackbarShow('即将跳转到「开往」项目的成员博客，不保证跳转网站的安全性和可用性', false, 5000);
+  acy.snackbarShow('即将跳转到「开往」项目的成员博客，不保证跳转网站的安全性和可用性', false, 5000);
   setTimeout(function () {
     window.open('https://www.travellings.cn/go.html');
   }, "5000");
@@ -436,7 +436,7 @@ function getArrayItems(arr, num) {
 // 检测按键
 window.onkeydown = function (e) {
   if (e.keyCode === 123) {
-    btf.snackbarShow('开发者模式已打开，请遵循GPL协议', false, 3000)
+    acy.snackbarShow('开发者模式已打开，请遵循GPL协议', false, 3000)
   }
 }
 
@@ -523,7 +523,7 @@ function owoBig() {
 }
 
 //文章页面上一篇下一篇
-document.addEventListener('scroll', btf.throttle(function () {
+document.addEventListener('scroll', acy.throttle(function () {
   //滚动条高度+视窗高度 = 可见区域底部高度
   var visibleBottom = window.scrollY + document.documentElement.clientHeight;
   //可见区域顶部高度
@@ -557,6 +557,7 @@ document.addEventListener('pjax:complete', function () {
   addRightMenuClickEvent()
   navTitle()
   percent()
+  // randomLinksList()
   heo.topPostScroll()
   heo.topCategoriesBarScroll()
   heo.sayhi()
@@ -578,3 +579,4 @@ document.addEventListener('pjax:complete', function () {
   heo.tagPageActive()
   heo.removeBodyPaceClass()
 })
+randomLinksList();

@@ -33,7 +33,7 @@ nav#nav.show
             i=nav.logo.custom
     #page-name-mask
       #page-name
-        a#page-name-text(onclick='btf.scrollToDest(0, 500)')
+        a#page-name-text(onclick='acy.scrollToDest(0, 500)')
           span #[=config.title]
     #menus
       !=partial('includes/header/menu_item', {}, {cache: true})
@@ -59,7 +59,7 @@ nav#nav.show
         #nav-console.nav-button
           a.console_switchbutton(onclick='heo.showConsole()' title='显示中控台' href='javascript:void(0);' rel='external nofollow')
             i.fas.fa-bars-progress
-      #nav-totop.nav-button(onclick='btf.scrollToDest(0, 500)')
+      #nav-totop.nav-button(onclick='acy.scrollToDest(0, 500)')
         a.totopbtn(data-pjax-state='')
           i.fas.fa-arrow-up
           span#percent 0

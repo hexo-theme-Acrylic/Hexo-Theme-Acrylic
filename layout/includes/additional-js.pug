@@ -39,8 +39,14 @@ div
 
     if commentsJsLoad
       include ./third-party/comments/js.pug
-
-
+  
+  script(type='text/javascript', src='https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js')
+  script(src='/js/heo.js')
+  script(src='/js/blogex.js')
+  script(src='/heo/random.js')
+  script(data-pjax, src='/lib/swiper.min.js')
+  if theme.footer.footer_friend_links.enable
+    !=randomLinks()
   != fragment_cache('injectBottom', function(){return injectHtml(theme.inject.bottom)})
 
   if theme.aplayerInject && theme.aplayerInject.enable

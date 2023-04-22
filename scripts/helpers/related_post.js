@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * Related Posts
  * According the tag
  */

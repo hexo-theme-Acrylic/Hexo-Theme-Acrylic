@@ -30,13 +30,16 @@ meta(name ="format-detection" content="telephone=no")
 meta(name="theme-color" content=themeColor)
 
 //- Open_Graph
-include ./head/Open_Graph.pug
+- let contentType = is_post() ? 'article' : 'website'
+- let metaImage = (page.cover || theme.avatar.img) ? full_url_for(page.cover || theme.avatar.img) : ''
 
 !=favicon_tag(theme.favicon || config.favicon)
 link(rel="canonical" href=urlNoIndex())
 
 //- 預解析
-!=partial('includes/head/preconnect', {}, {cache: true})
+link(rel="preconnect" href="//cdn1.tianli0.top")
+if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
+  link(rel="preconnect" href="//busuanzi.ibruce.info")
 
 //- PWA
 if (theme.pwa && theme.pwa.enable)
@@ -57,8 +60,21 @@ if theme.post_meta.ai.enable
 !=partial('includes/head/config', {}, {cache: true})
 
 include ./head/config_site.pug
-include ./head/noscript.pug
+//- noscript
+noscript. 
+  <style type="text/css">
+    #nav {
+      opacity: 1
+    }
+    .justified-gallery img {
+      opacity: 1
+    }
 
+    #recent-posts time,
+    #post-meta time {
+      display: inline !important
+    }
+  </style>
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
 //- if is_post()
   //- !=partial('includes/head/theme_color', {}, {cache: true})

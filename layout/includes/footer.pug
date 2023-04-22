@@ -10,7 +10,7 @@
         else 
           a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
             i(class=`${i.icon}`)
-  img.footer_mini_logo.entered.loading(title='返回顶部' onclick='btf.scrollToDest(0, 500)' src=`${theme.footer.footer_logo.url}` data-ll-status='loading')
+  img.footer_mini_logo.entered.loading(title='返回顶部' onclick='acy.scrollToDest(0, 500)' src=`${theme.footer.footer_logo.url}` data-ll-status='loading')
   if theme.footer.footer_icons.enable
       each i in theme.footer.footer_icons.right 
         if i.class == "in"
@@ -38,28 +38,23 @@
     .footer-group
       .footer-title-group
         h3.footer-title 友链
-        a.random-friends-btn(href='javascript:heo.addFriendLinksInFooter();' rel='external nofollow' data-pjax-state='')
+        a.random-friends-btn(href='javascript:randomLinksList();;' rel='external nofollow' data-pjax-state='')
           i.fa-solid.fa-arrows-rotate
       #friend-links-in-footer.footer-links
-        - var n=0
-        while n < theme.footer.footer_friend_links.number 
-          a.footer-item(href='',target='_blank',rel='noopener nofollow') 加载中
-          - n++
-        a.footer-item(href='/link/') 更多
 #footer-banner
   .footer-banner-links
     .footer-banner-left
       #footer-banner-tips
-        if copyrightenable
+        if theme.footer.footer_bottom.copyright.enable
           - var now = new Date()
           - var nowYear = now.getFullYear()
           - var time = theme.footer.footer_bottom.copyright.time
           if time && time != nowYear
-            .copyright!= `| &copy;${time} - ${nowYear} By `
-              a(target='_blank',href='/',rel='external nofollow') #[=config]
+            .copyright!= `&copy;${time} - ${nowYear} By `
+              a(target='_blank',href='/',rel='external nofollow') #[=config.author]
           else
-            .copyright!= `| &copy;${nowYear} By `
-              a(target='_blank',href='/',rel='external nofollow')
+            .copyright!= `&copy;${nowYear} By `
+              a(target='_blank',href='/',rel='external nofollow') #[=config.author]
     .footer-banner-right
       a.footer-banner-link(href='/rss/' ,data-pjax-state='' ,title="框架") Hexo
       a.footer-banner-link(href='/update/' ,data-pjax-state='' ,title="主题") Acrylic

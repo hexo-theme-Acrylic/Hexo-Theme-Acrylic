@@ -27,21 +27,5 @@
         .post-meta__tag-list
             each item, index in page.tags.data
                 a(href=url_for(item.path)).post-meta__tags #[=item.name]
-
 script(async='' src='https://cdn2.tianli0.top/gh/davidshimjs/qrcodejs@master/qrcode.min.js')
 script(async='' src='https://cdn2.tianli0.top/npm/js-heo@1.0.11/qrcode/qrcode-lu.js')
-script(type='text/javascript').
-    // 二维码
-    qrcodeCreate: function() {
-    if (document.getElementById('qrcode')){
-    document.getElementById("qrcode").innerHTML = "";
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: window.location.href,
-    width: 250,
-    height: 250,
-    colorDark : "#000",
-    colorLight : "#ffffff",
-    correctLevel : QRCode.CorrectLevel.H
-    });
-    }
-    },

@@ -1,7 +1,3 @@
-footer:
-  framework: 框架
-  theme: 主题
-
 copy:
   success: 复制成功
   error: 复制错误
@@ -104,10 +100,6 @@ rightside:
   scroll_to_comment: 直达评论
   setting: 设置
   ranklist: 打赏榜单
-  SAOSwitch: 右键开关
-  SAORefresh: 点击刷新
-  chat_btn: 与我联系
-  live2d_widget: 看板娘
   aside: 侧栏显隐
 
 copy_copyright:
@@ -122,6 +114,5 @@ Snackbar:
   day_to_night: 你已切换为深色模式
   night_to_day: 你已切换为浅色模式
 
-loading: 加载中...
 
 error404: 页面没有找到

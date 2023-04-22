@@ -1,0 +1,24 @@
+.flink#banners
+  .banners-title
+    .banners-title-small 友情链接
+    .banners-title-big 与数百名博主无限进步
+  .banner-button-group
+    a.banner-button.secondary(onclick='travelling()', data-pjax-state)
+      i.fas.fa-shuffle
+      span.banner-button-text 随机访问
+    a.banner-button(href="#post-comment", rel='external nofollow', data-pjax-state)
+      i.fas.fa-circle-chevron-right
+      span.banner-button-text 申请友链
+  .tags-group-all.nowrapMove
+    .tags-group-wrapper
+      if site.data.link
+        each i in site.data.link
+          - const evenNum = i.link_list.filter((x, index) => index % 2 === 0);
+          - const oddNum = i.link_list.filter((x, index) => index % 2 === 1);
+          each item, index in i.link_list
+            if ((index+1 <= evenNum.length) && (index+1 <= oddNum.length))
+              .tags-group-icon-pair
+                a.tags-group-icon(href=evenNum[index].link)
+                  img.entered.loading(title=evenNum[index].name, src=evenNum[index].avatar)
+                a.tags-group-icon(href=oddNum[index].link)
+                  img.entered.loading(title=oddNum[index].name,  target='_blank',src=oddNum[index].avatar,onerror='this.onerror=null', data-ll-status='loading')

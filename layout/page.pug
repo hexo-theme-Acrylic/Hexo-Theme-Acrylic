@@ -2,9 +2,6 @@ extends includes/layout.pug
 
 block content
   #page
-    //- if top_img === false && page.type != 'music'
-    //-   h1.page-title= page.title
-
     case page.type
       when 'tags'
         h1.page-title= page.title

@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * Merge CDN
  */
 
@@ -15,27 +15,27 @@ hexo.extend.filter.register('before_generate', () => {
   const thirdPartySrc = hexo.render.renderSync({ path: path.join(hexo.theme_dir,'/plugins.yml'), engine: 'yaml'})
   const internalSrc = {
     main: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/main.js',
       version
     },
     utils: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/utils.js',
       version
     },
     translate: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/tw_cn.js',
       version
     },
     local_search: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/search/local-search.js',
       version
     },
     algolia_js: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/search/algolia.js',
       version
     }

@@ -1,17 +1,13 @@
 #about-page
   .author-info
     .author-tag-left
-      span.author-tag 
-      span.author-tag 
-      span.author-tag 
-      span.author-tag 
+      each i in theme.about.info.right
+        span.author-tag #[=i]
     .author-img
       img.entered.loading(src=`${theme.avatar.img}` data-ll-status='loading')
     .author-tag-right
-      span.author-tag 
-      span.author-tag 
-      span.author-tag 
-      span.author-tag
+      each i in theme.about.info.left
+        span.author-tag #[=i]
   p.center.logo.large 关于本站
   .author-content
     .author-content-item.myInfoAndSayHello
@@ -280,10 +276,10 @@ script.
             document.removeEventListener('scroll', throttleScrollSelfInfoContentYear);
           }
         }
-        const throttleStatisticUP = btf.throttle(statisticUP, 200)
+        const throttleStatisticUP = acy.throttle(statisticUP, 200)
         document.addEventListener('scroll', throttleStatisticUP, {passive: true})
 
-        const throttleScrollSelfInfoContentYear = btf.throttle(scrollSelfInfoContentYear, 200)
+        const throttleScrollSelfInfoContentYear = acy.throttle(scrollSelfInfoContentYear, 200)
         document.addEventListener('scroll', throttleScrollSelfInfoContentYear, {passive: true})
     });
 

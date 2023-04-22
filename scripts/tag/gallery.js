@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * galleryGroup and allery
  */
 

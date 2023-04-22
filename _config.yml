@@ -1,7 +1,7 @@
 # 欢迎使用Acrylic主题!🎉
 # Welcome to use theme of Acrylic!🎉
-# 文档: https://Acrylic.zhheo.com/
-# dosc: https://Acrylic.zhheo.com/
+# 文档: https://pro.Acrylic.org.cn/
+# docs: https://docs.pro.Acrylic.org.cn/
 # 交流群: 649565726
 # 这是Dev版!
 # -------------------------------------
@@ -9,34 +9,35 @@
 # 图片
 # --------------------------------
 
-# 网站图标
+# 网站图标 (favicon)
 favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
 
-# 头像
+# 头像 (avatar)
 avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
 
-# 默认信息
-default_img:
-default_title:
-default_text:
+# 默认信息 (default)
+default_img: https://photo.acrylic.org.cn/K7xU3H.webp
+default_title: 没有配置捏
+default_text: 没有配置捏
 
-# 搜索
+# 搜索 (search)
 # --------------------------------
-# Algolia search
+
+# Algolia 搜索 (Algolia search)
 algolia_search:
   enable: false
   hits:
     per_page: 6
 
-# Local search
+# 本地搜索 (Local search)
 local_search:
   enable: false
   preload: false
   CDN:
 
 
-# 导航栏
+# 导航栏 (nav)
 # --------------------------------
 nav:
   left_groups:
@@ -63,7 +64,7 @@ nav:
   logo: 
     enable: true
     class: i_class #i_class/text/img i_class为icon图标,text为文字,img为图片
-    custom: heoicon icon-heologo #Heo/https://xxx.com/logo.png /class为text时留空
+    custom: heofont icon-heologo #Heo/https://xxx.com/logo.png /class为text时留空
   fps_enable: false
   menu:
     文库:
@@ -89,15 +90,15 @@ nav:
     random: true
     console: true
 
-# 页面
+# 页面 (page)
 # --------------------------------
-# 404页面
+# 404页面 (404 page)
 error_404:
   enable: true
   subtitle: '请尝试站内搜索寻找文章'
   background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
 
-# 即刻短文 
+# 即刻短文 (essay page)
 essay:
   enable: true
   descr: 分享生活的小确幸
@@ -106,44 +107,44 @@ essay:
   text: 如何使用
   icon: fas fa-circle-chevron-right
 
-# 关于页
+# 关于页面 (about page)
 about:
   info:
     right:
-      # - 🤖️ 数码爱好者
-      # - 🔍 分享与热心帮助
-      # - 🏠 智能家居小能手
-      # - 🔨 开发小萌新
+      - 🤖️ 数码爱好者
+      - 🔍 分享与热心帮助
+      - 🏠 智能家居小能手
+      - 🔨 开发小萌新
     left:
-      # - 专修交互设计 🤝
-      # - 脚踏实地行动派 🏃
-      # - 专攻各种困难 🧱
-      # - 人狠话不多 💢
-  job: #学生、独立开发者、博主
-  live: #中国，北京市
-  born: #1997
-  school: #大连工业大学
-  can: #产品设计
-  work: #UI/产品
-  character: #逻辑学家
-  character2: #INTP-T
-  personalities: #https://cdn.zhheo.com/public/svg/INTP-T.svg
-  selfie: #https://p.zhheo.com/202352d98ec86bef3388a0152b33cf9d06ad082002.png!cover
-  maxim1: #荆棘之路，
-  maxim2: #劈风斩浪。
-  tc1: #玄学流电脑疑难问题
-  tc2: #解决专家
-  tc3: #软件学习能力
-  tc4: #MAX
-  uid: #'UID:125766904'
-  fanjuname: #刺客伍六七
-  fanjulink: #'https://www.bilibili.com/bangumi/play/ss36594/?spm_id_from=333.999.0.0'
-  liketechnology: #数码科技
-  liketechnologyand: #手机、电脑软硬件
-  sllctitle: #为什么建站？
-  xllc: #写一写你的想法……
+      - 专修交互设计 🤝
+      - 脚踏实地行动派 🏃
+      - 专攻各种困难 🧱
+      - 人狠话不多 💢
+  job: 学生、独立开发者、博主
+  live: 中国，北京市
+  born: 1997
+  school: 大连工业大学
+  can: 产品设计
+  work: UI/产品
+  character: 逻辑学家
+  character2: INTP-T
+  personalities: https://cdn.zhheo.com/public/svg/INTP-T.svg
+  selfie: https://p.zhheo.com/202352d98ec86bef3388a0152b33cf9d06ad082002.png!cover
+  maxim1: 荆棘之路，
+  maxim2: 劈风斩浪。
+  tc1: 玄学流电脑疑难问题
+  tc2: 解决专家
+  tc3: 软件学习能力
+  tc4: MAX
+  uid: 'UID:125766904'
+  fanjuname: 刺客伍六七
+  fanjulink: 'https://www.bilibili.com/bangumi/play/ss36594/?spm_id_from=333.999.0.0'
+  liketechnology: 数码科技
+  liketechnologyand: 手机、电脑软硬件
+  sllctitle: 为什么建站？
+  xllc: 写一写你的想法……
 
-# 文章
+# 文章 (post)
 # --------------------------------
 post_meta:
   page: # 首页
@@ -162,9 +163,9 @@ post_meta:
   ai: #ai文章摘要生成
     enable: true 
     tianliGPT:
-      key: aX6hJp9B5eZtMqY7VrFg #可前往https://afdian.net/item/0e63b80adb6511edbeb552540025c377购买
+      key: aX6hJp9B5eZtMqY7VrFg #可前往购买
     
-# 字数统计
+# 字数统计 (wordcount)
 # 注意安装对应的插件
 wordcount:
   enable: false
@@ -172,6 +173,7 @@ wordcount:
   min2read: true
   total_wordcount: true
 
+# 数学公式
 # MathJax
 mathjax:
   enable: false
@@ -183,7 +185,7 @@ katex:
   per_page: false
   hide_scrollbar: true
 
-# 版权
+# 版权 (copyright)
 copyright:
   enable: true
   link: /cc/
@@ -191,15 +193,15 @@ copyright:
   short: cc
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
   
-# 相关文章
+# 相关文章 (related post)
 related_post:
   enable: true
 
-# 文章底部工具
+# 文章 ptool (ptool)
 ptool:
   enable: true
 
-# 打赏
+# 打赏 (reward)
 reward:
   enable: true
   QR_code:
@@ -210,14 +212,14 @@ reward:
       link:
       text: 支付宝
 
-# 评论系统
+# 评论 (comments)
 # --------------------------------
 comments:
   use: Twikoo # Waline/Twikoo/Artalk
   text: true # 在按钮旁边显示评论名称
   # lazyload: 当评论进入浏览器视野时，评论系统将被加载。
   lazyload: false
-  count: false # 顶部图显示评论数
+  count: true # 顶部图显示评论数
   card_post_count: false # 首页显示评论数
 
 # waline 
@@ -231,8 +233,8 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: 
-  region:
+  envId: https://t.pro.acrylic.org.cn/
+  region: 
   visitor: false
   option:
 
@@ -244,12 +246,12 @@ artalk:
   visitor: false
   option:
 
-# 首页顶部
+# 首页 hometop (hometop)
 hometop:
   enable: true
   banner:
     enable: true
-    class: people #people(人潮汹涌)/creativity(创造力)
+    class: creativity #people(人潮汹涌)/creativity(创造力)
     title_up: 分享设计
     title_dn: 与科技生活
     tips: ZHHEO.COM
@@ -288,7 +290,7 @@ hometop:
       class: 
       number: 6
 
-# 页脚
+# 页脚 (footer)
 # --------------------------------
 footer:
   footer_icons:
@@ -429,7 +431,6 @@ footer:
             class: in
   footer_friend_links:
     enable: true
-    number: 4
   footer_bottom:
     copyright:
       enable: true
@@ -438,36 +439,35 @@ footer:
       - text: 京ICP备1905135号
         link: https://beian.miit.gov.cn/#/Integrated/index
 
-# 小工具
+# 工具 (tool)
 # --------------------------------
 
-#广告
+# 广告 (ad)
 ad:
   index:
   aside:
   post:
 
-# 加载动画
+# 加载动画 (loading)
 loading: 
   enable: true
 
-# 手机边栏 
+# 手机边栏 (sidebar)
 sidebar: 
   list_group: true
   tag: true
 
-# 中控台
+# 中控台 (console)
 console:
   comment: true
   tag: true
   archives: true 
 
-# 图片放大
-# fancybox
+# 图片灯箱 (fancybox)
 # http://fancyapps.com/fancybox/3/
 fancybox: true
 
-# 标签外挂
+# 标签外挂 (mermaid)
 mermaid:
   enable: false
   # 主题: default/forest/dark/neutral
@@ -475,7 +475,7 @@ mermaid:
     light: default
     dark: dark
 
-# Note
+# 标签 (Note)
 note:
   style: flat
   icons: true
@@ -484,11 +484,10 @@ note:
 
 # 美化
 # --------------------------------
-# 显示模式
-# light/dark
-display_mode: light
+# 显示模式 (display mode)
+display_mode: light #light/dark
 
-# 侧边栏
+# 侧边栏 (aside)
 # --------------------------------
 aside:
   enable: true
@@ -525,15 +524,20 @@ aside:
 runtime:
   time: "2023/02/08 00:00:00"
 
-# 访问人數
+# 卜算子 (busuanzi) 
 busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
 
 
-# 右下角按钮
+# 右下悬浮栏 (right side)
 # --------------------------------
+
+rightside_item_order:
+  enable: false
+  hide: 
+  show: 
 # 简体繁体切换
 translate:
   enable: true
@@ -555,12 +559,8 @@ darkmode:
   # 2： 在下午 6 点到早上 6 点之间切换黑暗模式
   autoChangeMode: 1
 
-rightside_item_order:
-  enable: false
-  hide: 
-  show: 
 
-# 其他
+# 其他 (other)
 # --------------------------------
 # Pjax
 # 它可能包含错误和不稳定
@@ -576,7 +576,7 @@ aplayerInject:
   enable: true
   per_page: true
 
-# 弹窗
+# 弹窗 (snackbar)
 # https://github.com/polonel/SnackBar
 # 位置 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
@@ -585,16 +585,16 @@ snackbar:
   bg_light: '#49b1f5' 
   bg_dark: '#1f1f1f' 
 
+# 预加载 (instantpage)
 # https://instant.page/
-# 预加载
 instantpage: true
 
-# 中英文间加空格
+# 中英文间加空格 (pangu)
 pangu:
   enable: false
   field: site # site/post
 
-# 图片懒加载
+# 图片懒加载 (lazyload)
 # https://github.com/verlok/vanillsa-lazyload
 lazyload:
   enable: false
@@ -604,32 +604,31 @@ lazyload:
 
 # PWA
 # https://github.com/JLHwung/hexo-offline
-# pwa:
-#   enable: false
-#   manifest: /pwa/manifest.json
-#   apple_touch_icon: /pwa/apple-touch-icon.png
-#   favicon_32_32: /pwa/32.png
-#   favicon_16_16: /pwa/16.png
-#   mask_icon: /pwa/safari-pinned-tab.svg
+pwa:
+  enable: false
+  manifest: /pwa/manifest.json
+  apple_touch_icon: /pwa/apple-touch-icon.png
+  favicon_32_32: /pwa/32.png
+  favicon_16_16: /pwa/16.png
+  mask_icon: /pwa/safari-pinned-tab.svg
 
 
-Open_Graph_meta: true
-css_prefix: true
 
-# 代码引入
+# 引入 (inject)
 # --------------------------------
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    # 通常这里写CSS
+    # CSS
+    - <link rel="stylesheet" href="https://cdn3.codesign.qq.com/icons/X2bzpZvRWkZkAaV/latest/iconfont.css">
+    - <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.css">
   bottom:
     # - <script src="/js/xxx.js"></script>
-    # 通常这里写JS
-    - <script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script>
-    - <script src="/js/blogex.js"></script>
-    - <script data-pjax src="/lib/swiper.min.js"></script>
-    - <script src="/js/heo.js"></script>
-    - <script src="/heo/random.js"></script>
+    # JS
+    - <script data-pjax="" src="/js/rightmenu.js"></script>
+    - <script data-pjax="" src="/js/commentBarrage.js"></script>
+    - <script data-pjax="" src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/6.6.2/swiper-bundle.min.js"></script>
+
     
 
 # CDN

@@ -1,4 +1,4 @@
-const btf = {
+const acy = {
   debounce: function (func, wait, immediate) {
     let timeout
     return function () {
@@ -234,7 +234,7 @@ const btf = {
         if (i.parentNode.tagName !== 'A') {
           const dataSrc = i.dataset.lazySrc || i.src
           const dataCaption = i.title || i.alt || ''
-          btf.wrap(i, 'a', { href: dataSrc, 'data-fancybox': 'gallery', 'data-caption': dataCaption, 'data-thumb': dataSrc })
+          acy.wrap(i, 'a', { href: dataSrc, 'data-fancybox': 'gallery', 'data-caption': dataCaption, 'data-thumb': dataSrc })
         }
       })
 
@@ -252,7 +252,7 @@ const btf = {
 
   initJustifiedGallery: function (selector) {
     selector.forEach(function (i) {
-      if (!btf.isHidden(i)) {
+      if (!acy.isHidden(i)) {
         fjGallery(i, {
           itemSelector: '.fj-gallery-item',
           rowHeight: 220,
@@ -274,5 +274,8 @@ const btf = {
         title: title
       }, title, anchor)
     }
+  },
+  randomNum: (length) => {
+    return Math.floor(Math.random() * length)
   }
 }

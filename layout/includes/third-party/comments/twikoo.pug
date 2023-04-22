@@ -9,7 +9,7 @@ script.
         envId: '!{envId}',
         region: '!{region}',
         onCommentLoaded: function () {
-          btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+          acy.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
         }
       }, !{JSON.stringify(option)}))
     }
@@ -43,7 +43,7 @@ script.
     }
 
     if ('!{use[0]}' === 'Twikoo' || !!{lazyload}) {
-      if (!{lazyload}) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+      if (!{lazyload}) acy.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
       else loadTwikoo()
     } else {
       window.loadOtherComment = () => {

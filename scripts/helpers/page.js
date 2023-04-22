@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * @example
  *  page_description()
  *  cloudTags(source, minfontsize, maxfontsize, limit)
