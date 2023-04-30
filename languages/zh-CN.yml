@@ -4,10 +4,10 @@ copy:
   noSupport: 浏览器不支持
 
 page:
-  articles: 文章总览
+  articles: 文章
   tag: 标签
   category: 分类
-  archives: 归档
+  archives: 文章
 
 card_post_count: 条评论
 
@@ -57,7 +57,6 @@ aside:
   card_announcement: 公告
   card_categories: 分类
   card_tags: 标签
-  card_archives: 归档
   card_recent_post: 最新文章
   card_webinfo:
     headline: 网站资讯

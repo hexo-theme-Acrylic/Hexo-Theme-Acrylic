@@ -1,15 +1,20 @@
-//- each i in 
-//-   .site-card
-//-     span.site-card-tag 技术
-//-     a.img(target='_blank', title='Adil', href='https://blog.adil.com.cn', rel='external nofollow')
-//-       img.flink-avatar.entered.loaded(data-lazy-src='https://p.zhheo.com/SB32Uw23090581653027870462.jpg!cover_siteshot', onerror='this.onerror=null;this.src=\'https://bu.dusays.com/2023/03/03/6401a79030db5.png\'', alt='Adil', style='pointer-events: none;', data-ll-status='loaded', src='https://p.zhheo.com/SB32Uw23090581653027870462.jpg!cover_siteshot')
-//-       .img-alt.is-center Adil
-//-     a.info.cf-friends-link(target='_blank', title='Adil', href='https://blog.adil.com.cn', rel='external nofollow')
-//-     .site-card-avatar
-//-       a.info.cf-friends-link(target='_blank', title='Adil', href='https://blog.adil.com.cn', rel='external nofollow')
-//-       a.fancybox(href='https://p.zhheo.com/KKKL6z23990381615774419596.jpg!cover_mini', data-fancybox='images', data-caption='Adil', data-srcset='https://p.zhheo.com/KKKL6z23990381615774419596.jpg!cover_mini 1600w')
-//-         img.flink-avatar.cf-friends-avatar.entered.loaded(data-lazy-src='https://p.zhheo.com/KKKL6z23990381615774419596.jpg!cover_mini', onerror='this.onerror=null;this.src=\'https://bu.dusays.com/2023/03/03/6401a7902b8de.png\'', alt='Adil', data-ll-status='loaded', src='https://p.zhheo.com/KKKL6z23990381615774419596.jpg!cover_mini')
-//-       .img-alt.is-center Adil
-//-     .site-card-text
-//-       span.title.cf-friends-name Adil
-//-       span.desc(title='全栈开发工程师，分享深度技术的开发博客') 全栈开发工程师，分享深度技术的开发博客
+if site.data.link
+  each i in s.link_list
+    - var color = i.color || ""
+    - var tag = i.tag || "默认"
+    - var siteshot = i.siteshot || `https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/noanimate/${i.link}` || theme.default_img
+    .site-card
+      if color == "vip"
+        span.site-card-tag.vip #[=tag]
+      else if color == "speed"
+        span.site-card-tag.speed #[=tag]
+      else 
+        span.site-card-tag #[=tag]
+      a.img(target='_blank', title=`${i.name}`, href=`${i.link}`, rel='external nofollow')
+        img.flink-avatar.entered.loaded(data-lazy-src=`${siteshot}`, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=`${i.name}`, style="pointer-events: none;", data-ll-status='loaded', src=`${siteshot}`)
+      a.info.cf-friends-link(target='_blank', title=`${i.name}`, href=`${i.link}`, rel='external nofollow')
+        .site-card-avatar
+          img.flink-avatar.cf-friends-avatar.entered.loaded.no-fancybox(data-lazy-src=`${i.avatar}`, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=`${i.name}`, data-ll-status='loaded', src=`${i.avatar}`)
+        .site-card-text
+          span.title.cf-friends-name #[=i.name]
+          span.desc(title=`${descr}`) #[=i.descr]

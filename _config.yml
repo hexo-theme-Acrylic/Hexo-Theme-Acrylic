@@ -165,6 +165,9 @@ post_meta:
     tianliGPT:
       key: aX6hJp9B5eZtMqY7VrFg #可前往购买
     
+theme_color:
+  enable: true
+  class: online # online/local(未完成)
 # 字数统计 (wordcount)
 # 注意安装对应的插件
 wordcount:
@@ -275,7 +278,7 @@ hometop:
         icon: fas fa-book
   topgroup:
     enable: true
-    class: post #card/post/both
+    class: both #card/post/both
     #如果为both则都填
     #如果为card
     card:
@@ -430,7 +433,7 @@ footer:
             link: /categories/资源分享
             class: in
   footer_friend_links:
-    enable: true
+    enable: false
   footer_bottom:
     copyright:
       enable: true

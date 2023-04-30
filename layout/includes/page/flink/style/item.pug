@@ -1,0 +1,8 @@
+if site.data.link
+  each i in s.link_list
+    .flink-list-item
+      a.cf-friends-link(href=`${i.link}`, rel='external nofollow', title=`${i.name}`, target='_blank')
+        img.flink-avatar.cf-friends-avatar.entered.loaded(data-lazy-src=`${i.avatar}`, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=`${i.name}`, data-ll-status='loaded', src=`${i.avatar}`)
+        .flink-item-info
+          span.flink-item-name.cf-friends-name #[=i.name]
+          span.flink-item-desc(title=`${i.descr}`) #[=i.descr]

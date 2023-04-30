@@ -1,13 +1,12 @@
-hexo.extend.helper.register('randomLinks', function(){
-  const links = []
-  const data = this.site.data.link
-  data.forEach(x => {
-      x.link_list.forEach(y => {
-          links.push({
-              name: y.name,
-              link: y.link
-          })
-      })
-  });
-  return `<script>const flinks=${JSON.stringify(links)};function travelling(){const link=flinks[acy.randomNum(flinks.length)];acy.snackbarShow('您即将前往 ⌈ '+link.name+' ⌋ , 安全性未知',false,3000);setTimeout(()=>{window.open(link.link,"_blank")},3000)};function randomLinksList(){let data='';for(let i=1;i<=3;i++){const link=flinks[acy.randomNum(flinks.length)];data+='<a class="footer-item" href="'+link.link+'" target="_blank" rel="noopener nofollow">'+link.name+'</a>'};document.getElementById('friend-links-in-footer').innerHTML=data + '<a class="footer-item" href="/links/">更多</a>'};</script>`
+hexo.extend.filter.register('after_generate', function () {
+  if (hexo.theme.config.footer.footer_friend_links.enable){
+    const YML = require('yamljs')
+    const fs = require('fs')
+
+    let ls = [],
+        data = YML.parse(fs.readFileSync('source/_data/link.yml').toString().replace(/(?<=rss:)\s*\n/g, ' ""\n'));
+
+    data.forEach((e, i) => { if (i > 1) ls = ls.concat(e.link_list) });
+    fs.writeFileSync('source/link.json', `{"link_list": ${JSON.stringify(ls)},"length":${ls.length}}`)
+}
 })
