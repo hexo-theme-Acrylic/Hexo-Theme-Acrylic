@@ -107,6 +107,13 @@ essay:
   text: 如何使用
   icon: fas fa-circle-chevron-right
 
+# 友联页面 (link page)
+link:
+  enable: true
+  banner: true
+  ramdon_post: true
+  flink_posts: false #未开发完成
+  add_flink: false #未开发完成
 # 关于页面 (about page)
 about:
   info:

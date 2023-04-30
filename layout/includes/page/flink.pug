@@ -1,19 +1,29 @@
-if site.data.link
-  .flink#article-container
-    each s in site.data.link
-      - var num = s.link_list.length
-      - var title = s.class_name + ` (${num})`
-      h2(id=`${s.class_name}`)
-        a.headerlink(href=`#${title}`, title=`${title}`, data-pjax-state)
-        | #[=title]
-      .flink-desc #[=s.class_desc]
-      if s.link_style == "site-card"
-        .site-card-group
-          include ./flink/style/site_card.pug
-      else if s.link_style == "item"
-        .flink-list
-          include ./flink/style/item.pug
-      else if s.link_style == "mini-item"
-        .flink-list.mini
-          include ./flink/style/mini_item.pug
+if theme.link && theme.link.enable
+  if theme.link.banner
+    include ./flink/banner.pug
+  if theme.link.random_post
+    include ./flink/random_post.pug
+  if site.data.link
+    .flink#article-container
+      each s in site.data.link
+        - var num = s.link_list.length
+        - var title = s.class_name + ` (${num})`
+        h2(id=`${s.class_name}`)
+          a.headerlink(href=`#${title}`, title=`${title}`, data-pjax-state)
+          | #[=title]
+        .flink-desc #[=s.class_desc]
+        if s.link_style == "site-card"
+          .site-card-group
+            include ./flink/style/site_card.pug
+        else if s.link_style == "item"
+          .flink-list
+            include ./flink/style/item.pug
+        else if s.link_style == "mini-item"
+          .flink-list.mini
+            include ./flink/style/mini_item.pug
+  if theme.link.flink_posts
+    include ./flink/flink_posts.pug
+  if theme.link.add_flink
+    include ./flink/add_flink.pug
+
 

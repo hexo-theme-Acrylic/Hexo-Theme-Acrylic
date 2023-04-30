@@ -1,6 +1,8 @@
 if site.data.link
   each i in s.link_list
     .flink-list-item
+      if i.tag
+        span.site-card-tag #[=i.tag]
       a.cf-friends-link(href=`${i.link}`, rel='external nofollow', title=`${i.name}`, target='_blank')
         img.flink-avatar.cf-friends-avatar.entered.loaded(data-lazy-src=`${i.avatar}`, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=`${i.name}`, data-ll-status='loaded', src=`${i.avatar}`)
         .flink-item-info
