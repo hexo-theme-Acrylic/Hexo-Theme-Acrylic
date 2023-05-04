@@ -616,6 +616,11 @@ cloudflare_analytics:
 # https://clarity.microsoft.com/
 microsoft_clarity:
 
+# 51.la Analytics
+# https://v6.51.la/
+woyaola_analytics:
+woyaola_perf:
+
 # Insert ads manually (手動插入廣告)
 # --------------------------------------
 # ad:
