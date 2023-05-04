@@ -293,7 +293,7 @@ script.
       const top = offsetTop - scrollTop;
       return top <= viewPortHeight;
     }
-    fetch('https://v6-widget.51.la/v6/{掩码ID}/quote.js').then(res => res.text()).then((data) => {
+    fetch('https://v6-widget.51.la/v6/#{theme.woyaola_analytics}/quote.js').then(res => res.text()).then((data) => {
         let title = ['最近活跃', '今日人数', '今日访问', '昨日人数', '昨日访问', '本月访问', '总访问量']
         let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g)
 

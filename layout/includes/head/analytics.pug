@@ -4,7 +4,7 @@ if theme.baidu_analytics
     (function() {
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?!{theme.baidu_analytics}";
-      var s = document.getElementsByTagName("script")[0]; 
+      var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
 
@@ -29,3 +29,26 @@ if theme.microsoft_clarity
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "!{theme.microsoft_clarity}");
+
+if theme.woyaola_analytics
+  script.
+    !function(p){"use strict";!function (t) {
+      var s = window, e = document, i = p,
+              c = "".concat("https:" === e.location.protocol ? "https://" : "http://", "sdk.51.la/js-sdk-pro.min.js"),
+              n = e.createElement("script"), r = e.getElementsByTagName("script")[0];
+      n.type = "text/javascript", n.setAttribute("charset", "UTF-8"), n.async = !0, n.src = c, n.id = "LA_COLLECT", i.d = n;
+      var o = function () {
+        s.LA.ids.push(i)
+      };
+      s.LA ? s.LA.ids && o() : (s.LA = p, s.LA.ids = [], o()), r.parentNode.insertBefore(n, r)
+    }()}({id:"!{theme.woyaola_analytics}", ck:"!{theme.woyaola_analytics}"});
+
+if theme.woyaola_perf
+  script.
+    !(function(c,i,e,b){
+      var h=i.createElement("script");
+      var f=i.getElementsByTagName("script")[0];
+      h.type="text/javascript";
+      h.crossorigin=true;
+      h.onload=function(){new c[b]["Monitor"]().init({id:"!{theme.woyaola_perf}"});};
+      f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");
