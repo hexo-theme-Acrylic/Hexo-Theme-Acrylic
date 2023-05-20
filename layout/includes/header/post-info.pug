@@ -2,18 +2,21 @@
 #post-info
   #post-firstinfo
     .meta-firstline
-      a.post-meta-original(title='该文章为原创文章，注意版权协议', href=`${theme.copyright.link}`, data-pjax-state) 原创
+      if page.cc
+        a.post-meta-original(title='该文章为转载文章，注意版权协议', href=`${theme.copyright.link}`, data-pjax-state) #[=page.cc]
+      else 
+        a.post-meta-original(title='该文章为原创文章，注意版权协议', href=`${theme.copyright.link}`, data-pjax-state) 原创
       if (theme.post_meta.post.categories && page.categories.data.length > 0)
         each item, index in page.categories.data
           span.post-meta-categories
             a(href=url_for(item.path), data-pjax-state).post-meta-categories #[=item.name]
       .tag_share
         if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path),  data-pjax-state).post-meta__tags
-              span.tags-punctuation #
-              span.tags-name #[=item.name]
+          .post-meta__tag-list
+            each item, index in page.tags.data
+              a(href=url_for(item.path),  data-pjax-state).post-meta__tags
+                span.tags-punctuation #
+                span.tags-name #[=item.name]
   h1.post-title= page.title || _p('no_title')
   #post-meta
     .meta-secondline
@@ -69,10 +72,13 @@
         case whichCount
           when 'Waline'
             +countBlock
-              a(href=url_for(page.path) + '#post-comment')
+              a(href=url_for(page.path) + '#post-comment', data-pjax-state)
                 span.waline-comment-count(data-path=url_for(page.path))
                   i.fa-solid.fa-spinner.fa-spin
           when 'Twikoo'
             +countBlock
               a(href=url_for(page.path) + '#post-comment', data-pjax-state)
                 span#twikoo-count
+          when 'artalk'
+            a(href=url_for(page.path) + '#post-comment', data-pjax-state)
+              span 评论

@@ -1,3 +1,9 @@
+//- #heo-footer-banner
+//-   .footer-logo
+//-     i.heofont.icon-name-1(style="font-size: 30px")
+//-   .footer-banner-description 
+//-   | 来自 #[=config.author] 最新设计与科技的文章
+//-   a.footer-banner-link(href='/' data-pjax-state='') 了解更多
 #footer_deal
   if theme.footer.footer_icons.enable
       each i in theme.footer.footer_icons.left
@@ -65,3 +71,11 @@
         i.fa-brands.fa-creative-commons-by
         i.fa-brands.fa-creative-commons-nc
         i.fa-brands.fa-creative-commons-nd
+.needEndHide#cookies-window
+  .cookies-window-title 协议提醒助手
+  .cookies-window-content
+    span.cookies-tip 查看本站为你的个人隐私做出的努力
+    a.cookies-link(href='/privacy/' title='本站如何保护你的隐私' data-pjax-state)
+      i.heofont.icon-arrow-right-circle-fill
+#quit-box(onclick='RemoveRewardMask()',style="display: none")
+.comment-barrage

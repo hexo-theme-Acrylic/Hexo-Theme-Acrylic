@@ -10922,7 +10922,7 @@ details[open]:not(.tk-admin-config-group) > summary:hover:after {
 }
 
 /* 文章中的超链接 */
-#article-container a not(.no-fancybox,.site-card-avatar){
+#article-container a:not([class],[data-fancybox]){
   text-decoration: none;
   border-bottom: 2px solid var(--heo-lighttext);
   color: var(--heo-fontcolor);
@@ -10931,7 +10931,7 @@ details[open]:not(.tk-admin-config-group) > summary:hover:after {
   border-radius: 4px 4px 0 0;
 }
 
-#article-container a:not(.fancybox):hover {
+#article-container a:not([class],[data-fancybox]):hover {
   text-decoration: none;
   border-bottom: 2px solid var(--heo-none);
   color: var(--heo-white);

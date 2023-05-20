@@ -4,7 +4,7 @@ nav#nav.show
     #blog_name
       .back-home-button(tabindex='-1')
         if nav.left_groups.enable
-          i.back-home-button-icon.fas.fa-grip-vertical
+          i.back-home-button-icon(class=`${nav.group_icon}`)
           .back-menu-list-groups
             each item in nav.left_groups.group
               .back-menu-list-group
@@ -44,24 +44,25 @@ nav#nav.show
           #fps
           span.fpsText FPS
     #nav-right
-      if nav.right_button.travelling
+      if nav.right_button.travelling.enable
         #travellings_button.nav-button.only-home(style='display: none')
           a.site-page(onclick='totraveling()' title='随机前往一个开往项目网站' href='javascript:void(0);' rel='external nofollow')
-            i.fas.fa-train-subway
-      if nav.right_button.random
+            i(class=`${nav.right_button.travelling.icon}`)
+      if nav.right_button.random.enable
         #randomPost_button.nav-button
           a.site-page(onclick='toRandomPost()' title='随机前往一个文章')
-            i.fas.fa-shuffle
-      #search-button.nav-button
-        a.site-page.social-icon.search(title='站内搜索' href='javascript:void(0);' rel='external nofollow')
-          i.fas.fa-magnifying-glass
-      if nav.right_button.console
+            i(class=`${nav.right_button.random.icon}`)
+      if theme.algolia_search.enable || theme.local_search.enable
+        #search-button.nav-button
+          a.site-page.social-icon.search(title='站内搜索' href='javascript:void(0);' rel='external nofollow')
+            ii(class=`${nav.right_button.search}`)
+      if nav.right_button.console.enable
         #nav-console.nav-button
           a.console_switchbutton(onclick='heo.showConsole()' title='显示中控台' href='javascript:void(0);' rel='external nofollow')
-            i.fas.fa-bars-progress
+            i(class=`${nav.right_button.console.icon}`)
       #nav-totop.nav-button(onclick='acy.scrollToDest(0, 500)')
         a.totopbtn(data-pjax-state='')
-          i.fas.fa-arrow-up
+          i(class=`${nav.right_button.totop}`)
           span#percent 0
       #toggle-menu
         a.site-page(data-pjax-state='')

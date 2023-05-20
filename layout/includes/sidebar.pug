@@ -29,12 +29,9 @@
                       span.back-menu-item-text=i.text
     !=partial('includes/header/menu_item', {}, {cache: true})
     if sidebar.tag
-    .card-widget.card-tags.card-archives.card-webinfo.card-allinfo
-      .item-headline
-        i.fas.fa-tags
-        span 标签
-      .card-tag-cloud
-        a(href=url_for(config.tag_dir) + '/' )
-          .headline= _p('aside.tags')
-          .length-num= site.tags.length
+      span.sidebar-menu-item-title 标签
+      .card-widget.card-tags.card-archives.card-webinfo.card-allinfo
+        .item-headline
+          span 标签
+        .card-tag-cloud!= cloudTags({source: site.tags})
 

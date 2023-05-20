@@ -40,7 +40,7 @@ search:
     hits_stats: '找到 ${hits} 条结果，用时 ${time} 毫秒'
 
   local_search:
-    input_placeholder: 搜索文章
+    input_placeholder: 输入关键词快速查找
     hits_empty: '找不到您查询的内容：${query}'
 
 pagination:

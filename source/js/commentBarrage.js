@@ -6,7 +6,7 @@ var commentBarrageConfig = {
 	//twikoo部署地址腾讯云的为环境ID
 	twikooUrl: "https://t.pro.acrylic.org.cn/",
 	//token获取见上方
-	accessToken: "169d5f97a0f889913d83e04f40f3e442",
+	accessToken: "705c37df8b3be1654a5ff0f940e92445",
 	pageUrl: window.location.pathname,
 	barrageTimer: [],
 	barrageList: [],

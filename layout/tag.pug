@@ -9,5 +9,5 @@ block content
           !=catalog_list("tags")
         a.catalog-more(href="/tags/")!= '更多'
       .article-sort-title= _p('page.tag') + ' - ' + page.tag
-      +articleSort(page.posts)
+      +articleSort(page.posts, page.current)
       include includes/pagination.pug

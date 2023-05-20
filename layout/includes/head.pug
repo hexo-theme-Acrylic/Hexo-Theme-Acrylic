@@ -12,7 +12,9 @@
 - if (page.keywords) pageKeywords = Array.isArray(page.keywords) ? (page.keywords).join(',') :  ([]).join(',') || page.keywords
 - else if (page.tags && page.tags.length) pageKeywords = page.tags.data.map(function(tag) {return tag.name;}).join(',')
 - else pageKeywords = Array.isArray(config.keywords) ? (config.keywords).join(','):  ([]).join(',') || config.keywords
-- var pageAuthor = config.email ? config.author + ',' + config.email : config.author
+- var pageAuthor = config.author
+- var pagedescr = page.description || config.description ||default_text
+- var pageimage = page.cover || theme.avatar.img || default_img
 - var pageCopyright = config.copyright || config.author
 - var themeColorLight = page.tcolor || "#425AEF"
 - var themeColorDark = "#f2b94b"
@@ -20,6 +22,7 @@
 
 meta(charset='UTF-8')
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(http-equiv='content-language' content='zh-cn')
 meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 title= tabTitle
 if pageKeywords
@@ -28,18 +31,7 @@ meta(name="author" content=pageAuthor)
 meta(name="copyright" content=pageCopyright)
 meta(name ="format-detection" content="telephone=no")
 meta(name="theme-color" content=themeColor)
-
-//- Open_Graph
-- let contentType = is_post() ? 'article' : 'website'
-- let metaImage = (page.cover || theme.avatar.img) ? full_url_for(page.cover || theme.avatar.img) : ''
-
-!=favicon_tag(theme.favicon || config.favicon)
-link(rel="canonical" href=urlNoIndex())
-
-//- 預解析
-link(rel="preconnect" href="//cdn1.tianli0.top")
-if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
-  link(rel="preconnect" href="//busuanzi.ibruce.info")
+meta(name='description' content=pagedescr)
 
 //- PWA
 if (theme.pwa && theme.pwa.enable)
@@ -49,16 +41,32 @@ if (theme.pwa && theme.pwa.enable)
 link(rel='stylesheet', href=url_for(theme.asset.main_css))
 link(rel='stylesheet', href=url_for(theme.asset.fontawesomeV6) media="print" onload="this.media='all'")
 
-if (theme.snackbar && theme.snackbar.enable)
-  link(rel='stylesheet', href=url_for(theme.asset.snackbar_css) media="print" onload="this.media='all'")
+//- js
+script(src=url_for(theme.asset.jquery))
+script(src=url_for(theme.asset.heo))
+if theme.algolia_search.enable
+  script(src=url_for(theme.asset.instantsearch_v4) defer)
+//- if theme.post_meta.ai.enable
+//-   !=partial('includes/post/Post-Abstract-AI', {}, {cache: true})
+script(data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src=(url_for(theme.asset.pace)))
 
-link(rel='stylesheet' href=url_for(theme.asset.fancybox_css_v4) media="print" onload="this.media='all'")
+//- Open_Graph
+include ./head/Open_Graph.pug
+//- preconnect 預解析
+each i in theme.preconnect
+  link(rel='preconnect' href=`${i}`)
+link(rel="preconnect" href="//cdn1.tianli0.top")
+if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
+  link(rel="preconnect" href="//busuanzi.ibruce.info")
 
-if theme.post_meta.ai.enable
-  !=partial('includes/post/Post-Abstract-AI', {}, {cache: true})
-//- global config
+//- 百度验证
+if theme.baidu.enable
+  include ./head/baidu.pug
+//- 51la验证
+if theme.la.enable
+  include ./head/51la.pug
+
 !=partial('includes/head/config', {}, {cache: true})
-
 include ./head/config_site.pug
 //- noscript
 noscript. 
@@ -75,6 +83,18 @@ noscript.
       display: inline !important
     }
   </style>
+link(rel='alternate' href='/rss.xml' title=pageAuthor type='application/atom+xml')
+script(src='/lib/twikoo/twikoo.all.min.js' async)
+
+if (theme.snackbar && theme.snackbar.enable)
+  link(rel='stylesheet', href=url_for(theme.asset.snackbar_css) media="print" onload="this.media='all'")
+
+link(rel='stylesheet' href=url_for(theme.asset.fancybox_css_v4) media="print" onload="this.media='all'")
+
+
+//- global config
+
+
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
 //- if is_post()
   //- !=partial('includes/head/theme_color', {}, {cache: true})

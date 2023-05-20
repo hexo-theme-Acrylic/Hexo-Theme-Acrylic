@@ -28,17 +28,6 @@
     })
   }
 
-  let translate = 'undefined';
-  if (theme.translate && theme.translate.enable){
-    translate = JSON.stringify({
-      defaultEncoding: theme.translate.defaultEncoding,
-      translateDelay: theme.translate.translateDelay,
-      msgToTraditionalChinese: theme.translate.msgToTraditionalChinese,
-      msgToSimplifiedChinese: theme.translate.msgToSimplifiedChinese
-    })
-  }
-
-
   let Snackbar = 'undefined';
   if (theme.snackbar && theme.snackbar.enable) {
     Snackbar = JSON.stringify({
@@ -52,25 +41,32 @@
     })
   }
 
-  let highlight = JSON.stringify({
-      plugin: 'highlighjs',
-      highlightCopy: true,
-      highlightLang: true,
-      highlightHeightLimit: "200px",
-    });
-
-
+  let highlight = 'undefined';
+    if ((config.highlight && config.highlight.enable) || (config.prismjs && config.prismjs.enable)) {
+      highlight = JSON.stringify({
+        plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
+        highlightCopy: theme.highlight_copy,
+        highlightLang: theme.highlight_lang,
+        highlightHeightLimit: theme.highlight_height_limit
+      })
+    }
 script.
   const GLOBAL_CONFIG = { 
     root: '!{config.root}',
     algolia: !{algolia},
     localSearch: !{localSearch},
-    translate: !{translate},
+    translate: { "defaultEncoding": 2, "translateDelay": 0, "msgToTraditionalChinese": "简", "msgToSimplifiedChinese": "繁" },
     highlight: !{highlight},
+    copy: {
+      success: '!{_p("copy.success")}',
+      error: '!{_p("copy.error")}',
+      noSupport: '!{_p("copy.noSupport")}'
+    },
     relativeDate: {
       homepage: !{theme.post_meta.page.date_format === 'relative'},
       post: !{theme.post_meta.post.date_format === 'relative'}
     },
+    runtime: '!{theme.runtime.enable ? _p("aside.card_webinfo.runtime.unit") : ""}',
     date_suffix: {
       just: '!{_p("date_suffix.just")}',
       min: '!{_p("date_suffix.min")}',

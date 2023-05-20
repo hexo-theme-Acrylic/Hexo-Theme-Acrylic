@@ -1,0 +1,10 @@
+- let contentType = is_post() ? 'article' : 'website'
+!=favicon_tag(theme.favicon || config.favicon)
+meta(property='og:image' content=pageimage)
+meta(property='og:type' content=contentType)
+meta(property='og:title' content=pageAuthor)
+meta(property='og:url' content=urlNoIndex())
+meta(property='og:site_name' content=pageAuthor)
+meta(property='og:description' content=pagedescr)
+meta(property='og:locale' content='zh_CN')
+link(rel="canonical" href=urlNoIndex())

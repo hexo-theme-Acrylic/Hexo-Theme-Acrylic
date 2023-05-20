@@ -4,8 +4,10 @@ if theme.copyright.enable && page.copyright !== false
   - let info = page.copyright_info || _p('post.copyright.copyright_content', theme.copyright.license_url, theme.copyright.license, config.url, config.title)
   .post-copyright
     .post-copyright__author
-      each item, index in page.tags.data
-       a.post-copyright__original(href=url_for(item.path)).post-meta-tags #[=(config.emoji && config.emoji.tags && config.emoji.tags[item.name] || '') + item.name]
+      if page.cc
+        a.post-copyright__original(title='该文章为转载文章，注意版权协议', href=`${theme.copyright.link}`, data-pjax-state) #[=page.cc]
+      else 
+        a.post-copyright__original(title='该文章为原创文章，注意版权协议', href=`${theme.copyright.link}`, data-pjax-state) 原创
       a.post-copyright-title(href='#' data-pjax-state='')
         span #[=page.title]
     .post-copyright__type

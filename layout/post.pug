@@ -1,8 +1,10 @@
 extends includes/layout.pug
 
 block content
-  div
-    #post
+  #post
+    div
+      if theme.post_head_ai_description
+        include includes/post/ai-info.pug
       article#article-container.post-content!=page.content
       
       //- ptool
@@ -15,8 +17,7 @@ block content
       
       include includes/post/post-copyright.pug
       
-      if theme.post_pagination
-        include includes/pagination.pug
+      include includes/pagination.pug
       
       if theme.related_post && theme.related_post.enable
         != related_posts(page,site.posts)

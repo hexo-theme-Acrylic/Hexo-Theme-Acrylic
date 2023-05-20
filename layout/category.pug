@@ -6,8 +6,10 @@ block content
       #catalog-bar
         i.fa-fw.fas.fa-shapes
         #catalog-list
+          .catalog-list-item
+            a(href="/") 首页
           !=catalog_list("categories")
         a.catalog-more(href="/categories/")!= '更多'
       .article-sort-title= _p('page.category') + ' - ' + page.category
-      +articleSort(page.posts)
+      +articleSort(page.posts, page.current)
       include includes/pagination.pug

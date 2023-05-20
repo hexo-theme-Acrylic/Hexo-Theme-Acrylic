@@ -1,65 +1,85 @@
-#rightMenu.js-pjax
+.js-pjax
+  #rightMenu(style='top: 116px; left: 485px;')
     .rightMenu-group.rightMenu-small
-        a.rightMenu-item(href="javascript:window.history.back();")
-            i.fa.fa-arrow-left
-        a.rightMenu-item(href="javascript:window.history.forward();")
-            i.fa.fa-arrow-right
-        a.rightMenu-item(href="javascript:window.location.reload();")
-            i.fa.fa-refresh
-        a.rightMenu-item(href="javascript:acy.scrollToDest(0, 500);")
-            i.fa.fa-arrow-up
-    .rightMenu-group.rightMenu-line.hide#menu-text
-        a.rightMenu-item(href="javascript:rmf.copySelect();")
-            i.fa.fa-copy
-            span='复制'
-        a.rightMenu-item(href="javascript:window.open(\"https://www.baidu.com/s?wd=\"+window.getSelection().toString());window.location.reload();")
-            i.fa.fa-search
-            span='百度搜索'
-    .rightMenu-group.rightMenu-line.hide#menu-too
-        a.rightMenu-item(href="javascript:window.open(window.getSelection().toString());window.location.reload();")
-            i.fa.fa-link
-            span='转到链接'
-    .rightMenu-group.rightMenu-line.hide#menu-paste
-        a.rightMenu-item(href='javascript:rmf.paste()')
-            i.fa.fa-copy
-            span='粘贴'
-    .rightMenu-group.rightMenu-line.hide#menu-post
-        a.rightMenu-item(href="#post-comment")
-            i.fas.fa-comment
-            span='空降评论'
-        a.rightMenu-item(href="javascript:rmf.copyWordsLink()")
-            i.fa.fa-link
-            span='复制本文地址'
-    .rightMenu-group.rightMenu-line.hide#menu-to
-        a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
-            i.fa.fa-window-restore
-            span='新窗口打开'
-        a.rightMenu-item#menu-too(href="javascript:rmf.open()")
-            i.fa.fa-link
-            span='转到链接'
-        a.rightMenu-item(href="javascript:rmf.copyLink()")
-            i.fa.fa-copy
-            span='复制链接'
-    .rightMenu-group.rightMenu-line.hide#menu-img
-        a.rightMenu-item(href="javascript:rmf.saveAs()")
-            i.fa.fa-download
-            span='保存图片'
-        a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
-            i.fa.fa-window-restore
-            span='在新窗口打开'
-        a.rightMenu-item(href="javascript:rmf.copyLink()")
-            i.fa.fa-copy
-            span='复制图片链接'
+      .rightMenu-item#menu-backward
+        i.heofont.icon-arrow-left-line
+      .rightMenu-item#menu-forward
+        i.heofont.icon-arrow-right-line
+      .rightMenu-item#menu-refresh
+        i.heofont.icon-restart-line(style='font-size: 19px;')
+      .rightMenu-item#menu-top
+        i.heofont.icon-arrow-up-line
+    .rightMenu-group.rightMenu-line.rightMenuPlugin
+      .rightMenu-item#menu-copytext
+        i.heofont.icon-file-copy-fill
+        span 复制选中文本
+      .rightMenu-item#menu-pastetext
+        i.heofont.icon-clipboard-fill
+        span 粘贴文本
+      a.rightMenu-item#menu-commenttext(data-pjax-state)
+        i.heofont.icon-chat-new-fill
+        span 引用到评论
+      .rightMenu-item#menu-newwindow
+        i.heofont.icon-window-fill
+        span 新窗口打开
+      .rightMenu-item#menu-copylink
+        i.heofont.icon-link
+        span 复制链接地址
+      .rightMenu-item#menu-copyimg
+        i.heofont.icon-file-copy-fill
+        span 复制此图片
+      .rightMenu-item#menu-downloadimg
+        i.heofont.icon-download-cloud-fill
+        span 下载此图片
+      .rightMenu-item#menu-search
+        i.heofont.icon-search-2-line
+        span 站内搜索
+      .rightMenu-item#menu-searchBaidu
+        i.heofont.icon-baidu-fill
+        span 百度搜索
+      .rightMenu-item#menu-music-toggle
+        i.heofont.icon-play-fill
+        span 播放音乐
+      .rightMenu-item#menu-music-back
+        i.heofont.icon-skip-back-fill
+        span 切换到上一首
+      .rightMenu-item#menu-music-forward
+        i.heofont.icon-skip-forward-fill
+        span 切换到下一首
+      .rightMenu-item#menu-music-playlist(onclick='window.open(\'https://music.163.com/#/playlist?app_version=8.8.36&id=5197802668\', \'_blank\');')
+        i.heofont.icon-play-list-2-line
+        span 查看所有歌曲
+      .rightMenu-item#menu-music-copyMusicName
+        i.heofont.icon-file-copy-fill
+        span 复制歌名
+    .rightMenu-group.rightMenu-line.rightMenuOther
+      a.rightMenu-item.menu-Link#menu-randomPost(data-pjax-state)
+        i.heofont.icon-signal-tower-fill
+        span 随便逛逛
+      a.rightMenu-item.menu-link(href='/categories/', data-pjax-state)
+        i.heofont.icon-checkbox-multiple-blank-fill
+        span 博客分类
+      a.rightMenu-item.menu-link(href='/tags/', data-pjax-state)
+        i.heofont.icon-price-tag-3-fill
+        span 文章标签
     .rightMenu-group.rightMenu-line
-        a.rightMenu-item(href="javascript:toRandomPost()")
-            i.fa.fa-paper-plane
-            span='随便逛逛'
-        .rightMenu-item#menu-darkmode
-            i.fa-solid.fa-moon
-            span='切换模式'
-        a.rightMenu-item(href="/about/")
-            i.fa.fa-info-circle
-            span='关于博客'
-        a.rightMenu-item(href="javascript:rmf.fullScreen();")
-            i.fas.fa-expand
-            span='切换全屏'
+      a.rightMenu-item.menu-link(href='/privacy/', data-pjax-state)
+        i.heofont.icon-shield-user-fill
+        span 隐私协议
+      a.rightMenu-item.menu-link(href='/cc/', data-pjax-state)
+        i.heofont.icon-creative-commons-fill
+        span 版权协议
+    .rightMenu-group.rightMenu-line.rightMenuOther
+      .rightMenu-item#menu-copy
+        i.heofont.icon-external-link-fill
+        span 复制地址
+      .rightMenu-item#menu-commentBarrage
+        i.heofont.icon-chat-1-fill
+        span.menu-commentBarrage-text 显示热评
+      .rightMenu-item#menu-darkmode
+        i.heofont.icon-moon-clear-fill
+        span.menu-darkmode-text 深色模式
+      .rightMenu-item#menu-translate
+        i.heofont.icon-panben
+        span 轉為繁體
+  #rightmenu-mask

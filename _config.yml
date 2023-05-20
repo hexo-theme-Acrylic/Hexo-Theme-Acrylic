@@ -17,7 +17,7 @@ avatar:
   img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
 
 # 默认信息 (default)
-default_img: https://photo.acrylic.org.cn/K7xU3H.webp
+default_img: https://img1.acrylic.org.cn/2023/04/16/643b6a036a2cb.webp
 default_title: 没有配置捏
 default_text: 没有配置捏
 
@@ -40,6 +40,7 @@ local_search:
 # 导航栏 (nav)
 # --------------------------------
 nav:
+  group_icon: fas fa-grip-vertical
   left_groups:
     enable: true
     group:
@@ -86,9 +87,17 @@ nav:
       电影推荐: /movies/ || fas fa-clapperboard
       关于本站: /about/ || fas fa-sailboat
   right_button:
-    travelling: true
-    random: true
-    console: true
+    travelling:
+      enable: true
+      icon: fas fa-train-subway
+    random:
+      enable: true
+      icon: fas fa-shuffle
+    search: fas fa-magnifying-glass
+    console:
+      enable: true
+      icon: fas fa-bars-progress
+    totop: fas fa-arrow-up
 
 # 页面 (page)
 # --------------------------------
@@ -96,7 +105,7 @@ nav:
 error_404:
   enable: true
   subtitle: '请尝试站内搜索寻找文章'
-  background: https://tucdn.wpon.cn/2023/02/09/5fe538725e242.gif
+  background: https://img1.acrylic.org.cn/2023/04/16/643b6a036a2cb.webp
 
 # 即刻短文 (essay page)
 essay:
@@ -156,7 +165,7 @@ about:
 post_meta:
   page: # 首页
     date_type: created # created/updated/both 文章显示创作日期/更新日期/都显示
-    date_format: date 
+    date_format: relative 
     categories: true # 首页显示分类
     tags: true # 首页显示标签
     label: true # 首页显示文章描述
@@ -167,11 +176,19 @@ post_meta:
     tags: true # 首页显示标签
     label: true # 首页显示文章描述
   location: 成都 #地点
-  ai: #ai文章摘要生成
-    enable: true 
-    tianliGPT:
-      key: aX6hJp9B5eZtMqY7VrFg #可前往购买
-    
+
+# 文章顶部ai摘要
+post_head_ai_description:
+  enable: true
+  gptName: Heo
+  mode: tianli # 默认模式 可选值: tianli/local
+  switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
+  btnLink: https://afdian.net/item/886a79d4db6711eda42a52540025c377
+  randomNum: 3 # 按钮最大的随机次数，也就是一篇文章最大随机出来几种
+  basicWordCount: 1000 # 最低获取字符数, 最小1000, 最大1999
+  key: SZLhZo3TjRN7GZ9JiRFa
+  Referer: https://xx.xx/
+
 theme_color:
   enable: true
   class: online # online/local(未完成)
@@ -291,7 +308,7 @@ hometop:
     card:
       tips: 强势回归
       title: Acrylic-Promote
-      bg: https://acrylic.leonus.cn/i/2023/03/04/ir6ary.webp
+      bg: https://img1.acrylic.org.cn/2023/04/16/643b6a036a2cb.webp
       link: https://blog.zhheo.com/p/671f98c8.html
       buttontext: 更多推荐
       icon: fas fa-circle-plus
@@ -440,7 +457,7 @@ footer:
             link: /categories/资源分享
             class: in
   footer_friend_links:
-    enable: false
+    enable: true
   footer_bottom:
     copyright:
       enable: true
@@ -453,10 +470,10 @@ footer:
 # --------------------------------
 
 # 广告 (ad)
-ad:
-  index:
-  aside:
-  post:
+# ad:
+#   index:
+#   aside:
+#   post:
 
 # 加载动画 (loading)
 loading: 
@@ -520,6 +537,8 @@ aside:
         link: https://github.com/zhheo
   card_weixin:
     enable: true
+    face: https://p.zhheo.com/202363e5ca73123f202bbeda6f024866a181080502.png!cover
+    backFace: https://p.zhheo.com/202309da537f19ad4992f1340e53a11098df081402.png!cover
   card_recent_post:
     enable: false
     limit: 5 # 输入0全显示
@@ -532,6 +551,7 @@ aside:
     word_count: false
 
 runtime:
+  enable: true
   time: "2023/02/08 00:00:00"
 
 # 卜算子 (busuanzi) 
@@ -612,6 +632,22 @@ lazyload:
   placeholder:
   blur: false
 
+# 51la
+# https://v6.51.la/
+la:
+  enable: false
+  id: JduKh41OtkNBcW5g
+
+# 百度验证
+baidu:
+  enable: false
+  id: 828db1fd637f3717a876af84bf0678bd
+
+# 预加载 (preconnect)
+preconnect:
+  - //bu.dusays.com
+  - //d.zhheo.com
+  - //p.zhheo.com
 # PWA
 # https://github.com/JLHwung/hexo-offline
 pwa:
@@ -628,58 +664,63 @@ pwa:
 # --------------------------------
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
     # CSS
+    # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="https://cdn3.codesign.qq.com/icons/X2bzpZvRWkZkAaV/latest/iconfont.css">
     - <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.css">
+    - <script>var meting_api = "https://meting.zhheo.com/?server=:server&type=:type&id=:id&auth=:auth&r=:r";</script>
   bottom:
-    # - <script src="/js/xxx.js"></script>
     # JS
-    - <script data-pjax="" src="/js/rightmenu.js"></script>
-    - <script data-pjax="" src="/js/commentBarrage.js"></script>
-    - <script data-pjax="" src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/6.6.2/swiper-bundle.min.js"></script>
+    # - <script src="/js/xxx.js"></script>
 
     
 
 # CDN
 # --------------------------------
 CDN:
+  #主题CDN
+  # 可选local/jsdelivr/unpkg/cdnjs/custom
   internal_provider: local
 
   # 第三方CDN
-  # moezz/local/jsdelivr/unpkg/cdnjs/custom
-  third_party_provider: jsdelivr
+  # 可选moezz/local/jsdelivr/unpkg/cdnjs/custom/tianli(需要征得tianli本人同意)/elemecdn
+  third_party_provider: tianli
 
   version: false
+  # Custom format
   # 实例: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
   custom_format:
 
   option:
     # main_css:
-    countup_js: /js/countup.js
     # main:
     # utils:
+    jquery: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js
+    heo: /js/heo.js
+    # countup_js: /js/countup.js
     # translate:
     # local_search:
-    # algolia_js:
-    # algolia_search_v4:
-    # instantsearch_v4:
+    algolia_js: /lib/algolia/algolia.js
+    # algolia_search_v4: 
+    instantsearch_v4: /lib/algolia/instantsearch.min.js
     # pjax:
-    twikoo: https://cdn2.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
+    twikoo: https://cdn1.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
     # waline_js:
     # waline_css:
     # mathjax:
     # katex:
     # katex_copytex:
     # mermaid:
-    # lazyload:
-    # instantpage:
+    lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
+    instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
     # typed:
     # pangu:
-    # fancybox_css_v4:
+    pace: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js
+    qrcode: /lib/qrcode/qrcode.min.js
+    fancybox_css_v4: https://cdn1.tianli0.top/npm/@fancyapps/ui/dist/fancybox.min.css
     # fancybox_v4:
-    # snackbar_css:
-    # snackbar:
+    snackbar_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css
+    snackbar: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js
     # activate_power_mode:
     fontawesomeV6: https://cdn1.tianli0.top/npm/@fortawesome/fontawesome-free/css/all.min.css
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
