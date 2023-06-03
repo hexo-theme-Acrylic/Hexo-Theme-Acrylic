@@ -12,13 +12,13 @@ if theme.link && theme.link.enable
           a.headerlink(href=`#${title}`, title=`${title}`, data-pjax-state)
           | #[=title]
         .flink-desc #[=s.class_desc]
-        if s.link_style == "site-card"
+        if s.flink_style == "site-card"
           .site-card-group
             include ./flink/style/site_card.pug
-        else if s.link_style == "item"
+        else if s.flink_style == "item"
           .flink-list
             include ./flink/style/item.pug
-        else if s.link_style == "mini-item"
+        else if s.flink_style == "mini-item"
           .flink-list.mini
             include ./flink/style/mini_item.pug
   if theme.link.flink_posts

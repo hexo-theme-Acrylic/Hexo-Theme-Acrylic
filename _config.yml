@@ -192,6 +192,7 @@ post_head_ai_description:
 theme_color:
   enable: true
   class: online # online/local(未完成)
+
 # 字数统计 (wordcount)
 # 注意安装对应的插件
 wordcount:
