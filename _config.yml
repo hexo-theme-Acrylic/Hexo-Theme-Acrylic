@@ -65,7 +65,7 @@ nav:
   logo: 
     enable: true
     class: i_class #i_class/text/img i_class为icon图标,text为文字,img为图片
-    custom: heofont icon-heologo #Heo/https://xxx.com/logo.png /class为text时留空
+    custom: heofont icon-heologo # heofont icon-heologo / Heo / https://xxx.com/logo.png/
   fps_enable: false
   menu:
     文库:
