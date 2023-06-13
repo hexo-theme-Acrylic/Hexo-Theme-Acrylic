@@ -1,9 +1,10 @@
-//- #heo-footer-banner
-//-   .footer-logo
-//-     i.heofont.icon-name-1(style="font-size: 30px")
-//-   .footer-banner-description 
-//-   | 来自 #[=config.author] 最新设计与科技的文章
-//-   a.footer-banner-link(href='/' data-pjax-state='') 了解更多
+if theme.footer.banner.enable
+  #heo-footer-banner
+    .footer-logo
+      i(class=`${theme.footer.banner}`,style="font-size: 30px")
+    .footer-banner-description 
+    | 来自 #[=config.author] #[=theme.footer.banner.desc]
+    a.footer-banner-link(href=`${theme.footer.banner.link}` data-pjax-state='') #[=theme.footer.banner.button_text]
 #footer_deal
   if theme.footer.footer_icons.enable
       each i in theme.footer.footer_icons.left

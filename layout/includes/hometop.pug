@@ -1,5 +1,23 @@
+- var color=theme.hometop.topgroup.card.color || "#0E57D5"
+- var text_color=theme.hometop.topgroup.card.text_color || "#ffffff"
 #home_top
   include ./bbTimeList.pug
+  style(type='text/css').
+    .recent-post-item:nth-child(n+7) {
+      display: none;
+    }
+
+    .topGroup .todayCard::after {
+      box-shadow: 0 -109px 133px -9px #[=color] inset;
+    }
+
+    .todayCard-title,.todayCard-tips,.topGroup .banner-button {
+        color: #[=text_color];
+    }
+
+    .topGroup .todayCard {
+        background: #[=color];
+    }
   .recent-top-post-group#recent-top-post-group
     .recent-post-top#recent-post-top
       if theme.hometop.banner.enable
@@ -86,7 +104,3 @@
                   i(class=`${theme.hometop.topgroup.card.icon}`)
                   span.banner-button-text=theme.hometop.topgroup.card.buttontext
 
-  style(type='text/css').
-    .recent-post-item:nth-child(n+7) {
-    display: none;
-    }

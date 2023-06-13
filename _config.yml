@@ -83,8 +83,8 @@ nav:
       友情链接: /link/ || fas fa-user-group
       宝藏博主: javascript:travelling() || fas fa-bus
     我的:
+      我的装备: /equipment/ || fa-fw heofont icon-bijiben
       在线工具: /tlink/ || fas fa-screwdriver-wrench
-      电影推荐: /movies/ || fas fa-clapperboard
       关于本站: /about/ || fas fa-sailboat
   right_button:
     travelling:
@@ -112,6 +112,35 @@ essay:
   enable: true
   descr: 分享生活的小确幸
   tip: 使用 即刻短文静态部署版 构建
+  link: /posts/49736/
+  text: 如何使用
+  icon: fas fa-circle-chevron-right
+
+# memos短文 (memos page)
+memos:
+  enable: true
+  descr: 分享生活的小确幸
+  tip: 使用 memos 构建
+  link: /posts/49736/
+  text: 如何使用
+  icon: fas fa-circle-chevron-right
+  api: https://memos.acrylic.org.cn/api/memo?creatorId=1&tag=说说&limit=30
+
+# 朋友圈fcricle (fcricle page)
+fcricle:
+  enable: true
+  descr: 实物装备推荐
+  tip: 好物
+  link: /posts/49736/
+  text: 如何使用
+  icon: fas fa-circle-chevron-right
+  api: https://fcircle.acrylic.org.cn/
+
+# 装备equipment (equipment page)
+equipment:
+  enable: true
+  descr: 实物装备推荐
+  tip: 跟 张洪Heo 一起享受科技带来的乐趣
   link: /posts/49736/
   text: 如何使用
   icon: fas fa-circle-chevron-right
@@ -304,8 +333,7 @@ hometop:
   topgroup:
     enable: true
     class: both #card/post/both
-    #如果为both则都填
-    #如果为card
+    #如果为card/both
     card:
       tips: 强势回归
       title: Acrylic-Promote
@@ -313,14 +341,18 @@ hometop:
       link: https://blog.zhheo.com/p/671f98c8.html
       buttontext: 更多推荐
       icon: fas fa-circle-plus
-    #如果为post
-    post:
-      class: 
-      number: 6
+      color: #0E57D5
+      text_color: #ffffff # 默认白色
 
 # 页脚 (footer)
 # --------------------------------
 footer:
+  banner:
+    enable: true
+    logo: heofont icon-name-1
+    desc: 最新设计与科技的文章
+    link: /
+    button_text: 了解更多
   footer_icons:
     enable: true
     left:
@@ -467,6 +499,43 @@ footer:
       - text: 京ICP备1905135号
         link: https://beian.miit.gov.cn/#/Integrated/index
 
+
+# 侧边栏 (aside)
+# --------------------------------
+aside:
+  enable: true
+  button: true
+  mobile: true # 手机显示
+  position: right # 左边右边 right/left
+  card_author:
+    enable: true
+    description: <div class="author-info__description"></div>这有关于<b>产品、设计、开发</b>相关的问题和看法，还有<b>文章翻译</b>和<b>分享</b>。<div class="author-info__description2"></div>相信你可以在这里找到对你有用的<b>知识</b>和<b>教程</b>。
+    button:
+      link: /about/
+      icon: fas fa-circle-chevron-right
+      text: 了解更多
+    social:
+      - title: Dribbble
+        icon: fab fa-dribbble
+        link: https://dribbble.com/zhheo
+      - title: Github
+        icon: fab fa-github
+        link: https://github.com/zhheo
+  card_weixin:
+    enable: true
+    face: https://p.zhheo.com/202363e5ca73123f202bbeda6f024866a181080502.png!cover
+    backFace: https://p.zhheo.com/202309da537f19ad4992f1340e53a11098df081402.png!cover
+  card_recent_post:
+    enable: false
+    limit: 5 # 输入0全显示
+    sort: date # 显示发布日期/更新日期
+    sort_order: 
+  card_all_info:
+    enable: true
+    post_count: true
+    runtime: true
+    word_count: false
+
 # 工具 (tool)
 # --------------------------------
 
@@ -510,47 +579,10 @@ note:
   border_radius: 3
   light_bg_offset: 0
 
-# 美化
-# --------------------------------
 # 显示模式 (display mode)
 display_mode: light #light/dark
 
-# 侧边栏 (aside)
-# --------------------------------
-aside:
-  enable: true
-  button: true
-  mobile: true # 手机显示
-  position: right # 左边右边 right/left
-  card_author:
-    enable: true
-    description: <div class="author-info__description"></div>这有关于<b>产品、设计、开发</b>相关的问题和看法，还有<b>文章翻译</b>和<b>分享</b>。<div class="author-info__description2"></div>相信你可以在这里找到对你有用的<b>知识</b>和<b>教程</b>。
-    button:
-      link: /about/
-      icon: fas fa-circle-chevron-right
-      text: 了解更多
-    social:
-      - title: Dribbble
-        icon: fab fa-dribbble
-        link: https://dribbble.com/zhheo
-      - title: Github
-        icon: fab fa-github
-        link: https://github.com/zhheo
-  card_weixin:
-    enable: true
-    face: https://p.zhheo.com/202363e5ca73123f202bbeda6f024866a181080502.png!cover
-    backFace: https://p.zhheo.com/202309da537f19ad4992f1340e53a11098df081402.png!cover
-  card_recent_post:
-    enable: false
-    limit: 5 # 输入0全显示
-    sort: date # 显示发布日期/更新日期
-    sort_order: 
-  card_all_info:
-    enable: true
-    post_count: true
-    runtime: true
-    word_count: false
-
+# 网址运行时间 (runtime)
 runtime:
   enable: true
   time: "2023/02/08 00:00:00"
@@ -590,9 +622,6 @@ darkmode:
   # 2： 在下午 6 点到早上 6 点之间切换黑暗模式
   autoChangeMode: 1
 
-
-# 其他 (other)
-# --------------------------------
 # Pjax
 # 它可能包含错误和不稳定
 # https://github.com/MoOx/pjax
@@ -606,6 +635,9 @@ pjax:
 aplayerInject:
   enable: true
   per_page: true
+
+aplayer:
+  asset_inject: false
 
 # 弹窗 (snackbar)
 # https://github.com/polonel/SnackBar
@@ -658,7 +690,6 @@ pwa:
   favicon_32_32: /pwa/32.png
   favicon_16_16: /pwa/16.png
   mask_icon: /pwa/safari-pinned-tab.svg
-
 
 
 # 引入 (inject)

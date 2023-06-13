@@ -6,26 +6,22 @@
     escape: false
   }
 
-if is_post() 
-  - let prev = theme.post_pagination === 1 ? page.prev : page.next
-  - let next = theme.post_pagination === 1 ? page.next : page.prev
+if is_post()
   nav#pagination.pagination-post
-    if(prev)
-      - var hasPageNext = next ? 'pull-left' : 'pull-full'
-      .prev-post(class=hasPageNext)
-        a(href=url_for(prev.path) title=prev.title)
+    if(page.prev)
+      .prev-post(class=pull-left)
+        a(href=url_for(page.prev.path))
           .pagination-info
             .label=_p('pagination.prev')
-            .prev_info=prev.title
+            .prev_info=page.prev.title
             //- Display the article introduction on homepage
           
-    if(next)
-      - var hasPagePrev = prev ? 'pull-right' : 'pull-full'
-      .next-post(class=hasPagePrev)
-        a(href=url_for(next.path) title=next.title)
+    if(page.next)
+      .next-post(class=pull-right)
+        a(href=url_for(page.next.path))
           .pagination-info
             .label=_p('pagination.next')
-            .next_info=next.title
+            .next_info=page.next.title
 else
   nav#pagination
     .pagination

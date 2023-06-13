@@ -1,6 +1,7 @@
 mixin postUI(posts)
   each article , index in page.posts.data
-    .recent-post-item
+    - let lastPost = firstpost !== 1 && is_current('/') ? true : false
+     .recent-post-item(class= (lastPost === true) ? 'lastestpost-item' : '',onclick=`pjax.loadUrl('${url_for(article.link || article.path)}')`)
       -
         let link = article.link || article.path
         let title = article.title || _p('no_title')
@@ -12,6 +13,14 @@ mixin postUI(posts)
             img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.default_img) + `'` alt=title)
       .recent-post-info
         .recent-post-info-top
+          .recent-post-info-top-tips
+            if (theme.post_meta.page.categories && article.categories.data.length > 0)
+              each item, index in article.categories.data
+                span.original #[=item.name]
+            if firstpost != 1
+              span.lastestpost 最新
+              - var firstpost = 1
+            a.unvisited-post(href=url_for(link) title='Hexo的Butterfly魔改教程：我的装备，分享你在用的设备' data-pjax-state) 未读
           a.article-title(href=url_for(link) title=title)= title
         .article-meta-wrap
           if (is_home() && (article.top || article.sticky > 0))
@@ -24,31 +33,21 @@ mixin postUI(posts)
               span.article-meta.tags
                 span.article-meta-separator
                 each item, index in article.tags.data
-                  a(href=url_for(item.path)).article-meta__tags
+                  a(href=url_for(item.path) event.cancelbubble onclick='window.event.cancelBubble=true;').article-meta__tags
                     span.tags-punctuation #[=item.name]
             span.post-meta-date
               if (theme.post_meta.page.date_type === 'both')
                 i.far.fa-calendar-alt
-                span.article-meta-label=_p('post.created')
                 time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))=date(article.date, config.date_format)
                 span.article-meta-separator
                 i.fas.fa-history
-                span.article-meta-label=_p('post.updated')
                 time.post-meta-date-updated(datetime=date_xml(article.updated) title=_p('post.updated') + ' ' + full_date(article.updated))=date(article.updated, config.date_format)
               else
                 - let data_type_updated = theme.post_meta.page.date_type === 'updated'
                 - let date_type = data_type_updated ? 'updated' : 'date'
                 - let date_icon = data_type_updated ? 'fas fa-history' :'far fa-calendar-alt'
-                - let date_title = data_type_updated ? _p('post.updated') : _p('post.created')
                 i(class=date_icon)
-                span.article-meta-label=date_title
                 time(datetime=date_xml(article[date_type]) title=date_title + ' ' + full_date(article[date_type]))=date(article[date_type], config.date_format)
-          if (theme.post_meta.page.categories && article.categories.data.length > 0)
-            span.article-meta
-              span.article-meta-separator
-              each item, index in article.categories.data
-                if (index < article.categories.data.length - 1)
-                  i.fas.fa-angle-right.article-meta-link
           
           mixin countBlockInIndex
             - needLoadCountJs = true

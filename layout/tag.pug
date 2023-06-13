@@ -2,12 +2,9 @@ extends includes/layout.pug
 
 block content
   include ./includes/mixins/article-sort.pug
-    #tag
-      #catalog-bar
-        i.fa-fw.fas.fa-tags
-        #catalog-list
-          !=catalog_list("tags")
-        a.catalog-more(href="/tags/")!= '更多'
-      .article-sort-title= _p('page.tag') + ' - ' + page.tag
-      +articleSort(page.posts, page.current)
-      include includes/pagination.pug
+  #tag
+    #tag-page-tags
+      !=pagecloud({source: site.tags})
+    .article-sort-title= _p('page.tag')
+    +articleSort(page.posts)
+    include includes/pagination.pug

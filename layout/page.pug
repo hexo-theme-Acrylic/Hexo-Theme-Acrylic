@@ -13,10 +13,16 @@ block content
         include includes/page/categories.pug
       when 'essay'
         include includes/page/essay.pug
+      when 'memos'
+        include includes/page/memos.pug
+      when 'fcricle'
+        include includes/page/fcricle.pug
       when 'about'
         include includes/page/about.pug
       when 'music'
         include includes/page/music.pug
+      when 'equipment'
+        include includes/page/equipment.pug
       default
         h1.page-title= page.title
         include includes/page/default-page.pug
