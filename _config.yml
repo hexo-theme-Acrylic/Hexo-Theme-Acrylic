@@ -633,11 +633,9 @@ pjax:
 
 # Aplayer
 aplayerInject:
-  enable: true
+  enable: false
   per_page: true
 
-aplayer:
-  asset_inject: false
 
 # 弹窗 (snackbar)
 # https://github.com/polonel/SnackBar

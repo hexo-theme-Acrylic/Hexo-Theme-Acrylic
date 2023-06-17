@@ -1,7 +1,7 @@
 -
   var options = {
-    prev_text: '<i class="fas fa-chevron-left fa-fw"></i><div class="pagination-prev">上页</div>',
-    next_text: '<div class="pagination-next">下页</div><i class="fas fa-chevron-right fa-fw"></i>',
+    prev_text: '<a class="extend prev" rel="prev" href="/" data-pjax-state=""><i class="heofont icon-arrow-left-s-line"></i><div class="pagination_tips_prev">上页</div></a>',
+    next_text: '<a class="extend next" rel="next" href="/page/2/" data-pjax-state=""><div class="pagination_tips_next">下页</div><i class="heofont icon-arrow-right-s-line"></i></a>',
     mid_size: 1,
     escape: false
   }
@@ -27,4 +27,8 @@ else
     .pagination
       if is_home()
         - options.format = 'page/%d/#content-inner'
-      !=paginator(options)
+        !=paginator(options)
+        .toPageGroup
+          input#toPageText(oninput='value=value.replace(/[^0-9]/g,\'\')' maxlength='3' title='跳转到指定页面' onkeyup='if (this.value === \'0\') this.value = \'\'')
+          a#toPageButton(onclick='heo.toPage()' data-pjax-state)
+            i.heofont.icon-youxiangshuangjiantou

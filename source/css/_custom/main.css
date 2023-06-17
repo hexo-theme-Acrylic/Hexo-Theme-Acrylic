@@ -2493,7 +2493,7 @@ blockquote footer cite::before {
 }
 
 #page-header.nav-visible+.layout>.aside-content>.sticky_layout {
-  top: 70px;
+  top: 70px !important;
   transition: top 0.5s ease 0s;
 }
 
@@ -6744,19 +6744,19 @@ a.console_switchbutton {
 /* 文章页侧边栏固定位置 */
 @media screen and (max-width: 1300px) {
   #aside-content .sticky_layout {
-    top: 60px;
+    top: 60px !important;
   }
 }
 
 @media screen and (min-width: 768px) {
   #aside-content .sticky_layout {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
   }
 }
 
 @media screen and (min-width: 1300px) {
   #aside-content .sticky_layout {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
   }
 }
 
@@ -6779,7 +6779,7 @@ a.console_switchbutton {
 }
 
 #page-header.nav-visible+.layout>.aside-content>.sticky_layout {
-  top: 80px;
+  top: 80px !important;
 }
 
 #aside-content {
@@ -7037,11 +7037,11 @@ li.card-archive-list-item {
   }
 
   #aside-content .sticky_layout {
-    top: calc(60px + 1rem);
+    top: calc(60px + 1rem) !important;
   }
 
   #page-header.nav-visible+.layout>.aside-content>.sticky_layout {
-    top: calc(60px + 1rem);
+    top: calc(60px + 1rem) !important;
   }
 
   [data-theme=dark] #aside-content>.card-widget.card-info {
@@ -17018,4 +17018,11 @@ div#equipment {
 
 a.bber-reply {
   cursor: pointer;
+}
+@media screen and (min-width: 900px) {
+  #aside-content .sticky_layout {
+    position: sticky !important;
+    top: 20px;
+    transition: top 0.3s ease 0s;
+  }
 }

@@ -20,7 +20,7 @@ mixin postUI(posts)
             if firstpost != 1
               span.lastestpost 最新
               - var firstpost = 1
-            a.unvisited-post(href=url_for(link) title='Hexo的Butterfly魔改教程：我的装备，分享你在用的设备' data-pjax-state) 未读
+            a.unvisited-post(href=url_for(link) title=`${title}` data-pjax-state) 未读
           a.article-title(href=url_for(link) title=title)= title
         .article-meta-wrap
           if (is_home() && (article.top || article.sticky > 0))
