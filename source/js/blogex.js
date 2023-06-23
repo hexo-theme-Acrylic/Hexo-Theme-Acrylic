@@ -300,47 +300,47 @@ function addKeyShotListener() {
     $(window).on("keydown", keyDownEvent),
     $(window).on("keyup", keyUpEvent)
 }
-// function keyDownEvent(e) {
-//     if (27 == e.keyCode && (heo.hideLoading(),
-//     heo.hideConsole(),
-//     rm.hideRightMenu()),
-//     heo_keyboard && e.shiftKey && !heo_intype) {
-//         if (16 == e.keyCode && document.querySelector("#keyboard-tips").classList.add("show"),
-//         75 == e.keyCode)
-//             return heo.keyboardToggle(),
-//             !1;
-//         if (65 == e.keyCode)
-//             return heo.showConsole(),
-//             !1;
-//         if (77 == e.keyCode)
-//             return heo.musicToggle(),
-//             !1;
-//         if (82 == e.keyCode)
-//             return toRandomPost(),
-//             !1;
-//         if (72 == e.keyCode)
-//             return pjax.loadUrl("/"),
-//             !1;
-//         if (68 == e.keyCode)
-//             return rm.switchDarkMode(),
-//             !1;
-//         if (70 == e.keyCode)
-//             return pjax.loadUrl("/moments/"),
-//             !1;
-//         if (76 == e.keyCode)
-//             return pjax.loadUrl("/link/"),
-//             !1;
-//         if (80 == e.keyCode)
-//             return pjax.loadUrl("/about/"),
-//             !1;
-//         if (84 == e.keyCode)
-//             return pjax.loadUrl("/tlink/"),
-//             !1
-//     }
-// }
-// function keyUpEvent(e) {
-//     16 == e.keyCode && document.querySelector("#keyboard-tips").classList.remove("show")
-// }
+function keyDownEvent(e) {
+    if (27 == e.keyCode && (heo.hideLoading(),
+    heo.hideConsole(),
+    rm.hideRightMenu()),
+    heo_keyboard && e.shiftKey && !heo_intype) {
+        if (16 == e.keyCode && document.querySelector("#keyboard-tips").classList.add("show"),
+        75 == e.keyCode)
+            return heo.keyboardToggle(),
+            !1;
+        if (65 == e.keyCode)
+            return heo.showConsole(),
+            !1;
+        if (77 == e.keyCode)
+            return heo.musicToggle(),
+            !1;
+        if (82 == e.keyCode)
+            return toRandomPost(),
+            !1;
+        if (72 == e.keyCode)
+            return pjax.loadUrl("/"),
+            !1;
+        if (68 == e.keyCode)
+            return rm.switchDarkMode(),
+            !1;
+        if (70 == e.keyCode)
+            return pjax.loadUrl("/moments/"),
+            !1;
+        if (76 == e.keyCode)
+            return pjax.loadUrl("/link/"),
+            !1;
+        if (80 == e.keyCode)
+            return pjax.loadUrl("/about/"),
+            !1;
+        if (84 == e.keyCode)
+            return pjax.loadUrl("/tlink/"),
+            !1
+    }
+}
+function keyUpEvent(e) {
+    16 == e.keyCode && document.querySelector("#keyboard-tips").classList.remove("show")
+}
 function listenToPageInputPress() {
     var e = document.getElementById("toPageText")
       , t = document.getElementById("toPageButton");
@@ -430,30 +430,30 @@ document.addEventListener("scroll", acy.throttle((function() {
     o && t && (document.body.clientWidth > 1300 && (o.offsetTop + o.offsetHeight / 2 < e ? t.classList.add("show-window") : t.classList.remove("show-window")))
 }
 ), 200)),
-// "true" == localStorage.getItem("keyboardToggle") ? (document.querySelector("#consoleKeyboard").classList.add("on"),
-// heo_keyboard = !0) : (document.querySelector("#consoleKeyboard").classList.remove("on"),
-// heo_keyboard = !1),
-// addKeyShotListener(),
-// $("input").focus((function() {
-//     heo_intype = !0
-// }
-// )),
-// $("textarea").focus((function() {
-//     heo_intype = !0
-// }
-// )),
-// $("input").focusout((function() {
-//     heo_intype = !1
-// }
-// )),
-// $("textarea").focusout((function() {
-//     heo_intype = !1
-// }
-// )),
-// window.onfocus = function() {
-//     document.querySelector("#keyboard-tips").classList.remove("show")
-// }
-// ,
+"true" == localStorage.getItem("keyboardToggle") ? (document.querySelector("#consoleKeyboard").classList.add("on"),
+heo_keyboard = !0) : (document.querySelector("#consoleKeyboard").classList.remove("on"),
+heo_keyboard = !1),
+addKeyShotListener(),
+$("input").focus((function() {
+    heo_intype = !0
+}
+)),
+$("textarea").focus((function() {
+    heo_intype = !0
+}
+)),
+$("input").focusout((function() {
+    heo_intype = !1
+}
+)),
+$("textarea").focusout((function() {
+    heo_intype = !1
+}
+)),
+window.onfocus = function() {
+    document.querySelector("#keyboard-tips").classList.remove("show")
+}
+,
 document.addEventListener("pjax:click", (function() {
     console.clear(),
     Pace.restart(),

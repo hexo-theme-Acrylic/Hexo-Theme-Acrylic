@@ -17,4 +17,4 @@ if site.data.link
           img.flink-avatar.cf-friends-avatar.entered.loaded.no-fancybox(data-lazy-src=`${i.avatar}`, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=`${i.name}`, data-ll-status='loaded', src=`${i.avatar}`)
         .site-card-text
           span.title.cf-friends-name #[=i.name]
-          span.desc(title=`${descr}`) #[=i.descr]
+          span.desc(title=`${i.descr}`) #[=i.descr]

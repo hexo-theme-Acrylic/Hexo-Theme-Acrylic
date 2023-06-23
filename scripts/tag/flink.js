@@ -22,7 +22,7 @@ const flinkFn = (args, content) => {
           <div class="flink-list-item">
             <a href="${j.link}" title="${j.name}" target="_blank">
               <div class="flink-item-icon">
-                <img class="no-lightbox" src="${j.avatar}" onerror='this.onerror=null;this.src="${urlFor(hexo.theme.config.error_img.flink)}"' alt="${j.name}" />
+                <img class="no-lightbox" src="${j.avatar}" onerror='this.onerror=null;this.src="${urlFor(hexo.theme.config.default_img)}"' alt="${j.name}" />
               </div>
               <div class="flink-item-name">${j.name}</div> 
               <div class="flink-item-desc" title="${j.descr}">${j.descr}</div>

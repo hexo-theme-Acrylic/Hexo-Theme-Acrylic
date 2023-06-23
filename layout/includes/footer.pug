@@ -1,7 +1,7 @@
 if theme.footer.banner.enable
   #heo-footer-banner
     .footer-logo
-      i(class=`${theme.footer.banner}`,style="font-size: 30px")
+      i(class=`${theme.footer.banner.logo}`,style="font-size: 30px")
     .footer-banner-description 
     | 来自 #[=config.author] #[=theme.footer.banner.desc]
     a.footer-banner-link(href=`${theme.footer.banner.link}` data-pjax-state='') #[=theme.footer.banner.button_text]
@@ -14,7 +14,7 @@ if theme.footer.banner.enable
         else if i.class == "out"
           a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
             i(class=`${i.icon}`)
-        else 
+        else
           a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
             i(class=`${i.icon}`)
   img.footer_mini_logo.entered.loading(title='返回顶部' onclick='acy.scrollToDest(0, 500)' src=`${theme.footer.footer_logo.url}` data-ll-status='loading')

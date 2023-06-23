@@ -14120,12 +14120,6 @@ div#heo-footer-banner .footer-banner-description {
   max-width: 100%;
 }
 
-@media screen and (max-height: 750px) {
-  #body-wrap.error .aside-list {
-    display: none;
-  }
-}
-
 #body-wrap.error .aside-list .aside-list-group {
   display: flex;
   flex-direction: row;
@@ -17025,4 +17019,13 @@ a.bber-reply {
     top: 20px;
     transition: top 0.3s ease 0s;
   }
+}
+/* 阿里图标 */
+svg.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    font-size: 20px;
 }

@@ -14,13 +14,13 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       #web_bg
       //- #an_music_bg
       
-    !=partial('includes/sidebar', {}, {cache: true})
+    !=partial('includes/part/sidebar', {}, {cache: true})
 
     if page.type !== '404'
       #body-wrap(class=pageType)
         include ./header/index.pug
         if is_home()
-          include ./hometop.pug
+          include ./part/hometop.pug
 
         main#content-inner.layout(class=hideAside)
           if body
@@ -34,11 +34,12 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
           !=partial('includes/footer', {}, {cache: true})
 
     else
-      include ./404.pug
+      include ./page/404.pug
 
-    include ./rightside.pug
-    !=partial('includes/rightmenu',{}, {cache:true})
-    include ./music.pug
-    include ./console.pug
+    include ./part/rightside.pug
+    !=partial('includes/part/rightmenu',{}, {cache:true})
+    include ./part/music.pug
+    include ./part/console.pug
+    include ./part/keyboard.pug
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug

@@ -59,18 +59,18 @@ var heo = {
         fetch("/link.json").then((e=>e.json())).then((e=>{
             var t = []
               , o = -1;
-            for (const n of e) {
-                const e = n.link_list;
-                for (let n = 0; n < Math.min(e.length, 1); n++) {
-                    let n = Math.floor(Math.random() * e.length);
-                    for (; n === o && e.length > 1; )
-                        n = Math.floor(Math.random() * e.length);
+            for (a=1;a<5;a++) {
+                const i = e.link_list;
+                for (let n = 0; n < Math.min(i.length, 1); n++) {
+                    let n = Math.floor(Math.random() * i.length);
+                    for (; n === o && i.length > 1; )
+                        n = Math.floor(Math.random() * i.length);
                     o = n,
                     t.push({
-                        name: e[n].name,
-                        link: e[n].link
+                        name: i[n].name,
+                        link: i[n].link
                     }),
-                    e.splice(n, 1)
+                    i.splice(n, 1)
                 }
             }
             t.pop();
@@ -300,8 +300,11 @@ var heo = {
           , o = document.getElementById("toPageText")
           , n = parseInt(o.value);
         if (!isNaN(n) && n > 0 && "0" !== ("" + n)[0] && n <= t) {
+          if (n == 1)
+            var a = "/"
+          else
             var a = "/page/" + n + "/";
-            document.getElementById("toPageButton").href = a
+          document.getElementById("toPageButton").href = a
         }
     },
     changeSayHelloText: function() {
