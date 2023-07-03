@@ -13957,7 +13957,7 @@ figure.gallery-group:hover .gallery-group-name::after {
   }
 }
 
-.footer-banner-right {
+.footer-bar-right {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -14058,18 +14058,18 @@ figure.gallery-group:hover .gallery-group-name::after {
 	transition: all .3s ease-in-out;
 } */
 
-div#heo-footer-banner {
+div#heo-footer-bar {
   display: none;
 }
 
-.post div#heo-footer-banner {
+.post div#heo-footer-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 16px;
 }
 
-div#heo-footer-banner a.footer-banner-link {
+div#heo-footer-bar a.footer-bar-link {
   padding: 4px 16px;
   background: var(--heo-secondbg);
   border-radius: 20px;
@@ -14078,16 +14078,16 @@ div#heo-footer-banner a.footer-banner-link {
   font-size: 14px;
 }
 
-div#heo-footer-banner a.footer-banner-link:hover {
+div#heo-footer-bar a.footer-bar-link:hover {
   background: var(--heo-main);
   color: var(--heo-white);
 }
 
-div#heo-footer-banner .footer-logo {
+div#heo-footer-bar .footer-logo {
   font-size: 24px;
 }
 
-div#heo-footer-banner .footer-banner-description {
+div#heo-footer-bar .footer-bar-description {
   color: var(--heo-secondtext);
   font-weight: bold;
 }
@@ -14971,7 +14971,7 @@ span.hexo-douban-pagenum {
   font-size: 0.8rem;
 }
 
-#footer-banner {
+#footer-bar {
   padding: 1rem;
   color: var(--heo-fontcolor);
   margin-top: 1rem;
@@ -14982,7 +14982,7 @@ span.hexo-douban-pagenum {
   transition: 0.3s;
 }
 
-#footer-banner .footer-banner-links {
+#footer-bar .footer-bar-links {
   display: flex;
   justify-content: space-between;
   max-width: 1400px;
@@ -14993,14 +14993,14 @@ span.hexo-douban-pagenum {
   line-height: 1;
 }
 
-#footer-banner .footer-banner-left {
+#footer-bar .footer-bar-left {
   display: flex;
   flex-wrap: wrap;
   min-height: 32px;
   align-items: center;
 }
 
-#footer-banner .footer-banner-link {
+#footer-bar .footer-bar-link {
   margin-right: 1rem;
   color: var(--heo-fontcolor);
   font-size: 0.8rem;
@@ -15008,24 +15008,24 @@ span.hexo-douban-pagenum {
   white-space: nowrap;
 }
 
-#footer-banner .footer-banner-link.cc {
+#footer-bar .footer-bar-link.cc {
   margin-right: 0rem;
 }
 
-#footer-banner .footer-banner-link.cc i {
+#footer-bar .footer-bar-link.cc i {
   margin-right: 0.5rem;
   font-size: 18px;
 }
 
-#footer-banner .footer-banner-link:hover {
+#footer-bar .footer-bar-link:hover {
   color: var(--heo-theme);
 }
 
-#footer-banner>div>div.footer-banner-left>span {
+#footer-bar>div>div.footer-bar-left>span {
   margin-right: 1rem;
 }
 
-#footer-banner .footer-banner-right a:hover {
+#footer-bar .footer-bar-right a:hover {
   color: var(--heo-lighttext);
 }
 

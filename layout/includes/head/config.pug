@@ -42,7 +42,7 @@
   }
 
   let highlight = 'undefined';
-    if ((config.highlight && config.highlight.enable) || (config.prismjs && config.prismjs.enable)) {
+    if (config.highlight && config.highlight.enable) {
       highlight = JSON.stringify({
         plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
         highlightCopy: theme.highlight_copy,
@@ -50,8 +50,9 @@
         highlightHeightLimit: theme.highlight_height_limit
       })
     }
+
 script.
-  const GLOBAL_CONFIG = { 
+  const GLOBAL_CONFIG = {
     root: '!{config.root}',
     algolia: !{algolia},
     localSearch: !{localSearch},
@@ -78,5 +79,5 @@ script.
     Snackbar: !{Snackbar},
     isPhotoFigcaption: !{true},
     islazyload: !{theme.lazyload.enable},
-    isAnchor: !{false}
+    isAnchor: !{false},
   }

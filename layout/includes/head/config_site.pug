@@ -1,5 +1,5 @@
 -
-  const titleVal = pageTitle.replace(/'/ig,"\\'")
+  const titleVal = pageTitle.replace(/'/ig,"\\'") + " | "+  config.author
 
   let isHighlightShrink = false
 
@@ -12,6 +12,35 @@
     const pageToc = page.toc === true || page.toc === false ? page.toc : tocEnable
     showToc = pageToc && (toc(page.content) !== '' || page.encrypt == true )
   }
+
+  let Tcolor_mode = 'undefined';
+  let Tcolor = 'undefined';
+  if (theme.theme_color && is_post() ){
+    if (theme.theme_color.enable && theme.theme_color.mode && !page.tcolor_mode) { //- 开启了主题色和页面里没有tcolor_mode
+      Tcolor_mode = `${theme.theme_color.mode}`
+    }
+    else if(theme.theme_color.enable && page.tcolor_mode) { //- 开启了主题色和页面里有tcolor_mode
+      Tcolor_mode = `${page.tcolor_mode}`
+    }
+    else if(theme.theme_color.enable != true && page.tcolor_mode){ //- 没有开启主题色但页面里有tcolor_mode
+      consoel.warn('页面里有tcolor_mode,但主题色不开启')
+    }
+    if (Tcolor_mode == 'local' && page.tcolor) {
+      Tcolor = page.tcolor
+    }
+    else if (Tcolor_mode == 'local' && !page.tcolor){
+      console.warn('开启了主题色,但文章\"'+page.title+'\"里没有tcolor')
+    }
+    else if (Tcolor_mode == 'img2color' && theme.theme_color.api){
+      Tcolor = theme.theme_color.api
+    }
+    else if (Tcolor_mode == 'img2color' && !theme.theme_color.api){
+      console.error('没有配置主题色api')
+    }
+    else if (Tcolor_mode == 'cloud'){
+      Tcolor = 'cloud'
+    }
+  }
 -
 
 script#config-diff.
@@ -21,5 +50,8 @@ script#config-diff.
     isHome: !{is_home()},
     isHighlightShrink: !{isHighlightShrink},
     isToc: !{showToc},
-    postUpdate: '!{full_date(page.updated)}'
+    postUpdate: '!{full_date(page.updated)}',
+    tcolor_mode: '!{Tcolor_mode}',
+    tcolor: '!{Tcolor}'
   }
+  coverColor()

@@ -206,21 +206,22 @@ post_meta:
     label: true # 首页显示文章描述
   location: 成都 #地点
 
-# 文章顶部ai摘要
-post_head_ai_description:
-  enable: true
-  gptName: Heo
-  mode: tianli # 默认模式 可选值: tianli/local
-  switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
-  btnLink: https://afdian.net/item/886a79d4db6711eda42a52540025c377
-  randomNum: 3 # 按钮最大的随机次数，也就是一篇文章最大随机出来几种
-  basicWordCount: 1000 # 最低获取字符数, 最小1000, 最大1999
-  key: SZLhZo3TjRN7GZ9JiRFa
-  Referer: https://xx.xx/
+# # 文章顶部ai摘要
+# post_head_ai_description:
+#   enable: true
+#   gptName: Heo
+#   mode: tianli # 默认模式 可选值: tianli/local
+#   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
+#   btnLink: https://afdian.net/item/886a79d4db6711eda42a52540025c377
+#   randomNum: 3 # 按钮最大的随机次数，也就是一篇文章最大随机出来几种
+#   basicWordCount: 1000 # 最低获取字符数, 最小1000, 最大1999
+#   key: SZLhZo3TjRN7GZ9JiRFa
+#   Referer: https://xx.xx/
 
 theme_color:
   enable: true
-  class: online # online/local(未完成)
+  mode: img2color # online/local(未完成)
+  api: https://api-marcusyyds.vercel.app/v1/img2color
 
 # 字数统计 (wordcount)
 # 注意安装对应的插件
@@ -347,9 +348,9 @@ hometop:
 # 页脚 (footer)
 # --------------------------------
 footer:
-  banner:
+  bar:
     enable: true
-    logo: heofont icon-name-1
+    logo: heofont icon-heologo
     desc: 最新设计与科技的文章
     link: /
     button_text: 了解更多

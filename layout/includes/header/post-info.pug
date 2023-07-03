@@ -15,8 +15,7 @@
           .post-meta__tag-list
             each item, index in page.tags.data
               a(href=url_for(item.path),  data-pjax-state).post-meta__tags
-                span.tags-punctuation #
-                span.tags-name #[=item.name]
+                span.tags-name.tags-punctuation #[=item.name]
   h1.post-title= page.title || _p('no_title')
   #post-meta
     .meta-secondline

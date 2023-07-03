@@ -44,6 +44,7 @@ link(rel='stylesheet', href=url_for(theme.asset.fontawesomeV6) media="print" onl
 //- js
 script(src=url_for(theme.asset.jquery))
 script(src=url_for(theme.asset.heo))
+script(src='/js/heo_gpt.js')
 if theme.algolia_search.enable
   script(src=url_for(theme.asset.instantsearch_v4) defer)
 //- if theme.post_meta.ai.enable

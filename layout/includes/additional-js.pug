@@ -29,6 +29,8 @@ div
     != partial("includes/loading/loading-js", {}, { cache: true })
 
   .js-pjax
+    script(src="/js/themecolor.js")
+      
     if needLoadCountJs
       != partial("includes/third-party/card-post-count/index", {}, { cache: true })
 

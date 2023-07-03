@@ -1,10 +1,10 @@
-if theme.footer.banner.enable
-  #heo-footer-banner
+if theme.footer.bar.enable
+  #heo-footer-bar
     .footer-logo
-      i(class=`${theme.footer.banner.logo}`,style="font-size: 30px")
-    .footer-banner-description 
-    | 来自 #[=config.author] #[=theme.footer.banner.desc]
-    a.footer-banner-link(href=`${theme.footer.banner.link}` data-pjax-state='') #[=theme.footer.banner.button_text]
+      i(class=`${theme.footer.bar.logo}`,style="font-size: 30px")
+    .footer-bar-description 
+    | 来自 #[=config.author] #[=theme.footer.bar.desc]
+    a.footer-bar-link(href=`${theme.footer.bar.link}` data-pjax-state='') #[=theme.footer.bar.button_text]
 #footer_deal
   if theme.footer.footer_icons.enable
       each i in theme.footer.footer_icons.left
@@ -48,10 +48,10 @@ if theme.footer.banner.enable
         a.random-friends-btn(href='javascript:heo.addFriendLinksInFooter();;' rel='external nofollow' data-pjax-state='')
           i.fa-solid.fa-arrows-rotate
       #friend-links-in-footer.footer-links
-#footer-banner
-  .footer-banner-links
-    .footer-banner-left
-      #footer-banner-tips
+#footer-bar
+  .footer-bar-links
+    .footer-bar-left
+      #footer-bar-tips
         if theme.footer.footer_bottom.copyright.enable
           - var now = new Date()
           - var nowYear = now.getFullYear()
@@ -62,12 +62,12 @@ if theme.footer.banner.enable
           else
             .copyright!= `&copy;${nowYear} By `
               a(target='_blank',href='/',rel='external nofollow') #[=config.author]
-    .footer-banner-right
-      a.footer-banner-link(href='/rss/' ,data-pjax-state='' ,title="框架") Hexo
-      a.footer-banner-link(href='/update/' ,data-pjax-state='' ,title="主题") Acrylic
+    .footer-bar-right
+      a.footer-bar-link(href='/rss/' ,data-pjax-state='' ,title="框架") Hexo
+      a.footer-bar-link(href='/update/' ,data-pjax-state='' ,title="主题") Acrylic
       each i in theme.footer.footer_bottom.right
-        a.footer-banner-link(target='_blank' ,href=`${i.link}` rel='noopener external nofollow noreferrer noopener') #[=i.text]
-      a.footer-banner-link.cc(href=`${theme.copyright.link}` ,title=`${theme.copyright.short}` ,data-pjax-state='')
+        a.footer-bar-link(target='_blank' ,href=`${i.link}` rel='noopener external nofollow noreferrer noopener') #[=i.text]
+      a.footer-bar-link.cc(href=`${theme.copyright.link}` ,title=`${theme.copyright.short}` ,data-pjax-state='')
         i.fa-regular.fa-copyright
         i.fa-brands.fa-creative-commons-by
         i.fa-brands.fa-creative-commons-nc

@@ -220,7 +220,7 @@ var heo = {
     },
     hideLoading: function() {
         document.querySelector("#loading-box").classList.add("loaded")
-        // heoGPT.aiExplanation()
+        heoGPT.aiExplanation()
     },
     musicToggle: function() {
         heo_musicPlaying ? (document.querySelector("#nav-music").classList.remove("playing"),
@@ -395,4 +395,10 @@ document.addEventListener("pjax:click", (function() {
     heoGPT_timeoutId && clearTimeout(heoGPT_timeoutId),
     heoGPT_observer && heoGPT_observer.disconnect()
 }
-));
+)),
+// 如果你想使用主题的话,请留下这一行,谢谢
+console.log(
+  "\n %c Acrylic-Dev v1.0.0 %c https://github.com/hexo-theme-acrylic/hexo-theme-acrylic \n",
+  "color: #ffffff; background: #425aef; padding:5px 0; border-radius: 3px; font-size: 15px;",
+  "color: #425aef; background: #ffffff; padding:5px 0; border-radius: 0 3px 3px 0;"
+);
