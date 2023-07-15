@@ -115,6 +115,24 @@ window.addEventListener('load', () => {
     }
   })
 
+  const stats = instantsearch.widgets.stats({
+    container: '#algolia-info > .algolia-stats',
+    templates: {
+      text: function (data) {
+        const stats = GLOBAL_CONFIG.algolia.languages.hits_stats
+          .replace(/\$\{hits}/, data.nbHits)
+          .replace(/\$\{time}/, data.processingTimeMS)
+        return (
+          `<hr>${stats}`
+        )
+      }
+    }
+  })
+
+  const powerBy = instantsearch.widgets.poweredBy({
+    container: '#algolia-info > .algolia-poweredBy',
+  })
+
   const pagination = instantsearch.widgets.pagination({
     container: '#algolia-pagination',
     totalPages: 5,
@@ -127,7 +145,7 @@ window.addEventListener('load', () => {
   })
 
 
-  search.addWidgets([configure,searchBox,hits,pagination]) // add the widgets to the instantsearch instance
+  search.addWidgets([configure,searchBox,hits,stats,powerBy,pagination]) // add the widgets to the instantsearch instance
 
   search.start()
 
