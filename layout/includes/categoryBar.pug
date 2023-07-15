@@ -1,9 +1,0 @@
-#category-bar
-  #category-bar-items.category-bar-items
-    #category-bar-home.category-bar-item.select
-      a(href='/' data-pjax-state='') 首页
-    .category-bar-items#category-bar-items
-        !=getarray_bar("category")
-  #category-bar-next.category-bar-next(onclick='heo.scrollCategoryBarToRight()')
-    i.fas.fa-angle-double-right
-  a.category-bar-more(href='/categories/' data-pjax-state='') 更多

@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * inject js to head
  */
 

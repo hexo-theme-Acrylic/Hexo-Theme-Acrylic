@@ -1,8 +1,9 @@
 /**
- * Butterfly
+ * Acrylic
  * @example
  *  page_description()
  *  cloudTags(source, minfontsize, maxfontsize, limit)
+ *  pagecloud(source)
  */
 
 'use strict'
@@ -22,19 +23,41 @@ hexo.extend.helper.register('page_description', function () {
   }
 })
 
+hexo.extend.helper.register("get_page_fill_description", function () {
+  const { config, page } = this;
+  let description = page.description || page.content || page.title || config.description;
+
+  if (description) {
+    // 使用正则表达式匹配 h1-h6 标签中的文本内容
+    const regex = /<h[1-6][^>]*>(.*?)<\/h[1-6]>/g;
+    const headings = [];
+    let match;
+    while ((match = regex.exec(description))) {
+      headings.push(match[0]);
+    }
+
+    const contents = headings.map(heading => {
+      // 去掉 a 标签及其内容
+      const text = heading.replace(/<a[^>]*>.*?<\/a>/g, "");
+      // 去除特殊符号 &,:,; 等
+      return text.replace(/<\/?[^>]+>|&|:|;|#/g, "");
+    });
+
+    // 排除 div.post-ai-description 元素中的内容
+    const excludedDivRegex = /<div[^>]*class="?post-ai-description"?.*?>[\s\S]*?<\/div>/gi;
+    description = description.replace(excludedDivRegex, "");
+
+    description = escapeHTML(stripHTML(description).trim())
+      .replace(/\n/g, " ")
+      .replace(/[^\u4e00-\u9fa5]/gi, "");
+
+    return contents.join(", ") + description;
+  }
+});
 hexo.extend.helper.register('cloudTags', function (options = {}) {
   const env = this
   let source = options.source
-  const minfontsize = options.minfontsize
-  const maxfontsize = options.maxfontsize
-  const limit = options.limit
-  const unit = options.unit || 'px'
-
   let result = ''
-  if (limit > 0) {
-    source = source.limit(limit)
-  }
-
   const sizes = []
   source.sort('length').forEach(tag => {
     const { length } = tag
@@ -42,13 +65,25 @@ hexo.extend.helper.register('cloudTags', function (options = {}) {
     sizes.push(length)
   })
 
-  const length = sizes.length - 1
   source.forEach(tag => {
-    const ratio = length ? sizes.indexOf(tag.length) / length : 0
-    const size = minfontsize + ((maxfontsize - minfontsize) * ratio)
-    let style = `font-size: ${parseFloat(size.toFixed(2))}${unit};`
-    const color = 'rgb(' + Math.floor(Math.random() * 201) + ', ' + Math.floor(Math.random() * 201) + ', ' + Math.floor(Math.random() * 201) + ')' // 0,0,0 -> 200,200,200
-    result += `<a href="${env.url_for(tag.path)}" style="${style}">${tag.name}<sup>${tag.length}</sup></a>`
+    result += `<a href="${env.url_for(tag.path)}">${tag.name}<sup>${tag.length}</sup></a>`
+  })
+  return result
+})
+
+hexo.extend.helper.register('pagecloud', function (options = {}) {
+  const env = this
+  let source = options.source
+  let result = ''
+  const sizes = []
+  source.sort('length').forEach(tag => {
+    const { length } = tag
+    if (sizes.includes(length)) return
+    sizes.push(length)
+  })
+
+  source.forEach(tag => {
+    result += `<a href="${env.url_for(tag.path)}" id="${tag.name}" data-pjax-state=""><span class="tags-punctuation"></span> ${tag.name} <span class="tagsPageCount">${tag.length}</span></a>`
   })
   return result
 })
@@ -73,7 +108,7 @@ hexo.extend.helper.register('injectHtml', function (data) {
 hexo.extend.helper.register('findArchivesTitle', function (page, menu, date) {
   if (page.year) {
     const dateStr = page.month ? `${page.year}-${page.month}` : `${page.year}`
-    const date_format = page.month ? hexo.theme.config.aside.card_archives.format : 'YYYY'
+    const date_format = 'YYYY'
     return date(dateStr, date_format)
   }
 

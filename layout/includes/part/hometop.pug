@@ -1,0 +1,106 @@
+- var color=theme.hometop.topgroup.card.color || "#0E57D5"
+- var text_color=theme.hometop.topgroup.card.text_color || "#ffffff"
+#home_top
+  include ./bbTimeList.pug
+  style(type='text/css').
+    .recent-post-item:nth-child(n+7) {
+      display: none;
+    }
+
+    .topGroup .todayCard::after {
+      box-shadow: 0 -109px 133px -9px #[=color] inset;
+    }
+
+    .todayCard-title,.todayCard-tips,.topGroup .banner-button {
+        color: #[=text_color];
+    }
+
+    .topGroup .todayCard {
+        background: #[=color];
+    }
+  .recent-top-post-group#recent-top-post-group
+    .recent-post-top#recent-post-top
+      if theme.hometop.banner.enable
+        #bannerGroup
+          #banners
+            if theme.hometop.banner.class == "people"
+              canvas#peoplecanvas
+                script(src="https://cdn.cbd.int/cdn/expire-1-M/gsap/3.9.1/gsap.min.js") 
+                script(src="/lib/people.js") 
+            if theme.hometop.banner.class == "creativity"
+              .banners-title
+                .banners-title-big=theme.hometop.banner.title_up
+                .banners-title-big=theme.hometop.banner.title_dn
+                .banners-title-small=theme.hometop.banner.tips
+              .tags-group-all
+                .tags-group-wrapper
+                   if site.data.creativity
+                    each i in site.data.creativity
+                      - const evenNum = i.creativity_list.filter((x, index) => index % 2 === 0);
+                      - const oddNum = i.creativity_list.filter((x, index) => index % 2 === 1);
+                      each item, index in i.creativity_list
+                        if ((index+1 <= evenNum.length) && (index+1 <= oddNum.length))
+                          .tags-group-icon-pair
+                            .tags-group-icon(style=`background: ${evenNum[index].color}`)
+                              img.no-lightbox(title=evenNum[index].name, src=evenNum[index].icon)
+                            .tags-group-icon(style=`background: ${oddNum[index].color}`)
+                              img.no-lightbox(title=oddNum[index].name, src=oddNum[index].icon)
+            a#banner-hover(onclick='toRandomPost()', data-pjax-state)
+              span.bannerText 随便逛逛
+              i.fas.fa-arrow-right.banner-righticon
+          if theme.hometop.categoryGroup.enable
+            .categoryGroup
+              each item in theme.hometop.categoryGroup.category_list
+                .categoryItem(style=`box-shadow:${item.shadow}`)
+                  a.categoryButton(onclick=`pjax.loadUrl("${item.path}");` href='javascript:void(0);' class=`${item.class}`)
+                    span.categoryButtonText=item.name
+                    i(class=`${item.icon}`)
+      if theme.hometop.topgroup.enable
+        .topGroup
+          if theme.hometop.topgroup.class == "card"
+            .todayCard#todayCard(style='z-index: 1;')
+              .todayCard-info
+                .todayCard-tips=theme.hometop.topgroup.card.tips
+                .todayCard-title=theme.hometop.topgroup.card.title
+              .todayCard-cover(style=`background: url(\'${theme.hometop.topgroup.card.bg}\') no-repeat center /cover`)
+              .banner-button-group
+                a.banner-button(href=`${theme.hometop.topgroup.card.link}`, data-pjax-state='external')
+                  i(class=`${theme.hometop.topgroup.card.icon}`)
+                  span.banner-button-text=theme.hometop.topgroup.card.buttontext
+          if theme.hometop.topgroup.class == "post"
+            - site.posts.sort(sort, -1).limit(postLimit).each(function(article){
+              - let link = article.link || article.path
+              - let title = article.title || _p('no_title')
+              - let post_cover = article.cover
+              .recent-post-item
+                .post_cover.left_radius
+                  a(href=url_for(link), title=`${article.title}`, data-pjax-state)
+                    span.recent-post-top-text(onclick=`pjax.loadUrl("` + article.link + `");`) 荐 
+                    img.post_bg.entered.loaded(src=url_for(post_cover) alt=title)
+                .recent-post-info(onclick=`pjax.loadUrl("` + article.link + `");`)
+                  a.article-title(href=url_for(link), title=`${article.title}`, data-pjax-state)=article.title
+            - })
+          if theme.hometop.topgroup.class == "both"
+            - site.posts.sort(sort, -1).limit(postLimit).each(function(article){
+              - let link = article.link || article.path
+              - let title = article.title || _p('no_title')
+              - let post_cover = article.cover
+              .recent-post-item
+                .post_cover.left_radius
+                  a(href=url_for(link), title=`${article.title}`, data-pjax-state)
+                    span.recent-post-top-text(onclick=`pjax.loadUrl("` + article.link + `");`) 荐 
+                    img.post_bg.entered.loaded(src=url_for(post_cover) alt=title)
+                .recent-post-info(onclick=`pjax.loadUrl("` + article.link + `");`)
+                  a.article-title(href=url_for(link), title=`${article.title}`, data-pjax-state)=article.title
+            - })
+
+            .todayCard#todayCard(onclick=`window.open(\'${theme.hometop.topgroup.card.link}\')`, style='z-index: 1;')
+              .todayCard-info
+                .todayCard-tips=theme.hometop.topgroup.card.tips
+                .todayCard-title=theme.hometop.topgroup.card.title
+              .todayCard-cover(style=`background: url(\'${theme.hometop.topgroup.card.bg}\') no-repeat center /cover`)
+              .banner-button-group
+                a.banner-button(onclick=`window.event.cancelBubble=true;heo.hideTodayCard();`, data-pjax-state='external')
+                  i(class=`${theme.hometop.topgroup.card.icon}`)
+                  span.banner-button-text=theme.hometop.topgroup.card.buttontext
+

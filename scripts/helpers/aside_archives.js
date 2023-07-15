@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * for aside archives
  */
 

@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * Merge CDN
  */
 
@@ -15,30 +15,35 @@ hexo.extend.filter.register('before_generate', () => {
   const thirdPartySrc = hexo.render.renderSync({ path: path.join(hexo.theme_dir,'/plugins.yml'), engine: 'yaml'})
   const internalSrc = {
     main: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/main.js',
       version
     },
     utils: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/utils.js',
       version
     },
     translate: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/tw_cn.js',
       version
     },
     local_search: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/search/local-search.js',
       version
     },
     algolia_js: {
-      name: 'hexo-theme-butterfly',
+      name: 'hexo-theme-acrylic',
       file: 'js/search/algolia.js',
       version
-    }
+    },
+    heo_js: {
+      name: 'hexo-theme-acrylic',
+      file: 'js/heo.js',
+      version
+    },
   }
 
   const minFile = (file) => {
@@ -63,10 +68,12 @@ hexo.extend.filter.register('before_generate', () => {
         cdnjs_file,
         min_file,
         min_cdnjs_file,
-        cdnjs_name
+        cdnjs_name,
       }
       const cdnSource = {
         local: cond === 'internal' ? cdnjs_file : `/pluginsSrc/${name}/${file}`,
+        tianli: `https://cdn1.tianli0.top/npm/${name}${verType}/${min_file}`,
+        elemecdn: `https://npm.elemecdn.com/${name}${verType}/${file}`,
         jsdelivr: `https://cdn.jsdelivr.net/npm/${name}${verType}/${min_file}`,
         moezzcdn: `https://jsd.moezz.cn//npm/${name}${verType}/${min_file}`,
         unpkg: `https://unpkg.com/${name}${verType}/${file}`,

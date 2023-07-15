@@ -1,0 +1,28 @@
+- var fcricle = theme.fcricle
+if fcricle.enable
+  .author-content.author-content-item.essayPage.single
+    .card-content
+      .author-content-item-tips 即刻短文
+      span.author-content-item-title=fcricle.descr
+      .content-bottom
+        .tips=fcricle.tip
+      .banner-button-group
+        a.banner-button(onclick=`pjax.loadUrl("${fcricle.link}")`)
+          i(class=`${fcricle.icon}`)
+          span.banner-button-text=fcricle.text
+  #hexo-circle-of-friends-root
+  - var api = fcricle.api || "https://fcircle.acrylic.org.cn/"
+  script.
+    let UserConfig = {
+            // 填写你的api地址
+            private_api_url: "#{api}",
+            // 点击加载更多时，一次最多加载几篇文章，默认10
+            page_turning_number: 12,
+            // 头像加载失败时，默认头像地址
+            error_img: 'https://sdn.geekzu.org/avatar/57d8260dfb55501c37dde588e7c3852c',
+            // 进入页面时第一次的排序规则
+            sort_rule: 'created'
+        }
+    
+  script(type='text/javascript' src='https://cdn1.tianli0.top/gh/zhheo/JS-Heo@master/moments5/app.min.js')
+  script(type='text/javascript' src='https://cdn1.tianli0.top/gh/zhheo/JS-Heo@master/moments5/bundle.js')

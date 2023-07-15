@@ -1,0 +1,32 @@
+-
+  var options = {
+    prev_text: '<i class="heofont icon-arrow-left-s-line"></i><div class="pagination_tips_prev">上页</div>',
+    next_text: '<div class="pagination_tips_next">下页</div><i class="heofont icon-arrow-right-s-line"></i>',
+    mid_size: 1,
+    escape: false
+  }
+
+if is_post()
+  nav#pagination.pagination-post.needEndHide
+    if(page.prev)
+      .prev-post.pull-left
+        a(href=url_for(page.prev.path))
+          .pagination-info
+            .label=_p('pagination.prev')
+            .prev_info=page.prev.title
+    if(page.next)
+      .next-post.pull-right
+        a(href=url_for(page.next.path))
+          .pagination-info
+            .label=_p('pagination.next')
+            .next_info=page.next.title
+else
+  nav#pagination
+    .pagination
+      if is_home()
+        - options.format = 'page/%d/#content-inner'
+      !=paginator(options)
+      .toPageGroup
+        input#toPageText(oninput='value=value.replace(/[^0-9]/g,\'\')' maxlength='3' title='跳转到指定页面' onkeyup='if (this.value === \'0\') this.value = \'\'')
+        a#toPageButton(onclick='heo.toPage()' data-pjax-state)
+          i.heofont.icon-youxiangshuangjiantou
