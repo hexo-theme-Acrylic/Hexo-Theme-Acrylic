@@ -2,21 +2,31 @@ extends includes/layout.pug
 
 block content
   #page
-    if top_img === false && page.type != 'music'
-      h1.page-title= page.title
-
     case page.type
       when 'tags'
+        h1.page-title= page.title
         include includes/page/tags.pug
       when 'link'
         include includes/page/flink.pug
       when 'categories'
+        h1.page-title= page.title
         include includes/page/categories.pug
       when 'essay'
         include includes/page/essay.pug
+      when 'memos'
+        include includes/page/memos.pug
+      when 'fcricle'
+        include includes/page/fcricle.pug
       when 'about'
         include includes/page/about.pug
+      when 'music'
+        include includes/page/music.pug
+      when 'equipment'
+        include includes/page/equipment.pug
+      when 'collect'
+        include includes/page/collect.pug
       default
+        h1.page-title= page.title
         include includes/page/default-page.pug
 
     if page.comments !== false && theme.comments && theme.comments.use

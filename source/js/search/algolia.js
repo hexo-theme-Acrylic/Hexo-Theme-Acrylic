@@ -3,8 +3,8 @@ window.addEventListener('load', () => {
     const bodyStyle = document.body.style
     bodyStyle.width = '100%'
     bodyStyle.overflow = 'hidden'
-    btf.animateIn(document.getElementById('search-mask'), 'to_show 0.5s')
-    btf.animateIn(document.querySelector('#algolia-search .search-dialog'), 'titleScale 0.5s')
+    acy.animateIn(document.getElementById('search-mask'), 'to_show 0.5s')
+    acy.animateIn(document.querySelector('#algolia-search .search-dialog'), 'titleScale 0.5s')
     setTimeout(() => { document.querySelector('#algolia-search .ais-SearchBox-input').focus() }, 100)
 
     // shortcut: ESC
@@ -20,8 +20,8 @@ window.addEventListener('load', () => {
     const bodyStyle = document.body.style
     bodyStyle.width = ''
     bodyStyle.overflow = ''
-    btf.animateOut(document.querySelector('#algolia-search .search-dialog'), 'search_close .5s')
-    btf.animateOut(document.getElementById('search-mask'), 'to_hide 0.5s')
+    acy.animateOut(document.querySelector('#algolia-search .search-dialog'), 'search_close .5s')
+    acy.animateOut(document.getElementById('search-mask'), 'to_hide 0.5s')
   }
 
   const searchClickFn = () => {
@@ -115,6 +115,24 @@ window.addEventListener('load', () => {
     }
   })
 
+  const stats = instantsearch.widgets.stats({
+    container: '#algolia-info > .algolia-stats',
+    templates: {
+      text: function (data) {
+        const stats = GLOBAL_CONFIG.algolia.languages.hits_stats
+          .replace(/\$\{hits}/, data.nbHits)
+          .replace(/\$\{time}/, data.processingTimeMS)
+        return (
+          `<hr>${stats}`
+        )
+      }
+    }
+  })
+
+  const powerBy = instantsearch.widgets.poweredBy({
+    container: '#algolia-info > .algolia-poweredBy',
+  })
+
   const pagination = instantsearch.widgets.pagination({
     container: '#algolia-pagination',
     totalPages: 5,
@@ -127,7 +145,7 @@ window.addEventListener('load', () => {
   })
 
 
-  search.addWidgets([configure,searchBox,hits,pagination]) // add the widgets to the instantsearch instance
+  search.addWidgets([configure,searchBox,hits,stats,powerBy,pagination]) // add the widgets to the instantsearch instance
 
   search.start()
 

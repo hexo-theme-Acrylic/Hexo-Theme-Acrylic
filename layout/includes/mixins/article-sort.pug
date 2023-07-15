@@ -3,18 +3,22 @@ mixin articleSort(posts)
     - var year
     - posts.each(function (article) {
       - let tempYear = date(article.date, 'YYYY')
-      - let no_cover = article.cover === false || !theme.cover.archives_enable ? 'no-article-cover' : ''
       - let title = article.title || _p('no_title')
       if tempYear !== year
         - year = tempYear
         .article-sort-item.year= year
-      .article-sort-item(class=no_cover)
-        if article.cover && theme.cover.archives_enable
+      .article-sort-item
+        if article.cover
           a.article-sort-item-img(href=url_for(article.path) title=title)
-            img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
+            img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.default_img)}'`)
         .article-sort-item-info
+          a.article-sort-item-title(href=url_for(article.path) title=title)= title
+          if (theme.post_meta.page.tags && article.tags.data.length > 0)
+            span.article-sort-item-tags
+              each item, index in article.tags.data
+                a(href=url_for(item.path)).article-meta__tags 
+                  span.tags-punctuation #[=item.name]
           .article-sort-item-time
             i.far.fa-calendar-alt
             time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))= date(article.date, config.date_format)
-          a.article-sort-item-title(href=url_for(article.path) title=title)= title
     - })

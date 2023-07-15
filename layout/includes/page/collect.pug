@@ -1,0 +1,27 @@
+#article-container
+  .collect
+    - let collectPageContent = page.content
+    if site.data.collect
+      - let result = ""
+      each i in site.data.collect
+        - let className = i.class_name ? `<h2 ${i.class_desc?'':'style="margin-bottom:12px"'}>${i.class_name} (${i.link_list.length})</h2>` : ""
+        - let classDesc = i.class_desc ? `<div class="collect-desc">${i.class_desc}</div>` : ""
+        - let listResult = ""
+        each j in i.link_list
+          - 
+            listResult += `
+              <div title="${j.name}" referrerPolicy="no-referrer" class="collect_box" style="${j.img?`background-image: url(${j.img})`:'background-color: #333;'}">
+                  <div class="collect_top">
+                    <i class="${j.icon?j.icon:'fa-solid fa-film'}"></i>
+                    <span>${j.tip?j.tip:'电影'}</span>
+                  </div>
+                  <div class="collect_content">
+                    <span>${j.name?j.name:'未知'}</span>
+                    <div>${j.score?toStar(j.score):toStar(0)}</div>
+                  </div>
+                </div>
+              `
+          -
+        - result += `${className}${classDesc} <div class="collect-list">${listResult}</div>`
+      - collectPageContent = collectPageContent + result
+    != collectPageContent

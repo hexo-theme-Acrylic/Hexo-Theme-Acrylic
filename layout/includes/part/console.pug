@@ -1,0 +1,46 @@
+- var console = theme.console
+#console
+  .close-btn(onclick='heo.hideConsole()',href="javascript:void(0);")
+    i.fas.fa-circle-xmark
+  .console-card-group
+    if console.comment
+      .console-card-group-left
+        .console-card#card-newest-comments(onclick='heo.hideConsole()')
+          .card-content
+              .author-content-item-tips 互动
+              span.author-content-item-title 最近评论
+          .aside-list
+            span= _p('aside.card_newest_comments.loading_text')
+    .console-card-group-right
+      if console.tag
+        .console-card.tags(onclick='heo.hideConsole()')
+          .card-content
+              .author-content-item-tips 标签
+              span.author-content-item-title 寻找感兴趣的领域
+          .card-tag-cloud!= cloudTags({source: site.tags})
+      .console-card.history(onclick='heo.hideConsole()') 
+        if console.archives
+          .card-content
+              .author-content-item-tips 归档
+              span.author-content-item-title 发现有意思的内容
+          != aside_archives({ type: 'monthly', format: 'MMMM YYYY', order: -1, limit: 4 })  
+  .button-group
+    .console-btn-item 
+      a.darkmode_switchbutton(onclick='rm.switchDarkMode()',title='显示模式切换',href="javascript:void(0);")
+        i.fas.fa-moon(style='font-size: 1rem;')
+    #consoleHideAside.console-btn-item(onclick='heo.hideAsideBtn()',title='边栏显示控制')
+      a.asideSwitch
+        i.fas.fa-arrows-alt-h
+    #consoleKeyboard.console-btn-item(onclick='heo.keyboardToggle()',title='快捷键开关')
+      a.keyboard-switch
+        i.fas.fa-keyboard
+    #assist-open.console-btn-item(onclick='heo.hideConsole()',title='无障碍工具栏')
+      a.assist-btn
+        i.fas.fa-wheelchair
+    #consoleCommentBarrage.console-btn-item(onclick='changeMouseMode()',title='热评开关')
+      a.commentBarrage
+        i.fa-solid.fa-message
+    #consoleMusic.console-btn-item(onclick='heo.musicToggle()',title='音乐开关')
+      a.music-switch
+        i.fas.fa-music
+  .console-mask(onclick='heo.hideConsole()',href="javascript:void(0);")

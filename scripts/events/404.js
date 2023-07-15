@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * 404 error page
  */
 

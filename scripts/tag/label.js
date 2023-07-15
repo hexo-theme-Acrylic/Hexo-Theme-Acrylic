@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Acrylic
  * label
  * {% label text color %}
  */

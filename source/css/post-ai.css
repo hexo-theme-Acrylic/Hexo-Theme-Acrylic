@@ -1,0 +1,128 @@
+.post-ai-description {
+  background: var(--heo-secondbg);
+  border-radius: 12px;
+  padding: 12px 16px;
+  line-height: 1.3;
+  border: var(--style-border-always);
+  margin-bottom: 10px;
+}
+.ai-title {
+  display: flex;
+  color: var(--font-color);
+  border-radius: 8px;
+  align-items: center;
+  padding: 0 5px;
+}
+.ai-title i {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 20px;
+}
+.ai-title .heofont.heo-icon-arrow-rotate-right {
+  font-size: 14px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.ai-title .ai-title-text {
+  font-weight: bold;
+  margin-left: 8px;
+}
+#ai-tag {
+  font-size: 12px;
+  background-color: var(--heo-lighttext);
+  color: rgba(255,255,255,0.9);
+  border-radius: 4px;
+  margin-left: auto;
+  line-height: 1;
+  padding: 4px 5px;
+  cursor: pointer;
+}
+#ai-Toggle {
+  font-size: 12px;
+  background: var(--heo-lighttext);
+  color: var(--heo-card-bg);
+  padding: 4px;
+  border-radius: 4px;
+  margin-left: 6px;
+  transform: scale(0.8);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+#ai-Toggle:hover {
+  background: var(--heo-fontcolor);
+  color: var(--heo-card-bg);
+}
+#go-tianli-blog {
+  display: none;
+}
+.ai-explanation {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--heo-card-bg);
+  border-radius: 8px;
+  border: var(--style-border-always);
+  font-size: 15px;
+  line-height: 1.4;
+}
+.ai-cursor {
+  display: inline-block;
+  width: 7px;
+  background: #333;
+  height: 16px;
+  margin-bottom: -2px;
+  opacity: 0.95;
+  margin-left: 3px;
+  transition: all 0.3s;
+}
+[data-theme="dark"] .ai-cursor {
+  background: #fff;
+}
+.ai-btn-box {
+  font-size: 15.5px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.ai-btn-item {
+  padding: 5px 10px;
+  margin: 10px 16px 0px 5px;
+  width: fit-content;
+  line-height: 1;
+  background: rgba(48,52,63,0.75);
+  color: #fff;
+  border-radius: 6px;
+  user-select: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ai-btn-item:hover {
+  background: var(--heo-theme);
+}
+.ai-recommend {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.ai-recommend .ai-recommend-item {
+  width: calc(50% - 20px);
+  margin: 10px;
+  background: var(--heo-secondbg);
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: slide-in 0.6s 0.1s backwards;
+}
+.ai-recommend .ai-recommend-item span.index {
+  padding: 4px;
+}
+.ai-recommend .ai-recommend-item:hover {
+  color: var(--heo-white);
+  background: var(--heo-theme);
+}
+.ai-recommend .ai-recommend-item:hover a {
+  color: var(--heo-white);
+}
+maxWidth768()

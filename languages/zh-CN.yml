@@ -4,10 +4,10 @@ copy:
   noSupport: 浏览器不支持
 
 page:
-  articles: 文章总览
+  articles: 文章
   tag: 标签
   category: 分类
-  archives: 归档
+  archives: 文章
 
 card_post_count: 条评论
 
@@ -28,7 +28,7 @@ post:
     copyright_notice: 版权声明
     copyright_content: '本博客所有文章除特别声明外，均采用
       <a href="%s" target="_blank">%s</a> 许可协议。转载请注明来自 <a href="%s" target="_blank">%s</a>！'
-  recommend: 阅读建议
+  recommend: 相关推荐
   edit: 编辑
 
 search:
@@ -40,7 +40,7 @@ search:
     hits_stats: '找到 ${hits} 条结果，用时 ${time} 毫秒'
 
   local_search:
-    input_placeholder: 搜索文章
+    input_placeholder: 输入关键词快速查找
     hits_empty: '找不到您查询的内容：${query}'
 
 pagination:
@@ -57,7 +57,6 @@ aside:
   card_announcement: 公告
   card_categories: 分类
   card_tags: 标签
-  card_archives: 归档
   card_recent_post: 最新文章
   card_webinfo:
     headline: 网站资讯
@@ -100,10 +99,6 @@ rightside:
   scroll_to_comment: 直达评论
   setting: 设置
   ranklist: 打赏榜单
-  SAOSwitch: 右键开关
-  SAORefresh: 点击刷新
-  chat_btn: 与我联系
-  live2d_widget: 看板娘
   aside: 侧栏显隐
 
 copy_copyright:
@@ -118,6 +113,5 @@ Snackbar:
   day_to_night: 你已切换为深色模式
   night_to_day: 你已切换为浅色模式
 
-loading: 加载中...
 
 error404: 页面没有找到

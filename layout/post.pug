@@ -1,11 +1,8 @@
 extends includes/layout.pug
 
 block content
-  div
-    #post
-      //- if top_img === false
-      //-   include includes/header/post-info.pug
-      
+  #post
+    div
       article#article-container.post-content!=page.content
       
       //- ptool
@@ -18,8 +15,8 @@ block content
       
       include includes/post/post-copyright.pug
       
-      if theme.post_pagination
-        include includes/pagination.pug
+      include includes/part/pagination.pug
+      
       if theme.related_post && theme.related_post.enable
         != related_posts(page,site.posts)
 

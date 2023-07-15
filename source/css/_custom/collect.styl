@@ -1,0 +1,79 @@
+.collect
+  h2
+    margin-bottom: 0
+  .collect-desc
+    margin-bottom: 10px
+  .collect-list
+    display: flex
+    gap: 18px
+    flex-wrap: wrap
+    .collect_box
+      --w: calc(100% / 6 - 15px)
+      width: var(--w)
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      background-position: center
+      background-size: cover
+      border-radius: 12px
+      position: relative
+      overflow: hidden
+      padding: 10px
+      color: #fff
+      transition: .5s
+      &::after
+        content: ''
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 0
+        top: 0
+        background: rgba(0,0,0,0.3)
+        z-index: 0
+        transition: .5s
+      &:hover
+        transform: translateY(-10px)
+        &::after
+          background: rgba(0,0,0,0.1)
+      .collect_top
+        display: flex
+        z-index: 1
+        align-items: center
+        justify-content: space-between
+      .collect_content
+        z-index: 1
+        margin-top: 86%
+        span
+          display: block
+          font-size: 18px
+          font-weight: bold
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+
+[data-theme='dark']
+  .collect .collect-list .collect_box
+    color: #ddd !important
+    &:hover
+      transform: translateY(-10px)
+      &::after
+        background: rgba(0,0,0,0.2)
+    &::after
+      background: rgba(0,0,0,0.5)
+.collect .collect-list
+  @media screen and (max-width: 1100px)
+    gap: 15px
+    .collect_box
+      --w: calc(20% - 12px)
+  @media screen and (max-width: 900px)
+    gap: 16px
+    .collect_box
+      --w: calc(25% - 12px)
+  @media screen and (max-width: 768px)
+    gap: 15px
+    .collect_box
+      --w: calc(100% / 3 - 10px)
+  @media screen and (max-width: 500px)
+    gap: 16px
+    .collect_box
+      --w: calc(50% - 8px)

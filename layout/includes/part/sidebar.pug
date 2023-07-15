@@ -1,0 +1,37 @@
+- var nav = theme.nav 
+- var sidebar = theme.sidebar
+#sidebar
+  #menu-mask
+  #sidebar-menus
+    span.sidebar-menu-item-title 功能
+    .sidebar-menu-item
+      a.darkmode_switchbutton.menu-child(onclick='rm.switchDarkMode()' title='显示模式切换' href='javascript:void(0);' rel='external nofollow' data-pjax-state='')
+        i.fas.fa-moon(style='font-size: 1rem;')
+        span 显示模式
+    if sidebar.list_group
+      .back-menu-list-groups
+        each item in nav.left_groups.group
+          .back-menu-list-group
+            .back-menu-list-title=item.title
+              .back-menu-list
+                each i in item.a_item
+                  if i.class == "in"
+                    a.back-menu-item(href=`${i.link}` rel='external nofollow' title=`${i.text}` target='_blank')
+                      img.back-menu-item-icon.entered.loading(src=`${i.img}` data-ll-status='loading')
+                      span.back-menu-item-text=i.text
+                  else if i.class == "out"
+                    a.back-menu-item(href=`${i.link}` title=`${i.text}` target='_blank')
+                      img.back-menu-item-icon.entered.loading(src=`${i.img}` data-ll-status='loading')
+                      span.back-menu-item-text=i.text
+                  else 
+                    a.back-menu-item(href=`${i.link}` title=`${i.text}` target='_blank')
+                      img.back-menu-item-icon.entered.loading(src=`${i.img}` data-ll-status='loading')
+                      span.back-menu-item-text=i.text
+    !=partial('includes/header/menu_item', {}, {cache: true})
+    if sidebar.tag
+      span.sidebar-menu-item-title 标签
+      .card-widget.card-tags.card-archives.card-webinfo.card-allinfo
+        .item-headline
+          span 标签
+        .card-tag-cloud!= cloudTags({source: site.tags})
+
