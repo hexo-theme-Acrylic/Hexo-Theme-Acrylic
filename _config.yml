@@ -10,14 +10,14 @@
 # --------------------------------
 
 # 网站图标 (favicon)
-favicon: https://tucdn.wpon.cn/2023/02/10/a43d4d587028e.png
+favicon: https://bu.dusays.com/2023/07/15/64b2499a6ad24.png
 
 # 头像 (avatar)
 avatar:
-  img: https://p.zhheo.com/2023ab4befd994d9bc8e1e6a78027d517e21075402.png!cover
+  img: https://bu.dusays.com/2023/03/03/6401a7902b8de.png
 
 # 默认信息 (default)
-default_img: https://img1.acrylic.org.cn/2023/04/16/643b6a036a2cb.webp
+default_img: https://bu.dusays.com/2023/06/19/648feab74bbe8.jpg
 default_title: 没有配置捏
 default_text: 没有配置捏
 
@@ -48,19 +48,19 @@ nav:
         a_item:
           - text: 主页
             link: https://zhheo.com/
-            img: https://p.zhheo.com/20232e121c3fb2daa71897d26a515e030f49073402.png!cover_mini
+            img: https://bu.dusays.com/2023/03/03/6401a7902b8de.png
             class: out
           - text: 博客
             link: /
-            img: https://p.zhheo.com/20234681e06b8e086aa5b15481cb89fd38c7071002.png!cover_mini
+            img: https://bu.dusays.com/2023/03/03/6401a7902b8de.png
             class: out
           - text: 图片博客
             link: https://plog.zhheo.com/
-            img: https://p.zhheo.com/20236a16354d7c333cc7595efaee4b8c5667074602.png!cover_mini
+            img: https://bu.dusays.com/2023/03/03/6401a7902b8de.png
             class: out
           - text: 开发博客
             link: https://apps.zhheo.com/
-            img: https://p.zhheo.com/2023042bb31614949504f9ac59b134ce971d075802.png!cover_mini
+            img: https://bu.dusays.com/2023/03/03/6401a7902b8de.png
             class: out
   logo: 
     enable: true
@@ -105,7 +105,7 @@ nav:
 error_404:
   enable: true
   subtitle: '请尝试站内搜索寻找文章'
-  background: https://img1.acrylic.org.cn/2023/04/16/643b6a036a2cb.webp
+  background: https://bu.dusays.com/2023/06/19/648feab74bbe8.jpg
 
 # 即刻短文 (essay page)
 essay:
@@ -291,7 +291,7 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://t.pro.acrylic.org.cn/
+  envId: https://twikoo.marcus233.top/
   region: 
   visitor: false
   option:
@@ -337,12 +337,12 @@ hometop:
     #如果为card/both
     card:
       tips: 强势回归
-      title: Acrylic-Promote
-      bg: https://img1.acrylic.org.cn/2023/04/16/643b6a036a2cb.webp
-      link: https://blog.zhheo.com/p/671f98c8.html
+      title: Acrylic-Pro
+      bg: https://bu.dusays.com/2023/07/15/64b247d505b22.png
+      link: https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic
       buttontext: 更多推荐
       icon: fas fa-circle-plus
-      color: #0E57D5
+      color: #469a98
       text_color: #ffffff # 默认白色
 
 # 页脚 (footer)

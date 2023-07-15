@@ -1,7 +1,6 @@
-console.log("🚀 ~ file: blogex.js:4 ~ GLOBAL_CONFIG.tcolor_mode:", GLOBAL_CONFIG_SITE.tcolor_mode)
-if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost) {
-  switch (GLOBAL_CONFIG_SITE.tcolor_mode){
-    case "cloud":
+console.log("tcolor_mode:", GLOBAL_CONFIG_SITE.tcolor_mode)
+if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG_SITE.tcolor != "undefined") {
+  if (GLOBAL_CONFIG_SITE.tcolor_mode == "cloud"){
       function coverColor() {
         var path = document.getElementById("post-cover")?.src;
         if (void 0 !== path) {
@@ -14,6 +13,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost) {
                       , obj = eval("(" + json + ")")
                       , value = obj.RGB;
                     value = "#" + value.slice(2),
+                    console.log("covercolor:", value)
                     "light" == getContrastYIQ(value) && (value = LightenDarkenColor(colorHex(value), -50)),
                     document.styleSheets[0].addRule(":root", "--heo-main:" + value + "!important"),
                     document.styleSheets[0].addRule(":root", "--heo-main-op:" + value + "23!important"),
@@ -29,8 +29,10 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost) {
             document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
             heo.initThemeColor()
+            document.getElementById("coverdiv").classList.add("loaded")
       }
-    case "img2color":
+    }
+    else if (GLOBAL_CONFIG_SITE.tcolor_mode == "img2color"){
       function coverColor(){
         var api = GLOBAL_CONFIG_SITE.tcolor
         var path = document.getElementById("post-cover")?.src;
@@ -41,6 +43,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost) {
             httpRequest.onreadystatechange = function() {
               if (4 == httpRequest.readyState && 200 == httpRequest.status) {
                 value = httpRequest.responseText,
+                console.log("covercolor:", value)
                 "light" == getContrastYIQ(value) && (value = LightenDarkenColor(colorHex(value), -50)),
                 document.styleSheets[0].addRule(":root", "--heo-main:" + value + "!important"),
                 document.styleSheets[0].addRule(":root", "--heo-main-op:" + value + "23!important"),
@@ -57,10 +60,13 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost) {
             document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
             heo.initThemeColor()
+            document.getElementById("coverdiv").classList.add("loaded")
       }
-    case "local":
+    }
+    else if (GLOBAL_CONFIG_SITE.tcolor_mode == "local"){
       function coverColor(){
         value = "#"+GLOBAL_CONFIG_SITE.tcolor,
+        console.log("covercolor:", value)
         "light" == getContrastYIQ(value) && (value = LightenDarkenColor(colorHex(value), -50)),
         document.styleSheets[0].addRule(":root", "--heo-main:" + value + "!important"),
         document.styleSheets[0].addRule(":root", "--heo-main-op:" + value + "23!important"),
@@ -70,7 +76,17 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost) {
         document.getElementById("coverdiv").classList.add("loaded")
       }
     }
+    else if (GLOBAL_CONFIG_SITE.tcolor_mode == "undefined"){
+      function coverColor(){
+        document.styleSheets[0].addRule(":root", "--heo-main: var(--heo-theme)!important"),
+        document.styleSheets[0].addRule(":root", "--heo-main-op: var(--heo-theme-op)!important"),
+        document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
+        document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
+        heo.initThemeColor()
+        document.getElementById("coverdiv").classList.add("loaded")
+      }
   }
+}
 else{
   function coverColor(){
     document.styleSheets[0].addRule(":root", "--heo-main: var(--heo-theme)!important"),
@@ -136,3 +152,11 @@ function getContrastYIQ(e) {
     return t = 299 * o[1] + 587 * o[2] + 114 * o[3],
     (t /= 255e3) >= .5 ? "light" : "dark"
 }
+function whenDOMReady() {
+  coverColor(),
+  heo.sayhi()
+  // pjax加载完成（切换页面）后需要执行的函数和代码
+}
+
+whenDOMReady() // 打开网站先执行一次
+document.addEventListener("pjax:complete", whenDOMReady) // pjax加载完成（切换页面）后再执行一次

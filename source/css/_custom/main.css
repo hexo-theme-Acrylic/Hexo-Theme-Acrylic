@@ -11664,13 +11664,13 @@ figure {
   margin-top: 4px;
 }
 
-#post>div.post-copyright>div.post-copyright__type>span>a {
+#post .post-copyright .post-copyright-info a {
   font-size: 14px;
   opacity: 0.6;
   line-height: 16px;
 }
 
-#post>div.post-copyright>div.post-copyright__type>span>a:hover {
+#post .post-copyright .post-copyright-info a:hover{
   opacity: 1;
   background: none;
 }
@@ -11681,6 +11681,13 @@ figure {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
+#post>div.post-copyright>div.post-copyright__notice {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  margin: 0.5rem 0;
+}
+
 
 /* 提示 */
 #post>div.post-copyright>div.post-copyright__notice {
