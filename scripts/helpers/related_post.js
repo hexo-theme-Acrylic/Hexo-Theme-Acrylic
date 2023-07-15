@@ -42,7 +42,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
 
   if (relatedPosts.length > 0) {
     result += '<div class="relatedPosts">'
-    result += `<div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>${headlineLang}</span></div>`
+    result += `<div class="headline"><i class="fas fa-grin-stars" /></i><span>${headlineLang}</span></div>`
     result += '<div class="relatedPosts-list">'
 
     for (let i = 0; i < Math.min(relatedPosts.length, limitNum); i++) {
