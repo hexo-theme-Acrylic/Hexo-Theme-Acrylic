@@ -126,8 +126,8 @@ memos:
   icon: fas fa-circle-chevron-right
   api: https://memos.acrylic.org.cn/api/memo?creatorId=1&tag=说说&limit=30
 
-# 朋友圈fcricle (fcricle page)
-fcricle:
+# 朋友圈fcircle (fcircle page)
+fcircle:
   enable: true
   descr: 实物装备推荐
   tip: 好物
