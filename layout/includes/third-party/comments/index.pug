@@ -4,11 +4,12 @@ hr
   .comment-head
     .comment-headline
       i.fas.fa-message.fa-fw
-      span  &#x8BC4;&#x8BBA;
-    .comment-randomInfo
-      a(onclick='heo.addRandomCommentInfo()' href='javascript:void(0)' rel='external nofollow' data-pjax-state='external') &#x533F;&#x540D;&#x8BC4;&#x8BBA;
+      span 评论
+    if theme.twikoo.visitor
+      .comment-randomInfo
+        a(onclick='heo.addRandomCommentInfo()' href='javascript:void(0)' rel='external nofollow' data-pjax-state='external') 隐私政策
     .comment-privacy
-      a(href='/privacy/' data-pjax-state='') &#x9690;&#x79C1;&#x653F;&#x7B56;
+      a(href='/privacy/' data-pjax-state='') 隐私政策
     #comment-tips.comment-tips
       span ✅ 你无需删除空行，直接评论以获取最佳展示效果
 

@@ -28,9 +28,10 @@
       .rightMenu-item#menu-copyimg
         i.heofont.icon-file-copy-fill
         span 复制此图片
-      .rightMenu-item#menu-downloadimg
-        i.heofont.icon-download-cloud-fill
-        span 下载此图片
+      //- //- 此方法要求同源
+      //- .rightMenu-item#menu-downloadimg
+      //-   i.heofont.icon-download-cloud-fill
+      //-   span 下载此图片
       .rightMenu-item#menu-search
         i.heofont.icon-search-2-line
         span 站内搜索
@@ -46,9 +47,10 @@
       .rightMenu-item#menu-music-forward
         i.heofont.icon-skip-forward-fill
         span 切换到下一首
-      .rightMenu-item#menu-music-playlist(onclick='window.open(\'https://music.163.com/#/playlist?app_version=8.8.36&id=5197802668\', \'_blank\');')
-        i.heofont.icon-play-list-2-line
-        span 查看所有歌曲
+      if theme.music_nav.enable && theme.music_nav.id
+        .rightMenu-item#menu-music-playlist(onclick=`window.open(\'https://music.163.com/#/playlist?app_version=8.8.36&id=${theme.music_nav.id}\', \'_blank\');`)
+          i.heofont.icon-play-list-2-line
+          span 查看所有歌曲
       .rightMenu-item#menu-music-copyMusicName
         i.heofont.icon-file-copy-fill
         span 复制歌名
@@ -73,9 +75,10 @@
       .rightMenu-item#menu-copy
         i.heofont.icon-external-link-fill
         span 复制地址
-      .rightMenu-item#menu-commentBarrage
-        i.heofont.icon-chat-1-fill
-        span.menu-commentBarrage-text 显示热评
+      if theme.comments.commentBarrage && theme.twikoo.accessToken
+        .rightMenu-item#menu-commentBarrage
+          i.heofont.icon-chat-1-fill
+          span.menu-commentBarrage-text 显示热评
       .rightMenu-item#menu-darkmode
         i.heofont.icon-moon-clear-fill
         span.menu-darkmode-text 深色模式

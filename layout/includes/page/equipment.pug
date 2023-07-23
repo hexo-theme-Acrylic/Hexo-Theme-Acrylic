@@ -20,7 +20,7 @@ if theme.equipment.enable
             each item, index in i.equipment_list
               .equipment-item-content-item
                 .equipment-item-content-item-cover
-                  img.equipment-item-content-item-image(data-lazy-src=url_for(item.image) onerror=`this.onerror=null;this.src='` + url_for(theme.default_img) + `'` alt=item.name)
+                  img.equipment-item-content-item-image(src=url_for(item.image) data-lazy-src=url_for(item.image) onerror=`this.onerror=null;this.src='` + url_for(theme.default_img) + `'` alt=item.name)
                 .equipment-item-content-item-info
                   .equipment-item-content-item-name= item.name
                   .equipment-item-content-item-specification= item.specification

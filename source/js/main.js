@@ -174,7 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
         fragment.appendChild(hlTools)
       }
 
-      if (highlightHeightLimit && item.offsetHeight > highlightHeightLimit + 30) {
+      if (item.offsetHeight > 300 + 30) {
+      // if (item.offsetHeight) {
         const ele = document.createElement('div')
         ele.className = 'code-expand-btn'
         ele.innerHTML = '<i class="heofont icon-xiaxiangshuangjiantou"></i>'

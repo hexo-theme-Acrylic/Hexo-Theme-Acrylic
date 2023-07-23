@@ -3265,12 +3265,14 @@ li, ul {
   vertical-align: bottom;
 }
 
-@media screen and (max-width: 768px) {
-  .relatedPosts>.relatedPosts-list>div {
-    margin: 2px;
-    width: calc(50% - 4px);
-    height: 150px;
-  }
+/* GB让改的 */
+.relatedPosts>.relatedPosts-list>div {
+  margin: 2px;
+  width: calc(50% - 4px);
+  height: 150px;
+}
+.relatediv {
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 600px) {
@@ -9654,7 +9656,7 @@ div#author-info__sayhi:hover {
 
 
 #aside-content>.card-widget.card-info {
-  background: var(--heo-card-bg);
+  /* background: var(--heo-card-bg); */
   box-shadow: var(--heo-shadow-black);
   position: relative;
 }
@@ -11391,7 +11393,7 @@ figure {
 }
 
 #article-container .code-expand-btn:hover {
-  background: var(--heo-main);
+  background: var(--heo-theme);
 }
 
 #article-container .code-expand-btn:hover i {
@@ -17035,4 +17037,10 @@ svg.icon {
     fill: currentColor;
     overflow: hidden;
     font-size: 20px;
+}
+
+
+/* Fuck Bug */
+.post-copyright__type {
+  display: flex;
 }

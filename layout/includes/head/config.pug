@@ -1,4 +1,18 @@
 -
+  let post_root = '/p/'
+  if (config.permalink){
+    post_root = "/"+config.permalink.split("/")[0]+"/"
+  }
+
+  let twikoo = "undefined"
+  if (theme.comments.use == "Twikoo"){
+    twikoo = JSON.stringify({
+      envId: theme.twikoo.envId || "undefined",
+      visitor: theme.twikoo.visitor ? theme.twikoo.visitor : "undefined",
+      accessToken: theme.twikoo.accessToken || "undefined"
+    })
+  }
+
   let algolia = 'undefined';
   let env = process.env;
   if (theme.algolia_search.enable) {
@@ -41,23 +55,21 @@
     })
   }
 
-  let highlight = 'undefined';
-    if (config.highlight && config.highlight.enable) {
-      highlight = JSON.stringify({
-        plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
-        highlightCopy: theme.highlight_copy,
-        highlightLang: theme.highlight_lang,
-        highlightHeightLimit: theme.highlight_height_limit
-      })
-    }
+  let api = 'undefined'
+  api = JSON.stringify({
+    fcircle_random: (theme.fcircle.api + "randomfriend") || 'undefined',
+  })
+
 
 script.
   const GLOBAL_CONFIG = {
     root: '!{config.root}',
+    post_root: "!{post_root}",
     algolia: !{algolia},
+    twikoo: !{twikoo},
     localSearch: !{localSearch},
     translate: { "defaultEncoding": 2, "translateDelay": 0, "msgToTraditionalChinese": "简", "msgToSimplifiedChinese": "繁" },
-    highlight: !{highlight},
+    highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
     copy: {
       success: '!{_p("copy.success")}',
       error: '!{_p("copy.error")}',
@@ -91,4 +103,5 @@ script.
     isPhotoFigcaption: !{true},
     islazyload: !{theme.lazyload.enable},
     isAnchor: !{false},
+    api: !{api},
   }

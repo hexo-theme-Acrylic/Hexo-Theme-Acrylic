@@ -16,7 +16,7 @@
 - var pagedescr = page.description || config.description ||default_text
 - var pageimage = page.cover || theme.avatar.img || default_img
 - var pageCopyright = config.copyright || config.author
-- var themeColorLight = page.tcolor || "#425AEF"
+- var themeColorLight = "#425AEF"
 - var themeColorDark = "#f2b94b"
 - var themeColor = theme.display_mode === 'dark' ? themeColorDark : themeColorLight
 
@@ -34,6 +34,7 @@ meta(name="theme-color" content=themeColor)
 meta(name='description' content=pagedescr)
 
 //- PWA
+meta(name='apple-mobile-web-app-status-bar-style' content=themeColor)
 if (theme.pwa && theme.pwa.enable)
   !=partial('includes/head/pwa', {}, {cache: true})
 

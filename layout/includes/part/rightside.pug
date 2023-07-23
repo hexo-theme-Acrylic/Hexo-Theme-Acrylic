@@ -26,7 +26,7 @@ mixin rightsideItem(array)
           a#to_comment(href="#post-comment" title=_p("rightside.scroll_to_comment"))
             i.fas.fa-comments
 
-#rightside
+#rightside(style="opacity: 1; transform: translateX(-38px);")
   - const { enable, hide, show } = theme.rightside_item_order
   - const hideArray = enable ? hide && hide.split(',') : ['translate','darkmode','hideAside']
   - const showArray = enable ? show && show.split(',') : ['toc','chat','comment']

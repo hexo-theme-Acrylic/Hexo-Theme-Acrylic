@@ -40,7 +40,7 @@ local_search:
 # 导航栏 (nav)
 # --------------------------------
 nav:
-  group_icon: fas fa-grip-vertical
+  group_icon: heofont icon-apps-fill
   left_groups:
     enable: true
     group:
@@ -89,15 +89,15 @@ nav:
   right_button:
     travelling:
       enable: true
-      icon: fas fa-train-subway
+      icon: heofont icon-train-line
     random:
       enable: true
-      icon: fas fa-shuffle
-    search: fas fa-magnifying-glass
+      icon: heofont icon-signal-tower-fill
+    search: heofont icon-search-2-line
     console:
       enable: true
-      icon: fas fa-bars-progress
-    totop: fas fa-arrow-up
+      icon: heofont icon-dashboard-fill
+    totop: heofont icon-arrow-up-line
 
 # 页面 (page)
 # --------------------------------
@@ -126,15 +126,15 @@ memos:
   icon: fas fa-circle-chevron-right
   api: https://memos.acrylic.org.cn/api/memo?creatorId=1&tag=说说&limit=30
 
-# 朋友圈fcricle (fcricle page)
-fcricle:
+# 朋友圈fcircle (fcircle page)
+fcircle:
   enable: true
   descr: 实物装备推荐
   tip: 好物
   link: /posts/49736/
   text: 如何使用
   icon: fas fa-circle-chevron-right
-  api: https://fcircle.acrylic.org.cn/
+  api: https://fcircle.acrylic.org.cn/ # 加上最后的斜杠
 
 # 装备equipment (equipment page)
 equipment:
@@ -273,14 +273,16 @@ reward:
 # 评论 (comments)
 # --------------------------------
 comments:
-  use: Twikoo # Waline/Twikoo/Artalk
+  # Waline/Twikoo/Artalk 推荐只选一个 首字母大写!
+  use: Twikoo
   text: true # 在按钮旁边显示评论名称
-  # lazyload: 当评论进入浏览器视野时，评论系统将被加载。
-  lazyload: false
+  lazyload: false # 当评论进入浏览器视野时，评论系统将被加载。
   count: true # 顶部图显示评论数
   card_post_count: false # 首页显示评论数
+  commentBarrage: true # 仅支持twikoo
 
-# waline 
+
+# waline
 # https://waline.js.org/
 waline:
   serverURL: # Waline server address url
@@ -292,9 +294,10 @@ waline:
 # https://github.com/imaegoo/twikoo
 twikoo:
   envId: https://twikoo.marcus233.top/
-  region: 
-  visitor: false
+  accessToken: 169d5f97a0f889913d83e04f40f3e442 # 如果commentBarrage开启则填 不要搞我
+  region:
   option:
+  visitor: false # 新定义: 是否开启匿名评论
 
 # Artalk
 # https://artalk.js.org/guide/frontend/config.html
@@ -491,7 +494,7 @@ footer:
             link: /categories/资源分享
             class: in
   footer_friend_links:
-    enable: true
+    enable: false # 需要的配置项较多，请联系开发者获取帮助
   footer_bottom:
     copyright:
       enable: true
@@ -560,6 +563,11 @@ console:
   comment: true
   tag: true
   archives: true 
+
+# 音乐胶囊
+music_nav:
+  enable: true
+  id: 8668419170 # 为网易云音乐歌单
 
 # 图片灯箱 (fancybox)
 # http://fancyapps.com/fancybox/3/

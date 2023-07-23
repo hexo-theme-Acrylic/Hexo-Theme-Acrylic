@@ -1,17 +1,17 @@
-- var fcricle = theme.fcricle
-if fcricle.enable
+- var fcircle = theme.fcircle
+if fcircle.enable
   .author-content.author-content-item.essayPage.single
     .card-content
       .author-content-item-tips 即刻短文
-      span.author-content-item-title=fcricle.descr
+      span.author-content-item-title=fcircle.descr
       .content-bottom
-        .tips=fcricle.tip
+        .tips=fcircle.tip
       .banner-button-group
-        a.banner-button(onclick=`pjax.loadUrl("${fcricle.link}")`)
-          i(class=`${fcricle.icon}`)
-          span.banner-button-text=fcricle.text
+        a.banner-button(onclick=`pjax.loadUrl("${fcircle.link}")`)
+          i(class=`${fcircle.icon}`)
+          span.banner-button-text=fcircle.text
   #hexo-circle-of-friends-root
-  - var api = fcricle.api || "https://fcircle.acrylic.org.cn/"
+  - var api = fcircle.api || "https://fcircle.acrylic.org.cn/"
   script.
     let UserConfig = {
             // 填写你的api地址

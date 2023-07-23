@@ -9,6 +9,6 @@ hexo.extend.filter.register('after_generate', function () {
       // if (i != j) ls = ls.concat(e.link_list)
       ls = ls.concat(e.link_list)
   });
-  fs.writeFileSync('source/link.json', `{"link_list": ${JSON.stringify(ls)}}`)
+  fs.writeFileSync('source/zhheo/friendlink.json', `{"link_list": ${JSON.stringify(ls)}}`)
 }
 })

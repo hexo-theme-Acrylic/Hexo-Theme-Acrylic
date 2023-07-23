@@ -4,13 +4,13 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
       function coverColor() {
         var path = document.getElementById("post-cover")?.src;
         if (void 0 !== path) {
-            var httpRequest = new XMLHttpRequest;
-            httpRequest.open("GET", path + "?imageAve", !0),
-            httpRequest.send(),
-            httpRequest.onreadystatechange = function() {
-                if (4 == httpRequest.readyState && 200 == httpRequest.status) {
-                    var json = httpRequest.responseText
-                      , obj = eval("(" + json + ")")
+          var httpRequest = new XMLHttpRequest;
+          httpRequest.open("GET", path + "?imageAve", !0),
+          httpRequest.send(),
+          httpRequest.onreadystatechange = function() {
+            if (4 == httpRequest.readyState && 200 == httpRequest.status) {
+              var json = httpRequest.responseText
+              , obj = eval("(" + json + ")")
                       , value = obj.RGB;
                     value = "#" + value.slice(2),
                     console.log("covercolor:", value)
@@ -21,9 +21,11 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
                     document.styleSheets[0].addRule(":root", "--heo-main-none:" + value + "00!important"),
                     heo.initThemeColor(),
                     document.getElementById("coverdiv").classList.add("loaded")
+                    console.log("提取主题色成功")
                 }
             }
-        } else
+          } else
+            console.warn("提取主题色失败")
             document.styleSheets[0].addRule(":root", "--heo-main: var(--heo-theme)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-op: var(--heo-theme-op)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
@@ -36,7 +38,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
       function coverColor(){
         var api = GLOBAL_CONFIG_SITE.tcolor
         var path = document.getElementById("post-cover")?.src;
-          if (void 0 !== path && api != 'undefined') {
+          if (void 0 !== path && api != 'undefined' && document.getElementById('coverdiv')) {
             var httpRequest = new XMLHttpRequest;
             httpRequest.open("GET", api + "?img=" + path , !0),
             httpRequest.send(),
@@ -51,6 +53,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
                 document.styleSheets[0].addRule(":root", "--heo-main-none:" + value + "00!important"),
                 heo.initThemeColor(),
                 document.getElementById("coverdiv").classList.add("loaded")
+                console.log("提取主题色成功")
               }
             }
           } else
@@ -60,7 +63,8 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
             document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
             heo.initThemeColor()
-            document.getElementById("coverdiv").classList.add("loaded")
+            console.warn("提取主题色失败")
+            // document.getElementById("coverdiv").classList.add("loaded")
       }
     }
     else if (GLOBAL_CONFIG_SITE.tcolor_mode == "local"){
@@ -74,6 +78,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
         document.styleSheets[0].addRule(":root", "--heo-main-none:" + value + "00!important"),
         heo.initThemeColor(),
         document.getElementById("coverdiv").classList.add("loaded")
+        console.log("提取主题色成功")
       }
     }
     else if (GLOBAL_CONFIG_SITE.tcolor_mode == "undefined"){
@@ -84,6 +89,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
         document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
         heo.initThemeColor()
         document.getElementById("coverdiv").classList.add("loaded")
+        console.log("没有提取主题色")
       }
   }
 }
@@ -94,6 +100,8 @@ else{
     document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
     document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
     heo.initThemeColor()
+    // console.log("没有提取主题色")
+
   }
 }
 function colorHex(e) {

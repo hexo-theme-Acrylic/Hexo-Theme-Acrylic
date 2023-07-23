@@ -29,7 +29,8 @@ div
     != partial("includes/loading/loading-js", {}, { cache: true })
 
   .js-pjax
-    script(src="/js/themecolor.js")
+    if is_post()
+      script(src="/js/themecolor.js")
       
     if needLoadCountJs
       != partial("includes/third-party/card-post-count/index", {}, { cache: true })
@@ -70,7 +71,8 @@ div
   script(src=url_for(theme.asset.qrcode))
   script(src='/js/rightmenu.js')
   script(data-pjax src='/zhheo/random.js')
-  script(data-pjax src='/js/commentBarrage.js')
+  if theme.comments.commentBarrage && theme.twikoo.accessToken
+    script(data-pjax src='/js/commentBarrage.js')
   script(data-pjax src='/lib/swiper/swiper-bundle.min.js')
   //- script(data-pjax). 
     heo.qrcodeCreate();

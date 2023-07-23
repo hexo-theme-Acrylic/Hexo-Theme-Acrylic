@@ -51,7 +51,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
           ? relatedPosts[i].randomcover
           : relatedPosts[i].cover
       const title = this.escape_html(relatedPosts[i].title)
-      result += `<div><a href="${this.url_for(relatedPosts[i].path)}" title="${title}">`
+      result += `<div class="relatediv"><a href="${this.url_for(relatedPosts[i].path)}" title="${title}">`
       result += `<img class="cover" src="${this.url_for(cover)}" alt="cover">`
       result += `<div class="content is-center">`
       result += `<div class="title">${title}</div>`

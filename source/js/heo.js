@@ -24,7 +24,7 @@ var heo = {
         "/" == (e = decodeURIComponent(e)) ? $(".only-home").attr("style", "display: flex") : $(".only-home").attr("style", "display: none")
     },
     is_Post: function() {
-        return window.location.href.indexOf("/p/") >= 0
+        return window.location.href.indexOf(GLOBAL_CONFIG.post_root) >= 0
     },
     addNavBackgroundInit: function() {
         var e = 0
@@ -56,7 +56,7 @@ var heo = {
         }
     },
     addFriendLinksInFooter: function() {
-        fetch("/link.json").then((e=>e.json())).then((e=>{
+        fetch("/zhheo/friendlink.json").then((e=>e.json())).then((e=>{
             var t = []
               , o = -1;
             for (a=1;a<5;a++) {
@@ -129,8 +129,8 @@ var heo = {
     },
     chageTimeFormate: function() {
         for (var e = document.getElementsByTagName("time"), t = 0; t < e.length; t++) {
-            var o, n = e[t].getAttribute("datetime"), a = new Date(n), i = (new Date).getTime() - a.getTime(), l = Math.floor(i / 864e5);
-            o = 0 === l ? "最近" : 1 === l ? "昨天" : 2 === l ? "前天" : l <= 7 ? l + "天前" : a.getFullYear() !== (new Date).getFullYear() ? a.getFullYear() + "/" + (a.getMonth() + 1) + "/" + a.getDate() : a.getMonth() + 1 + "/" + a.getDate(),
+            var o, n = e[t].getAttribute("datetime"), a = new Date(n), l = (new Date).getTime() - a.getTime(), i = Math.floor(l / 864e5);
+            o = 0 === i ? "最近" : 1 === i ? "昨天" : 2 === i ? "前天" : i <= 7 ? i + "天前" : a.getFullYear() !== (new Date).getFullYear() ? a.getFullYear() + "/" + (a.getMonth() + 1) + "/" + a.getDate() : a.getMonth() + 1 + "/" + a.getDate(),
             e[t].textContent = o
         }
     },
@@ -148,10 +148,10 @@ var heo = {
                 e.getContext("2d").drawImage(o, 0, 0, o.width, o.height);
                 let n = e.toDataURL("image/png")
                   , a = document.createElement("a")
-                  , i = new MouseEvent("click");
+                  , l = new MouseEvent("click");
                 a.download = t || "photo",
                 a.href = n,
-                a.dispatchEvent(i)
+                a.dispatchEvent(l)
             }
             ,
             o.src = e,
@@ -184,8 +184,8 @@ var heo = {
         document.getElementById("todayCard") && document.getElementById("todayCard").classList.add("hide")
     },
     changeThemeColor: function(e) {
-        // null !== document.querySelector('meta[name="theme-color"]') && (document.querySelector('meta[name="theme-color"]').setAttribute("content", e),
-        // document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute("content", e))
+        null !== document.querySelector('meta[name="theme-color"]') && (document.querySelector('meta[name="theme-color"]').setAttribute("content", e),
+        document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute("content", e))
     },
     initThemeColor: function() {
         const e = window.scrollY || document.documentElement.scrollTop;
@@ -219,7 +219,7 @@ var heo = {
         heo.changeThemeColor(e)
     },
     hideLoading: function() {
-        document.querySelector("#loading-box").classList.add("loaded")
+        document.querySelector("#loading-box").classList.add("loaded"),
         heoGPT.aiExplanation()
     },
     musicToggle: function() {
@@ -270,11 +270,11 @@ var heo = {
             let a = null;
             window.requestAnimationFrame((function e(t) {
                 a || (a = t);
-                const i = t - a
-                  , l = (c = Math.min(i / 0, 1)) < .5 ? 2 * c * c : (4 - 2 * c) * c - 1;
+                const l = t - a
+                  , i = (c = Math.min(l / 0, 1)) < .5 ? 2 * c * c : (4 - 2 * c) * c - 1;
                 var c;
-                window.scrollTo(0, o + n * l),
-                i < 600 && window.requestAnimationFrame(e)
+                window.scrollTo(0, o + n * i),
+                l < 600 && window.requestAnimationFrame(e)
             }
             ))
         }
@@ -300,11 +300,8 @@ var heo = {
           , o = document.getElementById("toPageText")
           , n = parseInt(o.value);
         if (!isNaN(n) && n > 0 && "0" !== ("" + n)[0] && n <= t) {
-          if (n == 1)
-            var a = "/"
-          else
             var a = "/page/" + n + "/";
-          document.getElementById("toPageButton").href = a
+            document.getElementById("toPageButton").href = a
         }
     },
     changeSayHelloText: function() {
@@ -318,16 +315,22 @@ var heo = {
     },
     scrollCategoryBarToRight: function() {
         var e = document.getElementById("category-bar-items")
-          , t = document.getElementById("category-bar-next")
-          , o = e.clientWidth;
+          , t = document.getElementById("category-bar-next");
+        function o() {
+            t.style.transform = e.scrollLeft + e.clientWidth >= e.scrollWidth ? "rotate(180deg)" : ""
+        }
+        e.addEventListener("scroll", o);
+        var n = e.clientWidth;
         e && (e.scrollLeft + e.clientWidth >= e.scrollWidth ? (e.scroll({
             left: 0,
             behavior: "smooth"
         }),
-        t.innerHTML = '<i class="heofont icon-youxiangshuangjiantou"></i>') : e.scrollBy({
-            left: o,
+        t.style.transform = "",
+        e.removeEventListener("scroll", o)) : (e.scrollBy({
+            left: n,
             behavior: "smooth"
-        }))
+        }),
+        t.style.transform = ""))
     },
     addRandomCommentInfo: function() {
         const e = `${adjectives[Math.floor(Math.random() * adjectives.length)]}${vegetablesAndFruits[Math.floor(Math.random() * vegetablesAndFruits.length)]}`;
@@ -341,12 +344,12 @@ var heo = {
                     break
                 }
             }
-            for (var i = 0; i < o.length; i++) {
-                var l = document.querySelector(o[i]);
-                if (null != l) {
-                    l.value = "visitor@zhheo.com",
-                    l.dispatchEvent(new Event("input")),
-                    l.dispatchEvent(new Event("change"));
+            for (var l = 0; l < o.length; l++) {
+                var i = document.querySelector(o[l]);
+                if (null != i) {
+                    i.value = GLOBAL_CONFIG.twikoo.visitor,
+                    i.dispatchEvent(new Event("input")),
+                    i.dispatchEvent(new Event("change"));
                     break
                 }
             }
@@ -363,9 +366,9 @@ var heo = {
         if (t && e && o && n)
             try {
                 const a = await fetch("/zhheo/powerlink.json")
-                  , i = await a.json()
-                  , l = heo.getRandomInt(0, i[0].link_list.length)
-                  , c = i[0].link_list[l];
+                  , l = await a.json()
+                  , i = heo.getRandomInt(0, l[0].link_list.length)
+                  , c = l[0].link_list[i];
                 e.style.backgroundImage = `url(${c.avatar})`,
                 t.href = c.link,
                 o.innerText = c.name,
@@ -374,6 +377,28 @@ var heo = {
     },
     getRandomInt: function(e, t) {
         return Math.floor(Math.random() * (t - e)) + e
+    },
+    addCommentCount: function(e) {
+        var t = document.getElementsByClassName("comment-headline");
+        t.length > 0 && twikoo.getCommentsCount({
+            envId: GLOBAL_CONFIG.twikoo.envId,
+            urls: [window.location.pathname],
+            includeReply: !0
+        }).then((function(o) {
+            for (var n = 0; n < t.length; n++) {
+                var a = t[n]
+                  , l = a.getElementsByTagName("span")[0];
+                if (l) {
+                    var i = document.createElement("span");
+                    i.innerText = " (" + e + ")",
+                    a.insertBefore(i, l.nextSibling)
+                }
+            }
+        }
+        )).catch((function(e) {
+            console.error(e)
+        }
+        ))
     }
 };
 const adjectives = ["美丽的", "英俊的", "聪明的", "勇敢的", "可爱的", "慷慨的", "善良的", "可靠的", "开朗的", "成熟的", "稳重的", "真诚的", "幽默的", "豁达的", "有趣的", "活泼的", "优雅的", "敏捷的", "温柔的", "温暖的", "敬业的", "细心的", "耐心的", "深沉的", "朴素的", "含蓄的", "率直的", "开放的", "务实的", "坚强的", "自信的", "谦虚的", "文静的", "深刻的", "纯真的", "朝气蓬勃的", "慎重的", "大方的", "顽强的", "迷人的", "机智的", "善解人意的", "富有想象力的", "有魅力的", "独立的", "好奇的", "干净的", "宽容的", "尊重他人的", "体贴的", "守信的", "有耐性的", "有责任心的", "有担当的", "有远见的", "有智慧的", "有眼光的", "有冒险精神的", "有爱心的", "有同情心的", "喜欢思考的", "喜欢学习的", "具有批判性思维的", "善于表达的", "善于沟通的", "善于合作的", "善于领导的", "有激情的", "有幽默感的", "有思想的", "有个性的", "有正义感的", "有责任感的", "有创造力的", "有想象力的", "有艺术细胞的", "有团队精神的", "有协调能力的", "有决策能力的", "有组织能力的", "有学习能力的", "有执行能力的", "有分析能力的", "有逻辑思维的", "有创新能力的", "有专业素养的", "有商业头脑的"]
@@ -398,7 +423,7 @@ document.addEventListener("pjax:click", (function() {
 )),
 // 如果你想使用主题的话,请留下这一行,谢谢
 console.log(
-  "\n %c Acrylic-Dev v1.0.0 %c https://github.com/hexo-theme-acrylic/hexo-theme-acrylic \n",
+  "\n %c Acrylic-Dev v1.0.2 %c https://github.com/hexo-theme-acrylic/hexo-theme-acrylic \n",
   "color: #ffffff; background: #425aef; padding:5px 0; border-radius: 3px; font-size: 15px;",
   "color: #425aef; background: #ffffff; padding:5px 0; border-radius: 0 3px 3px 0;"
 );

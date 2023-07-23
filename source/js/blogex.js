@@ -1,6 +1,6 @@
 function checkOpen() {}
 function navTitle() {
-    var e = document.title.replace(" | 张洪Heo", "");
+    var e = document.title.split("|")[0].replace(" ","");
     document.getElementById("page-name-text").innerHTML = e
 }
 function showcopy() {
@@ -95,7 +95,8 @@ function AddRewardMask() {
     $("#quit-box").attr("style", "display: flex")
 }
 function travelling() {
-    fetch("https://moments.zhheo.com/randomfriend").then((e=>e.json())).then((e=>{
+  if (GLOBAL_CONFIG.api.fcircle_random != 'undefined'){
+    fetch(GLOBAL_CONFIG.api.fcircle_random).then((e=>e.json())).then((e=>{
         var t = e.link
           , o = "点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：「" + e.name + "」";
         document.styleSheets[0].addRule(":root", "--heo-snackbar-time:8000ms!important"),
@@ -109,8 +110,12 @@ function travelling() {
                 window.open(t, "_blank")
             }
         })
+      }
+      ))
     }
-    ))
+  else{
+    acy.snackbarShow("博客没有配置友圈哦");
+  }
 }
 function toforeverblog() {
     Snackbar.show({
@@ -274,7 +279,7 @@ function listenToPageInputPress() {
     )))
 }
 function initBlog() {
-    coverColor(),
+    // coverColor(),
     addRightMenuClickEvent(),
     navTitle(),
     percent(),
@@ -297,7 +302,7 @@ function initBlog() {
     heo.initThemeColor(),
     heo.hideLoading(),
     heo.tagPageActive(),
-    heo.removeBodyPaceClass()
+    heo.removeBodyPaceClass(),
     heoGPT.aiExplanation(),
     AIEngine(),
     addAIToggleListener()
