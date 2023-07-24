@@ -72,7 +72,7 @@ hexo.extend.filter.register('before_generate', () => {
       }
       const cdnSource = {
         local: cond === 'internal' ? cdnjs_file : `/pluginsSrc/${name}/${file}`,
-        tianli: `https://cdn1.tianli0.top/npm/${name}${verType}/${min_file}`,
+        chuqi: `https://cdn.chuqis.com/npm/${name}${verType}/${min_file}`,
         elemecdn: `https://npm.elemecdn.com/${name}${verType}/${file}`,
         jsdelivr: `https://cdn.jsdelivr.net/npm/${name}${verType}/${min_file}`,
         moezzcdn: `https://jsd.moezz.cn//npm/${name}${verType}/${min_file}`,
