@@ -726,8 +726,8 @@ CDN:
   internal_provider: local
 
   # 第三方CDN
-  # 可选moezz/local/jsdelivr/unpkg/cdnjs/custom/tianli(需要征得tianli本人同意)/elemecdn
-  third_party_provider: tianli
+  # 可选moezz/local/jsdelivr/unpkg/cdnjs/custom/chuqi/elemecdn
+  third_party_provider: chuqi
 
   version: false
   # Custom format
