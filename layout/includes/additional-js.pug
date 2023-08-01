@@ -31,14 +31,15 @@ div
   .js-pjax
     if is_post()
       script(src="/js/themecolor.js")
-      
-    if needLoadCountJs
-      != partial("includes/third-party/card-post-count/index", {}, { cache: true })
-
-    include ./third-party/math/index.pug
 
     if commentsJsLoad
-      include ./third-party/comments/js.pug
+      include ./third-party/newest-comments/twikoo-comment.pug
+    //- if needLoadCountJs
+    //-   != partial("includes/third-party/card-post-count/index", {}, { cache: true })
+    //- if commentsJsLoad
+    //-   include ./third-party/comments/js.pug
+
+    include ./third-party/math/index.pug
 
   //- //- 文章二维码
   //- script(src='/lib/qrcode/qrcode.min.js')

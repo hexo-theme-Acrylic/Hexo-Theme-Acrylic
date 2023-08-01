@@ -3,7 +3,7 @@ hexo.extend.helper.register('catalog_list', function (type) {
   hexo.locals.get(type).map(function (item) {
     html += `
     <div class="category-bar-item" id="${item.name}">
-      <a href="/${item.path}">${item.name}</a>
+      <a href="/${item.path}" data-pjax-state>${item.name}</a>
     </div>
     `
   })

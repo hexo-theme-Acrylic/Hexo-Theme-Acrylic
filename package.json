@@ -9,7 +9,12 @@
 	},
 	"main": "package.json",
 	"homepage": "https://pro.acrylic.org.cn/",
-	"keywords": ["hexo", "theme", "Acrylic","hexo-theme-Acrylic"],
+	"keywords": [
+		"hexo",
+		"theme",
+		"Acrylic",
+		"hexo-theme-Acrylic"
+	],
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -21,5 +26,8 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git"
+	},
+	"devDependencies": {
+		"hexo-swpp": "^2.8.4"
 	}
 }
