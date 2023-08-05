@@ -5,6 +5,6 @@ block content
   #tag
     #tag-page-tags
       !=pagecloud({source: site.tags})
-    .article-sort-title= _p('page.tag')
-    +articleSort(page.posts)
-    include includes/part/pagination.pug
+    #recent-posts(class="recent-posts category_ui")
+      +articleSort(page.posts)
+      include includes/part/pagination.pug

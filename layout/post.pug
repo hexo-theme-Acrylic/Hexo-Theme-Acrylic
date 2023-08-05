@@ -4,11 +4,7 @@ block content
   #post
     div
       article#article-container.post-content!=page.content
-      
-      //- ptool
-      if theme.ptool.enable
-        include includes/third-party/ptool/index.pug
-      
+
       //- ad
       if theme.ad && theme.ad.post
         .ads-wrap!=theme.ad.post
