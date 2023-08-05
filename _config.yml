@@ -247,10 +247,10 @@ copyright:
   enable: true
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-  description: 分享设计与科技生活
   subscribe: 
     enable: true
   author_img:
+    enable: true
     back: https://bu.dusays.com/2023/07/19/64b77416a23a4.png
     front: https://bu.dusays.com/2023/07/19/64b776957f4ea.png
   
@@ -549,7 +549,6 @@ aside:
 # 加载动画 (loading)
 loading: 
   enable: true
-  image: https://bu.dusays.com/2023/07/15/64b2499a6ad24.png
 
 # 手机边栏 (sidebar)
 sidebar: 

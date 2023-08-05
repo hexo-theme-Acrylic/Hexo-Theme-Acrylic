@@ -1,14 +1,18 @@
 if theme.copyright.enable && page.copyright !== false
-  - let author = page.copyright_author ? page.copyright_author : config.author
-  - let url = page.copyright_url ? page.copyright_url : page.permalink
+  - let author = page.author ? page.author : config.author
+  - let url = page.url ? page.url : page.permalink
   - let info = _p(theme.copyright.license)
+  - let text = ( page.author || page.url ) ? "转载" : "原创"
   .post-copyright
       div(class="post-copyright__author_group")
         a(class="post-copyright__author_img", href="/about/")
-          img(class="post-copyright__author_img_back entered loading", src=`${theme.copyright.author_img.back}`, data-ll-status="loading")
-          img(class="post-copyright__author_img_front entered loading", src=`${theme.copyright.author_img.front}`, data-ll-status="loading")
+          if theme.copyright.author_img.enable
+            img(class="post-copyright__author_img_back entered loading", src=`${theme.copyright.author_img.back}`, data-ll-status="loading")
+            img(class="post-copyright__author_img_front entered loading", src=`${theme.copyright.author_img.front}`, data-ll-status="loading")
+          else
+            img(class="post-copyright__author_img_back entered loading", src=`${theme.avatar.img}`, data-ll-status="loading")
         div(class="post-copyright__author_name")= config.author
-        div(class="post-copyright__author_desc")!= theme.copyright.description || config.description
+        div(class="post-copyright__author_desc")= config.description
       #post-tools.post-tools
         .post-tools-left
           if theme.reward.enable && theme.reward.QR_code
@@ -19,7 +23,7 @@ if theme.copyright.enable && page.copyright !== false
                 i.heofont.icon-plant-fill
                 | 订阅
       div(class="post-copyright__notice")
-        span.post-copyright-info 本文是原创文章，采用 
+        span.post-copyright-info 本文是#[=text]文章，采用 
           a(href=`${theme.copyright.link}`, target="_blank")!= info 
           | 协议，完整转载请注明来自
           a(href="/", target="_blank")= config.author
