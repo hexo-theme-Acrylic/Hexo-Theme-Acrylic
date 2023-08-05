@@ -8196,6 +8196,17 @@ div#banners {
   min-width: 200px;
 }
 
+.layout>div:first-child:not(.recent-posts) {
+    box-shadow: var(--heo-shadow-border);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: var(--heo-card-bg);
+    border: var(--style-border);
+    width: calc(100% - 300px);
+    align-self: flex-start;
+    animation: slide-in .6s .1s backwards
+}
+
 .categoryGroup .categoryItem:nth-child(3) {
   display: none;
 }
@@ -8573,7 +8584,21 @@ i.bber-gotobb {
 }
 
 @media screen and (min-width: 1300px) {
-
+  
+  #recent-posts .recent-post-item {
+      margin-top: .5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+      animation: slide-in .6s .4s backwards;
+      will-change: transform;
+      width: calc(100% / 2 - .5rem);
+      margin-top: .25rem;
+      margin-bottom: .75rem;
+      box-shadow: var(--heo-shadow-border);
+  }
+  
   #recent-posts>.recent-post-item:nth-child(2) .lastestpost {
     display: flex;
     color: var(--heo-secondtext);
