@@ -720,8 +720,8 @@ CDN:
   internal_provider: local
 
   # 第三方CDN
-  # 可选moezz/local/jsdelivr/unpkg/cdnjs/custom/chuqi/elemecdn
-  third_party_provider: chuqi
+  # 可选moezz/local/jsdelivr/unpkg/cdnjs/custom/chuqi/elemecdn/onmicrosoft
+  third_party_provider: onmicrosoft
 
   version: false
   # Custom format
@@ -741,7 +741,7 @@ CDN:
     # algolia_search_v4: 
     instantsearch_v4: /lib/algolia/instantsearch.min.js
     # pjax:
-    twikoo: https://cdn1.tianli0.top/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
+    twikoo: /js/twikoo.all.min.js #https://jsd.onmicrosoft.cn/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
     # waline_js:
     # waline_css:
     # mathjax:
@@ -753,15 +753,14 @@ CDN:
     # typed:
     # pangu:
     pace: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js
-    qrcode: /lib/qrcode/qrcode.min.js
-    fancybox_css_v4: https://cdn1.tianli0.top/npm/@fancyapps/ui/dist/fancybox.min.css
+    fancybox_css_v4: https://jsd.onmicrosoft.cn/npm/@fancyapps/ui/dist/fancybox.min.css
     # fancybox_v4:
     snackbar_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css
     snackbar: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js
     # activate_power_mode:
-    fontawesomeV6: https://cdn1.tianli0.top/npm/@fortawesome/fontawesome-free/css/all.min.css
+    fontawesomeV6: https://jsd.onmicrosoft.cn/npm/@fortawesome/fontawesome-free/css/all.min.css
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
     aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
-    meting_js: https://cdn1.tianli0.top/gh/hexo-theme-Acrylic/JS-Acrylic@main/Meting.js
+    meting_js: https://jsd.onmicrosoft.cn/gh/hexo-theme-Acrylic/JS-Acrylic@main/Meting.js
     # artalk_js:
     # artalk_css:
