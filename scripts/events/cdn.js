@@ -76,6 +76,7 @@ hexo.extend.filter.register('before_generate', () => {
         elemecdn: `https://npm.elemecdn.com/${name}${verType}/${file}`,
         cbd: `https://cdn.cbd.int/${name}${verType}/${file}`,
         fcdn: `https://fcdn.dusays.com/npm/${name}${verType}/${min_file}`,
+        onmicrosoft: `https://jsd.onmicrosoft.cn/npm/${name}${verType}/${min_file}`,
         moezzcdn: `https://jsd.moezz.cn//npm/${name}${verType}/${min_file}`,
         jsdelivr: `https://cdn.jsdelivr.net/npm/${name}${verType}/${min_file}`,
         unpkg: `https://unpkg.com/${name}${verType}/${file}`,
