@@ -21,11 +21,7 @@ if theme.link && theme.link.enable
         else if s.flink_style == "mini-item"
           .flink-list.mini
             include ./flink/style/mini_item.pug
-  if theme.link.flink_posts
-    include ./flink/flink_posts.pug
   #article-container
     != page.content
-  if theme.link.add_flink
-    include ./flink/add_flink.pug
 
 
