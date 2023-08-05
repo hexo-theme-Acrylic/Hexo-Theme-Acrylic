@@ -25,7 +25,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
                 }
             }
           } else
-            console.warn("提取主题色失败")
+            //console.warn("提取主题色失败")
             document.styleSheets[0].addRule(":root", "--heo-main: var(--heo-theme)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-op: var(--heo-theme-op)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
@@ -63,7 +63,7 @@ if (GLOBAL_CONFIG_SITE.tcolor_mode && GLOBAL_CONFIG_SITE.isPost && GLOBAL_CONFIG
             document.styleSheets[0].addRule(":root", "--heo-main-op-deep:var(--heo-theme-op-deep)!important"),
             document.styleSheets[0].addRule(":root", "--heo-main-none: var(--heo-theme-none)!important"),
             heo.initThemeColor()
-            console.warn("提取主题色失败")
+            //console.warn("提取主题色失败")
             // document.getElementById("coverdiv").classList.add("loaded")
       }
     }
