@@ -8196,6 +8196,17 @@ div#banners {
   min-width: 200px;
 }
 
+.layout>div:first-child:not(.recent-posts) {
+    box-shadow: var(--heo-shadow-border);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: var(--heo-card-bg);
+    border: var(--style-border);
+    width: calc(100% - 300px);
+    align-self: flex-start;
+    animation: slide-in .6s .1s backwards
+}
+
 .categoryGroup .categoryItem:nth-child(3) {
   display: none;
 }
@@ -8573,7 +8584,21 @@ i.bber-gotobb {
 }
 
 @media screen and (min-width: 1300px) {
-
+  
+  #recent-posts .recent-post-item {
+      margin-top: .5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+      animation: slide-in .6s .4s backwards;
+      will-change: transform;
+      width: calc(100% / 2 - .5rem);
+      margin-top: .25rem;
+      margin-bottom: .75rem;
+      box-shadow: var(--heo-shadow-border);
+  }
+  
   #recent-posts>.recent-post-item:nth-child(2) .lastestpost {
     display: flex;
     color: var(--heo-secondtext);
@@ -11501,208 +11526,226 @@ figure {
     border: var(--style-border-hover);
   }
 }
-
-/* 版权信息 */
-/* 背景 */
+/* 文章版权new */
 #post .post-copyright {
-  background: var(--heo-card-bg);
-  padding: 1rem 1.3rem;
-  overflow: hidden;
-  border: var(--style-border);
-  border-width: 1px;
-  transition: 0.3s;
-  position: relative;
-  margin: 1.5rem 0px 0.5rem;
-  border-radius: 12px;
-}
-
-#post .post-copyright:after {
-  position: absolute;
-  right: 22px;
-  top: -77px;
-  content: "\e00d";
-  font-size: 180px;
-  font-family: "heofont";
-  color: var(--heo-fontcolor);
-  opacity: 0.1;
-  filter: blur(7px);
+    background: var(--heo-secondbg);
+    border-width: 1px;
+    transition: .3s;
+    position: relative;
+    margin: 80px 0 30px;
+    border-radius: 12px;
+    padding: 34px 0 20px 0;
+    border: var(--style-border-always)
 }
 
 @media screen and (max-width: 768px) {
-  #post .post-copyright {
-    padding: 1rem 1.3rem;
-  }
+    #post .post-copyright {
+        padding:1rem 1.3rem
+    }
+}
+
+.post-copyright__author_img {
+    width: 66px;
+    height: 66px;
+    margin: auto;
+    border-radius: 66px;
+    overflow: hidden;
+    position: absolute;
+    left: calc(50% - 33px);
+    top: -33px;
+    border: var(--style-border-always);
+    box-shadow: var(--heo-shadow-main)
+}
+
+.post-copyright__author_img img {
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+img.post-copyright__author_img_back {
+    border-radius: 66px;
+    z-index: 10
+}
+
+img.post-copyright__author_img_front {
+    z-index: 20;
+    transform: scale(1.2) translateY(6px)
+}
+
+.post-copyright__author_img:hover img.post-copyright__author_img_front {
+    transform: scale(1) translateY(3px)
+}
+
+.post-copyright__author_img:hover img.post-copyright__author_img_back {
+    transform: scale(.8)
+}
+
+.post-copyright__author_name {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 16px;
+    color: var(--heo-fontcolor);
+    line-height: 1
+}
+
+.post-copyright__author_desc {
+    text-align: center;
+    font-size: 14px;
+    color: var(--heo-secondtext);
+    margin-top: 4px
 }
 
 .post-copyright__author {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center
 }
 
 .post-copyright__original {
-  background: var(--heo-fontcolor);
-  color: var(--heo-card-bg);
-  padding: 0.2rem 0.5rem;
-  font-size: 0.7rem;
-  border-radius: 8px;
-  margin-right: 0.5rem;
-  font-weight: bold;
-  line-height: 1.5;
-  white-space: nowrap;
-  -webkit-user-select: none;
+    background: var(--heo-fontcolor);
+    color: var(--heo-card-bg);
+    padding: .2rem .5rem;
+    font-size: .7rem;
+    border-radius: 8px;
+    margin-right: .5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+    -webkit-user-select: none
 }
 
 .post-copyright__original:hover {
-  background: var(--heo-main);
-  color: var(--heo-white);
+    background: var(--heo-main);
+    color: var(--heo-white)
 }
 
 @media screen and (max-width: 768px) {
-  #post .post-copyright {
-    box-shadow: var(--heo-shadow-border);
-  }
+    #post .post-copyright {
+        background:var(--heo-card-bg);
+        box-shadow: var(--heo-shadow-border)
+    }
 
-  .post-copyright .post-meta-original {
-    display: none;
-  }
+    .post-copyright .post-meta-original {
+        display: none
+    }
 
-  .post-copyright__original {
-    display: none;
-  }
-
-  #post .post-copyright:after {
-    display: none;
-  }
+    .post-copyright__original {
+        display: none
+    }
 }
 
-/* 复制按钮 */
 .post-copyright-copybtn {
-  margin-left: 0.5rem;
-  color: var(--heo-fontcolor);
-  opacity: 0.4;
-  transition: 0.3s;
+    margin-left: .5rem;
+    color: var(--heo-fontcolor);
+    opacity: .4;
+    transition: .3s
 }
 
 .post-copyright-copybtn:hover {
-  opacity: 1;
-  transition: 0.3s;
+    opacity: 1;
+    transition: .3s
 }
 
 .post-copyright-copybtn i {
-  font-size: 16px;
+    font-size: 16px
 }
 
-/* 作者名 */
 #post .post-copyright .post-copyright-info a {
-  padding: 0;
-  color: var(--heo-fontcolor);
-  font-weight: bold;
+    padding: 0;
+    color: var(--heo-fontcolor);
+    font-weight: 700
 }
 
 #post .post-copyright .post-copyright__notice .post-copyright-info a {
-  padding: 0 4px;
-}
-
-#post .post-copyright .post-copyright-info a:hover {
-  color: var(--heo-lighttext);
+    padding: 0 4px
 }
 
 #post .post-copyright .post-copyright-info {
-  padding-left: 0;
-  color: var(--heo-fontcolor);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+    padding-left: 0;
+    color: var(--heo-secondtext);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-align: center
 }
 
 #post .post-copyright .post-copyright-title {
-  padding-left: 0;
-  color: var(--heo-fontcolor);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  font-size: 1rem;
-  font-weight: bold;
+    padding-left: 0;
+    color: var(--heo-fontcolor);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 1rem;
+    font-weight: 700
 }
 
 #post .post-copyright .post-copyright-title:hover {
-  color: var(--heo-lighttext);
+    color: var(--heo-lighttext)
 }
 
 #post>div.post-copyright>div.post-copyright__author>span>span {
-  padding: 0;
-  color: var(--heo-fontcolor);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.38;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+    padding: 0;
+    color: var(--heo-fontcolor);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.38;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
 }
 
 @media screen and (max-width: 768px) {
-  #post>div.post-copyright>div.post-copyright__author>span>span {
-    -webkit-line-clamp: 3;
-  }
+    #post>div.post-copyright>div.post-copyright__author>span>span {
+        -webkit-line-clamp:3
+    }
 
-  #post .post-copyright .post-copyright-info {
-    -webkit-line-clamp: 2;
-  }
+    #post .post-copyright .post-copyright-info {
+        -webkit-line-clamp: 2
+    }
 
-  #post .post-copyright .post-copyright-title {
-    -webkit-line-clamp: 3;
-    line-height: 1.2;
-  }
+    #post .post-copyright .post-copyright-title {
+        -webkit-line-clamp: 3;
+        line-height: 1.2
+    }
 }
 
-/* 链接 */
 #post>div.post-copyright>div.post-copyright__type {
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-  margin-top: 4px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 4px
 }
 
-#post .post-copyright .post-copyright-info a {
-  font-size: 14px;
-  opacity: 0.6;
-  line-height: 16px;
+#post>div.post-copyright>div.post-copyright__type>span>a {
+    font-size: 14px;
+    opacity: .6;
+    line-height: 16px
 }
 
-#post .post-copyright .post-copyright-info a:hover{
-  opacity: 1;
-  background: none;
+#post>div.post-copyright>div.post-copyright__type>span>a:hover {
+    opacity: 1;
+    background: 0 0
 }
 
 #post-copyright-url a {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
 }
 
 #post>div.post-copyright>div.post-copyright__notice {
-  font-size: 0.7rem;
-  line-height: 1rem;
-  margin: 0.5rem 0;
+    font-size: 12px;
+    margin: .5rem 0
 }
 
-
-/* 提示 */
-#post>div.post-copyright>div.post-copyright__notice {
-  font-size: 0.7rem;
-  line-height: 1rem;
-  margin: 0.5rem 0;
-}
-
-/* 装饰圈 */
 #post .post-copyright:before {
-  display: none;
+    display: none
 }
-
 /* 打赏作者按钮 */
 .post-reward .reward-button {
   background: var(--heo-red);
@@ -11749,6 +11792,20 @@ figure {
   flex-direction: column;
   align-items: center;
 }
+/* plusnew */
+.post-tools {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    -webkit-user-select: none
+}
+
+.post-copyright__notice {
+    font-size: 12px;
+    margin: .5rem 0
+}
 
 /* 打赏描述 */
 .reward-dec {
@@ -11788,17 +11845,16 @@ a.reward-main-btn:hover {
 }
 
 .reward-link.mode {
-  background: var(--heo-green);
-  color: var(--heo-white);
-  padding: 0;
-  width: 173px;
-  height: 40px;
-  line-height: 39px;
-  box-shadow: var(--heo-shadow-green);
-  border-radius: 8px;
-  margin-left: 0.5rem;
-  text-align: center;
-  transition: 0.3s;
+    background: var(--heo-green);
+    color: var(--heo-white);
+    padding: 0 16px;
+    height: 40px;
+    line-height: 39px;
+    box-shadow: var(--heo-shadow-green);
+    border-radius: 8px;
+    margin-left: .5rem;
+    text-align: center;
+    transition: .3s
 }
 
 .reward-link.mode a {
@@ -12897,15 +12953,6 @@ button.el-button.tk-cancel.el-button--default.el-button--small {
     border-radius: 0;
     margin-top: 0;
   }
-}
-
-.post-tools {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-  -webkit-user-select: none;
 }
 
 .post-reward {

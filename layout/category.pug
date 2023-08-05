@@ -3,16 +3,14 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/article-sort.pug
   #category
-    .category-in-bar
-      .category-in-bar-tips 分类
-      #category-bar
-        .category-bar-items#category-bar-items
-          .category-bar-item#category-bar-home
-            a(href='/' data-pjax-state) 首页
-          !=catalog_list("categories")
-        .category-bar-next#category-bar-next(onclick='heo.scrollCategoryBarToRight()')
-          i.heofont.icon-youxiangshuangjiantou
-        a.category-bar-more(href='/categories/' data-pjax-state) 更多
-    .article-sort-title= _p('page.category')
-    +articleSort(page.posts)
-    include includes/part/pagination.pug
+    #category-bar
+      #category-bar-items.category-bar-items
+        #category-bar-home.category-bar-item
+          a(href='/') 首页
+        !=catalog_list("categories")
+      #category-bar-next.category-bar-next(onclick="heo.scrollCategoryBarToRight()" style="transform: rotate(180deg);")
+        i.heofont.icon-youxiangshuangjiantou
+      a.category-bar-more(href='/categories/') 更多
+    #recent-posts(class="recent-posts category_ui")
+      +articleSort(page.posts)
+      include includes/part/pagination.pug

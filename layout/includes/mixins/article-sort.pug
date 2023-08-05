@@ -1,24 +1,59 @@
 mixin articleSort(posts)
-  .article-sort
-    - var year
-    - posts.each(function (article) {
-      - let tempYear = date(article.date, 'YYYY')
-      - let title = article.title || _p('no_title')
-      if tempYear !== year
-        - year = tempYear
-        .article-sort-item.year= year
-      .article-sort-item
-        if article.cover
-          a.article-sort-item-img(href=url_for(article.path) title=title)
-            img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.default_img)}'`)
-        .article-sort-item-info
-          a.article-sort-item-title(href=url_for(article.path) title=title)= title
+  - posts.each(function (article) {
+   .recent-post-item(class= (lastPost === true) ? 'lastestpost-item' : '',onclick=`pjax.loadUrl('${url_for(article.link || article.path)}')`)
+    -
+      let link = article.link || article.path
+      let title = article.title || _p('no_title')
+      let post_cover = article.cover
+    -
+    if post_cover
+      .post_cover(class='left_radius')
+        a(href=url_for(link) title=title)
+          img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.default_img) + `'` alt=title)
+    .recent-post-info
+      .recent-post-info-top
+        .recent-post-info-top-tips
+          if (theme.post_meta.page.categories && article.categories.data.length > 0)
+            each item, index in article.categories.data
+              span.original #[=item.name]
+          if firstpost != 1
+            span.lastestpost 最新
+            - var firstpost = 1
+          a.unvisited-post(href=url_for(link) title=`${title}` data-pjax-state) 未读
+        a.article-title(href=url_for(link) title=title)= title
+      .article-meta-wrap
+        if (is_home() && (article.top || article.sticky > 0))
+          span.article-meta
+            i.fas.fa-thumbtack.sticky
+            span.sticky= _p('sticky')
+            span.article-meta-separator
+        if (theme.post_meta.page.date_type)
           if (theme.post_meta.page.tags && article.tags.data.length > 0)
-            span.article-sort-item-tags
+            span.article-meta.tags
+              span.article-meta-separator
               each item, index in article.tags.data
-                a(href=url_for(item.path)).article-meta__tags 
+                a(href=url_for(item.path) event.cancelbubble onclick='window.event.cancelBubble=true;').article-meta__tags
                   span.tags-punctuation #[=item.name]
-          .article-sort-item-time
-            i.far.fa-calendar-alt
-            time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))= date(article.date, config.date_format)
-    - })
+          span.post-meta-date
+            if (theme.post_meta.page.date_type === 'both')
+              i.far.fa-calendar-alt
+              time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))=date(article.date, config.date_format)
+              span.article-meta-separator
+              i.fas.fa-history
+              time.post-meta-date-updated(datetime=date_xml(article.updated) title=_p('post.updated') + ' ' + full_date(article.updated))=date(article.updated, config.date_format)
+            else
+              - let data_type_updated = theme.post_meta.page.date_type === 'updated'
+              - let date_type = data_type_updated ? 'updated' : 'date'
+              - let date_icon = data_type_updated ? 'fas fa-history' :'far fa-calendar-alt'
+              i(class=date_icon)
+              time(datetime=date_xml(article[date_type]) title=date_title + ' ' + full_date(article[date_type]))=date(article[date_type], config.date_format)
+        
+        mixin countBlockInIndex
+          - needLoadCountJs = true
+          span.article-meta(onclick='scrollTo("post-comment")')
+            span.article-meta-separator
+            i.fas.fa-comments
+            if block
+              block
+            span.article-meta-label= ' ' + _p('card_post_count')
+  - })

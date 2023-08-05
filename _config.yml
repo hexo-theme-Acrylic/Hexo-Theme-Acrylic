@@ -36,7 +36,6 @@ local_search:
   preload: false
   CDN:
 
-
 # 导航栏 (nav)
 # --------------------------------
 nav:
@@ -243,20 +242,20 @@ katex:
   per_page: false
   hide_scrollbar: true
 
-# 版权 (copyright)
+# 版权 (copyright) [new]
 copyright:
   enable: true
-  link: /cc/
   license: CC BY-NC-SA 4.0
-  short: cc
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  description: 分享设计与科技生活
+  subscribe: 
+    enable: true
+  author_img:
+    back: https://bu.dusays.com/2023/07/19/64b77416a23a4.png
+    front: https://bu.dusays.com/2023/07/19/64b776957f4ea.png
   
 # 相关文章 (related post)
 related_post:
-  enable: true
-
-# 文章 ptool (ptool)
-ptool:
   enable: true
 
 # 打赏 (reward)
@@ -280,7 +279,6 @@ comments:
   count: true # 顶部图显示评论数
   card_post_count: false # 首页显示评论数
   commentBarrage: true # 仅支持twikoo
-
 
 # waline
 # https://waline.js.org/
@@ -503,7 +501,6 @@ footer:
       - text: 京ICP备1905135号
         link: https://beian.miit.gov.cn/#/Integrated/index
 
-
 # 侧边栏 (aside)
 # --------------------------------
 aside:
@@ -552,6 +549,7 @@ aside:
 # 加载动画 (loading)
 loading: 
   enable: true
+  image: https://bu.dusays.com/2023/07/15/64b2499a6ad24.png
 
 # 手机边栏 (sidebar)
 sidebar: 
@@ -606,7 +604,6 @@ busuanzi:
   site_pv: true
   page_pv: true
 
-
 # 右下悬浮栏 (right side)
 # --------------------------------
 
@@ -655,7 +652,6 @@ aplayerInject:
   enable: false
   per_page: true
 
-
 # 弹窗 (snackbar)
 # https://github.com/polonel/SnackBar
 # 位置 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
@@ -698,6 +694,7 @@ preconnect:
   - //bu.dusays.com
   - //d.zhheo.com
   - //p.zhheo.com
+
 # PWA
 # https://github.com/JLHwung/hexo-offline
 pwa:
@@ -707,7 +704,6 @@ pwa:
   favicon_32_32: /pwa/32.png
   favicon_16_16: /pwa/16.png
   mask_icon: /pwa/safari-pinned-tab.svg
-
 
 # 引入 (inject)
 # --------------------------------
@@ -721,8 +717,6 @@ inject:
   bottom:
     # JS
     # - <script src="/js/xxx.js"></script>
-
-    
 
 # CDN
 # --------------------------------

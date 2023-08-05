@@ -201,6 +201,19 @@ function owoBig() {
     }
     ))
 }
+function initObserver() {
+    var e = document.getElementById("post-comment")
+      , t = document.getElementById("pagination");
+    e && t && new IntersectionObserver((function(e) {
+        e.forEach((function(e) {
+            e.isIntersecting ? (t.classList.add("show-window"),
+            document.querySelector(".comment-barrage").style.bottom = "-200px") : (t.classList.remove("show-window"),
+            document.querySelector(".comment-barrage").style.bottom = "0px")
+        }
+        ))
+    }
+    )).observe(e)
+}
 function percent() {
     let e = document.documentElement.scrollTop || window.pageYOffset
       , t = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
@@ -299,6 +312,7 @@ function initBlog() {
     heo.reflashEssayWaterFall(),
     heo.darkModeStatus(),
     heo.categoriesBarActive(),
+    initObserver(),
     heo.initThemeColor(),
     heo.hideLoading(),
     heo.tagPageActive(),
@@ -343,14 +357,6 @@ $(".topGroup").hover((function() {}
 }
 )),
 document.getElementById("post-comment") && owoBig(),
-document.addEventListener("scroll", acy.throttle((function() {
-    var e = window.scrollY + document.documentElement.clientHeight
-      , t = (window,
-    document.getElementById("pagination"))
-      , o = document.getElementById("post-tools");
-    o && t && (document.body.clientWidth > 1300 && (o.offsetTop + o.offsetHeight / 2 < e ? t.classList.add("show-window") : t.classList.remove("show-window")))
-}
-), 200)),
 "true" == localStorage.getItem("keyboardToggle") ? (document.querySelector("#consoleKeyboard").classList.add("on"),
 heo_keyboard = !0) : (document.querySelector("#consoleKeyboard").classList.remove("on"),
 heo_keyboard = !1),

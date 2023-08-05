@@ -55,4 +55,4 @@ style(type='text/css').
 #loading-box(onclick='heo.hideLoading();')
   .loading-bg
     div.loading-img
-    .loading-image-dot
+      img.loading-img.nolazyload.entered.error(alt='loading image', src=`${theme.loading.image}`, data-ll-status='error')

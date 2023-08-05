@@ -317,7 +317,7 @@ var heo = {
         var e = document.getElementById("category-bar-items")
           , t = document.getElementById("category-bar-next");
         function o() {
-            t.style.transform = e.scrollLeft + e.clientWidth >= e.scrollWidth ? "rotate(180deg)" : ""
+            t.style.transform = e.scrollLeft + e.clientWidth >= e.scrollWidth ? "rotate(180deg)!important" : ""
         }
         e.addEventListener("scroll", o);
         var n = e.clientWidth;
