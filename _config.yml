@@ -746,7 +746,7 @@ CDN:
     # algolia_search_v4: 
     instantsearch_v4: /lib/algolia/instantsearch.min.js
     # pjax:
-    twikoo: /js/twikoo.all.min.js #https://jsd.onmicrosoft.cn/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
+    twikoo: /lib/twikoo/twikoo.all.min.js #https://jsd.onmicrosoft.cn/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js
     # waline_js:
     # waline_css:
     # mathjax:
