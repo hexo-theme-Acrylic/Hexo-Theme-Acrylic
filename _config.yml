@@ -552,6 +552,7 @@ aside:
 # 加载动画 (loading)
 loading: 
   enable: true
+  image: https://bu.dusays.com/2023/07/15/64b2499a6ad24.png
 
 # 手机边栏 (sidebar)
 sidebar: 
