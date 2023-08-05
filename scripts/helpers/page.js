@@ -83,7 +83,7 @@ hexo.extend.helper.register('pagecloud', function (options = {}) {
   })
 
   source.forEach(tag => {
-    result += `<a href="${env.url_for(tag.path)}" id="${tag.name}" data-pjax-state="" ><span class="tags-punctuation"></span> ${tag.name} <span class="tagsPageCount">${tag.length}</span></a>`
+    result += `<a href="${env.url_for(tag.path)}" id="${tag.name}"><span class="tags-punctuation"></span> ${tag.name} <span class="tagsPageCount">${tag.length}</span></a>`
   })
   return result
 })
