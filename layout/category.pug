@@ -1,7 +1,7 @@
 extends includes/layout.pug
 
 block content
-  include ./includes/mixins/article-sort.pug
+  include ./includes/mixins/post-ui.pug
   #category
     #category-bar
       #category-bar-items.category-bar-items
@@ -12,5 +12,5 @@ block content
         i.heofont.icon-youxiangshuangjiantou
       a.category-bar-more(href='/categories/') 更多
     #recent-posts(class="recent-posts category_ui")
-      +articleSort(page.posts)
+      +postUI(page.posts)
       include includes/part/pagination.pug
