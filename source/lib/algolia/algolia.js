@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
     document.body.style.cssText = 'width: 100%;overflow: hidden'
     document.querySelector('#algolia-search .search-dialog').style.display = 'block'
     document.querySelector('#algolia-search .ais-search-box--input').focus()
-    btf.fadeIn(document.getElementById('search-mask'), 0.5)
+    acy.fadeIn(document.getElementById('search-mask'), 0.5)
     // shortcut: ESC
     document.addEventListener('keydown', function f (event) {
       if (event.code === 'Escape') {
@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
     const $searchDialog = document.querySelector('#algolia-search .search-dialog')
     $searchDialog.style.animation = 'search_close .5s'
     setTimeout(() => { $searchDialog.style.cssText = "display: none; animation: ''" }, 500)
-    btf.fadeOut(document.getElementById('search-mask'), 0.5)
+    acy.fadeOut(document.getElementById('search-mask'), 0.5)
   }
 
   const searchClickFn = () => {

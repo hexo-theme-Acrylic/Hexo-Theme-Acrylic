@@ -208,7 +208,7 @@ module.exports.cacheList = {
     // 该项用于匹配缓存，传入的参数是 URL 类型的，返回一个 boolean
     match: (url, $eject) => {
       const allowedHost = $eject.domain;
-      const allowedPaths = ["/404.html", "/css/index.css"];
+      const allowedPaths = ["/404.html", "/css/index.css", "localhost"];
       return url.host === allowedHost && allowedPaths.includes(url.pathname);
     },
   },
@@ -238,7 +238,7 @@ module.exports.getSpareUrls = srcUrl => {
             timeout: 3000,
             list: [
                 srcUrl,
-                `https://cdn.chuqis.com/${new URL(srcUrl).pathname}`
+                `https://jsd.onmicrosoft.cn/${new URL(srcUrl).pathname}`
             ]
         }
     }

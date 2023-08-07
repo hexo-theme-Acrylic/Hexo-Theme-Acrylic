@@ -24,6 +24,16 @@ hexo.extend.filter.register('before_generate', () => {
       file: 'js/utils.js',
       version
     },
+    heo: {
+      name: 'hexo-theme-acrylic',
+      file: 'js/heo.js',
+      version
+    },
+    blogex: {
+      name: 'hexo-theme-acrylic',
+      file: 'js/blogex.js',
+      version
+    },
     translate: {
       name: 'hexo-theme-acrylic',
       file: 'js/tw_cn.js',
@@ -39,11 +49,31 @@ hexo.extend.filter.register('before_generate', () => {
       file: 'js/search/algolia.js',
       version
     },
-    heo_js: {
+    commentBarrage_js: {
       name: 'hexo-theme-acrylic',
-      file: 'js/heo.js',
+      file: 'js/commentBarrage.js',
       version
     },
+    random_js: {
+      name: 'hexo-theme-acrylic',
+      file: 'zhheo/random.js',
+      version
+    },
+    rightmenu_js: {
+      name: 'hexo-theme-acrylic',
+      file: 'js/rightmenu.js',
+      version
+    },
+    tianli_gpt_js: {
+      name: 'hexo-theme-acrylic',
+      file: 'js/tianli_gpt.js',
+      version
+    },
+    themecolor_js: {
+      name: 'hexo-theme-acrylic',
+      file: 'js/themecolor.js',
+      version
+    }
   }
 
   const minFile = (file) => {

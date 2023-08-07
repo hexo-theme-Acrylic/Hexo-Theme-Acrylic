@@ -63,6 +63,8 @@
 
 script.
   const GLOBAL_CONFIG = {
+    author: `!{config.author}`,
+    api: !{api},
     root: '!{config.root}',
     post_root: "!{post_root}",
     algolia: !{algolia},
@@ -103,5 +105,4 @@ script.
     isPhotoFigcaption: !{true},
     islazyload: !{theme.lazyload.enable},
     isAnchor: !{false},
-    api: !{api},
   }

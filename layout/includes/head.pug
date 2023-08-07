@@ -45,7 +45,6 @@ link(rel='stylesheet', href=url_for(theme.asset.fontawesomeV6) media="print" onl
 //- js
 script(src=url_for(theme.asset.jquery))
 script(src=url_for(theme.asset.heo))
-script(src='/js/heo_gpt.js')
 if theme.algolia_search.enable
   script(src=url_for(theme.asset.instantsearch_v4) defer)
 //- if theme.post_meta.ai.enable
@@ -57,7 +56,6 @@ include ./head/Open_Graph.pug
 //- preconnect 預解析
 each i in theme.preconnect
   link(rel='preconnect' href=`${i}`)
-link(rel="preconnect" href="//cdn1.tianli0.top")
 if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
   link(rel="preconnect" href="//busuanzi.ibruce.info")
 
@@ -86,18 +84,11 @@ noscript.
     }
   </style>
 link(rel='alternate' href='/rss.xml' title=pageAuthor type='application/atom+xml')
-script(src='/lib/twikoo/twikoo.all.min.js' async)
-
+script(src=url_for(theme.asset.twikoo) async)
 if (theme.snackbar && theme.snackbar.enable)
   link(rel='stylesheet', href=url_for(theme.asset.snackbar_css) media="print" onload="this.media='all'")
-
 link(rel='stylesheet' href=url_for(theme.asset.fancybox_css_v4) media="print" onload="this.media='all'")
 
-
 //- global config
-
-
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
-//- if is_post()
-  //- !=partial('includes/head/theme_color', {}, {cache: true})
 !=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
