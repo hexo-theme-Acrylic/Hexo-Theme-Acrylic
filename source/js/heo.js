@@ -423,7 +423,7 @@ document.addEventListener("pjax:click", (function() {
 )),
 // 如果你想使用主题的话,请留下这一行,谢谢
 console.log(
-  "\n %c Acrylic-Dev v1.0.2 %c https://github.com/hexo-theme-acrylic/hexo-theme-acrylic \n",
+  "\n %c Acrylic-Dev v1.0.3 %c https://github.com/hexo-theme-acrylic/hexo-theme-acrylic \n",
   "color: #ffffff; background: #425aef; padding:5px 0; border-radius: 3px; font-size: 15px;",
   "color: #425aef; background: #ffffff; padding:5px 0; border-radius: 0 3px 3px 0;"
 );
