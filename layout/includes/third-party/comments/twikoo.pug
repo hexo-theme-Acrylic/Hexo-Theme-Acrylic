@@ -1,50 +1,42 @@
-- const { envId, region, option } = theme.twikoo
-- const { use, lazyload, count } = theme.comments
-
 script.
   (()=>{
+    const $countDom = document.getElementById('twikoo-count')
     const init = () => {
       twikoo.init(Object.assign({
         el: '#twikoo-wrap',
-        envId: '!{envId}',
-        region: '!{region}',
-        onCommentLoaded: function () {
-          acy.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
-        }
-      }, !{JSON.stringify(option)}))
+        envId: '!{theme.twikoo.envId}',
+        region: '!{theme.twikoo.region}'
+      }, !{JSON.stringify(theme.twikoo.option)}))
     }
 
     const getCount = () => {
-      const countELement = document.getElementById('twikoo-count')
-      if(!countELement) return
       twikoo.getCommentsCount({
-        envId: '!{envId}',
-        region: '!{region}',
+        envId: '!{theme.twikoo.envId}',
+        region: '!{theme.twikoo.region}',
         urls: [window.location.pathname],
         includeReply: false
       }).then(function (res) {
-        countELement.innerText = res[0].count
+        $countDom.innerText = res[0].count
       }).catch(function (err) {
         console.error(err);
       });
     }
 
-    const runFn = () => {
-      init()
-      !{count ? 'GLOBAL_CONFIG_SITE.isPost && getCount()' : ''}
-    }
-
-    const loadTwikoo = () => {
+    const loadTwikoo = (bool = false) => {
       if (typeof twikoo === 'object') {
-        setTimeout(runFn,0)
-        return
-      } 
-      getScript('!{url_for(theme.asset.twikoo)}').then(runFn)
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      } else {
+        getScript('!{theme.CDN.twikoo}').then(()=> {
+          init()
+          bool && $countDom && setTimeout(getCount,0)
+        })
+      }
     }
 
-    if ('!{use[0]}' === 'Twikoo' || !!{lazyload}) {
-      if (!{lazyload}) acy.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
-      else loadTwikoo()
+    if ('!{theme.comments.use[0]}' === 'Twikoo' || !!{theme.comments.lazyload}) {
+      if (!{theme.comments.lazyload}) acy.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+      else loadTwikoo(true)
     } else {
       window.loadOtherComment = () => {
         loadTwikoo()

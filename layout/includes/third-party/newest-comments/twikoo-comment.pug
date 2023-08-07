@@ -43,7 +43,7 @@ script.
       if (typeof twikoo === 'object') {
         runTwikoo()
       } else {
-        getScript('/lib/twikoo/twikoo.all.min.js').then(runTwikoo)
+        getScript('!{theme.CDN.twikoo}').then(runTwikoo)
       }
     }
 
