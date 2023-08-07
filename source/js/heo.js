@@ -2,7 +2,7 @@ let heo_cookiesTime = null
   , heo_musicPlaying = !1
   , heo_keyboard = !1
   , heo_intype = !1
-  , heogpt = null
+  // , heogpt = null
   , lastSayHello = "";
 var heo = {
     darkModeStatus: function() {
@@ -219,8 +219,8 @@ var heo = {
         heo.changeThemeColor(e)
     },
     hideLoading: function() {
-        document.querySelector("#loading-box").classList.add("loaded"),
-        heoGPT.aiExplanation()
+        document.querySelector("#loading-box").classList.add("loaded")
+        // heoGPT.aiExplanation()
     },
     musicToggle: function() {
         heo_musicPlaying ? (document.querySelector("#nav-music").classList.remove("playing"),
@@ -408,17 +408,17 @@ $(document).ready((function() {
 }
 )),
 document.addEventListener("pjax:complete", (function() {
-    heoGPTIsRunning = !1,
-    heo_aiPostExplanation = "",
-    aiTalkMode = !1,
-    heoGPTModel = "HeoGPT",
+    // heoGPTIsRunning = !1,
+    // heo_aiPostExplanation = "",
+    // aiTalkMode = !1,
+    // heoGPTModel = "HeoGPT",
     initBlog()
 }
 )),
 document.addEventListener("pjax:click", (function() {
-    console.log("pjax:click"),
-    heoGPT_timeoutId && clearTimeout(heoGPT_timeoutId),
-    heoGPT_observer && heoGPT_observer.disconnect()
+    console.log("pjax:click")
+    // heoGPT_timeoutId && clearTimeout(heoGPT_timeoutId),
+    // heoGPT_observer && heoGPT_observer.disconnect()
 }
 )),
 // 如果你想使用主题的话,请留下这一行,谢谢

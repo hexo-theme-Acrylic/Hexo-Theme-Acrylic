@@ -1,7 +1,7 @@
 div
   script(src=url_for(theme.asset.utils))
   script(src=url_for(theme.asset.main))
-  script(charset='utf-8' data-pjax src='/js/blogex.js')
+  script(charset='utf-8' data-pjax src=url_for(theme.asset.blogex))
   if theme.translate.enable
     script(src=url_for(theme.asset.translate) type="module")
 
@@ -20,8 +20,8 @@ div
   //- search
   if theme.algolia_search.enable
     script(src=url_for(theme.asset.algolia_search_v4))
-    //- script(src=url_for(theme.asset.instantsearch_v4))
     script(src=url_for(theme.asset.algolia_js))
+    //- script(src=url_for(theme.asset.instantsearch_v4))
   else if theme.local_search.enable
     script(src=url_for(theme.asset.local_search))
 
@@ -30,34 +30,22 @@ div
 
   .js-pjax
     if is_post()
-      script(src="/js/themecolor.js")
+      script(src=url_for(theme.asset.themecolor_js))
 
+    //- TianliGPT
+    include ./post/ai-info.pug
+
+    include ./third-party/newest-comments/twikoo-comment.pug
     if commentsJsLoad
-      include ./third-party/newest-comments/twikoo-comment.pug
-    //- if needLoadCountJs
-    //-   != partial("includes/third-party/card-post-count/index", {}, { cache: true })
-    //- if commentsJsLoad
-    //-   include ./third-party/comments/js.pug
+      include ./third-party/comments/js.pug
+    if needLoadCountJs
+      !=partial('includes/third-party/card-post-count/index', {}, {cache: true})
 
-    include ./third-party/math/index.pug
-
-  //- //- 文章二维码
-  //- script(src='/lib/qrcode/qrcode.min.js')
-  //- //-即刻依赖
-  
-  //- //-用到的一些函数
-  //- script(src='/js/rightmenu.js')
-  //- //-私有函数（功能性）
-  //- script(src='/js/heo.js')
-  //- script(src='/js/blogex.js')
-  //- script(src='/zhheo/random.js')
-  //- script(data-pjax src='/js/commentBarrage.js')
-  //- script(data-pjax src='/lib/swiper/swiper-bundle.min.js')
-
-  //- script(data-pjax, src='/lib/swiper/swiper.min.js')
   != fragment_cache('injectBottom', function(){return injectHtml(theme.inject.bottom)})
-  script(src='/lib/swiper/swiper.min.js')
-  script(type='text/javascript', src='/lib/waterfall.min.js')
+
+  script(src=url_for(theme.asset.swiper))
+  script(type='text/javascript', src=url_for(theme.asset.waterfall))
+
   if theme.aplayerInject && theme.aplayerInject.enable
     if theme.pjax.enable || theme.aplayerInject.per_page
       include ./third-party/aplayer.pug
@@ -67,14 +55,11 @@ div
     != partial("includes/third-party/pjax", {}, { cache: true })
 
   if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
-    script(async data-pjax src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+    script(async data-pjax src=url_for(theme.asset.busuanzi))
 
   script(src=url_for(theme.asset.qrcode))
-  script(src='/js/rightmenu.js')
-  script(data-pjax src='/zhheo/random.js')
+  script(src=url_for(theme.asset.rightmenu_js))
+  script(data-pjax src=url_for(theme.asset.random_js))
   if theme.comments.commentBarrage && theme.twikoo.accessToken
-    script(data-pjax src='/js/commentBarrage.js')
-  script(data-pjax src='/lib/swiper/swiper-bundle.min.js')
-  //- script(data-pjax). 
-    heo.qrcodeCreate();
-    heo.sayhi();
+    script(data-pjax src=url_for(theme.asset.commentBarrage_js))
+  script(data-pjax src=url_for(theme.asset.swiper_bundle))

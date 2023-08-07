@@ -117,15 +117,15 @@ function travelling() {
     acy.snackbarShow("博客没有配置友圈哦");
   }
 }
-function toforeverblog() {
+function toTianliGPTblog() {
     Snackbar.show({
-        text: "点击前往按钮进入「十年之约」项目中的成员博客，不保证跳转网站的安全性和可用性",
+        text: "点击前往按钮进入「TianliGPT」项目中的成员博客，不保证跳转网站的安全性和可用性",
         duration: 8e3,
         pos: "top-center",
         actionText: "前往",
         onActionClick: function(e) {
             $(e).css("opacity", 0),
-            window.open(link, "https://www.foreverblog.cn/go.html")
+            window.open("https://summary.zhheo.com/static/matrix.html", "_blank")
         }
     })
 }
@@ -316,10 +316,10 @@ function initBlog() {
     heo.initThemeColor(),
     heo.hideLoading(),
     heo.tagPageActive(),
-    heo.removeBodyPaceClass(),
-    heoGPT.aiExplanation(),
-    AIEngine(),
-    addAIToggleListener()
+    heo.removeBodyPaceClass()
+    // heoGPT.aiExplanation(),
+    // AIEngine(),
+    // addAIToggleListener()
 }
 document.addEventListener("touchstart", (e=>{
     RemoveRewardMask()

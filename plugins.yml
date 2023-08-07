@@ -58,10 +58,6 @@ typed:
   name: typed.js
   file: lib/typed.min.js
   version: 2.0.12
-pangu:
-  name: pangu
-  file: dist/browser/pangu.min.js
-  version: 4.0.7
 fancybox_css_v4:
   name: '@fancyapps/ui'
   file: dist/fancybox.css
