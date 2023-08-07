@@ -8,8 +8,8 @@ if site.data.link
         span.site-card-tag.vip #[=tag]
       else if color == "speed"
         span.site-card-tag.speed #[=tag]
-      else 
-        span.site-card-tag #[=tag]
+      else
+        span.site-card-tag(style=`background-color: #${color} !important`) #[=tag]
       a.img(target='_blank', title=`${i.name}`, href=`${i.link}`, rel='external nofollow')
         img.flink-avatar.entered.loaded(data-lazy-src=`${siteshot}`, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=`${i.name}`, style="pointer-events: none;", data-ll-status='loaded', src=`${siteshot}`)
       a.info.cf-friends-link(target='_blank', title=`${i.name}`, href=`${i.link}`, rel='external nofollow')

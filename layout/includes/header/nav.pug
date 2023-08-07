@@ -45,8 +45,8 @@ nav#nav.show
           span.fpsText FPS
     #nav-right
       if nav.right_button.travelling.enable
-        .nav-button.only-home#travellings_button(style='display: none')
-          a.site-page(target='_blank' rel='noopener external nofollow' href='https://www.travellings.cn/go.html' title='随机前往一个开往项目网站')
+        .nav-button.only-home#travellings_button
+          a.site-page( rel='noopener external nofollow' onclick='toTianliGPTblog()' href='javascript:void(0);' title='随机前往一个TainliGPT项目网站')
             i(class=`${nav.right_button.travelling.icon}`)
       if nav.right_button.random.enable
         .nav-button#randomPost_button
@@ -60,7 +60,7 @@ nav#nav.show
         .nav-button#nav-console
           a.console_switchbutton(onclick='heo.showConsole()' title='显示中控台' href='javascript:void(0);' rel='external nofollow' data-pjax-state)
             i(class=`${nav.right_button.console.icon}`)
-      .nav-button#nav-totop(onclick='btf.scrollToDest(0, 500)')
+      .nav-button#nav-totop(onclick='acy.scrollToDest(0, 500)')
         a.totopbtn(data-pjax-state)
           i(class=`${nav.right_button.totop}`)
           span#percent
