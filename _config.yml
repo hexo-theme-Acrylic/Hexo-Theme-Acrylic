@@ -255,10 +255,10 @@ related_post:
 reward:
   enable: true
   QR_code:
-    - img: https://cdn.staticaly.com/gh/gtwxxh666/pic@main/1/wechat.png
+    - img: https://img01.anheyu.com/useruploads/8/2023/08/09/64d36090eeae9.png
       link:
       text: 微信
-    - img: https://cdn.staticaly.com/gh/gtwxxh666/pic@main/1/alipay.png
+    - img: https://img01.anheyu.com/useruploads/8/2023/08/09/64d36090ee66e.png
       link:
       text: 支付宝
 
