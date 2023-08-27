@@ -9,7 +9,9 @@
 
 主题预览:  🤟[Heo](https://blog.zhheo.com/) ||  👍 [满心](https://blog.lovelu.top/)  ||  🤞 [Jayhrn](https://blog.jayhrn.com/)
 
-文档: 📖 [https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
+Demo：[https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
+
+文档: 📖 [https://doc.acrylic.org.cn/](https://doc.acrylic.org.cn/)
 
 一款基于[hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly)修改的主题
 
