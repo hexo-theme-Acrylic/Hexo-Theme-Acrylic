@@ -755,7 +755,7 @@ CDN:
     # fancybox_v4:
     snackbar_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css
     snackbar: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js
-    fontawesomeV6: https://jsd.onmicrosoft.cn/npm/@fortawesome/fontawesome-free/css/all.min.css
+    fontawesomeV6: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
     aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
     meting_js: https://jsd.onmicrosoft.cn/gh/hexo-theme-Acrylic/JS-Acrylic@main/Meting.js
